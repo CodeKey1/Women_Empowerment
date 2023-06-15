@@ -31,6 +31,8 @@ require __DIR__.'/auth.php';
 
 Route::group(['namespace'=> 'guest'],function (){
     Route::get('/about' ,[App\Http\Controllers\Site\AboutController::class,'index'])-> name('about');
+    Route::get('/registration_project' ,[App\Http\Controllers\Site\RegistrationController::class,'index'])-> name('project.signup');
+    Route::post('/project_store' ,[App\Http\Controllers\Site\RegistrationController::class,'store'])-> name('project.store');
 
 });
 ///////////////////////////////////////////// Dashboard site ///////////////////////////////////////////

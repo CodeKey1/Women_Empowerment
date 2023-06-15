@@ -125,7 +125,7 @@
                                                 </div>
                                                 <div class="mm2-com mm1-com mm1-s1">
                                                     <div class="ed-course-in">
-                                                        <a class="course-overlay" href="#">
+                                                        <a class="course-overlay" href="{{ route('project.signup') }}">
                                                             <img src="images/h-adm1.jpg" alt="">
                                                             <span>Admission</span>
                                                         </a>
@@ -290,7 +290,7 @@
                             <form>
                                 <div class="sf-type">
                                     <div class="sf-input">
-                                        <input type="text" id="sf-box" placeholder="Search course and discount courses">
+                                        <input type="text" id="sf-box" placeholder="  ">
                                     </div>
                                     <div class="sf-list">
                                         <ul>
@@ -314,7 +314,7 @@
                                     </div>
                                 </div>
                                 <div class="sf-submit">
-                                    <input type="submit" value="Search Course">
+                                    <input type="submit" value=" بحث بالمنصة ">
                                 </div>
                             </form>
                         </div>

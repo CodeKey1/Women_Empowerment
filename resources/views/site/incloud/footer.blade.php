@@ -282,6 +282,9 @@
                 </div>
             </div>
         </div>
+        @include('site.incloud.alertts.error')
+        @include('site.incloud.alertts.success')
+
     </section>
     <!-- SOCIAL MEDIA SHARE -->
     <section>
