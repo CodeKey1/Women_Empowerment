@@ -4,15 +4,16 @@
             <div class="container">
                 <div class="row">
                     <div class="bot-book">
-                        <div class="col-md-2 bb-img">
-                            <img src="images/3.png" alt="">
+                        <div class="col-md-3 bb-link">
+                            <a href="{{ route('project.signup') }}"> سجل مشروعك </a>
                         </div>
-                        <div class="col-md-7 bb-text">
+                        <div class="col-md-7 bb-text" style="text-align: right;">
                             <h4>therefore always free from repetition</h4>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
                         </div>
-                        <div class="col-md-3 bb-link">
-                            <a href="course-details.html"> سجل مشروعك </a>
+
+                        <div class="col-md-2 bb-img">
+                            <img src="images/3.png" alt="">
                         </div>
                     </div>
                 </div>

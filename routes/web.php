@@ -31,6 +31,8 @@ require __DIR__.'/auth.php';
 
 Route::group(['namespace'=> 'guest'],function (){
     Route::get('/about' ,[App\Http\Controllers\Site\AboutController::class,'index'])-> name('about');
+    Route::get('/stratgey' ,[App\Http\Controllers\Site\PageController::class,'index'])-> name('stratgey');
+    Route::get('/instructions' ,[App\Http\Controllers\Site\PageController::class,'instructions'])-> name('instructions');
     Route::get('/registration_project' ,[App\Http\Controllers\Site\RegistrationController::class,'index'])-> name('project.signup');
     Route::post('/project_store' ,[App\Http\Controllers\Site\RegistrationController::class,'store'])-> name('project.store');
 
@@ -39,5 +41,8 @@ Route::group(['namespace'=> 'guest'],function (){
 
 Route::middleware(['auth','admin'])->group(function (){
     Route::get('/dashboard' ,[App\Http\Controllers\Admin\AdminController::class,'index'])  -> name('dashboard');
+    Route::get('/back' ,[App\Http\Controllers\Admin\AdminController::class,'back'])  -> name('back');
+    Route::get('/all_apply' ,[App\Http\Controllers\Admin\ApplyController::class,'index'])  -> name('admin.apply');
+    Route::get('/user_apply{id}' ,[App\Http\Controllers\Admin\ApplyController::class,'show'])  -> name('admin.apply.show');
 
 });

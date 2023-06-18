@@ -91,6 +91,7 @@
  .con-title{
      text-align: center;
      margin-bottom: 40px;
+     direction: rtl;
 }
  .con-title h2{
      font-size: 36px;
@@ -105,9 +106,9 @@
      line-height: 40px;
 }
  .con-title p{
-     font-size: 18px;
-     color: #3f444a;
-     font-weight: 300;
+    font-size: 15px;
+    color: #000000;
+    font-weight: 500;
 }
  .pad-all-20{
      padding:20px;
@@ -143,8 +144,8 @@
  .wed-logo a{
 }
  .wed-logo a img{
-     width: 250px;
-     padding: 7px 0px;
+     width: 95px;
+     /* padding: 7px 0px; */
 }
  .wed-menu{
      float: right;
@@ -2215,7 +2216,7 @@
 /* =  14.USER DASHBOARD
 /*-------------------------------------------------*/
  .pro-cover{
-     background: url('../images/pro-bg.jpg') no-repeat center center;
+     background: url('../images/cover.jpg') no-repeat center center;
      width:100%;
      height:250px;
      display: block;
@@ -2271,6 +2272,7 @@
      border: 1px solid #f3f2f2;
 }
  .pro-user-bio ul{
+    text-align: center;
 }
  .pro-user-bio ul li{
      padding-bottom: 10px;
@@ -3390,7 +3392,7 @@ left: 0;
      width: 32px;
      text-align: center;
      box-sizing: border-box;
-     margin-left: 11px;
+     margin-right: 11px;
      margin-top: 12px;
 }
  .s18-age-event ul li h4{
@@ -3452,7 +3454,7 @@ left: 0;
      width: 28px;
      height: 28px;
      position: absolute;
-     right: 0px;
+     left: 0px;
      top: 10px;
      background-position: -358px -196px;
      background-color: #425473;
@@ -4311,9 +4313,10 @@ left: 0;
 .sb2-13 ul {
     /* padding: 20px; */
 
-    margin-left: 0px;
-    padding-left: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
     margin-bottom: 0px;
+    direction: rtl;
 }
 .sb2-13 ul li {
     list-style-type: none;
@@ -4335,7 +4338,7 @@ left: 0;
     display: block;
     position: absolute;
     margin-top: -15px;
-    right: 20px;
+    left: 20px;
     font-size: 12px;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
@@ -4370,7 +4373,7 @@ left: 0;
     background: #57666d;
 }
 .sb2-13 ul li a i {
-    margin-right: 8px;
+    margin-left: 8px;
     width: 16px;
 }
 .sb2-2 {
@@ -4569,11 +4572,11 @@ left: 0;
 .left-sub-menu ul li a {
     display: block;
     font-size: 13.5px;
-    padding: 10px 24px 10px 45px;
+    padding: 10px 45px 10px 24px;
 }
 .left-sub-menu ul li a:hover {
     background: none;
-    padding-left: 55px;
+    padding-right: 55px;
 }
 .left-sub-menu ul li a:focus {
     background: none;
@@ -4821,6 +4824,7 @@ left: 0;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 700;
+    text-align: center;
 }
 .table-desi tbody {}
 .table-desi tbody tr {
@@ -4836,6 +4840,7 @@ left: 0;
 .table-desi tbody tr td {
     color: #929292;
     padding: 15px 8px 12px 8px !important;
+    text-align: center;
 }
 .table-desi i {
     background: #58b392;
@@ -5055,7 +5060,7 @@ left: 0;
     display: none;
 }
 .logo {} .logo img {
-    width: 100%;
+    width: 50%;
 }
 .atab-menu {
     display: inline-block;
@@ -5160,7 +5165,7 @@ border: 1px solid #e2e2e2;
     height: 40px;
     border-radius: 2px;
     font-size: 14px;
-    padding-left: 16px;
+    padding-right: 16px;
     box-sizing: border-box;
     margin-bottom: 8px;
 }
@@ -5652,7 +5657,7 @@ padding: 6px 25px;
     box-sizing: border-box;
 }
 .s17-eve-time-msg {
-    float: left;
+    float: right;
     width: 75%;
     padding-right: 80px;
     box-sizing: border-box;

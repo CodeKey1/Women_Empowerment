@@ -62,7 +62,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wed-logo">
-                            <a href="{{ route('site') }}"><img src="images/logo.png" alt="" />
+                            <a href="{{ route('site') }}"><img src="images/3.jpeg" alt="" />
                             </a>
                         </div>
                         <div class="main-menu">
@@ -158,7 +158,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="#"> الإستراتيجية </a></li>
+                                <li><a href="{{ route('stratgey') }}"> الإستراتيجية </a></li>
                                 <!--<li><a class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</a></li>-->
                                 <!-- <li class="cour-menu">
                                     <a href="#!" class="mm-arr">All Pages</a>

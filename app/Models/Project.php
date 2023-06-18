@@ -13,6 +13,7 @@ class Project extends Model
     protected $fillable = [
         'name',
         'email',
+        'role',
         'phone',
         'city',
         'about',
@@ -20,4 +21,9 @@ class Project extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function project_type(){
+
+        return  $this->belongsTo(Type::class ,'type_id');
+    }
 }

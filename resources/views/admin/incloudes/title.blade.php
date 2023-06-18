@@ -1,1 +1,1 @@
-<title> EEducation Master Template </title>
+<title> منصة رائدة الأعمال </title>

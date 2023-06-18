@@ -1,23 +1,23 @@
 <!--== LEFT MENU ==-->
 <div class="sb2-13">
     <ul class="collapsible" data-collapsible="accordion">
-        <li><a href="admin.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
+        <li><a href="admin.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> الرئيسية </a>
         </li>
-        <li><a href="admin-setting.html"><i class="fa fa-cogs" aria-hidden="true"></i> Site Setting</a>
-        </li>
-        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> All Courses</a>
+        {{-- <li><a href="admin-setting.html"><i class="fa fa-cogs" aria-hidden="true"></i> Site Setting</a>
+        </li> --}}
+        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> جميع المتقدمين </a>
             <div class="collapsible-body left-sub-menu">
                 <ul>
-                    <li><a href="admin-all-courses.html">All Course</a>
+                    <li><a href="{{ route('admin.apply') }}"> المتقدمين </a>
                     </li>
-                    <li><a href="admin-add-courses.html">Add New Course</a>
+                    <li><a href="admin-add-courses.html"> اضافة </a>
                     </li>
-                    <li><a href="admin-trash-courses.html">Trash Course</a>
+                    <li><a href="admin-trash-courses.html"> الجاري </a>
                     </li>
                 </ul>
             </div>
         </li>
-        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
+        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> المستخدمين </a>
             <div class="collapsible-body left-sub-menu">
                 <ul>
                     <li><a href="admin-user-all.html">All Users</a>
@@ -27,7 +27,7 @@
                 </ul>
             </div>
         </li>
-        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bookmark-o" aria-hidden="true"></i>All Pages</a>
+        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bookmark-o" aria-hidden="true"></i> التسوق الشبكي </a>
             <div class="collapsible-body left-sub-menu">
                 <ul>
                     <li><a href="admin-page-all.html">Pages</a>
@@ -37,7 +37,7 @@
                 </ul>
             </div>
         </li>
-        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bars" aria-hidden="true"></i> Menu</a>
+        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bars" aria-hidden="true"></i> المشاريع </a>
             <div class="collapsible-body left-sub-menu">
                 <ul>
                     <li><a href="admin-main-menu.html">Main menu</a></li>
@@ -91,7 +91,7 @@
                 </ul>
             </div>
         </li>
-        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Students</a>
+        {{-- <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Students</a>
             <div class="collapsible-body left-sub-menu">
                 <ul>
                     <li><a href="admin-user-all.html">All Students</a>
@@ -100,8 +100,8 @@
                     </li>
                 </ul>
             </div>
-        </li>
-        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-commenting-o" aria-hidden="true"></i> Enquiry</a>
+        </li> --}}
+        {{-- <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-commenting-o" aria-hidden="true"></i> Enquiry</a>
             <div class="collapsible-body left-sub-menu">
                 <ul>
                     <li><a href="admin-all-enquiry.html">All Enquiry</a></li>
@@ -112,8 +112,8 @@
                     <li><a href="admin-common-enquiry.html">Common Enquiry</a></li>
                 </ul>
             </div>
-        </li>
-        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-cloud-download" aria-hidden="true"></i> Import & Export</a>
+        </li> --}}
+        {{-- <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-cloud-download" aria-hidden="true"></i> Import & Export</a>
             <div class="collapsible-body left-sub-menu">
                 <ul>
                     <li><a href="admin-export-data.html">Export all datas</a>
@@ -122,6 +122,6 @@
                     </li>
                 </ul>
             </div>
-        </li>
+        </li> --}}
     </ul>
 </div>

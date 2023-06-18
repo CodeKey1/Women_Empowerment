@@ -1,35 +1,28 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class PageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function back()
-    {
-        //
-        return redirect()->back();
-    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         //
-        return view('admin.pages.dashboard');
+        return view('site.pages.stratgey');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function instructions()
     {
         //
+        return view('site.pages.instructions');
     }
 
     /**

@@ -1,16 +1,16 @@
 @extends('site.sub_site')
 @section('profile')
 <div class="pro-menu">
-    <div class="container">
+    <div class="container" style="direction: rtl">
         <div class="col-md-9 col-md-offset-3">
             <ul>
                 <li><a href="dashboard.html" class="pro-act">My Dashboard</a></li>
-                <li><a href="db-profile.html">Profile</a></li>
-                <li><a href="db-courses.html">Courses</a></li>
-                <li><a href="db-exams.html">Exams</a></li>
-                <li><a href="db-time-line.html">Time Line</a></li>
-                <li><a href="#">Entry</a></li>
-                <li><a href="#">Notifications</a></li>
+                <li><a href="db-profile.html"> الصفحة الشخصية </a></li>
+                <li><a href="db-courses.html">المشروعات</a></li>
+                <li><a href="db-exams.html">رأدات اعمال</a></li>
+                <li><a href="db-time-line.html"> مواقيت </a></li>
+                {{-- <li><a href="#">Entry</a></li>
+                <li><a href="#">Notifications</a></li> --}}
             </ul>
         </div>
     </div>
@@ -19,12 +19,12 @@
     <div class="container pg-inn">
         <div class="col-md-3">
             <div class="pro-user">
-                <img src="images/user.jpg" alt="user">
+                <img src="images/icon/profile.png" alt="user" style="background: burlywood;">
             </div>
             <div class="pro-user-bio">
                 <ul>
                     <li>
-                        <h4>Emily Jessica</h4>
+                        <h4>{{ Auth::user()->name }}</h4>
                     </li>
                     <li>Student Id: ST17241</li>
                     <li><a href="#!"><i class="fa fa-facebook"></i> Facebook: my sample</a></li>
@@ -34,15 +34,14 @@
             </div>
         </div>
         <div class="col-md-9">
-            <div class="udb">
+            <div class="udb" style="direction: rtl">
 
                 <div class="udb-sec udb-prof">
-                    <h4><img src="images/icon/db1.png" alt="" /> My Profile</h4>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
-                        to using 'Content here, content here', making it look like readable English.</p>
+                    <h4><img src="images/icon/db1.png" alt="" /> بياناتك  </h4>
+                    <p> كلمة عن المتقدمة </p>
                 </div>
                 <div class="udb-sec udb-cour">
-                    <h4><img src="images/icon/db2.png" alt="" /> Booking Courses</h4>
+                    <h4><img src="images/icon/db2.png" alt="" /> المشاريع </h4>
                     <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.The point of using Lorem Ipsummaking it look like readable English.</p>
                     <div class="sdb-cours">
                         <ul>
@@ -94,18 +93,17 @@
                     </div>
                 </div>
                 <div class="udb-sec udb-cour-stat">
-                    <h4><img src="images/icon/db3.png" alt="" /> Course Status</h4>
-                    <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.The point of using Lorem Ipsummaking it look like readable English.</p>
+                    <h4><img src="images/icon/db3.png" alt="" /> حالة المشاريع </h4>
+                    <p> متابعة حالة التقديم بالمشروع  </p>
                     <div class="pro-con-table">
                         <table class="bordered responsive-table">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Course Name</th>
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
-                                    <th>Status</th>
-                                    <th>Edit</th>
+                                    <th>#</th>
+                                    <th> اسم المشروع </th>
+                                    <th> وقت التقديم </th>
+                                    <th> فئة المشروع </th>
+                                    <th> حالة </th>
                                     <th>View</th>
                                 </tr>
                             </thead>
@@ -115,52 +113,46 @@
                                     <td>01</td>
                                     <td>Software Testing</td>
                                     <td>12May 2018</td>
-                                    <td>18Aug 2018</td>
-                                    <td><span class="pro-user-act">active</span></td>
-                                    <td><a href="sdb-course-edit.html" class="pro-edit">edit</a></td>
-                                    <td><a href="sdb-course-view.html" class="pro-edit">view</a></td>
+                                    <td> خدمي </td>
+                                    <td><span class="ad-st-view">جاري</span></td>
+                                    <td><a href="sdb-course-view.html" class="pro-edit"> عرض </a></td>
                                 </tr>
-                                <tr>
-                                    <td>02</td>
-                                    <td>Mechanical Design</td>
-                                    <td>05Jan 2019</td>
-                                    <td>10Feb 2019</td>
-                                    <td><span class="pro-user-act">active</span></td>
-                                    <td><a href="sdb-course-edit.html" class="pro-edit">edit</a></td>
-                                    <td><a href="sdb-course-view.html" class="pro-edit">view</a></td>
-                                </tr>
-                                <tr>
-                                    <td>03</td>
-                                    <td>Architecture & Planning</td>
-                                    <td>21Jun 2020</td>
-                                    <td>08Dec 2020</td>
-                                    <td><span class="pro-user-act">active</span></td>
-                                    <td><a href="sdb-course-edit.html" class="pro-edit">edit</a></td>
-                                    <td><a href="sdb-course-view.html" class="pro-edit">view</a></td>
-                                </tr>
-                                <tr>
-                                    <td>04</td>
-                                    <td>Board Exam Training</td>
-                                    <td>08Jun 2018</td>
-                                    <td>21Sep 2018</td>
-                                    <td><span class="pro-user-act pro-user-de-act">de-active</span></td>
-                                    <td><a href="sdb-course-edit.html" class="pro-edit">edit</a></td>
-                                    <td><a href="sdb-course-view.html" class="pro-edit">view</a></td>
-                                </tr>
-                                <tr>
-                                    <td>05</td>
-                                    <td>Yoga Training Classes</td>
-                                    <td>16JFeb 2018</td>
-                                    <td>26Mar 2018</td>
-                                    <td><span class="pro-user-act pro-user-de-act">de-active</span></td>
-                                    <td><a href="sdb-course-edit.html" class="pro-edit">edit</a></td>
-                                    <td><a href="sdb-course-view.html" class="pro-edit">view</a></td>
-                                </tr>
+
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <div class="udb-sec udb-time">
+                <div class="udb-sec udb-cour-stat">
+                    <h4><img src="images/icon/db3.png" alt="" />  التسوق الشبكي </h4>
+                    <p> جميع المتقدمين تحت بند التسوق الشبكي والتابعين لكي </p>
+                    <div class="pro-con-table">
+                        <table class="bordered responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th> اسم التابع  </th>
+                                    <th>  فئة مشرعة </th>
+                                    <th> العدد التابع له</th>
+                                    <th> حالة </th>
+                                    <th>View</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>01</td>
+                                    <td>Software Testing</td>
+                                    <td>12May 2018</td>
+                                    <td> خدمي </td>
+                                    <td><span class="pro-user-act">مقبول</span></td>
+                                    <td><a href="sdb-course-view.html" class="pro-edit"> عرض </a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {{-- <div class="udb-sec udb-time">
                     <h4><img src="images/icon/db4.png" alt="" /> Class Time Line</h4>
                     <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                     <div class="tour_head1 udb-time-line days">
@@ -298,7 +290,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

@@ -3,25 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ApplyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function back()
-    {
-        //
-        return redirect()->back();
-    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         //
-        return view('admin.pages.dashboard');
+        $apply = Project::select()->get();
+        return view('admin.pages.apply.all_apply',compact('apply'));
     }
 
     /**
@@ -46,6 +40,8 @@ class AdminController extends Controller
     public function show(string $id)
     {
         //
+        $apply = Project::select()->find($id);
+        return view('admin.pages.apply.view',compact('apply'));
     }
 
     /**
