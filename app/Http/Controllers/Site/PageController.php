@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\Mobadrat;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -10,10 +11,20 @@ class PageController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function site()
+    {
+        //
+        $mopadarat = Mobadrat::select()->get();
+        return view('site.pages.index',compact('mopadarat'));
+    }
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         //
-        return view('site.pages.stratgey');
+        $mopadarat = Mobadrat::select()->get();
+        return view('site.pages.stratgey',compact('mopadarat'));
     }
 
     /**
@@ -23,6 +34,15 @@ class PageController extends Controller
     {
         //
         return view('site.pages.instructions');
+    }
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function initiatives()
+    {
+        //
+        $mopadarat = Mobadrat::select()->get();
+        return view('site.pages.initiatives',compact('mopadarat'));
     }
 
     /**

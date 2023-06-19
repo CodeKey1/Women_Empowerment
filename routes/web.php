@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {return view('site.pages.index'); })->name('site');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile_user', function () {return view('site.pages.dashboard'); })->name('profile');
@@ -30,9 +29,11 @@ require __DIR__.'/auth.php';
 ///////////////////////////////////////////// front site ///////////////////////////////////////////
 
 Route::group(['namespace'=> 'guest'],function (){
+    Route::get('/', [App\Http\Controllers\Site\PageController::class,'site'])->name('site');
     Route::get('/about' ,[App\Http\Controllers\Site\AboutController::class,'index'])-> name('about');
     Route::get('/stratgey' ,[App\Http\Controllers\Site\PageController::class,'index'])-> name('stratgey');
     Route::get('/instructions' ,[App\Http\Controllers\Site\PageController::class,'instructions'])-> name('instructions');
+    Route::get('/initiatives' ,[App\Http\Controllers\Site\PageController::class,'initiatives'])-> name('initiatives');
     Route::get('/registration_project' ,[App\Http\Controllers\Site\RegistrationController::class,'index'])-> name('project.signup');
     Route::post('/project_store' ,[App\Http\Controllers\Site\RegistrationController::class,'store'])-> name('project.store');
 

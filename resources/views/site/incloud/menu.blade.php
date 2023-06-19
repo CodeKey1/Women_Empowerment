@@ -110,7 +110,7 @@
                                 <li class="admi-menu">
                                     <a href="#" class="mm-arr"> البيانات المفتوحى </a>
                                     <!-- MEGA MENU 1 -->
-                                    <div class="mm-pos">
+                                    {{-- <div class="mm-pos">
                                         <div class="admi-mm m-menu">
                                             <div class="m-menu-inn">
                                                 <div class="mm2-com mm1-com mm1-s1">
@@ -125,7 +125,7 @@
                                                 </div>
                                                 <div class="mm2-com mm1-com mm1-s1">
                                                     <div class="ed-course-in">
-                                                        <a class="course-overlay" href="{{ route('project.signup') }}">
+                                                        <a class="course-overlay" href="">
                                                             <img src="images/h-adm1.jpg" alt="">
                                                             <span>Admission</span>
                                                         </a>
@@ -156,7 +156,7 @@
 
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </li>
                                 <li><a href="{{ route('stratgey') }}"> الإستراتيجية </a></li>
                                 <!--<li><a class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</a></li>-->
@@ -264,9 +264,9 @@
                                         </div>
                                     </div>
                                 </li> -->
-                                <li><a href="#"> تدريب </a>
+                                <li><a href="#"> التدريب </a>
                                 </li>
-                                <li><a href="#"> نمازج مشرفة </a>
+                                <li><a href="#"> النماذج المشرفة </a>
                                 </li>
                                 <li><a href="{{ route('about') }}"> عن المنصة </a>
                                 </li>

@@ -24,21 +24,21 @@ $(document).ready(function() {
         $(".fil-5").addClass("filt-eff-1");
     });
 
-    //MEGA MENU	
+    //MEGA MENU
     $(".about-menu").hover(function() {
         $(".about-mm").fadeIn();
     });
     $(".about-menu").mouseleave(function() {
         $(".about-mm").fadeOut();
     });
-    //MEGA MENU	
+    //MEGA MENU
     $(".admi-menu").hover(function() {
         $(".admi-mm").fadeIn();
     });
     $(".admi-menu").mouseleave(function() {
         $(".admi-mm").fadeOut();
     });
-    //MEGA MENU	
+    //MEGA MENU
     $(".cour-menu").hover(function() {
         $(".cour-mm").fadeIn();
     });
@@ -115,7 +115,7 @@ $(document).ready(function() {
     $(".ed-mi-close").on('click', function() {
         $(".ed-mm-inn").removeClass("ed-mm-act");
     });
-	
+
     //MATERIAL SELECT BOX
     $('select').material_select();
 
@@ -152,7 +152,7 @@ $(document).ready(function() {
             minLength: 1
         }
     });
-	
+
     //GOOGLE MAP - SCROLL REMOVE
     $('.contact-map')
         .on('click', function() {
@@ -170,12 +170,12 @@ $(document).ready(function() {
     //$(".man-drop").fadeOut();
     //$(".mob-close").fadeOut();
     //$(".desk-hide").fadeIn();
-    //});	
+    //});
 
-    //RIGHT CLICK DISABLE	
+    //RIGHT CLICK DISABLE
     //$("body").on("contextmenu",function(){
     //return false;
-    //}); 
+    //});
     $('.slider').slider({
         height: 500,
         interval: 1000
