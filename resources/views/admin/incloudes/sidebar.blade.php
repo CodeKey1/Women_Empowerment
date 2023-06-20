@@ -47,11 +47,11 @@
                 </ul>
             </div>
         </li>
-        <li><a href="admin-slider.html"><i class="fa fa-image" aria-hidden="true"></i> Slider</a>
+        <li><a href="admin-slider.html"><i class="fa fa-image" aria-hidden="true"></i> المبادرات </a>
         </li>
-        <li><a href="admin-quick-link.html"><i class="fa fa-external-link-square" aria-hidden="true"></i> Slider quick link</a>
+        <li><a href="admin-quick-link.html"><i class="fa fa-external-link-square" aria-hidden="true"></i>  </a>
         </li>
-        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i> Events</a>
+        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i> ارشادات المراة </a>
             <div class="collapsible-body left-sub-menu">
                 <ul>
                     <li><a href="admin-event-all.html">All Events</a>

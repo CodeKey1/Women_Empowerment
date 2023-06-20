@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\Guide_Women;
 use App\Models\Mobadrat;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,9 @@ class PageController extends Controller
     public function site()
     {
         //
+        $guide = Guide_Women::select()->get();
         $mopadarat = Mobadrat::select()->get();
-        return view('site.pages.index',compact('mopadarat'));
+        return view('site.pages.index',compact('mopadarat','guide'));
     }
     /**
      * Display a listing of the resource.
@@ -25,6 +27,23 @@ class PageController extends Controller
         //
         $mopadarat = Mobadrat::select()->get();
         return view('site.pages.stratgey',compact('mopadarat'));
+    }
+    /**
+     * Display a listing of the resource.
+     */
+    public function guide()
+    {
+        //
+        $guide = Guide_Women::select()->get();
+        return view('site.pages.women_guide',compact('guide'));
+    }
+    /**
+     * Display a listing of the resource.
+     */
+    public function project_design()
+    {
+        //
+        return view('site.pages.design_project');
     }
 
     /**

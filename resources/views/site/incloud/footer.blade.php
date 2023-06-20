@@ -8,8 +8,8 @@
                             <a href="{{ route('project.signup') }}"> سجل مشروعك </a>
                         </div>
                         <div class="col-md-7 bb-text" style="text-align: right;">
-                            <h4>therefore always free from repetition</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                            <h4>   منصة مسرعات المشروعات الخضراء الذكية لرائدات الاعمال </h4>
+                            <p> تحتوى المنصه على الكثير من المواضيع التى تحتاجيها لتاسيس مشروعك الريادي خاصة المشروعات المهتمه بمعالجة القضيه البيئية . </p>
                         </div>
 
                         <div class="col-md-2 bb-img">
@@ -34,55 +34,49 @@
 			  </div>-->
             <div class="row wed-foot-link">
                 <div class="col-md-4 foot-tc-mar-t-o">
-                    <h4>Top Courses</h4>
+                    <h4> اهم الصفحات </h4>
                     <ul>
-                        <li><a href="course-details.html">Accounting/Finance</a></li>
-                        <li><a href="course-details.html">civil engineering</a></li>
-                        <li><a href="course-details.html">Art/Design</a></li>
-                        <li><a href="course-details.html">Marine Engineering</a></li>
-                        <li><a href="course-details.html">Business Management</a></li>
-                        <li><a href="course-details.html">Journalism/Writing</a></li>
-                        <li><a href="course-details.html">Physical Education</a></li>
-                        <li><a href="course-details.html">Political Science</a></li>
+                        <li><a href="#"> الإرشادات </a></li>
+                        <li><a href="#"> ارشادات التسريع </a></li>
+                        <li><a href="#"> الاستراتيجية </a></li>
+                        <li><a href="#"> نماذج ناجحة </a></li>
+
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h4>New Courses</h4>
+                    <h4> المشاريع </h4>
                     <ul>
-                        <li><a href="course-details.html">Sciences</a></li>
-                        <li><a href="course-details.html">Statistics</a></li>
-                        <li><a href="course-details.html">Web Design/Development</a></li>
-                        <li><a href="course-details.html">SEO</a></li>
-                        <li><a href="course-details.html">Google Business</a></li>
-                        <li><a href="course-details.html">Graphics Design</a></li>
-                        <li><a href="course-details.html">Networking Courses</a></li>
-                        <li><a href="course-details.html">Information technology</a></li>
+                        <li><a href="#"> خدمي </a></li>
+                        <li><a href="#"> تجاري </a></li>
+                        <li><a href="#"> صناعي </a></li>
+                        <li><a href="#"> صناعات يدوية </a></li>
+
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h4>HELP & SUPPORT</h4>
+                    <h4>المساعدة & الدعم </h4>
                     <ul>
-                        <li><a href="#">24x7 Live help</a>
+                        <li><a href="#">24x7 مساعدة</a>
                         </li>
-                        <li><a href="#">Contact us</a>
+                        <li><a href="#"> تواصل معنا </a>
                         </li>
-                        <li><a href="#">Feedback</a>
+                        <li><a href="#"> </a>
                         </li>
-                        <li><a href="#">FAQs</a>
+                        <li><a href="#"> الأسئلة الشائعة </a>
                         </li>
-                        <li><a href="#">Safety Tips</a>
+                        <li><a href="#"> التقديم </a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="row wed-foot-link-1">
                 <div class="col-md-4 foot-tc-mar-t-o">
-                    <h4>Get In Touch</h4>
-                    <p>Address: 28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</p>
-                    <p>Phone: <a href="#!">+101-1231-4321</a></p>
-                    <p>Email: <a href="#!">info@edu.com</a></p>
+                    <h4> العنوان </h4>
+                    <p> أسوان ديوان عام المحافظة </p>
+                    <p>الهاتف: <a href="#!">+101-1231-4321</a></p>
+                    <p>البريد: <a href="#!">info@edu.com</a></p>
                 </div>
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <h4>DOWNLOAD OUR FREE MOBILE APPS</h4>
                     <ul>
                         <li><a href="#"><span class="sprite sprite-android"></span></a>
@@ -90,9 +84,9 @@
                         <li><a href="#"><span class="sprite sprite-ios"></span></a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
                 <div class="col-md-4">
-                    <h4>SOCIAL MEDIA</h4>
+                    <h4> التواصل الإجتماعي</h4>
                     <ul>
                         <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         </li>

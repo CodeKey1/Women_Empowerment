@@ -205,126 +205,48 @@
                         <p> رائدات الاعمال </p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="ho-ev-latest ho-ev-latest-bg-2">
                         <div class="ho-lat-ev">
-                            <h4> Job Vacants </h4>
-                            <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
+                            <h4> ارشادات رأدات الأعمال </h4>
+                            <p> </p>
                         </div>
                     </div>
                     <div class="ho-event ho-event-mob-bot-sp">
                         <ul>
-                            <li>
-                                <div class="ho-ev-img"><img src="images/event/1.jpg" alt="">
-                                </div>
-                                <div class="ho-ev-link">
-                                    <a href="#">
-                                        <h4>Almost before we knew it, we had left the ground</h4>
-                                    </a>
-                                    <p>Etiam ornare lacus nec lectus vestibulum aliquam.</p>
-                                    <span>Location: New York</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="ho-ev-img"><img src="images/event/2.jpg" alt="">
-                                </div>
-                                <div class="ho-ev-link">
-                                    <a href="#">
-                                        <h4>Then came the night of the first falling star.</h4>
-                                    </a>
-                                    <p>Vestibulum sollicitudin sem arcu</p>
-                                    <span>Location: Los Angeles</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="ho-ev-img"><img src="images/event/3.jpg" alt="">
-                                </div>
-                                <div class="ho-ev-link">
-                                    <a href="#">
-                                        <h4>Educate to Empower NYE Party</h4>
-                                    </a>
-                                    <p>Vestibulum sollicitudin sem arcu, eget ullamcorper purus hendrerit</p>
-                                    <span>Location: Chennai</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="ho-ev-img"><img src="images/event/4.jpg" alt=""></div>
-                                <div class="ho-ev-link">
-                                    <a href="#">
-                                        <h4>Then came the night of the first falling star.</h4>
-                                    </a>
-                                    <p>Venenatis lacus lectus.</p>
-                                    <span>Location: Chicago</span>
-                                </div>
-                            </li>
+                            @isset($guide)
+                            @foreach ($guide as $num => $guides)
+                                @if ($num < 5)
+                                    <li>
+                                        <div class="ho-ev-date"><span>{{ $num + 1 }}</span><span></span>
+                                        </div>
+                                        <div class="ho-ev-link" style="width: 75%;">
+                                            <a href="events.html">
+                                                <h4> {{ $guides->name }}</h4>
+                                            </a>
+                                            <p>{{ $guides->description }}</p>
+                                            <a href="{{ route('guide') }}">
+                                                <span> للمزيد </span>
+                                            </a>
+
+                                        </div>
+                                    </li>
+                                @endif
+                            @endforeach
+                        @endisset
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="ho-ev-latest ho-ev-latest-bg-2">
-                        <div class="ho-lat-ev">
-                            <h4>Job Vacants</h4>
-                            <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
-                        </div>
-                    </div>
-                    <div class="ho-event ho-event-mob-bot-sp">
-                        <ul>
-                            <li>
-                                <div class="ho-ev-img"><img src="images/event/1.jpg" alt="">
-                                </div>
-                                <div class="ho-ev-link">
-                                    <a href="#">
-                                        <h4>Almost before we knew it, we had left the ground</h4>
-                                    </a>
-                                    <p>Etiam ornare lacus nec lectus vestibulum aliquam.</p>
-                                    <span>Location: New York</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="ho-ev-img"><img src="images/event/2.jpg" alt="">
-                                </div>
-                                <div class="ho-ev-link">
-                                    <a href="#">
-                                        <h4>Then came the night of the first falling star.</h4>
-                                    </a>
-                                    <p>Vestibulum sollicitudin sem arcu</p>
-                                    <span>Location: Los Angeles</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="ho-ev-img"><img src="images/event/3.jpg" alt="">
-                                </div>
-                                <div class="ho-ev-link">
-                                    <a href="#">
-                                        <h4>Educate to Empower NYE Party</h4>
-                                    </a>
-                                    <p>Vestibulum sollicitudin sem arcu, eget ullamcorper purus hendrerit</p>
-                                    <span>Location: Chennai</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="ho-ev-img"><img src="images/event/4.jpg" alt=""></div>
-                                <div class="ho-ev-link">
-                                    <a href="#">
-                                        <h4>Then came the night of the first falling star.</h4>
-                                    </a>
-                                    <p>Venenatis lacus lectus.</p>
-                                    <span>Location: Chicago</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="ho-event ho-event-mob-bot-sp">
                         <ul>
                             @isset($mopadarat)
                                 @foreach ($mopadarat as $num => $Mopadarat)
-                                    @if ($num < 5)
+                                    @if ($num < 6)
                                         <li>
                                             <div class="ho-ev-date"><span>{{ $num + 1 }}</span><span></span>
                                             </div>
-                                            <div class="ho-ev-link">
+                                            <div class="ho-ev-link" style="width: 75%;">
                                                 <a href="events.html">
                                                     <h4> {{ $Mopadarat->name }}</h4>
                                                 </a>

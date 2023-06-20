@@ -24,8 +24,8 @@
                                     </div>
                                     <div class="ed-ad-dec">
                                         <h4> الجوائز </h4>
-                                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi bibendum imperdiet bibendum.</p>
-                                        <a href="awards.html">Read more</a>
+                                        <p> </p>
+                                        <a href="awards.html">اقراء المزيد</a>
                                     </div>
                                 </li>
                                 <li>
@@ -34,8 +34,8 @@
                                     </div>
                                     <div class="ed-ad-dec">
                                         <h4> فريق الدعم </h4>
-                                        <p>tiam eget enim non magna vestibulum malesuada ut et lectus. Curabitur egestas risus massa, a malesuada erat ultrices non.</p>
-                                        <a href="research.html">Read more</a>
+                                        <p> </p>
+                                        <a href="research.html">اقراء المزيد</a>
                                     </div>
                                 </li>
                                 <li>
@@ -43,9 +43,9 @@
                                         <img src="images/adv/3.png" alt="">
                                     </div>
                                     <div class="ed-ad-dec">
-                                        <h4>Educations</h4>
-                                        <p>Maecenas venenatis, turpis ac tincidunt convallis, leo enim ultrices tortor, at faucibus neque sapien ac elit. Curabitur ut ipsum odio.</p>
-                                        <a href="all-courses.html">Read more</a>
+                                        <h4> الإرشادات </h4>
+                                        <p> </p>
+                                        <a href="all-courses.html">اقراء المزيد</a>
                                     </div>
                                 </li>
                                 <li>
@@ -54,8 +54,8 @@
                                     </div>
                                     <div class="ed-ad-dec">
                                         <h4> التقدبم </h4>
-                                        <p>Aliquam malesuada commodo lectus, at fermentum ligula finibus eu. Morbi nisi neque, suscipit non pulvinar vitae.</p>
-                                        <a href="awards.html">Read more</a>
+                                        <p> </p>
+                                        <a href="awards.html">اقراء المزيد</a>
                                     </div>
                                 </li>
                                 <li>
@@ -63,9 +63,9 @@
                                         <img src="images/adv/5.png" alt="">
                                     </div>
                                     <div class="ed-ad-dec">
-                                        <h4> </h4>
-                                        <p>Maecenas venenatis, turpis ac tincidunt convallis, leo enim ultrices tortor, at faucibus neque sapien ac elit. Curabitur ut ipsum odio.</p>
-                                        <a href="facilities.html">Read more</a>
+                                        <h4> التسوق الشبكي </h4>
+                                        <p> </p>
+                                        <a href="facilities.html">اقراء المزيد</a>
                                     </div>
                                 </li>
                                 <li>
@@ -73,9 +73,9 @@
                                         <img src="images/adv/6.png" alt="">
                                     </div>
                                     <div class="ed-ad-dec">
-                                        <h4> المشرعات </h4>
-                                        <p>Maecenas venenatis, turpis ac tincidunt convallis, leo enim ultrices tortor, at faucibus neque sapien ac elit. Curabitur ut ipsum odio.</p>
-                                        <a href="departments.html">Read more</a>
+                                        <h4> التدريب </h4>
+                                        <p> </p>
+                                        <a href="departments.html">اقراء المزيد</a>
                                     </div>
                                 </li>
                             </ul>
