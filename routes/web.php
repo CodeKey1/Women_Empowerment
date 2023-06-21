@@ -34,6 +34,7 @@ Route::group(['namespace'=> 'guest'],function (){
     Route::get('/stratgey' ,[App\Http\Controllers\Site\PageController::class,'index'])-> name('stratgey');
     Route::get('/instructions' ,[App\Http\Controllers\Site\PageController::class,'instructions'])-> name('instructions');
     Route::get('/initiatives' ,[App\Http\Controllers\Site\PageController::class,'initiatives'])-> name('initiatives');
+    Route::get('/namazeg' ,[App\Http\Controllers\Site\PageController::class,'namazeg'])-> name('namazeg');
     Route::get('/women_guide' ,[App\Http\Controllers\Site\PageController::class,'guide'])-> name('guide');
     Route::get('/design_project' ,[App\Http\Controllers\Site\PageController::class,'project_design'])-> name('project_design');
     Route::get('/registration_project' ,[App\Http\Controllers\Site\RegistrationController::class,'index'])-> name('project.signup');

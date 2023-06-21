@@ -1,16 +1,147 @@
 @extends('site.sub_site')
+@section('css')
+    <style>
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        * {
+            position: relative;
+            margin: 0;
+            padding: 0;
+
+            border: 0 none;
+
+            -webkit-transition: all ease .4s;
+            -moz-transition: all ease .4s;
+            transition: all ease .4s;
+        }
+
+        h1 {
+            padding-top: 40px;
+
+            color: #ccc;
+            text-align: center;
+            font-size: 1.8rem;
+
+            text-shadow: rgba(0, 0, 0, 0.6) 1px 0, rgba(0, 0, 0, 0.6) 1px 0, rgba(0, 0, 0, 0.6) 0 1px, rgba(0, 0, 0, 0.6) 0 1px;
+        }
+
+        .navP {
+            margin: 20px;
+            width: 455px;
+            min-height: auto;
+        }
+
+        .navP ul {
+            position: relative;
+            padding-top: 20px;
+        }
+
+        .navP li {
+            position: relative;
+            padding: 20px 3px 0 3px;
+            float: left;
+
+            text-align: center;
+            list-style-type: none;
+        }
+
+        .navP li::before,
+        .navP li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            width: 50%;
+            height: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .navP li::after {
+            left: 50%;
+            right: auto;
+
+            border-left: 1px solid #ccc;
+        }
+
+        .navP li:only-child::after,
+        .navP li:only-child::before {
+            content: '';
+            display: none;
+        }
+
+        .navP li:only-child {
+            padding-top: 0;
+        }
+
+        .navP li:first-child::before,
+        .navP li:last-child::after {
+            border: 0 none;
+        }
+
+        .navP li:last-child::before {
+            border-right: 1px solid #ccc;
+            border-radius: 0 5px 0 0;
+        }
+
+        .navP li:first-child::after {
+            border-radius: 5px 0 0 0;
+        }
+
+        .navP ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 1px solid #ccc;
+            width: 0;
+            height: 20px;
+        }
+
+        .navP li a {
+            display: inline-block;
+            padding: 5px 10px;
+
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-family: system-ui;
+            font-size: 15px;
+            background: teal;
+        }
+
+        .navP li a:hover,
+        .navP li a:hover+ul li a {
+            color: #000;
+            background: #c8e4f8;
+            border: 1px solid #94a0b4;
+        }
+
+        .navP li a:hover+ul li::after,
+        .navP li a:hover+ul li::before,
+        .navP li a:hover+ul::before,
+        .navP li a:hover+ul ul::before {
+            content: '';
+            border-color: #94a0b4;
+        }
+    </style>
+@endsection
 @section('profile')
 <div class="pro-menu">
     <div class="container" style="direction: rtl">
         <div class="col-md-9 col-md-offset-3">
             <ul>
-                <li><a href="dashboard.html" class="pro-act">My Dashboard</a></li>
-                <li><a href="db-profile.html"> الصفحة الشخصية </a></li>
-                <li><a href="db-courses.html">المشروعات</a></li>
-                <li><a href="db-exams.html">رأدات اعمال</a></li>
-                <li><a href="db-time-line.html"> مواقيت </a></li>
-                {{-- <li><a href="#">Entry</a></li>
-                <li><a href="#">Notifications</a></li> --}}
+                <li><a href="dashboard.html" class="pro-act">الصفحة الشخصية </a></li>
+                <li><a href="db-profile.html">  الإعدادات </a></li>
+
             </ul>
         </div>
     </div>
@@ -19,17 +150,19 @@
     <div class="container pg-inn">
         <div class="col-md-3">
             <div class="pro-user">
-                <img src="images/icon/profile.png" alt="user" style="background: burlywood;">
+                <img src="images/icon/seyasea.png" alt="user" style="background: #4c2d34;height: 220px;">
             </div>
+
             <div class="pro-user-bio">
                 <ul>
                     <li>
                         <h4>{{ Auth::user()->name }}</h4>
                     </li>
-                    <li>Student Id: ST17241</li>
-                    <li><a href="#!"><i class="fa fa-facebook"></i> Facebook: my sample</a></li>
-                    <li><a href="#!"><i class="fa fa-google-plus"></i> Google: my sample</a></li>
-                    <li><a href="#!"><i class="fa fa-twitter"></i> Twitter: my sample</a></li>
+                    <div class="semi-deta">
+                        <ul>
+                            <li style="width: 100%;">رائدة أعمال </li>
+                        </ul>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -41,53 +174,130 @@
                     <p> كلمة عن المتقدمة </p>
                 </div>
                 <div class="udb-sec udb-cour">
-                    <h4><img src="images/icon/db2.png" alt="" /> المشاريع </h4>
-                    <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.The point of using Lorem Ipsummaking it look like readable English.</p>
-                    <div class="sdb-cours">
-                        <ul>
+                    <h4><img src="images/icon/db2.png" alt="" />  مخطط المشروع </h4>
+
+                    <div class="navP" style="display: block">
+                        <ul style="width: max-content;">
                             <li>
-                                <a href="#">
-                                    <div class="list-mig-like-com com-mar-bot-30">
-                                        <div class="list-mig-lc-img"> <img src="images/course/3.jpg" alt=""> <span class="home-list-pop-rat list-mi-pr">Duration:150 Days</span> </div>
-                                        <div class="list-mig-lc-con">
-                                            <h5>Master of Science</h5>
-                                            <p>Illinois City,</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="list-mig-like-com com-mar-bot-30">
-                                        <div class="list-mig-lc-img"> <img src="images/course/4.jpg" alt=""> <span class="home-list-pop-rat list-mi-pr">Duration:60 Days</span> </div>
-                                        <div class="list-mig-lc-con">
-                                            <h5>Java Programming</h5>
-                                            <p>Illinois City,</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="list-mig-like-com com-mar-bot-30">
-                                        <div class="list-mig-lc-img"> <img src="images/course/5.jpg" alt=""> <span class="home-list-pop-rat list-mi-pr">Duration:30 Days</span> </div>
-                                        <div class="list-mig-lc-con">
-                                            <h5>Aeronautical Engineering</h5>
-                                            <p>Illinois City,</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="list-mig-like-com com-mar-bot-30">
-                                        <div class="list-mig-lc-img"> <img src="images/course/3.jpg" alt=""> <span class="home-list-pop-rat list-mi-pr">Duration:20 Days</span> </div>
-                                        <div class="list-mig-lc-con">
-                                            <h5>Master of Science</h5>
-                                            <p>Illinois City,</p>
-                                        </div>
-                                    </div>
-                                </a>
+                                <a href="#"> اسم المشروع</a>
+                                <ul>
+                                    <li>
+                                        <a href="#"> النجاح </a>
+                                        <ul>
+                                            <li>
+                                                <a href="#"> 1 </a>
+
+                                            </li>
+                                            <li>
+                                                <a href="#">2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"> مرحلة النمو والانتشار </a>
+                                        <ul>
+                                            <li>
+                                                <a href="#"> النمو والانتشار</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#"> مرحلة </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">مرحلة</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"> مرحلة التنفيذ </a>
+                                        <ul>
+                                            <li>
+                                                <a href="#"> العمل</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#"> مرحلة </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">مرحلة</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"> مرحلة تخطيط الاعمال</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#">التخطيط</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">مرحلة</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">مرحلة</a>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#">مرحلة</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">العمل</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">مرحلة</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">مرحلة</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"> مرحلة التفكير</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#">التفكير</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">مرحلة</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">مرحلة</a>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#">مرحلة</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#"> التنفيذ </a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">مرحلة</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">مرحلة</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>

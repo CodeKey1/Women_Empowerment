@@ -44,7 +44,7 @@
                             <a href="{{ route('instructions') }}" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="images/icon/h-ic1.png" alt=""> ارشادات </a>
                         </li>
                         <li>
-                            <a href="#" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="images/icon/h-ic2.png" alt=""> صمم مشروعك </a>
+                            <a href="{{ route('project_design') }}" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="images/icon/h-ic2.png" alt=""> صمم مشروعك </a>
                         </li>
                         <li>
                             <a href="#" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="images/icon/h-ic4.png" alt=""> المشروعات </a>

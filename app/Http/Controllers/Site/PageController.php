@@ -12,6 +12,16 @@ class PageController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function namazeg()
+    {
+        //
+        $guide = Guide_Women::select()->get();
+        $mopadarat = Mobadrat::select()->get();
+        return view('site.pages.namazeg',compact('mopadarat','guide'));
+    }
+    /**
+     * Display a listing of the resource.
+     */
     public function site()
     {
         //

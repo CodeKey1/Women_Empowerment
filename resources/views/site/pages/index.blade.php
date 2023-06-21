@@ -13,7 +13,7 @@
                 <div class="col-md-4">
                     <div class="col-md-12">
                         <div class="ed-course-in">
-                            <a class="course-overlay" >
+                            <a class="course-overlay">
                                 <img src="images/rehla.jpeg" alt="">
 
                             </a>
@@ -24,32 +24,32 @@
                     <div class="ed-course">
                         <div class="col-md-6 col-sm-4 col-xs-12">
                             <div class="ed-course-in">
-                                <a class="course-overlay" href="all-courses.html">
-                                    <img src="images/2.jpg" alt="">
+                                <a class="course-overlay" >
+                                    <img src="images/660.png" alt="">
                                     <span>مرحلة التفكير </span>
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-4 col-xs-12">
                             <div class="ed-course-in">
-                                <a class="course-overlay" href="db-time-line.html">
-                                    <img src="images/1.jpg" alt="">
+                                <a class="course-overlay" >
+                                    <img src="images/100.jpg" alt="">
                                     <span> مرحلة تخطيط الأعمال </span>
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-4 col-xs-12">
                             <div class="ed-course-in">
-                                <a class="course-overlay" href="seminar.html">
-                                    <img src="images/3.jpg" alt="">
+                                <a class="course-overlay" >
+                                    <img src="images/99.jpg" alt="">
                                     <span> مرحلة التنفيذ </span>
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-4 col-xs-12">
                             <div class="ed-course-in">
-                                <a class="course-overlay" href="events.html">
-                                    <img src="images/4.png" alt="">
+                                <a class="course-overlay" >
+                                    <img src="images/77.jpg" alt="">
                                     <span>مرحلة النمو والتوسع </span>
                                 </a>
                             </div>
@@ -102,7 +102,7 @@
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
                                 <a href="course-details.html">
-                                    <h3>مجال المشغولات اليدوية</h3>
+                                    <h3 >  مجال المشغولات اليدوية  </h3>
                                 </a>
                                 <h4> </h4>
                                 <p>فكرة مشروع محل بيع المشغولات اليدوية في إنتاج الأعمال اليدوية البسيطة التي يُمكن
@@ -125,7 +125,7 @@
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
                                 <a href="course-details.html">
-                                    <h3>تسميد عضوى </h3>
+                                    <h3> تسميد عضوى </h3>
                                 </a>
                                 <h4> </h4>
                                 <p>مشروع يقوم على استخدام روث الحيوانات وعمل كمبوست </p> <span
@@ -151,7 +151,7 @@
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
                                 <a href="course-details.html">
-                                    <h3>تدوير الملابس </h3>
+                                    <h3>  تدوير الملابس </h3>
                                 </a>
                                 <h4> </h4>
                                 <p>جمع الألبسة القديمة والمنتجات الأخرى القابلة لإعادة التدوير، واستفادة منها من خلال
@@ -197,43 +197,39 @@
     <section style="direction: rtl">
         <div class="container com-sp pad-bot-0">
             <div class="row">
-                <div class="ho-ev-latest ho-ev-latest-bg-1">
-                    <div class="ho-lat-ev">
-                        <a href="{{ route('initiatives') }}">
-                            <h4> المبادرات </h4>
-                        </a>
-                        <p> رائدات الاعمال </p>
-                    </div>
+                <div class="con-title" style="text-align: right !important;">
+                    <a href="{{ route('initiatives') }}">
+                        <h2> مبادرات <span> رائدات الاعمال </span></h2>
+                    </a>
                 </div>
                 <div class="col-md-6">
-                    <div class="ho-ev-latest ho-ev-latest-bg-2">
-                        <div class="ho-lat-ev">
-                            <h4> ارشادات رأدات الأعمال </h4>
-                            <p> </p>
+                        <div class="con-title">
+                            <a href="{{ route('initiatives') }}">
+                                <h2> ارشادات  <span> رائدات الاعمال </span></h2>
+                            </a>
                         </div>
-                    </div>
                     <div class="ho-event ho-event-mob-bot-sp">
                         <ul>
                             @isset($guide)
-                            @foreach ($guide as $num => $guides)
-                                @if ($num < 5)
-                                    <li>
-                                        <div class="ho-ev-date"><span>{{ $num + 1 }}</span><span></span>
-                                        </div>
-                                        <div class="ho-ev-link" style="width: 75%;">
-                                            <a href="events.html">
-                                                <h4> {{ $guides->name }}</h4>
-                                            </a>
-                                            <p>{{ $guides->description }}</p>
-                                            <a href="{{ route('guide') }}">
-                                                <span> للمزيد </span>
-                                            </a>
+                                @foreach ($guide as $num => $guides)
+                                    @if ($num < 3)
+                                        <li>
+                                            <div class="ho-ev-date"><span>{{ $num + 1 }}</span><span></span>
+                                            </div>
+                                            <div class="ho-ev-link" style="width: 75%;">
+                                                <a href="events.html">
+                                                    <h4> {{ $guides->name }}</h4>
+                                                </a>
+                                                <p>{{ $guides->description }}</p>
+                                                <a href="{{ route('guide') }}">
+                                                    <span> للمزيد </span>
+                                                </a>
 
-                                        </div>
-                                    </li>
-                                @endif
-                            @endforeach
-                        @endisset
+                                            </div>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            @endisset
                         </ul>
                     </div>
                 </div>
@@ -242,7 +238,7 @@
                         <ul>
                             @isset($mopadarat)
                                 @foreach ($mopadarat as $num => $Mopadarat)
-                                    @if ($num < 6)
+                                    @if ($num < 4)
                                         <li>
                                             <div class="ho-ev-date"><span>{{ $num + 1 }}</span><span></span>
                                             </div>

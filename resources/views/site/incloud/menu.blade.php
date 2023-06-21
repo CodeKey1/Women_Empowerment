@@ -266,7 +266,7 @@
                                 </li> -->
                                 <li><a href="#"> التدريب </a>
                                 </li>
-                                <li><a href="#"> النماذج المشرفة </a>
+                                <li><a href="{{ route('namazeg') }}"> النماذج المشرفة </a>
                                 </li>
                                 <li><a href="{{ route('about') }}"> عن المنصة </a>
                                 </li>
