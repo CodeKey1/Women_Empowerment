@@ -101,7 +101,7 @@
                             <div class="col-md-3"> <img src="images/project/1.jpg" alt=""> </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
-                                <a href="course-details.html">
+                                <a href="{{route('namazeg')}}">
                                     <h3 >  مجال المشغولات اليدوية  </h3>
                                 </a>
                                 <h4> </h4>
@@ -111,7 +111,7 @@
                                 </p> <span class="home-top-cour-rat">4.2</span>
                                 <div class="hom-list-share">
                                     <ul>
-                                        <li><a href="course-details.html"><i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <li><a href="{{route('namazeg')}}"><i class="fa fa-bar-chart" aria-hidden="true"></i>
                                                 عرض المشروع </a> </li>
 
                                     </ul>
@@ -124,7 +124,7 @@
                             <div class="col-md-3"> <img src="images/project/3.jpg" alt=""> </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
-                                <a href="course-details.html">
+                                <a href="{{route('namazeg')}}">
                                     <h3> تسميد عضوى </h3>
                                 </a>
                                 <h4> </h4>
@@ -132,7 +132,7 @@
                                     class="home-top-cour-rat">4.2</span>
                                 <div class="hom-list-share">
                                     <ul>
-                                        <li><a href="course-details.html"><i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <li><a href="{{route('namazeg')}}"><i class="fa fa-bar-chart" aria-hidden="true"></i>
                                                 عرض المشروع </a> </li>
 
                                     </ul>
@@ -150,7 +150,7 @@
                             <div class="col-md-3"> <img src="images/project/2.jpg" alt=""> </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
-                                <a href="course-details.html">
+                                <a href="{{route('namazeg')}}">
                                     <h3>  تدوير الملابس </h3>
                                 </a>
                                 <h4> </h4>
@@ -159,7 +159,7 @@
                                     class="home-top-cour-rat">4.2</span>
                                 <div class="hom-list-share">
                                     <ul>
-                                        <li><a href="course-details.html"><i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <li><a href="{{route('namazeg')}}"><i class="fa fa-bar-chart" aria-hidden="true"></i>
                                                 عرض المشروع </a> </li>
 
                                     </ul>
@@ -172,7 +172,7 @@
                             <div class="col-md-3"> <img src="images/project/4.jpg" alt=""> </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
-                                <a href="course-details.html">
+                                <a href="{{route('namazeg')}}">
                                     <h3>متجر هدايا صديق للبيئة </h3>
                                 </a>
                                 <h4> </h4>
@@ -180,7 +180,7 @@
                                     class="home-top-cour-rat">4.2</span>
                                 <div class="hom-list-share">
                                     <ul>
-                                        <li><a href="course-details.html"><i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <li><a href="{{route('namazeg')}}"><i class="fa fa-bar-chart" aria-hidden="true"></i>
                                                 عرض المشروع </a> </li>
 
                                     </ul>

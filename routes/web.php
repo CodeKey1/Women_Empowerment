@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile_user', function () {return view('site.pages.dashboard'); })->name('profile');
+    //Route::get('/profile_user', function () {return view('site.pages.dashboard'); })->name('profile');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -45,6 +45,7 @@ Route::group(['namespace'=> 'guest'],function (){
 
 Route::middleware(['auth','admin'])->group(function (){
     Route::get('/dashboard' ,[App\Http\Controllers\Admin\AdminController::class,'index'])  -> name('dashboard');
+    Route::get('/profile_user' ,[App\Http\Controllers\Admin\ApplyController::class,'profile'])  -> name('profile');
     Route::get('/back' ,[App\Http\Controllers\Admin\AdminController::class,'back'])  -> name('back');
     Route::get('/all_apply' ,[App\Http\Controllers\Admin\ApplyController::class,'index'])  -> name('admin.apply');
     Route::get('/user_apply{id}' ,[App\Http\Controllers\Admin\ApplyController::class,'show'])  -> name('admin.apply.show');

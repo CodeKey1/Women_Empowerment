@@ -319,15 +319,19 @@
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <td>01</td>
-                                    <td>Software Testing</td>
-                                    <td>12May 2018</td>
-                                    <td> خدمي </td>
-                                    <td><span class="ad-st-view">جاري</span></td>
-                                    <td><a href="sdb-course-view.html" class="pro-edit"> عرض </a></td>
-                                </tr>
+                                @isset($apply)
+                                        @foreach ($apply as $num => $applys)
+                                            <tr>
 
+                                                <td>{{ $num +1 }}</td>
+                                                <td>{{ $applys->name }}</td>
+                                                <td>{{ $applys->created_at->format('Y-d-m') }}</td>
+                                                <td>{{ $applys->project_type->name }}</td>
+                                                <td><span class="pro-edit">جاري</span></td>
+                                                <td><a href="{{ route('admin.apply.show',$applys->id) }}" class="ad-st-view"> عرض </a></td>
+                                            </tr>
+                                        @endforeach
+                                    @endisset
                             </tbody>
                         </table>
                     </div>

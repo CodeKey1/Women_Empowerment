@@ -5,9 +5,19 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ApplyController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
+    public function profile()
+    {
+        //
+        $apply = Project::select()->where('id',Auth()->id())->get();
+        return view('site.pages.dashboard',compact('apply'));
+    }
     /**
      * Display a listing of the resource.
      */
