@@ -2030,9 +2030,9 @@
  .cor-p4 p{
 }
  .cor-p5{
-     border-top: 1px solid #d2d2d2;
-     margin-top: 30px;
-     border-bottom: 1px solid #d2d2d2;
+
+
+
      padding-bottom: 10px;
 }
  .cor-p5 h3{
@@ -2046,7 +2046,7 @@
 }
  .cor-p5 ul li a{
      font-weight: 500;
-     background-color: #eee;
+     background-color: #eee0;
      padding:10px;
 }
  .cor-p5 ul li a img{
@@ -3578,7 +3578,13 @@ left: 0;
      overflow: hidden;
      padding:100px 0px 100px 0px;
 }
- .h-quote:before {
+ .h-quotee {
+     background: url(../images/weather.png);
+     position: relative;
+     overflow: hidden;
+     padding:70px 0px 100px 0px;
+}
+ .h-quotee:before {
      content: '';
      position: absolute;
      background: #4c2d34;
@@ -3717,7 +3723,7 @@ left: 0;
      width: 100%;
 }
  .admiss-form{
-     padding: 0px 40px;
+     padding: 0px 0px;
 }
  .admiss-form h4{
      font-size: 24px;

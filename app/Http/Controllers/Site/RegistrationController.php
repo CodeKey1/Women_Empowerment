@@ -25,6 +25,8 @@ class RegistrationController extends Controller
     public function create()
     {
         //
+        $type = Type::select()->get();
+        return view('site.pages.add_project', compact('type'));
 
     }
 

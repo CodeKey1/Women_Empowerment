@@ -1,7 +1,7 @@
 @extends('site.page')
 @section('content')
     <!--SECTION START-->
-    <section class="c-all h-quote">
+    <section class="c-all h-quotee">
         <div class="container" style="direction: rtl;">
             <div class="col-md-6 col-sm-12 col-xs-12">
                 <div class="all-title quote-title qu-new">

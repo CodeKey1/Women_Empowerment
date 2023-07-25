@@ -1087,7 +1087,8 @@ html {
      margin-top: 20px;
      margin-bottom: 20px;
      border: 0;
-     border-top: 1px solid #eee;
+     border-top: 1px solid #040404;
+     width: 80%;
 }
  .sr-only {
      position: absolute;
@@ -3394,10 +3395,10 @@ html {
      max-width: none;
 }
  .nav-tabs {
-     border-bottom: 1px solid #ddd;
+
 }
  .nav-tabs > li {
-     float: left;
+     float: right;
      margin-bottom: -1px;
 }
  .nav-tabs > li > a {
