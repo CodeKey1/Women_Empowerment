@@ -36,7 +36,7 @@ class RegistrationController extends Controller
     public function store(Request $request)
     {
         //
-        try {
+        // try {
              Project::create([
                 'name' => $request['name'],
                 'phone' => $request['phone'],
@@ -47,9 +47,9 @@ class RegistrationController extends Controller
 
             ]);
             return redirect()->back()->with(['success' => 'تم التقديم بنجاح']);
-        } catch (\Exception $ex) {
-            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
-        }
+        // } catch (\Exception $ex) {
+        //     return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        // }
 
     }
 

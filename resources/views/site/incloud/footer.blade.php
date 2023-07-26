@@ -281,10 +281,32 @@
         @include('site.incloud.alertts.success')
 
     </section>
-
+    <div class="chat-icon" id="chatIcon" onclick="displayChat(1);">
+        <h4>Chat with Sola</h4>
+        <img src="images/sola.png" alt="">
+    </div>
+    <div class="chat-container" id="chatContainer">
+        <div class="header">
+            <h3>Chat with <span style="color: var(--main_color);">Sola</span></h3>
+            <button class="close-button" onclick="displayChat(0);">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <hr style="width: 80%;">
+        <div class="body" id="dialog">
+        </div>
+        <hr style="width: 80%;">
+        <div class="footer">
+            <form>
+                <input id="message" placeholder="Enter your message" autocomplete="off">
+                <button id="submit">send</button>
+            </form>
+        </div>
+    </div>
     <!--Import jQuery before materialize.js-->
     <script src="js/main.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/chat.js"></script>
     @yield('script')
