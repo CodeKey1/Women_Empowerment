@@ -4,8 +4,9 @@
             <div class="ed-mob-menu-con">
                 <div class="ed-mm-left">
                     <div class="wed-logo">
-                        <a href="index-2.html"><img src="images/logo.png" alt="" />
-						</a>
+                        <a href="index-2.html"><img src="images/3.jpeg" style="height: 55px; width: 75px; margin:0;"
+                                alt="" />
+                        </a>
                     </div>
                 </div>
                 <div class="ed-mm-right">
@@ -13,7 +14,7 @@
                         <a href="#!" class="ed-micon"><i class="fa fa-bars"></i></a>
                         <div class="ed-mm-inn">
                             <a href="#!" class="ed-mi-close"><i class="fa fa-times"></i></a>
-                            <h4>All Courses</h4>
+                            {{-- <h4>All Courses</h4>
                             <ul>
                                 <li><a href="course-details.html">Accounting/Finance</a></li>
                                 <li><a href="course-details.html">civil engineering</a></li>
@@ -31,34 +32,40 @@
                                 <li><a href="course-details.html">Graphics Design</a></li>
                                 <li><a href="course-details.html">Networking Courses</a></li>
                                 <li><a href="course-details.html">Information technology</a></li>
-                            </ul>
-                            <h4>User Account</h4>
+                            </ul> --}}
+                            <h4>الحساب الشخصي</h4>
                             <ul>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal1">Sign In</a></li>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal2">Register</a></li>
+                                <li><a href="#!" data-toggle="modal" data-target="#modal1">تسجيل الدخول</a></li>
+                                <li><a href="#!" data-toggle="modal" data-target="#modal2">تسجيل جديد</a></li>
                             </ul>
-                            <h4>All Pages</h4>
+                            <h4>الصفحات</h4>
                             <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="admission.html">Admission</a></li>
-                                <li><a href="all-courses.html">All courses</a></li>
-                                <li><a href="course-details.html">Course details</a></li>
-                                <li><a href="awards.html">Awards</a></li>
-                                <li><a href="seminar.html">Seminar</a></li>
+                                <li><a href="{{ route('site') }}"> الرئيسية </a>
+                                </li>
+                                <li><a href="{{ route('about') }}"> عن المنصة </a>
+                                </li>
+                                <li><a href="{{ route('namazeg') }}"> النماذج المشرفة </a>
+                                </li>
+                                <li><a href="#"> التدريب </a>
+                                </li>
+                                <li><a href="{{ route('stratgey') }}"> الإستراتيجية </a>
+                                </li>
+                                <li><a href="#" class="mm-arr"> البيانات المفتوحى </a>
+                                </li>
+                                {{-- <li><a href="seminar.html">Seminar</a></li>
                                 <li><a href="events.html">Events</a></li>
                                 <li><a href="event-details.html">Event details</a></li>
                                 <li><a href="event-register.html">Event register</a></li>
-                                <li><a href="contact-us.html">Contact us</a></li>
+                                <li><a href="contact-us.html">Contact us</a></li> --}}
                             </ul>
-                            <h4>User Profile</h4>
+                            {{-- <h4>User Profile</h4>
                             <ul>
                                 <li><a href="dashboard.html">User profile</a></li>
                                 <li><a href="db-courses.html">Courses</a></li>
                                 <li><a href="db-exams.html">Exams</a></li>
                                 <li><a href="db-profile.html">Prfile</a></li>
                                 <li><a href="db-time-line.html">Time line</a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </div>

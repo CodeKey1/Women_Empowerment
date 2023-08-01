@@ -24,7 +24,7 @@
                     <div class="ed-course">
                         <div class="col-md-6 col-sm-4 col-xs-12">
                             <div class="ed-course-in">
-                                <a class="course-overlay" >
+                                <a class="course-overlay">
                                     <img src="images/660.png" alt="">
                                     <span>مرحلة التفكير </span>
                                 </a>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-md-6 col-sm-4 col-xs-12">
                             <div class="ed-course-in">
-                                <a class="course-overlay" >
+                                <a class="course-overlay">
                                     <img src="images/100.jpg" alt="">
                                     <span> مرحلة تخطيط الأعمال </span>
                                 </a>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-md-6 col-sm-4 col-xs-12">
                             <div class="ed-course-in">
-                                <a class="course-overlay" >
+                                <a class="course-overlay">
                                     <img src="images/99.jpg" alt="">
                                     <span> مرحلة التنفيذ </span>
                                 </a>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-md-6 col-sm-4 col-xs-12">
                             <div class="ed-course-in">
-                                <a class="course-overlay" >
+                                <a class="course-overlay">
                                     <img src="images/77.jpg" alt="">
                                     <span>مرحلة النمو والتوسع </span>
                                 </a>
@@ -101,8 +101,8 @@
                             <div class="col-md-3"> <img src="images/project/1.jpg" alt=""> </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
-                                <a href="{{route('namazeg')}}">
-                                    <h3 >  مجال المشغولات اليدوية  </h3>
+                                <a href="{{ route('namazeg') }}">
+                                    <h3> مجال المشغولات اليدوية </h3>
                                 </a>
                                 <h4> </h4>
                                 <p>فكرة مشروع محل بيع المشغولات اليدوية في إنتاج الأعمال اليدوية البسيطة التي يُمكن
@@ -111,7 +111,8 @@
                                 </p> <span class="home-top-cour-rat">4.2</span>
                                 <div class="hom-list-share">
                                     <ul>
-                                        <li><a href="{{route('namazeg')}}"><i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <li><a href="{{ route('namazeg') }}"><i class="fa fa-bar-chart"
+                                                    aria-hidden="true"></i>
                                                 عرض المشروع </a> </li>
 
                                     </ul>
@@ -124,7 +125,7 @@
                             <div class="col-md-3"> <img src="images/project/3.jpg" alt=""> </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
-                                <a href="{{route('namazeg')}}">
+                                <a href="{{ route('namazeg') }}">
                                     <h3> تسميد عضوى </h3>
                                 </a>
                                 <h4> </h4>
@@ -132,7 +133,8 @@
                                     class="home-top-cour-rat">4.2</span>
                                 <div class="hom-list-share">
                                     <ul>
-                                        <li><a href="{{route('namazeg')}}"><i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <li><a href="{{ route('namazeg') }}"><i class="fa fa-bar-chart"
+                                                    aria-hidden="true"></i>
                                                 عرض المشروع </a> </li>
 
                                     </ul>
@@ -150,8 +152,8 @@
                             <div class="col-md-3"> <img src="images/project/2.jpg" alt=""> </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
-                                <a href="{{route('namazeg')}}">
-                                    <h3>  تدوير الملابس </h3>
+                                <a href="{{ route('namazeg') }}">
+                                    <h3> تدوير الملابس </h3>
                                 </a>
                                 <h4> </h4>
                                 <p>جمع الألبسة القديمة والمنتجات الأخرى القابلة لإعادة التدوير، واستفادة منها من خلال
@@ -159,7 +161,8 @@
                                     class="home-top-cour-rat">4.2</span>
                                 <div class="hom-list-share">
                                     <ul>
-                                        <li><a href="{{route('namazeg')}}"><i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <li><a href="{{ route('namazeg') }}"><i class="fa fa-bar-chart"
+                                                    aria-hidden="true"></i>
                                                 عرض المشروع </a> </li>
 
                                     </ul>
@@ -172,7 +175,7 @@
                             <div class="col-md-3"> <img src="images/project/4.jpg" alt=""> </div>
                             <!--POPULAR COURSES: CONTENT-->
                             <div class="col-md-9 home-top-cour-desc">
-                                <a href="{{route('namazeg')}}">
+                                <a href="{{ route('namazeg') }}">
                                     <h3>متجر هدايا صديق للبيئة </h3>
                                 </a>
                                 <h4> </h4>
@@ -180,7 +183,8 @@
                                     class="home-top-cour-rat">4.2</span>
                                 <div class="hom-list-share">
                                     <ul>
-                                        <li><a href="{{route('namazeg')}}"><i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <li><a href="{{ route('namazeg') }}"><i class="fa fa-bar-chart"
+                                                    aria-hidden="true"></i>
                                                 عرض المشروع </a> </li>
 
                                     </ul>
@@ -203,11 +207,11 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                        <div class="con-title">
-                            <a href="{{ route('initiatives') }}">
-                                <h2> ارشادات  <span> رائدات الاعمال </span></h2>
-                            </a>
-                        </div>
+                    <div class="con-title">
+                        <a href="{{ route('guide') }}">
+                            <h2> ارشادات <span> رائدات الاعمال </span></h2>
+                        </a>
+                    </div>
                     <div class="ho-event ho-event-mob-bot-sp">
                         <ul>
                             @isset($guide)

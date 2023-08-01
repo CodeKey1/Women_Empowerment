@@ -1,162 +1,163 @@
 * {
-  --main_color: #16b3b7;
-  --sec_color: #f6b7bd;
-  --sec_color_hue: #f6b7bd80;
+    --main_color: #3fa2a5;
+    --sec_color: #4c2d34;
+    --sec_color_hue: #4c2d3480;
 }
 
 .chat-icon {
-  position: absolute;
-  bottom: 2vw;
-  right: 3vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  background-color: white;
-  border-radius: 20px 50% 50% 20px;
-  padding-left: 10px;
-  color: var(--sec_color);
-  z-index: 1000;
-  position: fixed;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    position: absolute;
+    bottom: 2vw;
+    right: 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 20px 50% 50% 20px;
+    padding-left: 10px;
+    color: var(--sec_color);
+    z-index: 1000;
+    position: fixed;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+        rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .chat-icon img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 10px;
 }
 
 .chat-container {
-  width: 350px;
-  height: 75vh;
-  display: flex;
-  flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  background-color: rgb(248, 248, 248);
-  border-radius: 25px;
-  position: absolute;
-  bottom: 7vh;
-  right: 7vw;
-  display: none;
-  z-index: 1000;
-  position: fixed;
+    width: 350px;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    background-color: rgb(248, 248, 248);
+    border-radius: 25px;
+    position: absolute;
+    bottom: 7vh;
+    right: 7vw;
+    display: none;
+    z-index: 1000;
+    position: fixed;
 }
 
 .header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .header .close-button {
-  height: max-content;
-  padding: 3px 7px;
-  outline: none;
-  border: none;
-  background-color: rgb(117, 0, 0);
-  color: white;
-  font-size: larger;
-  border-radius: 5px;
+    height: max-content;
+    padding: 3px 15px;
+    outline: none;
+    border: none;
+    background-color: rgb(117, 0, 0);
+    color: white;
+    font-size: larger;
+    border-radius: 5px;
+}
+
+.header .close-button span {
+    color: white;
 }
 
 .header .close-button:hover {
-  background-color: rgb(255, 0, 0);
-  cursor: pointer;
-  transition: 0.5s ease;
+    background-color: rgb(255, 0, 0);
+    cursor: pointer;
+    transition: 0.5s ease;
 }
 
 .header h3 {
-  color: var(--sec_color);
-  text-align: center;
+    color: var(--sec_color);
+    text-align: center;
 }
 
 .body {
-  flex: 1;
-  color: white;
-  background-color: rgb(241, 241, 241);
-  border-radius: 10px;
-  padding: 20px 30px;
-  overflow-y: auto;
+    flex: 1;
+    color: white;
+    border-radius: 10px;
+    padding: 20px 30px;
+    overflow-y: auto;
 }
 
 .body .message {
-  display: flex;
+    display: flex;
 }
 .body .message p {
-  color: rgb(0, 0, 0);
+    color: white;
 }
 
 .body .user_message {
-  background-color: var(--main_color);
-  padding: 1px 10px 1px 10px;
-  margin-left: 20px;
-  width: fit-content;
-  border-radius: 10px;
-  margin-bottom: 10px;
+    background-color: var(--main_color);
+    padding: 1px 10px 1px 10px;
+    margin-left: 20px;
+    width: fit-content;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .body .response_message {
-  margin-left: auto;
-  background-color: var(--sec_color);
-  color: white;
-  padding: 1px 10px 1px 10px;
-  margin-right: 20px;
-  width: fit-content;
-  border-radius: 10px;
-  margin-bottom: 10px;
+    margin-left: auto;
+    background-color: var(--sec_color);
+    color: white;
+    padding: 1px 10px 1px 10px;
+    margin-right: 20px;
+    width: fit-content;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .footer form {
-  display: flex;
-  margin: 10px 10px;
+    display: flex;
+    margin: 10px 10px;
 }
 
 form #submit {
-  width: 80px;
-  height: 40px;
-  margin: 0 10px;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: var(--sec_color);
-  cursor: pointer;
-  border-radius: 25px 25px 25px 0;
-  color: rgb(0, 39, 110);
+    width: 80px;
+    height: 40px;
+    margin: 0 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #2b614f;
+    cursor: pointer;
+    border-radius: 25px 25px 25px 0;
+    color: wheat;
 }
 
 form #submit:hover {
-  background-color: var(--sec_color_hue);
-  color: black;
-  transition: 1 ease;
+    background-color: var(--sec_color);
+    transition: 1 ease;
 }
 
 form #message {
-  flex: 1;
-  height: 40px;
-  border: none;
-  outline: none;
-  padding-left: 5px;
-  background-color: var(--sec_color_hue);
-  font-size: 16px;
-  border-radius: 32px 0 32px 32px;
-  color: black;
+    flex: 1;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding-left: 5px;
+    background-color: var(--sec_color_hue);
+    font-size: 16px;
+    border-radius: 32px 0 32px 32px;
 }
 
 .body::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 .body::-webkit-scrollbar-track {
-  border-radius: 8px;
-  background-color: #95a5a6;
-  border: 1px solid #cacaca;
+    border-radius: 8px;
+    background-color: #95a5a6;
+    border: 1px solid #cacaca;
 }
 
 .body::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: var(--sec_color_hue);
+    border-radius: 10px;
+    background-color: var(--sec_color_hue);
 }
