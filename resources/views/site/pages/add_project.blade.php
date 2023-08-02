@@ -43,7 +43,7 @@
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> الإسم رباعي <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="full_name"
+                                                <input type="text" class="form-control" name="name"
                                                     placeholder="يرجي ادخال الإسم رباعي" required>
                                             </div>
 
@@ -97,7 +97,7 @@
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> اسم المشروع <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="project_name" required>
+                                                <input type="text" class="form-control" name="name" required>
                                             </div>
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> مجال المشروع <span
@@ -191,7 +191,7 @@
                                             <div class="col-md-6 ">
                                                 <label class="control-label col-sm-3"> الخطر المحتمل <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" name="risk_name" class="form-control" required>
+                                                <input type="text" name="name" class="form-control" required>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> اجراءات التعامل مع الخطر <span
@@ -217,32 +217,32 @@
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> تحليل السوق <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="5" rows="5"
+                                                <textarea class="form-control" name="market" cols="5" rows="5"
                                                     placeholder="تقييم حجم السوق المستهدف وإمكانيات نموه واتجاهاته" required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> التحليل التنافسي <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="5" rows="5" placeholder="تقييم نقاط القوة والضعف في المنافسة."
-                                                    required></textarea>
+                                                <textarea class="form-control" name="competitive" cols="5" rows="5"
+                                                    placeholder="تقييم نقاط القوة والضعف في المنافسة." required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> الجدوى الفنية <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="5" rows="5"
+                                                <textarea class="form-control" name="technical" cols="5" rows="5"
                                                     placeholder="الموارد والقدرات الفنية المطلوبة لتطوير وإطلاق المنتج أو الخدمة" required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> الصالحيةاملالية تقييم التكاليف
                                                     وتدفقات
                                                     اإليرادات املحتملةلألعمال. <span style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="5" rows="5"
+                                                <textarea class="form-control" name="finance" cols="5" rows="5"
                                                     placeholder="رأس المال المستثمر تدفقات الايرادات المحتملة" required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> ملخص لنتائج الدراسةوتوصيات لستقبل
                                                     المشروع <span style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="5" rows="5" placeholder="" required></textarea>
+                                                <textarea class="form-control" name="recommendation" cols="5" rows="5" placeholder="" required></textarea>
                                             </div>
 
                                         </div>
@@ -261,46 +261,43 @@
                                         @csrf
                                         <h4> خطة المشروع </h4>
                                         <div class="row" id="plane">
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> المدة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
+                                            <div class="col-md-3 ">
                                                 <label class="control-label "> النهاية <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="end_date[]" class="form-control" required>
                                             </div>
-                                            <div class="col-md-2 ">
+                                            <div class="col-md-3 ">
                                                 <label class="control-label "> البداية <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="start_date[]" class="form-control" required>
                                             </div>
                                             <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المهام (1) <span
+                                                <label class="control-label col-sm-3"> المهام <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="name[]" class="form-control" required>
                                             </div>
 
-                                        <div class="row" >
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المتابعة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                            <div class="row">
+                                                <div class="col-md-6 ">
+                                                    <label class="control-label col-sm-3"> المتابعة <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="text" name="follower[]" class="form-control"
+                                                        required>
+                                                </div>
+                                                <div class="col-md-6 ">
+                                                    <label class="control-label col-sm-3"> المسؤول <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="text" name="responsible[]" class="form-control"
+                                                        required>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المسؤول <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                            <div class="row">
+                                                <a href="javascript:void(0)"
+                                                    style="float: left;background-color: seagreen;color: white;border-radius: 6px;width: 40px;"
+                                                    id="addplan-btn" class="btn btn-primary" onclick="addplanRow()"> +
+                                                </a>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <a href="javascript:void(0)"
-                                                style="float: left;background-color: seagreen;color: white;border-radius: 6px;width: 40px;"
-                                                id="addplan-btn" class="btn btn-primary" onclick="addplanRow()"> + </a>
-
-                                        </div>
-                                    </div>
                                         <div class="row">
                                             <a data-toggle="tab" class="btn btn-danger" href="#drasa">عودة</a>
                                             <button type="submit" name="formType" value="projectPlan"
@@ -318,55 +315,55 @@
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> القيمة المقدمة: <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="3" rows="3"
+                                                <textarea class="form-control" name="provided_value" cols="3" rows="3"
                                                     placeholder=" المنفعة أو الحل الذي يقدمه المشروع للعملاء لحل مشكلة أو احتياج معين " required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> فئات العملاء <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="3" rows="3"
+                                                <textarea class="form-control" name="customer_categories" cols="3" rows="3"
                                                     placeholder=" المجموعات المستهدفة من العملاء الذين يستفيدون من القيمة المقدمة ويدفعون ثمنها" required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> قنوات وصول المشروع للعملاء <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="3" rows="3"
+                                                <textarea class="form-control" name="project_access" cols="3" rows="3"
                                                     placeholder=" الطرق التي يصل بها المشروع إلى الفئات العملاء ويتواصل معهم ويسلم لهم القيمة المقدمة " required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> استراتيجية جذب العملاء: <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="3" rows="3"
+                                                <textarea class="form-control" name="attract_clients" cols="3" rows="3"
                                                     placeholder=" الإستراتيجية التي يتبعها المشروع لجذب واسعاد العملاء" required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> مصادر الدخل: <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="3" rows="3"
+                                                <textarea class="form-control" name="income_source" cols="3" rows="3"
                                                     placeholder=" آلية تحديد سعر وطريقة تحصيل الأموال من العملاء مقابل القيمة المقدمة " required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> الموارد الرئيسية: <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="3" rows="3"
+                                                <textarea class="form-control" name="main_resorce" cols="3" rows="3"
                                                     placeholder=" الأصول والأشخاص والأدوات والشركاء التي يحتاجها المشروع لتقديم وتسليم القيمة المقدمة" required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> الأنشطة الرئيسية: <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="3" rows="3"
+                                                <textarea class="form-control" name="main_activity" cols="3" rows="3"
                                                     placeholder=" الخطوات والإجراءات التي يقوم بها المشروع لتوليد وتسليم القيمة المقدمة " required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> الشركاء الرئيسين للمشروع <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="3" rows="3"
+                                                <textarea class="form-control" name="partners" cols="3" rows="3"
                                                     placeholder=" هي الجهات التي تساهم في تزويد المشروع بالموارد أو تسانده في تنفيذ الأنشطة أو تزيد من قيمته" required></textarea>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> التكاليف: <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="3" rows="3"
+                                                <textarea class="form-control" name="cost" cols="3" rows="3"
                                                     placeholder=" المصروفات التي يتحملها المشروع لإنشاء وتشغيل نموذج العمل." required></textarea>
                                             </div>
                                         </div>
@@ -387,27 +384,27 @@
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> مؤشر الأداء <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="3" rows="3" placeholder="  " required></textarea>
+                                                <textarea class="form-control" name="name[]" cols="3" rows="3" placeholder="  " required></textarea>
                                             </div>
                                             <div class="col-md-3 ">
                                                 <label class="control-label "> آلية القياس <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="measurement[]" class="form-control" required>
                                             </div>
                                             <div class="col-md-3 ">
                                                 <label class="control-label "> المستهدف <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="target[]" class="form-control" required>
                                             </div>
                                             <div class="col-md-3 ">
                                                 <label class="control-label "> وحدة القياس <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="unit[]" class="form-control" required>
                                             </div>
                                             <div class="col-md-3 ">
-                                                <label class="control-label "> دورية القياس <span
+                                                <label class="control-label "> دورة القياس <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="period[]" class="form-control" required>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -509,37 +506,32 @@
                 div.className = 'row plane';
                 div.innerHTML =
                     `
-                    <div class="col-md-2 ">
-                                                <label class="control-label "> المدة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
+                                            <div class="col-md-3 ">
                                                 <label class="control-label "> النهاية <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="end_date[]" class="form-control" required>
                                             </div>
-                                            <div class="col-md-2 ">
+                                            <div class="col-md-3 ">
                                                 <label class="control-label "> البداية <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="start_date[]" class="form-control" required>
                                             </div>
                                             <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المهام (1) <span
+                                                <label class="control-label col-sm-3"> المهام <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="name[]" class="form-control" required>
                                             </div>
 
                                         <div class="row" >
                                             <div class="col-md-6 ">
                                                 <label class="control-label col-sm-3"> المتابعة <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="follower[]" class="form-control" required>
                                             </div>
                                             <div class="col-md-6 ">
                                                 <label class="control-label col-sm-3"> المسؤول <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="responsible[]" class="form-control" required>
                                             </div>
                                         </div>
                                         <div class="row">
