@@ -320,17 +320,17 @@
 
                             <tbody>
                                 @isset($apply)
-                                        @foreach ($apply as $num => $applys)
+                                        {{-- @foreach ($apply as $num => $applys)
                                             <tr>
 
                                                 <td>{{ $num +1 }}</td>
                                                 <td>{{ $applys->name }}</td>
                                                 <td>{{ $applys->created_at->format('Y-d-m') }}</td>
-                                                <td>{{ $applys->project_type->name }}</td>
+                                                <td>{{ $applys->project_name->name }}</td>
                                                 <td><span class="pro-edit">جاري</span></td>
                                                 <td><a href="{{ route('admin.apply.show',$applys->id) }}" class="ad-st-view"> عرض </a></td>
                                             </tr>
-                                        @endforeach
+                                        @endforeach --}}
                                     @endisset
                             </tbody>
                         </table>

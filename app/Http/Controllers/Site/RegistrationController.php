@@ -9,9 +9,11 @@ use App\Models\Project_risk;
 use App\Models\Project_study;
 use App\Models\Project_Plan;
 use App\Models\Project_form;
+use App\Models\User;
 use App\Models\Project_performane;
-use App\Models\Type;
 use Illuminate\Http\Request;
+use App\Models\Type;
+use Illuminate\Support\Facades\Auth;
 
 class RegistrationController extends Controller
 {
@@ -42,7 +44,7 @@ class RegistrationController extends Controller
     {
         //
         // try {
-            $project = Project::select()->latest('id');
+            $project = Auth()->id();
             $form = $request['formType'];
             switch ($form) {
                 case 'initial':
@@ -53,13 +55,14 @@ class RegistrationController extends Controller
                         "phone" => $request['phone'],
                         "address" => $request['address'],
                         "fund" => $request['fund'],
+                        "project_id" => $project,
 
                     ]);
 
                     return redirect()->route('project.create')->with('menu1_active',true)->with('active',true);
                     break;
                 case 'projectInitial':
-                    $project = Project::create([
+                    Project::create([
                         "name" => $request['name'],
                         "category" => $request['category'],
                         "idea" => $request['idea'],
@@ -71,7 +74,7 @@ class RegistrationController extends Controller
                         "trail" => $request['trail'],
                         "email" => $request['email'],
                         "date" => $request['date'],
-                        "owner_id" => $request['owner_id'],
+                        "owner_id" => $project,
 
                     ]);
                     return redirect()->route('project.create')->with('menu2_active',true)->with('active',true);
@@ -83,10 +86,10 @@ class RegistrationController extends Controller
                         "possibility" => $request['possibility'],
                         "evaluation" => $request['evaluation'],
                         "procedures" => $request['procedures'],
-                        "project_id" => $project->id,
+                        "project_id" => $project,
                     ]);
-                    break;
                     return redirect()->route('project.create')->with('drasa_active',true)->with('active',true);
+                    break;
                 case 'projectStudy':
                     Project_study::create([
                         "recommendation" => $request['recommendation'],
@@ -94,10 +97,10 @@ class RegistrationController extends Controller
                         "technical" => $request['technical'],
                         "competitive" => $request['competitive'],
                         "market" => $request['market'],
-                        "project_id" => $project->id,
+                        "project_id" => $project,
                     ]);
-                    break;
                     return redirect()->route('project.create')->with('plan_active',true)->with('active',true);
+                    break;
                 case 'projectPlan':
                     for ($i = 0; $i < count($request->name); $i++) {
                         $name[] = $request->name[$i];
@@ -111,11 +114,11 @@ class RegistrationController extends Controller
                             "end_date" => $end_date[$i],
                             "responsible" => $responsible[$i],
                             "follower" => $follower[$i],
-                            "project_id" => $project->id,
+                            "project_id" => $project,
                         ]);
                     }
-                    break;
                     return redirect()->route('project.create')->with('template_active',true)->with('active',true);
+                    break;
                 case 'workForm':
                     Project_form::create([
                         "provided_value" => $request['provided_value'],
@@ -127,7 +130,7 @@ class RegistrationController extends Controller
                         "main_activity" => $request['main_activity'],
                         "partners" => $request['partners'],
                         "cost" => $request['cost'],
-                        "project_id" => $project->id,
+                        "project_id" => $project,
                     ]);
                     return redirect()->route('project.create')->with('mosher_active',true)->with('active',true);
                     break;
@@ -144,7 +147,7 @@ class RegistrationController extends Controller
                             "unit" => $unit[$i],
                             "target" => $target[$i],
                             "measurement" => $measurement[$i],
-                            "project_id" => $project->id,
+                            "project_id" => $project,
                         ]);
                     }
                     return redirect()->back()->with(['success' => 'تم حفظ التأشيرة بنجاح']);

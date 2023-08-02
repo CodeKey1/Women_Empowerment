@@ -98,6 +98,7 @@
                                                 <label class="control-label col-sm-3"> اسم المشروع <span
                                                         style="color: red">*</span></label>
                                                 <input type="text" class="form-control" name="name" required>
+                                                <input type="text" class="form-control" name="owner_id" value=" {{ Auth::user()->id }}" readonly>
                                             </div>
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> مجال المشروع <span
@@ -264,12 +265,12 @@
                                             <div class="col-md-3 ">
                                                 <label class="control-label "> النهاية <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" name="end_date[]" class="form-control" required>
+                                                <input type="date" name="end_date[]" class="form-control" required>
                                             </div>
                                             <div class="col-md-3 ">
                                                 <label class="control-label "> البداية <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" name="start_date[]" class="form-control" required>
+                                                <input type="date" name="start_date[]" class="form-control" required>
                                             </div>
                                             <div class="col-md-6 ">
                                                 <label class="control-label col-sm-3"> المهام <span
@@ -304,6 +305,7 @@
                                                 class="btn">حفظ -
                                                 التالي</button>
                                         </div>
+                                    </form>
                                 </div>
                                 <div id="template" class="tab-pane fade tab {{ session('template_active') ? 'in active': null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
@@ -363,8 +365,8 @@
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> التكاليف: <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" name="cost" cols="3" rows="3"
-                                                    placeholder=" المصروفات التي يتحملها المشروع لإنشاء وتشغيل نموذج العمل." required></textarea>
+                                                <input class="form-control" name="cost" type="number"
+                                                    placeholder=" المصروفات التي يتحملها المشروع لإنشاء وتشغيل نموذج العمل." required>
                                             </div>
                                         </div>
                                         <div class="row">
