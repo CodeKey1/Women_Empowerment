@@ -56,7 +56,7 @@ class RegistrationController extends Controller
 
                     ]);
 
-                    return redirect()->route('project.create')->with('menu1_active',true);
+                    return redirect()->route('project.create')->with('menu1_active',true)->with('active',true);
                     break;
                 case 'projectInitial':
                     $project = Project::create([
@@ -74,7 +74,7 @@ class RegistrationController extends Controller
                         "owner_id" => $request['owner_id'],
 
                     ]);
-                    return redirect()->back()->with(['success' => 'تم حفظ التأشيرة بنجاح']);
+                    return redirect()->route('project.create')->with('menu2_active',true)->with('active',true);
                     break;
                 case 'projectRisk':
                     Project_risk::create([
@@ -86,7 +86,7 @@ class RegistrationController extends Controller
                         "project_id" => $project->id,
                     ]);
                     break;
-                    return redirect()->back()->with(['success' => 'تم حفظ التأشيرة بنجاح']);
+                    return redirect()->route('project.create')->with('drasa_active',true)->with('active',true);
                 case 'projectStudy':
                     Project_study::create([
                         "recommendation" => $request['recommendation'],
@@ -97,7 +97,7 @@ class RegistrationController extends Controller
                         "project_id" => $project->id,
                     ]);
                     break;
-                    return redirect()->back()->with(['success' => 'تم حفظ التأشيرة بنجاح']);
+                    return redirect()->route('project.create')->with('plan_active',true)->with('active',true);
                 case 'projectPlan':
                     for ($i = 0; $i < count($request->name); $i++) {
                         $name[] = $request->name[$i];
@@ -115,7 +115,7 @@ class RegistrationController extends Controller
                         ]);
                     }
                     break;
-                    return redirect()->back()->with(['success' => 'تم حفظ التأشيرة بنجاح']);
+                    return redirect()->route('project.create')->with('template_active',true)->with('active',true);
                 case 'workForm':
                     Project_form::create([
                         "provided_value" => $request['provided_value'],
@@ -129,7 +129,7 @@ class RegistrationController extends Controller
                         "cost" => $request['cost'],
                         "project_id" => $project->id,
                     ]);
-                    return redirect()->back()->with(['success' => 'تم حفظ التأشيرة بنجاح']);
+                    return redirect()->route('project.create')->with('mosher_active',true)->with('active',true);
                     break;
                 case 'projectPeroformance':
                     for ($i = 0; $i < count($request->period); $i++) {

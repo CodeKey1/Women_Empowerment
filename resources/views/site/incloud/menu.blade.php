@@ -110,57 +110,10 @@
                                         </div>
                                     </div>
                                 </li> -->
-                                <li class="admi-menu">
+                                {{-- <li class="admi-menu">
                                     <a href="#" class="mm-arr"> البيانات المفتوحى </a>
-                                    <!-- MEGA MENU 1 -->
-                                    {{-- <div class="mm-pos">
-                                        <div class="admi-mm m-menu">
-                                            <div class="m-menu-inn">
-                                                <div class="mm2-com mm1-com mm1-s1">
-                                                    <div class="ed-course-in">
-                                                        <a class="course-overlay" href="#">
-                                                            <img src="images/h-about1.jpg" alt="">
-                                                            <span>Academics</span>
-                                                        </a>
-                                                    </div>
-                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                                    <a href="#" class="mm-r-m-btn">Read more</a>
-                                                </div>
-                                                <div class="mm2-com mm1-com mm1-s1">
-                                                    <div class="ed-course-in">
-                                                        <a class="course-overlay" href="">
-                                                            <img src="images/h-adm1.jpg" alt="">
-                                                            <span>Admission</span>
-                                                        </a>
-                                                    </div>
-                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                                    <a href="#" class="mm-r-m-btn">Read more</a>
-                                                </div>
-                                                <div class="mm2-com mm1-com mm1-s1">
-                                                    <div class="ed-course-in">
-                                                        <a class="course-overlay" href="#">
-                                                            <img src="images/h-cam1.jpg" alt="">
-                                                            <span>History & awards</span>
-                                                        </a>
-                                                    </div>
-                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                                    <a href="#" class="mm-r-m-btn">Read more</a>
-                                                </div>
-                                                <div class="mm2-com mm1-com mm1-s4">
-                                                    <div class="ed-course-in">
-                                                        <a class="course-overlay" href="#">
-                                                            <img src="images/h-res1.jpg" alt="">
-                                                            <span>Seminar 2018</span>
-                                                        </a>
-                                                    </div>
-                                                    <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                                    <a href="#" class="mm-r-m-btn">Read more</a>
-                                                </div>
 
-                                            </div>
-                                        </div>
-                                    </div> --}}
-                                </li>
+                                </li> --}}
                                 <li><a href="{{ route('stratgey') }}"> الإستراتيجية </a></li>
                                 <!--<li><a class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</a></li>-->
                                 <!-- <li class="cour-menu">
@@ -267,7 +220,7 @@
                                         </div>
                                     </div>
                                 </li> -->
-                                <li><a href="#"> التدريب </a>
+                                {{-- <li><a href="#"> التدريب </a> --}}
                                 </li>
                                 <li><a href="{{ route('namazeg') }}"> النماذج المشرفة </a>
                                 </li>

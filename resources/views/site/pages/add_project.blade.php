@@ -8,7 +8,7 @@
                     <div class="col s12">
                         <div class="cor-p5">
                             <ul class="nav nav-tabs search-top">
-                                <li class="{{ !session('menu1_active') ? 'active': null }}">
+                                <li class="{{ !session('active') ? 'active': null }} ">
                                     <a data-toggle="tab" href="#home">
                                         <img src="images/icon/cor4.png" alt="">
                                         <span> بيانات رائدة الأعمال</span>
@@ -28,7 +28,7 @@
                                             alt=""><span> مؤشرات أداء المشروع </span></a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="home" class="tab-pane fade {{ !session('menu1_active') ? 'in active': null }}">
+                                <div id="home" class="tab-pane fade {{ !session('active') ? 'in active': null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}" method="POST"enctype="multipart/form-data">
                                         @csrf
