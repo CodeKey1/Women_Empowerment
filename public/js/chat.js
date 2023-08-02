@@ -3,7 +3,7 @@ function displayWelcomeMessage() {
   var html = "<div class='message'>";
   html += "<div class='response_message'> <p>";
   html +=
-    "Hi im Sola your virtual assistant <br>You can ask me any thing related with Aswan<br>I will try to give you accurate answers<br>How can i help you?";
+    "مرحبا انا سولا مساعدك الافتراضي <br>يمكنك أن تسألني أي شيء متعلق بأسوان<br>سأحاول أن أعطيك إجابات دقيقة<br>كيف يمكنني مساعدتك؟";
   html += "</p> </div>";
   html +=
     "<img src='images/sola.png' style='width: 45px; border-radius: 50%; height: 100%;'>";
@@ -18,7 +18,7 @@ document.getElementById("submit").addEventListener("click", async (e) => {
   var message = document.getElementById("message").value;
   var res = "";
   document.getElementById("submit").disabled = true;
-  document.getElementById("submit").innerHTML = "wait";
+  document.getElementById("submit").innerHTML = "انتظر";
   document.getElementById("submit").style.cursor = "wait";
   //clear message
   document.getElementById("message").value = "";

@@ -124,7 +124,7 @@ form #submit {
   outline: none;
   background-color: var(--sec_color);
   cursor: pointer;
-  border-radius: 25px 25px 25px 0;
+  border-radius: 25px 0 25px 25px;
   color: rgb(0, 39, 110);
 }
 
@@ -142,7 +142,7 @@ form #message {
   padding-left: 5px;
   background-color: var(--sec_color_hue);
   font-size: 16px;
-  border-radius: 32px 0 32px 32px;
+  border-radius: 32px 32px 32px 0;
   color: black;
 }
 
