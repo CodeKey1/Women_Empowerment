@@ -260,7 +260,7 @@
                                         method="POST"enctype="multipart/form-data">
                                         @csrf
                                         <h4> خطة المشروع </h4>
-                                        <div class="row">
+                                        <div class="row" id="plane">
                                             <div class="col-md-2 ">
                                                 <label class="control-label "> المدة <span
                                                         style="color: red">*</span></label>
@@ -281,8 +281,8 @@
                                                         style="color: red">*</span></label>
                                                 <input type="text" class="form-control" required>
                                             </div>
-                                        </div>
-                                        <div class="row">
+
+                                        <div class="row" >
                                             <div class="col-md-6 ">
                                                 <label class="control-label col-sm-3"> المتابعة <span
                                                         style="color: red">*</span></label>
@@ -294,6 +294,13 @@
                                                 <input type="text" class="form-control" required>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <a href="javascript:void(0)"
+                                                style="float: left;background-color: seagreen;color: white;border-radius: 6px;width: 40px;"
+                                                id="addplan-btn" class="btn btn-primary" onclick="addplanRow()"> + </a>
+
+                                        </div>
+                                    </div>
                                         <div class="row">
                                             <a data-toggle="tab" class="btn btn-danger" href="#drasa">عودة</a>
                                             <button type="submit" name="formType" value="projectPlan"
@@ -484,6 +491,80 @@
             confirm("متأكد؟") ? document.getElementById('work_experience').removeChild(input.parentNode) : 0;
             if (document.getElementsByClassName("work-xp").length != 9) {
                 document.getElementById("addWork-btn").style.display = "block";
+            }
+        }
+    </script>
+    <script>
+        function addplanRow() {
+            var elements = document.getElementsByClassName('plane-input');
+            var empty = "no"
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].value == "") {
+                    empty = "yes"
+                }
+            }
+
+            if (empty == "no" && document.getElementsByClassName("plane").length < 9) {
+                const div = document.createElement('div');
+                div.className = 'row plane';
+                div.innerHTML =
+                    `
+                    <div class="col-md-2 ">
+                                                <label class="control-label "> المدة <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-2 ">
+                                                <label class="control-label "> النهاية <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-2 ">
+                                                <label class="control-label "> البداية <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <label class="control-label col-sm-3"> المهام (1) <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+
+                                        <div class="row" >
+                                            <div class="col-md-6 ">
+                                                <label class="control-label col-sm-3"> المتابعة <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <label class="control-label col-sm-3"> المسؤول <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <a href="javascript:void(0)"
+                                                style="float: left;background-color: seagreen;color: white;border-radius: 6px;width: 40px;"
+                                                id="addplan-btn" class="btn btn-primary" onclick="addplanRow()"> + </a>
+
+                                        </div>
+                <input type="button" class="btn btn-danger" style="width:50px; height: 35px;" value="x" onclick="removeplanRow(this)" /> `;;
+                document.getElementById('plane').appendChild(div);
+                if (document.getElementsByClassName("work-xp").length == 9) {
+                    document.getElementById("addplan-btn").style.display = "none";
+                }
+                if (document.getElementsByClassName("work-xp").length != 9) {
+                    document.getElementById("addplan-btn").style.display = "block";
+                }
+            } else {
+                alert("برجاء ملء البيانات!");
+            }
+        }
+
+        function removeplanRow(input) {
+            confirm("متأكد؟") ? document.getElementById('plane').removeChild(input.parentNode) : 0;
+            if (document.getElementsByClassName("work-xp").length != 9) {
+                document.getElementById("addplan-btn").style.display = "block";
             }
         }
     </script>
