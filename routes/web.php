@@ -26,6 +26,15 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+///////////////////////////////////////////// front site Auth ///////////////////////////////////////////
+
+Route::middleware(['auth'])->group(function (){
+
+    Route::get('/add_project' ,[App\Http\Controllers\Site\RegistrationController::class,'create'])-> name('project.create');
+    Route::post('/project_store' ,[App\Http\Controllers\Site\RegistrationController::class,'store'])-> name('project.store');
+
+});
+
 ///////////////////////////////////////////// front site ///////////////////////////////////////////
 
 Route::group(['namespace'=> 'guest'],function (){
@@ -38,8 +47,6 @@ Route::group(['namespace'=> 'guest'],function (){
     Route::get('/women_guide' ,[App\Http\Controllers\Site\PageController::class,'guide'])-> name('guide');
     Route::get('/design_project' ,[App\Http\Controllers\Site\PageController::class,'project_design'])-> name('project_design');
     Route::get('/registration_project' ,[App\Http\Controllers\Site\RegistrationController::class,'index'])-> name('project.signup');
-    Route::get('/add_project' ,[App\Http\Controllers\Site\RegistrationController::class,'create'])-> name('project.create');
-    Route::post('/project_store' ,[App\Http\Controllers\Site\RegistrationController::class,'store'])-> name('project.store');
 
 });
 ///////////////////////////////////////////// Dashboard site ///////////////////////////////////////////

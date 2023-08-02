@@ -50,7 +50,7 @@
                             <a href="#" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="images/icon/h-ic4.png" alt=""> المشروعات </a>
                         </li>
                         <li>
-                            <a href="{{ route('project.signup') }}" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="images/icon/h-ic3.png" alt=""> التقديم </a>
+                            <a href="{{ route('project.create') }}" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="images/icon/h-ic3.png" alt=""> التقديم </a>
                         </li>
                     </ul>
                 </div>
