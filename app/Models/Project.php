@@ -11,19 +11,25 @@ class Project extends Model
     protected $table  = 'project';
 
     protected $fillable = [
+        'id',
         'name',
+        'category',
+        'idea',
+        'goal',
+        'innovation',
+        'future',
+        'location',
+        'smart',
+        'trail',
         'email',
-        'role',
-        'phone',
-        'city',
-        'about',
-        'type_id',
+        'date',
+        'owner_id',
         'created_at',
         'updated_at',
     ];
 
-    public function project_type(){
+    public function project_owner(){
 
-        return  $this->belongsTo(Type::class ,'type_id');
+        return  $this->belongsTo(Project_owner::class ,'owner_id');
     }
 }
