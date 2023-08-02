@@ -37,13 +37,13 @@
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> رقم القومي <span
                                                         style="color: red">*</span></label>
-                                                <input type="number" class="form-control" name="nationalId" placeholder=""
+                                                <input type="number" class="form-control" name="nid" placeholder=""
                                                     required>
                                             </div>
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> الإسم رباعي <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="name"
+                                                <input type="text" class="form-control" name="full_name"
                                                     placeholder="يرجي ادخال الإسم رباعي" required>
                                             </div>
 
@@ -64,7 +64,7 @@
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> عنوان رائدة الأعمال (المدينة -
                                                     العنوان) <span style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="city" placeholder=""
+                                                <input type="text" class="form-control" name="address" placeholder=""
                                                     required>
                                             </div>
                                         </div>
@@ -74,9 +74,9 @@
                                                     <span style="color: red">*</span></label>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="radio" id="yes" name="Tamuel" value="1" required>
+                                                <input type="radio" id="yes" name="fund" value="1" required>
                                                 <label for="yes"> نعم </label>
-                                                <input type="radio" id="no" name="Tamuel" value="0">
+                                                <input type="radio" id="no" name="fund" value="0">
                                                 <label for="no">لا </label>
                                             </div>
                                         </div>
@@ -97,69 +97,65 @@
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> اسم المشروع <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" class="form-control" name="project_name" required>
                                             </div>
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> مجال المشروع <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" placeholder="" required>
+                                                <input type="text" class="form-control" name="category"
+                                                    placeholder="" required>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> ملخص فكرة المشروع <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" class="form-control" name="idea" required>
                                             </div>
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> تاريخ البدء المتوقع <span
                                                         style="color: red">*</span></label>
-                                                <input type="date" class="form-control" required>
+                                                <input type="date" class="form-control" name="date" required>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> أهداف المشروع <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" class="form-control" name="goal" required>
                                             </div>
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> التخطيط والابتكار في المشروع
                                                     <span style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="innovation" class="form-control" required>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> كيف يولد المشروع مستقبل اكثر خضرة
                                                     واستدامه <span style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="5" rows="5" required></textarea>
+                                                <textarea class="form-control" name="future" cols="5" rows="5" required></textarea>
                                             </div>
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> ذكاء المشروع <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" class="form-control" name="smart" required>
                                             </div>
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> الاثر المتوقع للمشروع <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" class="form-control" name="trail" required>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> الموقع الألكتروني للمشروع </label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="email" class="form-control">
                                             </div>
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> مقر تنفيذ المشروع <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> الاثر المتوقع للمشروع <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="location" class="form-control" required>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -180,139 +176,27 @@
                                             <div class="col-md-2 ">
                                                 <label class="control-label "> التقيم <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="evaluation" class="form-control" required>
                                             </div>
                                             <div class="col-md-2 ">
                                                 <label class="control-label "> الإحتمال <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="possibility" class="form-control" required>
                                             </div>
                                             <div class="col-md-2 ">
                                                 <label class="control-label "> الشدة <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="degree" class="form-control" required>
                                             </div>
                                             <div class="col-md-6 ">
                                                 <label class="control-label col-sm-3"> الخطر المحتمل <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
+                                                <input type="text" name="risk_name" class="form-control" required>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> اجراءات التعامل مع الخطر <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="5" rows="5" required></textarea>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> التقيم <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> الإحتمال <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> الشدة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> الخطر المحتمل <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> اجراءات التعامل مع الخطر <span
-                                                        style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="5" rows="5" required></textarea>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> التقيم <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> الإحتمال <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> الشدة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> الخطر المحتمل <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> اجراءات التعامل مع الخطر <span
-                                                        style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="5" rows="5" required></textarea>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> التقيم <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> الإحتمال <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> الشدة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> الخطر المحتمل <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> اجراءات التعامل مع الخطر <span
-                                                        style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="5" rows="5" required></textarea>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> التقيم <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> الإحتمال <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> الشدة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> الخطر المحتمل <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> اجراءات التعامل مع الخطر <span
-                                                        style="color: red">*</span></label>
-                                                <textarea class="form-control" cols="5" rows="5" required></textarea>
+                                                <textarea class="form-control" name="procedures" cols="5" rows="5" required></textarea>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -410,148 +294,6 @@
                                                 <input type="text" class="form-control" required>
                                             </div>
                                         </div>
-                                        <hr />
-                                        <div class="row">
-
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> المدة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> النهاية <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> البداية <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المهام (2) <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المتابعة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المسؤول <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <hr />
-                                        <div class="row">
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> المدة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> النهاية <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> البداية <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المهام (3) <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المتابعة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المسؤول <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <hr />
-                                        <div class="row">
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> المدة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> النهاية <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> البداية <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المهام (4) <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المتابعة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المسؤول <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <hr />
-                                        <div class="row">
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> المدة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> النهاية <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-2 ">
-                                                <label class="control-label "> البداية <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المهام (5) <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المتابعة <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <label class="control-label col-sm-3"> المسؤول <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <hr />
                                         <div class="row">
                                             <a data-toggle="tab" class="btn btn-danger" href="#drasa">عودة</a>
                                             <button type="submit" name="formType" value="projectPlan"

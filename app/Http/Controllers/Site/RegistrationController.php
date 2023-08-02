@@ -36,21 +36,23 @@ class RegistrationController extends Controller
     public function store(Request $request)
     {
         //
-        // try {
-             Project::create([
-                'name' => $request['name'],
-                'phone' => $request['phone'],
-                'email' => $request['email'],
-                'city' => $request['city'],
-                'about' => $request['about'],
-                'type_id' => $request['type_id'],
-
-            ]);
-            return redirect()->back()->with(['success' => 'تم التقديم بنجاح']);
-        // } catch (\Exception $ex) {
-        //     return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
-        // }
-
+        $form = $request['formType'];
+        switch($form){
+            case 'initial':
+                break;
+            case 'projectInitial':
+                break;
+            case 'projectRisk':
+                break;
+            case 'projectStudy':
+                break;
+            case 'projectPlan':
+                break;
+            case 'workForm':
+                break;
+            case 'projectPeroformance':
+                break;     
+        }
     }
 
     /**
