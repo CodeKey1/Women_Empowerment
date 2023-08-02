@@ -25,7 +25,7 @@
                                     <div class="ed-ad-dec">
                                         <h4> الجوائز </h4>
                                         <p> </p>
-                                        <a href="awards.html">اقراء المزيد</a>
+
                                     </div>
                                 </li>
                                 <li>
@@ -35,7 +35,7 @@
                                     <div class="ed-ad-dec">
                                         <h4> فريق الدعم </h4>
                                         <p> </p>
-                                        <a href="research.html">اقراء المزيد</a>
+
                                     </div>
                                 </li>
                                 <li>
@@ -45,7 +45,7 @@
                                     <div class="ed-ad-dec">
                                         <h4> الإرشادات </h4>
                                         <p> </p>
-                                        <a href="all-courses.html">اقراء المزيد</a>
+
                                     </div>
                                 </li>
                                 <li>
@@ -53,9 +53,9 @@
                                         <img src="images/adv/4.png" alt="">
                                     </div>
                                     <div class="ed-ad-dec">
-                                        <h4> التقدبم </h4>
+                                        <h4> التقديم </h4>
                                         <p> </p>
-                                        <a href="awards.html">اقراء المزيد</a>
+
                                     </div>
                                 </li>
                                 <li>
@@ -65,7 +65,7 @@
                                     <div class="ed-ad-dec">
                                         <h4> التسوق الشبكي </h4>
                                         <p> </p>
-                                        <a href="facilities.html">اقراء المزيد</a>
+
                                     </div>
                                 </li>
                                 <li>
@@ -75,7 +75,7 @@
                                     <div class="ed-ad-dec">
                                         <h4> التدريب </h4>
                                         <p> </p>
-                                        <a href="departments.html">اقراء المزيد</a>
+
                                     </div>
                                 </li>
                             </ul>
