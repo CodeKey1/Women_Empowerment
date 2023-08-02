@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Mobadrat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,6 +27,13 @@ class ApplyController extends Controller
         //
         $apply = Project::select()->get();
         return view('admin.pages.apply.all_apply',compact('apply'));
+    }
+
+    public function mopdara()
+    {
+        //
+        $mopadra = Mobadrat::select()->get();
+        return view('admin.pages.mopadra',compact('mopadra'));
     }
 
     /**

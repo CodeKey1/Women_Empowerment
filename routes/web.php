@@ -49,6 +49,7 @@ Route::middleware(['auth','admin'])->group(function (){
     Route::get('/profile_user' ,[App\Http\Controllers\Admin\ApplyController::class,'profile'])  -> name('profile');
     Route::get('/back' ,[App\Http\Controllers\Admin\AdminController::class,'back'])  -> name('back');
     Route::get('/all_apply' ,[App\Http\Controllers\Admin\ApplyController::class,'index'])  -> name('admin.apply');
+    Route::get('/mopadra' ,[App\Http\Controllers\Admin\ApplyController::class,'mopdara'])  -> name('admin.mopdara');
     Route::get('/user_apply{id}' ,[App\Http\Controllers\Admin\ApplyController::class,'show'])  -> name('admin.apply.show');
 
 });

@@ -47,7 +47,7 @@
                 </ul>
             </div>
         </li>
-        <li><a href="admin-slider.html"><i class="fa fa-image" aria-hidden="true"></i> المبادرات </a>
+        <li><a href="{{ route('admin.mopdara') }}"><i class="fa fa-image" aria-hidden="true"></i> المبادرات </a>
         </li>
         <li><a href="admin-quick-link.html"><i class="fa fa-external-link-square" aria-hidden="true"></i>  </a>
         </li>
