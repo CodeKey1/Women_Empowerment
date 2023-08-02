@@ -449,27 +449,27 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-6"> مؤشر الأداء <span
                                                         style="color: red">*</span></label>
-                                                <textarea class="form-control"  cols="3" rows="3" placeholder="  " required></textarea>
+                                                <textarea class="form-control"  name="name[]"   cols="3" rows="3" placeholder="  " required></textarea>
                                             </div>
                                             <div class="col-md-3 ">
                                                 <label class="control-label "> آلية القياس <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control"  required>
+                                                <input type="text" name="measurement[]" class="form-control"  required>
                                             </div>
                                             <div class="col-md-3 ">
                                                 <label class="control-label "> المستهدف <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control"  required>
+                                                <input type="text" name="target[]" class="form-control"  required>
                                             </div>
                                             <div class="col-md-3 ">
                                                 <label class="control-label "> وحدة القياس <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control"  required>
+                                                <input type="text"  name="unit[]" class="form-control"  required>
                                             </div>
                                             <div class="col-md-3 ">
                                                 <label class="control-label "> دورية القياس <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" class="form-control"  required>
+                                                <input type="text"  name="period[]" class="form-control"  required>
                                             </div>
                 <input type="button" class="btn btn-danger" style="width:50px; height: 35px;" value="x" onclick="removeWorkRow(this)" /> `;;
                 document.getElementById('work_experience').appendChild(div);
