@@ -24,6 +24,7 @@ class Project extends Model
         'email',
         'date',
         'owner_id',
+        'user_id',
         'created_at',
         'updated_at',
     ];

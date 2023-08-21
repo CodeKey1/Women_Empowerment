@@ -18,6 +18,7 @@ class Project_plan extends Model
         'responsible',
         'follower',
         'project_id',
+        'user_id',
         'created_at',
         'updated_at',
     ];

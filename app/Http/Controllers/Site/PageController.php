@@ -30,6 +30,13 @@ class PageController extends Controller
         $mopadarat = Mobadrat::select()->get();
         return view('site.pages.namazeg',compact('mopadarat','guide'));
     }
+    public function namazeg_project()
+    {
+        //
+        $guide = Guide_Women::select()->get();
+        $mopadarat = Mobadrat::select()->get();
+        return view('site.pages.namazeg_project');
+    }
     /**
      * Display a listing of the resource.
      */
