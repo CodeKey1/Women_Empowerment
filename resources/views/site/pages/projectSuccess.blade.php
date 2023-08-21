@@ -132,6 +132,10 @@
             content: '';
             border-color: #94a0b4;
         }
+
+        #report {
+            display: none;
+        }
     </style>
 @endsection
 @section('profile')
@@ -178,31 +182,31 @@
                                         <div class="form-group col-md-12">
                                             <label>مبلغ الاستثمار للمشروع (رأس المال المستثمر)</label>
                                             <input style="height: calc(2.25rem + 6px);" type="number" step="0.1"
-                                                name="capital" class="form-control"placeholder="">
+                                                id="capital" class="form-control"placeholder="">
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>الربح المتوقع للعام الأول</label>
                                             <input style="height: calc(2.25rem + 6px);" type="number" step="0.1"
-                                                name="f_year" class="form-control"placeholder="">
+                                                id="f_year" class="form-control cashFlow"placeholder="">
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>الربح المتوقع للعام الثاني</label>
                                             <input style="height: calc(2.25rem + 6px);" type="number" step="0.1"
-                                                name="s_year" class="form-control"placeholder="">
+                                                id="s_year" class="form-control cashFlow"placeholder="">
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>الربح المتوقع للعام الثالث</label>
                                             <input style="height: calc(2.25rem + 6px);" type="number" step="0.1"
-                                                name="t_year" class="form-control"placeholder="">
+                                                id="t_year" class="form-control cashFlow"placeholder="">
                                         </div>
                                     </div>
-                                    <button type="submit" name="actionbtn" class="btn btn-success" value="catbtn"
+                                    <button type="submit" onclick="getNPV()" class="btn btn-success"
                                         style="float: left;">احسب فرص النجاح</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="udb-sec udb-cour-stat">
+                    <div class="udb-sec udb-cour-stat" id="report">
                         <h4><img src="images/icon/db3.png" alt="" /> تقرير فرص نجاح مشروعك </h4>
                         <p> التقرير </p>
                         <div class="pro-con-table">
@@ -211,162 +215,104 @@
                                     <tr>
                                         <th> المؤشر </th>
                                         <th> القيمة </th>
+                                        <th> وصف </th>
                                         <th> توصيات </th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
                                     <tr>
-                                        <td>01</td>
-                                        <td>Software Testing</td>
-                                        <td>12May 2018</td>
+                                        <td>مؤشر صافي القيمة الحالية</td>
+                                        <td id="NetPresentValue"></td>
+                                        <td id="NetPresentValue_note"></td>
+                                        <td id="NetPresentValue_desc"></td>
                                     </tr>
-
+                                    <tr>
+                                        <td>مؤشر ربحية المشروع</td>
+                                        <td id="ProfitIndecator"></td>
+                                        <td id="ProfitIndecator_note"></td>
+                                        <td id="ProfitIndecator_desc"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>معدل العائد الداخلى</td>
+                                        <td id=""></td>
+                                        <td id=""></td>
+                                        <td id=""></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    {{-- <div class="udb-sec udb-time">
-                    <h4><img src="images/icon/db4.png" alt="" /> Class Time Line</h4>
-                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                    <div class="tour_head1 udb-time-line days">
-                        <ul>
-                            <li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                <div class="sdb-cl-tim">
-                                    <div class="sdb-cl-day">
-                                        <h5>Today</h5>
-                                        <span>10Sep 2018</span>
-                                    </div>
-                                    <div class="sdb-cl-class">
-                                        <ul>
-                                            <li>
-                                                <div class="sdb-cl-class-tim tooltipped" data-position="top" data-delay="50" data-tooltip="Class timing">
-                                                    <span>09:30 am</span>
-                                                    <span>10:15 pm</span>
-                                                </div>
-                                                <div class="sdb-cl-class-name tooltipped" data-position="top" data-delay="50" data-tooltip="Class Details">
-                                                    <h5>Software Testing <span>John Smith</span></h5>
-                                                    <span class="sdn-hall-na">Apj Hall 112</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="sdb-cl-class-tim tooltipped" data-position="top" data-delay="50" data-tooltip="Class timing">
-                                                    <span>10:15 am</span>
-                                                    <span>11:00 am</span>
-                                                </div>
-                                                <div class="sdb-cl-class-name tooltipped" data-position="top" data-delay="50" data-tooltip="Class Details">
-                                                    <h5>Mechanical Design Classes <span>Stephanie</span></h5>
-                                                    <span class="sdn-hall-na">Apj Hall 112</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="sdb-cl-class-tim">
-                                                    <span>11:00 am</span>
-                                                    <span>11:45 am</span>
-                                                </div>
-                                                <div class="sdb-cl-class-name sdb-cl-class-name-lev">
-                                                    <h5>Board Exam Training Classes <span>Matthew</span></h5>
-                                                    <span class="sdn-hall-na">Apj Hall 112</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                <div class="sdb-cl-tim">
-                                    <div class="sdb-cl-day">
-                                        <h5>Tuesday</h5>
-                                        <span>11Sep 2018</span>
-                                    </div>
-                                    <div class="sdb-cl-class">
-                                        <ul>
-                                            <li>
-                                                <div class="sdb-cl-class-tim tooltipped" data-position="top" data-delay="50" data-tooltip="Class timing">
-                                                    <span>9:30 am</span>
-                                                    <span>10:15 am</span>
-                                                </div>
-                                                <div class="sdb-cl-class-name tooltipped" data-position="top" data-delay="50" data-tooltip="Class Details">
-                                                    <h5>Agriculture <span>John Smith</span></h5>
-                                                    <span class="sdn-hall-na">Apj Hall 112</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="sdb-cl-class-tim">
-                                                    <span>10:15 am</span>
-                                                    <span>11:00 am</span>
-                                                </div>
-                                                <div class="sdb-cl-class-name">
-                                                    <h5>Google Product Training <span>Stephanie</span></h5>
-                                                    <span class="sdn-hall-na">Apj Hall 112</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="sdb-cl-class-tim">
-                                                    <span>11:00 am</span>
-                                                    <span>11:45 am</span>
-                                                </div>
-                                                <div class="sdb-cl-class-name sdb-cl-class-name-lev">
-                                                    <h5>Web Design & Development <span>Matthew</span></h5>
-                                                    <span class="sdn-hall-na">Apj Hall 112</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                <div class="sdb-cl-tim">
-                                    <div class="sdb-cl-day">
-                                        <h5>Wednesday</h5>
-                                        <span>12Sep 2018</span>
-                                    </div>
-                                    <div class="sdb-cl-class">
-                                        <ul>
-                                            <li>
-                                                <div class="sdb-cl-class-tim">
-                                                    <span>9:30 am</span>
-                                                    <span>10:15 am</span>
-                                                </div>
-                                                <div class="sdb-cl-class-name">
-                                                    <h5>Software Testing <span>John Smith</span></h5>
-                                                    <span class="sdn-hall-na">Apj Hall 112</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="sdb-cl-class-tim">
-                                                    <span>10:15 am</span>
-                                                    <span>11:00 am</span>
-                                                </div>
-                                                <div class="sdb-cl-class-name">
-                                                    <h5>Mechanical Design Classes <span>Stephanie</span></h5>
-                                                    <span class="sdn-hall-na">Apj Hall 112</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="sdb-cl-class-tim">
-                                                    <span>11:00 am</span>
-                                                    <span>11:45 am</span>
-                                                </div>
-                                                <div class="sdb-cl-class-name sdb-cl-class-name-lev">
-                                                    <h5>Board Exam Training Classes <span>Matthew</span></h5>
-                                                    <span class="sdn-hall-na">Apj Hall 112</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="l-info-pack-plac"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                <h4><span>Holiday: </span> Thursday </h4>
-                                <p>After breakfast, proceed for tour of Dubai city. Visit Jumeirah Mosque, World Trade Centre, Palaces and Dubai Museum. Enjoy your overnight stay at the hotel.In the evening, enjoy a tasty dinner on the Dhow cruise.
-                                    Later, head back to the hotel for a comfortable overnight stay.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div> --}}
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        /**
+         * Calculates the Net Present Value of a given initial investment
+         * cost and an array of cash flow values with the specified discount rate.
+         *
+         * @param {number} rate - The discount rate percentage
+         * @param {number} initialCost - The initial investment
+         * @param {array} cashFlows - An array of future payment amounts
+         * @return {number} The calculated Net Present Value
+         */
+        function getNPV() {
+            var rate = 18;
+            var initialCost = parseInt(document.getElementById('capital').value);
+            var cashFlows = [];
+            cashFlows[0] = parseInt(document.getElementById('f_year').value);
+            cashFlows[1] = parseInt(document.getElementById('s_year').value);
+            cashFlows[2] = parseInt(document.getElementById('t_year').value);
+            var npv = 0;
+            var NetPresentValue = (-initialCost);
+            var ProfitIndecator = initialCost;
+            for (var i = 0; i < cashFlows.length; i++) {
+                npv += cashFlows[i] / Math.pow(rate / 100 + 1, i + 1);
+            }
+            NetPresentValue += npv;
+            ProfitIndecator = npv / ProfitIndecator;
+            document.getElementById("report").style.display = "block";
+            /*=========================================================================*/
+            /*====================printing result in html==============================*/
+            /*=========================================================================*/
+            document.getElementById('NetPresentValue').innerHTML = Math.round(NetPresentValue);
+            document.getElementById('ProfitIndecator').innerHTML = ProfitIndecator.toFixed(2);
+            /*=========================================================================*/
+            /*====================printnig description in html=========================*/
+            /*=========================================================================*/
+            //NetPresentValue
+            if (NetPresentValue > 0) {
+                document.getElementById('NetPresentValue_desc').innerHTML =
+                    "فكري في الاستثمار في هذا المشروع. كلما ارتفع صافي القيمة الحالية ، كان الاستثمار أكثر ربحية. من المرجح أن يكون المشروع ناجحًا.";
+                document.getElementById('NetPresentValue_note').innerHTML = "سيحقق الاستثمار ربحًا";
+            } else if (NetPresentValue < 0) {
+                document.getElementById('NetPresentValue_desc').innerHTML =
+                    "لا ننصحك بالمضى قدما في هذا المشروع من غير المحتمل أن يكون المشروع ناجحًا، وقد يولد خسائر ننصحك بمراجعة الدورات على منصتنا الذكية واكتشاف نفسك مرة أخرى "
+                document.getElementById('NetPresentValue_note').innerHTML = "الاستثمار سوف يكسر";
+            } else {
+                document.getElementById('NetPresentValue_desc').innerHTML =
+                    "لن يولد الاستثمار ربحًا أو خسارة. قد يكون المشروع ناجحً ا وقد لا يكون كذلك. راجعي دراسة جدوى المشروع والمخاطر المتوقعة وأعيدي النظر في تصميم المشروع "
+                document.getElementById('NetPresentValue_note').innerHTML = "الاستثمار سيولد خسارة";
+            }
+            //ProfitIndecator
+            if (ProfitIndecator > 3) {
+                document.getElementById('ProfitIndecator_desc').innerHTML =
+                    "من المتوقع أن يولد الاستثمار ربحًا كبيرًا جدًا. يكاد يكون من المؤكد أن يكون المشروع ناجحًا.";
+                document.getElementById('ProfitIndecator_note').innerHTML = "الاستثمار المتميز";
+            } else if (ProfitIndecator > 2 && ProfitIndecator < 3) {
+                document.getElementById('ProfitIndecator_desc').innerHTML =
+                    "من المتوقع أن يولد الاستثمار ربحًا كبيرًا. من المحتمل جدًا أن يكون المشروع ناجحًا.";
+                document.getElementById('ProfitIndecator_note').innerHTML = "استثمار ممتاز";
+            } else if (ProfitIndecator > 1 && ProfitIndecator < 2) {
+                document.getElementById('ProfitIndecator_desc').innerHTML =
+                    "من المتوقع أن يولد الاستثمار ربحًا. من المرجح أن يكون المشروع ناجحًا.";
+                document.getElementById('ProfitIndecator_note').innerHTML = "استثمار جيد";
+            } else {
+                document.getElementById('ProfitIndecator_desc').innerHTML =
+                    "المشروع سيولد خسارة  قد يكون المشروع ناجحًا وقد لا يكون كذلك.";
+                document.getElementById('ProfitIndecator_note').innerHTML = "الاستثمار سيولد خسارة";
+            }
+        }
+    </script>
 @endsection
