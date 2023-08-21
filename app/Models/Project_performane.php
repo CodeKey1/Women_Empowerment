@@ -18,6 +18,7 @@ class Project_performane extends Model
         'target',
         'measurement',
         'project_id',
+        'user_id',
         'created_at',
         'updated_at',
     ];

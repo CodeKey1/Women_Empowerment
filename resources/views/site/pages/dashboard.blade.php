@@ -169,7 +169,7 @@
             </div>
             <div class="col-md-9">
                 <div class="udb" style="direction: rtl">
-                    @isset($apply)
+                    {{-- @isset($apply)
                         <div class="udb-sec udb-prof">
                             <h4><img src="images/icon/db1.png" alt="" /> البيانات الأساسية </h4>
                             @foreach ($apply as $num => $applys)
@@ -178,8 +178,8 @@
                                 <p>البريد الإلكتروني : {{ $applys->email }} </p>
                             @endforeach
                         </div>
-                    @endisset
-                    <div class="udb-sec udb-cour">
+                    @endisset --}}
+                    {{-- <div class="udb-sec udb-cour">
                         <h4><img src="images/icon/db2.png" alt="" /> مخطط المشروع </h4>
 
                         <div class="navP" style="display: block">
@@ -307,7 +307,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="udb-sec udb-cour-stat">
                         <h4><img src="images/icon/db3.png" alt="" /> حالة المشاريع </h4>
                         <p> متابعة حالة التقديم بالمشروع </p>
@@ -342,7 +342,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="udb-sec udb-cour-stat">
+                    {{-- <div class="udb-sec udb-cour-stat">
                         <h4><img src="images/icon/db3.png" alt="" /> التسوق الشبكي </h4>
                         <p> جميع المتقدمين تحت بند التسوق الشبكي والتابعين لكي </p>
                         <div class="pro-con-table">
@@ -371,7 +371,7 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="udb-sec udb-time">
                     <h4><img src="images/icon/db4.png" alt="" /> Class Time Line</h4>
                     <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
