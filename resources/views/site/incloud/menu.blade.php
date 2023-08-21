@@ -5,14 +5,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="ed-com-t1-left">
-                            <ul>
-                                <li><a href="#">العنوان : أسوان, ديوان عام المحافظة</a>
-                                </li>
-                                {{-- <li><a href="#">تليفون : +101-1231-1231</a>
-                                </li> --}}
-                            </ul>
-                        </div>
                         <div class="ed-com-t1-right">
                             <ul>
                                 @guest
