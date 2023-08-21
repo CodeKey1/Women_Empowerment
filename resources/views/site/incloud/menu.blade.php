@@ -58,7 +58,7 @@
                         </div>
                         <div class="main-menu">
                             <ul>
-                                <li><a href="#"> البيانات المفتوحة </a></li>
+                                <li><a href="{{ route('Data') }}"> البيانات المفتوحة </a></li>
                                 <li><a href="{{ route('stratgey') }}"> الإستراتيجية </a></li>
 
                                 <li><a href="{{ route('training') }}"> التدريب </a>

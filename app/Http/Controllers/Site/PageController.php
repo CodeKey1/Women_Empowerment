@@ -65,6 +65,15 @@ class PageController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function Data()
+    {
+        //
+        //$mopadarat = Mobadrat::select()->get();
+        return view('site.pages.openData');
+    }
+    /**
+     * Display a listing of the resource.
+     */
     public function guide()
     {
         //

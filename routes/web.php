@@ -41,6 +41,7 @@ Route::group(['namespace' => 'guest'], function () {
     Route::get('/profile_user', [App\Http\Controllers\Admin\ApplyController::class, 'profile'])->name('profile');
     Route::get('/about', [App\Http\Controllers\Site\AboutController::class, 'index'])->name('about');
     Route::get('/stratgey', [App\Http\Controllers\Site\PageController::class, 'index'])->name('stratgey');
+    Route::get('/opendata', [App\Http\Controllers\Site\PageController::class, 'Data'])->name('Data');
     Route::get('/instructions', [App\Http\Controllers\Site\PageController::class, 'instructions'])->name('instructions');
     Route::get('/initiatives', [App\Http\Controllers\Site\PageController::class, 'initiatives'])->name('initiatives');
     Route::get('/namazeg', [App\Http\Controllers\Site\PageController::class, 'namazeg'])->name('namazeg');
