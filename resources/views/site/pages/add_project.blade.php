@@ -8,27 +8,33 @@
                     <div class="col s12">
                         <div class="cor-p5">
                             <ul class="nav nav-tabs search-top">
-                                <li class="{{ !session('active') ? 'active': null }} ">
+                                <li class="{{ !session('active') ? 'active' : null }} ">
                                     <a data-toggle="tab" href="#home">
                                         <img src="images/icon/cor4.png" alt="">
                                         <span> بيانات رائدة الأعمال</span>
                                     </a>
                                 </li>
-                                <li class="{{ session('menu1_active') ? 'active': null }}"><a data-toggle="tab" href="#menu1"><img src="images/icon/cor3.png"
-                                            alt=""><span> المشروع </span></a></li>
-                                <li class="{{ session('menu2_active') ? 'active': null }}"><a data-toggle="tab" href="#menu2"><img src="images/icon/cor1.png"
-                                            alt=""><span> المخاطر المحتملة للمشروع </span></a></li>
-                                <li class="{{ session('drasa_active') ? 'active': null }}"><a data-toggle="tab" href="#drasa"><img src="images/icon/cor5.png"
-                                            alt=""><span> دراسة جدوى المشروع </span></a></li>
-                                <li class="{{ session('plan_active') ? 'active': null }}"><a data-toggle="tab" href="#plan"><img src="images/icon/cor5.png"
-                                            alt=""><span> خطة المشروع </span></a></li>
-                                <li class="{{ session('template_active') ? 'active': null }}"><a data-toggle="tab" href="#template"><img src="images/icon/cor5.png"
-                                            alt=""><span> نموذج العمل </span></a></li>
-                                <li class="{{ session('mosher_active') ? 'active': null }}"><a data-toggle="tab" href="#mosher"><img src="images/icon/cor5.png"
-                                            alt=""><span> مؤشرات أداء المشروع </span></a></li>
+                                <li class="{{ session('menu1_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#menu1"><img src="images/icon/cor3.png" alt=""><span> المشروع
+                                        </span></a></li>
+                                <li class="{{ session('menu2_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#menu2"><img src="images/icon/cor1.png" alt=""><span> المخاطر
+                                            المحتملة للمشروع </span></a></li>
+                                <li class="{{ session('drasa_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#drasa"><img src="images/icon/cor5.png" alt=""><span> دراسة جدوى
+                                            المشروع </span></a></li>
+                                <li class="{{ session('plan_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#plan"><img src="images/icon/cor5.png" alt=""><span> خطة المشروع
+                                        </span></a></li>
+                                <li class="{{ session('template_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#template"><img src="images/icon/cor5.png" alt=""><span> نموذج العمل
+                                        </span></a></li>
+                                <li class="{{ session('mosher_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#mosher"><img src="images/icon/cor5.png" alt=""><span> مؤشرات أداء
+                                            المشروع </span></a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="home" class="tab-pane fade {{ !session('active') ? 'in active': null }}">
+                                <div id="home" class="tab-pane fade {{ !session('active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}" method="POST"enctype="multipart/form-data">
                                         @csrf
@@ -87,7 +93,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="menu1" class="tab-pane fade tab {{ session('menu1_active') ? 'in active': null }}">
+                                <div id="menu1"
+                                    class="tab-pane fade tab {{ session('menu1_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -166,7 +173,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="menu2" class="tab-pane fade tab {{ session('menu2_active') ? 'in active': null }}">
+                                <div id="menu2"
+                                    class="tab-pane fade tab {{ session('menu2_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -207,7 +215,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="drasa" class="tab-pane fade tab {{ session('drasa_active') ? 'in active': null }}">
+                                <div id="drasa"
+                                    class="tab-pane fade tab {{ session('drasa_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -254,7 +263,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="plan" class="tab-pane fade tab {{ session('plan_active') ? 'in active': null }}">
+                                <div id="plan"
+                                    class="tab-pane fade tab {{ session('plan_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -305,7 +315,8 @@
                                                 التالي</button>
                                         </div>
                                 </div>
-                                <div id="template" class="tab-pane fade tab {{ session('template_active') ? 'in active': null }}">
+                                <div id="template"
+                                    class="tab-pane fade tab {{ session('template_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -374,7 +385,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="mosher" class="tab-pane fade tab {{ session('mosher_active') ? 'in active': null }}">
+                                <div id="mosher"
+                                    class="tab-pane fade tab {{ session('mosher_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -559,13 +571,5 @@
                 document.getElementById("addplan-btn").style.display = "block";
             }
         }
-    </script>
-    <script>
-        window.onload = function() {
-            var element = document.getElementById('divId');
-            if (element) {
-                element.scrollIntoView();
-            }
-        };
     </script>
 @endsection

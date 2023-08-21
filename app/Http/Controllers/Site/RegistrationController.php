@@ -53,7 +53,6 @@ class RegistrationController extends Controller
                         "phone" => $request['phone'],
                         "address" => $request['address'],
                         "fund" => $request['fund'],
-
                     ]);
 
                     return redirect()->route('project.create')->with('menu1_active',true)->with('active',true);

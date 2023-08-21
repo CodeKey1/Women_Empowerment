@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2023 at 04:01 PM
+-- Generation Time: Aug 02, 2023 at 05:53 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -76,7 +76,7 @@ INSERT INTO `guide_women` (`id`, `name`, `description`, `created_at`, `updated_a
 --
 
 CREATE TABLE `initiatives` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `text` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -112,7 +112,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `mobadrat` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -213,7 +213,7 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `project` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `category` varchar(255) NOT NULL,
   `idea` varchar(255) NOT NULL,
@@ -225,8 +225,8 @@ CREATE TABLE `project` (
   `trail` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `date` date NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `owner_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -237,7 +237,7 @@ CREATE TABLE `project` (
 --
 
 CREATE TABLE `project_form` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `provided_value` varchar(255) NOT NULL,
   `customer_categories` varchar(255) NOT NULL,
   `project_access` varchar(255) NOT NULL,
@@ -247,8 +247,8 @@ CREATE TABLE `project_form` (
   `main_activity` varchar(255) NOT NULL,
   `partners` varchar(255) NOT NULL,
   `cost` float NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `project_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -259,16 +259,16 @@ CREATE TABLE `project_form` (
 --
 
 CREATE TABLE `project_owner` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nid` int(11) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `phone` int(11) NOT NULL,
   `address` varchar(255) NOT NULL,
   `fund` int(11) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
-  `project_id` int(11) NOT NULL
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `project_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -278,14 +278,14 @@ CREATE TABLE `project_owner` (
 --
 
 CREATE TABLE `project_performane` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `period` varchar(255) NOT NULL,
   `unit` varchar(255) NOT NULL,
   `target` varchar(255) NOT NULL,
   `measurement` varchar(255) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `project_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -296,14 +296,14 @@ CREATE TABLE `project_performane` (
 --
 
 CREATE TABLE `project_plan` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `responsible` varchar(255) NOT NULL,
   `follower` varchar(255) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `project_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -314,14 +314,14 @@ CREATE TABLE `project_plan` (
 --
 
 CREATE TABLE `project_risk` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `degree` varchar(255) NOT NULL,
   `possibility` varchar(255) NOT NULL,
   `evaluation` varchar(255) NOT NULL,
   `procedures` varchar(255) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `project_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -332,14 +332,14 @@ CREATE TABLE `project_risk` (
 --
 
 CREATE TABLE `project_study` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `recommendation` varchar(255) NOT NULL,
   `finance` varchar(255) NOT NULL,
   `technical` varchar(255) NOT NULL,
   `competitive` varchar(255) NOT NULL,
   `market` varchar(255) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `project_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -350,7 +350,7 @@ CREATE TABLE `project_study` (
 --
 
 CREATE TABLE `type` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(150) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
