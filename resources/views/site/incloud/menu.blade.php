@@ -64,6 +64,8 @@
                                 </li>
                                 <li><a href="{{ route('namazeg') }}"> النماذج المشرفة </a>
                                 </li>
+                                <li><a href="#"> اختبر مشروعك </a>
+                                </li>
                                 <li><a href="{{ route('about') }}"> عن المنصة </a>
                                 </li>
                                 <li><a href="{{ route('site') }}"> الرئيسية </a>
