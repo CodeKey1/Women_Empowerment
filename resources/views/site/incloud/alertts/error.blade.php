@@ -1,13 +1,12 @@
-<div id="modal5" class="modal fade" role="dialog">
-    <div class="log-in-pop" style="width: 45%">
-        <div class="log-in-pop-left">
-            <img src="images/alert/failure.png" alt="" width="80%">
-
+@if(Session::has('error'))
+<div style="padding: 10px">
+    <div class="alert alert-danger alert-dismissible show fade">
+        <div class="alert-body" style="text-align: center;">
+          <button class="close" data-dismiss="alert">
+            <span>&times;</span>
+          </button>
+          {{Session::get('error')}}
         </div>
-        <div class="log-in-pop-right">
-            <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
-            </a>
-            <h4>  الرجاء المحاولة مرة اخري </h4>
-        </div>
-    </div>
+      </div>
 </div>
+@endif

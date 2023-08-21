@@ -135,238 +135,243 @@
     </style>
 @endsection
 @section('profile')
-<div class="pro-menu">
-    <div class="container" style="direction: rtl">
-        <div class="col-md-9 col-md-offset-3">
-            <ul>
-                <li><a href="dashboard.html" class="pro-act">الصفحة الشخصية </a></li>
-                <li><a href="db-profile.html">  الإعدادات </a></li>
-
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="stu-db">
-    <div class="container pg-inn">
-        <div class="col-md-3">
-            <div class="pro-user">
-                <img src="images/icon/seyasea.png" alt="user" style="background: #4c2d34;height: 220px;">
-            </div>
-
-            <div class="pro-user-bio">
+    <div class="pro-menu">
+        <div class="container" style="direction: rtl">
+            <div class="col-md-9 col-md-offset-3">
                 <ul>
-                    <li>
-                        <h4>{{ Auth::user()->name }}</h4>
-                    </li>
-                    <div class="semi-deta">
-                        <ul>
-                            <li style="width: 100%;">رائدة أعمال </li>
-                        </ul>
-                    </div>
+                    <li><a href="#" class="pro-act">الصفحة الشخصية </a></li>
+                    <li><a href="#"> الإعدادات </a></li>
+
                 </ul>
             </div>
         </div>
-        <div class="col-md-9">
-            <div class="udb" style="direction: rtl">
-
-                <div class="udb-sec udb-prof">
-                    <h4><img src="images/icon/db1.png" alt="" /> بياناتك  </h4>
-                    <p> كلمة عن المتقدمة </p>
+    </div>
+    <div class="stu-db">
+        <div class="container pg-inn">
+            <div class="col-md-3">
+                <div class="pro-user">
+                    <img src="images/icon/seyasea.png" alt="user" style="background: #4c2d34;height: 220px;">
                 </div>
-                <div class="udb-sec udb-cour">
-                    <h4><img src="images/icon/db2.png" alt="" />  مخطط المشروع </h4>
 
-                    <div class="navP" style="display: block">
-                        <ul style="width: max-content;">
-                            <li>
-                                <a href="#"> اسم المشروع</a>
-                                <ul>
-                                    <li>
-                                        <a href="#"> النجاح </a>
-                                        <ul>
-                                            <li>
-                                                <a href="#"> 1 </a>
+                <div class="pro-user-bio">
+                    <ul>
+                        <li>
+                            <h4>{{ Auth::user()->name }}</h4>
+                        </li>
+                        <div class="semi-deta">
+                            <ul>
+                                <li style="width: 100%;">رائدة أعمال </li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="udb" style="direction: rtl">
+                    @isset($apply)
+                        <div class="udb-sec udb-prof">
+                            <h4><img src="images/icon/db1.png" alt="" /> البيانات الأساسية </h4>
+                            @foreach ($apply as $num => $applys)
+                                <p>الإســم :  {{ $applys->name }} </p>
+                                <p>الرقم القومي :  {{ $applys->nid }} </p>
+                                <p>البريد الإلكتروني :  {{ $applys->email }} </p>
+                            @endforeach
+                        </div>
+                    @endisset
+                    <div class="udb-sec udb-cour">
+                        <h4><img src="images/icon/db2.png" alt="" /> مخطط المشروع </h4>
 
-                                            </li>
-                                            <li>
-                                                <a href="#">2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#"> مرحلة النمو والانتشار </a>
-                                        <ul>
-                                            <li>
-                                                <a href="#"> النمو والانتشار</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"> مرحلة </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">مرحلة</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#"> مرحلة التنفيذ </a>
-                                        <ul>
-                                            <li>
-                                                <a href="#"> العمل</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"> مرحلة </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">مرحلة</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#"> مرحلة تخطيط الاعمال</a>
-                                        <ul>
-                                            <li>
-                                                <a href="#">التخطيط</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">مرحلة</a>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">مرحلة</a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="#">مرحلة</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">العمل</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">مرحلة</a>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">مرحلة</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#"> مرحلة التفكير</a>
-                                        <ul>
-                                            <li>
-                                                <a href="#">التفكير</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">مرحلة</a>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">مرحلة</a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="#">مرحلة</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#"> التنفيذ </a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">مرحلة</a>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">مرحلة</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <div class="navP" style="display: block">
+                            <ul style="width: max-content;">
+                                <li>
+                                    <a href="#"> اسم المشروع</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#"> النجاح </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#"> 1 </a>
+
+                                                </li>
+                                                <li>
+                                                    <a href="#">2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#"> مرحلة النمو والانتشار </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#"> النمو والانتشار</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#"> مرحلة </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">مرحلة</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#"> مرحلة التنفيذ </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#"> العمل</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#"> مرحلة </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">مرحلة</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#"> مرحلة تخطيط الاعمال</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">التخطيط</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">مرحلة</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="#">مرحلة</a>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#">مرحلة</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#">العمل</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">مرحلة</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="#">مرحلة</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#"> مرحلة التفكير</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">التفكير</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">مرحلة</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="#">مرحلة</a>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#">مرحلة</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#"> التنفيذ </a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">مرحلة</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="#">مرحلة</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="udb-sec udb-cour-stat">
-                    <h4><img src="images/icon/db3.png" alt="" /> حالة المشاريع </h4>
-                    <p> متابعة حالة التقديم بالمشروع  </p>
-                    <div class="pro-con-table">
-                        <table class="bordered responsive-table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th> اسم المشروع </th>
-                                    <th> وقت التقديم </th>
-                                    <th> فئة المشروع </th>
-                                    <th> حالة </th>
-                                    <th>View</th>
-                                </tr>
-                            </thead>
+                    <div class="udb-sec udb-cour-stat">
+                        <h4><img src="images/icon/db3.png" alt="" /> حالة المشاريع </h4>
+                        <p> متابعة حالة التقديم بالمشروع </p>
+                        <div class="pro-con-table">
+                            <table class="bordered responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th> اسم المشروع </th>
+                                        <th> وقت التقديم </th>
+                                        <th> فئة المشروع </th>
+                                        <th> حالة </th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
 
-                            <tbody>
-                                @isset($apply)
-                                        {{-- @foreach ($apply as $num => $applys)
+                                <tbody>
+                                    @isset($apply)
+                                        @foreach ($project as $num => $projects)
                                             <tr>
 
                                                 <td>{{ $num +1 }}</td>
-                                                <td>{{ $applys->name }}</td>
-                                                <td>{{ $applys->created_at->format('Y-d-m') }}</td>
-                                                <td>{{ $applys->project_name->name }}</td>
+                                                <td>{{ $projects->name }}</td>
+                                                <td>{{ $projects->created_at->format('Y-d-m') }}</td>
+                                                <td>{{ $projects->category }}</td>
                                                 <td><span class="pro-edit">جاري</span></td>
-                                                <td><a href="{{ route('admin.apply.show',$applys->id) }}" class="ad-st-view"> عرض </a></td>
+                                                <td><a href="#" class="ad-st-view"> عرض </a></td>
                                             </tr>
-                                        @endforeach --}}
+                                        @endforeach
                                     @endisset
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div class="udb-sec udb-cour-stat">
-                    <h4><img src="images/icon/db3.png" alt="" />  التسوق الشبكي </h4>
-                    <p> جميع المتقدمين تحت بند التسوق الشبكي والتابعين لكي </p>
-                    <div class="pro-con-table">
-                        <table class="bordered responsive-table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th> اسم التابع  </th>
-                                    <th>  فئة مشرعة </th>
-                                    <th> العدد التابع له</th>
-                                    <th> حالة </th>
-                                    <th>View</th>
-                                </tr>
-                            </thead>
+                    <div class="udb-sec udb-cour-stat">
+                        <h4><img src="images/icon/db3.png" alt="" /> التسوق الشبكي </h4>
+                        <p> جميع المتقدمين تحت بند التسوق الشبكي والتابعين لكي </p>
+                        <div class="pro-con-table">
+                            <table class="bordered responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th> اسم التابع </th>
+                                        <th> فئة مشرعة </th>
+                                        <th> العدد التابع له</th>
+                                        <th> حالة </th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td>01</td>
-                                    <td>Software Testing</td>
-                                    <td>12May 2018</td>
-                                    <td> خدمي </td>
-                                    <td><span class="pro-user-act">مقبول</span></td>
-                                    <td><a href="sdb-course-view.html" class="pro-edit"> عرض </a></td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Software Testing</td>
+                                        <td>12May 2018</td>
+                                        <td> خدمي </td>
+                                        <td><span class="pro-user-act">مقبول</span></td>
+                                        <td><a href="sdb-course-view.html" class="pro-edit"> عرض </a></td>
+                                    </tr>
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                {{-- <div class="udb-sec udb-time">
+                    {{-- <div class="udb-sec udb-time">
                     <h4><img src="images/icon/db4.png" alt="" /> Class Time Line</h4>
                     <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                     <div class="tour_head1 udb-time-line days">
@@ -505,8 +510,8 @@
                         </ul>
                     </div>
                 </div> --}}
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

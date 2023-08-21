@@ -1,34 +1,43 @@
 @extends('site.page')
 @section('content')
     <!--SECTION START-->
+
     <section class="h-quote">
         <div class="container" style="direction: rtl;">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="n-form-com admiss-form">
+                    @include('site.incloud.alertts.success')
+                    @include('site.incloud.alertts.error')
                     <div class="col s12">
                         <div class="cor-p5">
                             <ul class="nav nav-tabs search-top">
-                                <li class="{{ !session('active') ? 'active': null }} ">
+                                <li class="{{ !session('active') ? 'active' : null }} ">
                                     <a data-toggle="tab" href="#home">
                                         <img src="images/icon/cor4.png" alt="">
                                         <span> بيانات رائدة الأعمال</span>
                                     </a>
                                 </li>
-                                <li class="{{ session('menu1_active') ? 'active': null }}"><a data-toggle="tab" href="#menu1"><img src="images/icon/cor3.png"
-                                            alt=""><span> المشروع </span></a></li>
-                                <li class="{{ session('menu2_active') ? 'active': null }}"><a data-toggle="tab" href="#menu2"><img src="images/icon/cor1.png"
-                                            alt=""><span> المخاطر المحتملة للمشروع </span></a></li>
-                                <li class="{{ session('drasa_active') ? 'active': null }}"><a data-toggle="tab" href="#drasa"><img src="images/icon/cor5.png"
-                                            alt=""><span> دراسة جدوى المشروع </span></a></li>
-                                <li class="{{ session('plan_active') ? 'active': null }}"><a data-toggle="tab" href="#plan"><img src="images/icon/cor5.png"
-                                            alt=""><span> خطة المشروع </span></a></li>
-                                <li class="{{ session('template_active') ? 'active': null }}"><a data-toggle="tab" href="#template"><img src="images/icon/cor5.png"
-                                            alt=""><span> نموذج العمل </span></a></li>
-                                <li class="{{ session('mosher_active') ? 'active': null }}"><a data-toggle="tab" href="#mosher"><img src="images/icon/cor5.png"
-                                            alt=""><span> مؤشرات أداء المشروع </span></a></li>
+                                <li class="{{ session('menu1_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#menu1"><img src="images/icon/cor3.png" alt=""><span> المشروع
+                                        </span></a></li>
+                                <li class="{{ session('menu2_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#menu2"><img src="images/icon/cor1.png" alt=""><span> المخاطر
+                                            المحتملة للمشروع </span></a></li>
+                                <li class="{{ session('drasa_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#drasa"><img src="images/icon/cor5.png" alt=""><span> دراسة جدوى
+                                            المشروع </span></a></li>
+                                <li class="{{ session('plan_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#plan"><img src="images/icon/cor5.png" alt=""><span> خطة المشروع
+                                        </span></a></li>
+                                <li class="{{ session('template_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#template"><img src="images/icon/cor5.png" alt=""><span> نموذج العمل
+                                        </span></a></li>
+                                <li class="{{ session('mosher_active') ? 'active' : null }}"><a data-toggle="tab"
+                                        href="#mosher"><img src="images/icon/cor5.png" alt=""><span> مؤشرات أداء
+                                            المشروع </span></a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="home" class="tab-pane fade {{ !session('active') ? 'in active': null }}">
+                                <div id="home" class="tab-pane fade {{ !session('active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}" method="POST"enctype="multipart/form-data">
                                         @csrf
@@ -87,7 +96,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="menu1" class="tab-pane fade tab {{ session('menu1_active') ? 'in active': null }}">
+                                <div id="menu1"
+                                    class="tab-pane fade tab {{ session('menu1_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -98,7 +108,8 @@
                                                 <label class="control-label col-sm-3"> اسم المشروع <span
                                                         style="color: red">*</span></label>
                                                 <input type="text" class="form-control" name="name" required>
-                                                <input type="text" class="form-control" name="owner_id" value=" {{ Auth::user()->id }}" readonly>
+                                                <input type="text" class="form-control" name="owner_id"
+                                                    value=" {{ Auth::user()->id }}" readonly>
                                             </div>
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> مجال المشروع <span
@@ -167,7 +178,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="menu2" class="tab-pane fade tab {{ session('menu2_active') ? 'in active': null }}">
+                                <div id="menu2"
+                                    class="tab-pane fade tab {{ session('menu2_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -208,7 +220,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="drasa" class="tab-pane fade tab {{ session('drasa_active') ? 'in active': null }}">
+                                <div id="drasa"
+                                    class="tab-pane fade tab {{ session('drasa_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -255,7 +268,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="plan" class="tab-pane fade tab {{ session('plan_active') ? 'in active': null }}">
+                                <div id="plan"
+                                    class="tab-pane fade tab {{ session('plan_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -307,7 +321,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="template" class="tab-pane fade tab {{ session('template_active') ? 'in active': null }}">
+                                <div id="template"
+                                    class="tab-pane fade tab {{ session('template_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -366,7 +381,8 @@
                                                 <label class="control-label col-sm-6"> التكاليف: <span
                                                         style="color: red">*</span></label>
                                                 <input class="form-control" name="cost" type="number"
-                                                    placeholder=" المصروفات التي يتحملها المشروع لإنشاء وتشغيل نموذج العمل." required>
+                                                    placeholder=" المصروفات التي يتحملها المشروع لإنشاء وتشغيل نموذج العمل."
+                                                    required>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -376,7 +392,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="mosher" class="tab-pane fade tab {{ session('mosher_active') ? 'in active': null }}">
+                                <div id="mosher"
+                                    class="tab-pane fade tab {{ session('mosher_active') ? 'in active' : null }}">
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -511,12 +528,12 @@
                                             <div class="col-md-3 ">
                                                 <label class="control-label "> النهاية <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" name="end_date[]" class="form-control" required>
+                                                <input type="date" name="end_date[]" class="form-control" required>
                                             </div>
                                             <div class="col-md-3 ">
                                                 <label class="control-label "> البداية <span
                                                         style="color: red">*</span></label>
-                                                <input type="text" name="start_date[]" class="form-control" required>
+                                                <input type="date" name="start_date[]" class="form-control" required>
                                             </div>
                                             <div class="col-md-6 ">
                                                 <label class="control-label col-sm-3"> المهام <span
