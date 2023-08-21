@@ -58,14 +58,15 @@
                         </div>
                         <div class="main-menu">
                             <ul>
-                                <li><a href="{{ route('Data') }}"> البيانات المفتوحة </a></li>
-                                <li><a href="{{ route('stratgey') }}"> الإستراتيجية </a></li>
-
+                                <li><a href="{{ route('Data') }}"> البيانات المفتوحة </a>
+                                </li>
+                                <li><a href="{{ route('stratgey') }}"> الإستراتيجية </a>
+                                </li>
                                 <li><a href="{{ route('training') }}"> التدريب </a>
                                 </li>
                                 <li><a href="{{ route('namazeg') }}"> النماذج المشرفة </a>
                                 </li>
-                                <li><a href="{{ route('namazeg-project') }}"> نمازج المشاريع </a>
+                                <li><a href="{{ route('namazeg-project') }}"> نماذج المشاريع </a>
                                 </li>
                                 <li><a href="{{ route('about') }}"> عن المنصة </a>
                                 </li>

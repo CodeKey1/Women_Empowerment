@@ -26,28 +26,17 @@
                                 </li>
                                 <li><a href="{{ route('about') }}"> عن المنصة </a>
                                 </li>
+                                <li><a href="{{ route('namazeg-project') }}"> نماذج المشاريع </a>
+                                </li>
                                 <li><a href="{{ route('namazeg') }}"> النماذج المشرفة </a>
                                 </li>
-                                {{-- <li><a href="#"> التدريب </a>
-                                </li> --}}
+                                <li><a href="{{ route('training') }}"> التدريب </a>
+                                </li>
                                 <li><a href="{{ route('stratgey') }}"> الإستراتيجية </a>
                                 </li>
-                                {{-- <li><a href="#" class="mm-arr"> البيانات المفتوحى </a>
-                                </li> --}}
-                                {{-- <li><a href="seminar.html">Seminar</a></li>
-                                <li><a href="events.html">Events</a></li>
-                                <li><a href="event-details.html">Event details</a></li>
-                                <li><a href="event-register.html">Event register</a></li>
-                                <li><a href="contact-us.html">Contact us</a></li> --}}
+                                <li><a href="{{ route('Data') }}"> البيانات المفتوحة </a>
+                                </li>
                             </ul>
-                            {{-- <h4>User Profile</h4>
-                            <ul>
-                                <li><a href="dashboard.html">User profile</a></li>
-                                <li><a href="db-courses.html">Courses</a></li>
-                                <li><a href="db-exams.html">Exams</a></li>
-                                <li><a href="db-profile.html">Prfile</a></li>
-                                <li><a href="db-time-line.html">Time line</a></li>
-                            </ul> --}}
                         </div>
                     </div>
                 </div>
