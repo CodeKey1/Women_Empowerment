@@ -109,7 +109,7 @@
                                                         style="color: red">*</span></label>
                                                 <input type="text" class="form-control" name="name" required>
                                                 <input type="text" class="form-control" name="owner_id"
-                                                    value=" {{ Auth::user()->id }}" readonly>
+                                                    value=" {{ Auth::user()->id }}" style="display: none;">
                                             </div>
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <label class="control-label col-sm-3"> مجال المشروع <span
