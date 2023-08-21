@@ -579,12 +579,4 @@
             }
         }
     </script>
-    <script>
-        window.onload = function() {
-            var element = document.getElementById('divId');
-            if (element) {
-                element.scrollIntoView();
-            }
-        };
-    </script>
 @endsection
