@@ -233,12 +233,12 @@
                                         <td id="ProfitIndecator_note"></td>
                                         <td id="ProfitIndecator_desc"></td>
                                     </tr>
-                                    <tr>
+                                    {{-- <tr>
                                         <td>معدل العائد الداخلى</td>
                                         <td id=""></td>
                                         <td id=""></td>
                                         <td id=""></td>
-                                    </tr>
+                                    </tr> --}}
                                 </tbody>
                             </table>
                         </div>
