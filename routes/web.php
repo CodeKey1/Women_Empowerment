@@ -24,41 +24,39 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 ///////////////////////////////////////////// front site Auth ///////////////////////////////////////////
 
-Route::middleware(['auth'])->group(function (){
+Route::middleware(['auth'])->group(function () {
 
-    Route::get('/add_project' ,[App\Http\Controllers\Site\RegistrationController::class,'create'])-> name('project.create');
-    Route::post('/project_store' ,[App\Http\Controllers\Site\RegistrationController::class,'store'])-> name('project.store');
-
+    Route::get('/add_project', [App\Http\Controllers\Site\RegistrationController::class, 'create'])->name('project.create');
+    Route::post('/project_store', [App\Http\Controllers\Site\RegistrationController::class, 'store'])->name('project.store');
 });
 
 ///////////////////////////////////////////// front site ///////////////////////////////////////////
 
-Route::group(['namespace'=> 'guest'],function (){
-    Route::get('/', [App\Http\Controllers\Site\PageController::class,'site'])->name('site');
-    Route::get('/profile_user' ,[App\Http\Controllers\Admin\ApplyController::class,'profile'])  -> name('profile');
-    Route::get('/about' ,[App\Http\Controllers\Site\AboutController::class,'index'])-> name('about');
-    Route::get('/stratgey' ,[App\Http\Controllers\Site\PageController::class,'index'])-> name('stratgey');
-    Route::get('/instructions' ,[App\Http\Controllers\Site\PageController::class,'instructions'])-> name('instructions');
-    Route::get('/initiatives' ,[App\Http\Controllers\Site\PageController::class,'initiatives'])-> name('initiatives');
-    Route::get('/namazeg' ,[App\Http\Controllers\Site\PageController::class,'namazeg'])-> name('namazeg');
-    Route::get('/women_guide' ,[App\Http\Controllers\Site\PageController::class,'guide'])-> name('guide');
-    Route::get('/design_project' ,[App\Http\Controllers\Site\PageController::class,'project_design'])-> name('project_design');
-    Route::get('/registration_project' ,[App\Http\Controllers\Site\RegistrationController::class,'index'])-> name('project.signup');
-    Route::get('/training' ,[App\Http\Controllers\Site\PageController::class,'training'])-> name('training');
-    Route::get('/training-details' ,[App\Http\Controllers\Site\PageController::class,'training_details'])-> name('training.details');
-
+Route::group(['namespace' => 'guest'], function () {
+    Route::get('/', [App\Http\Controllers\Site\PageController::class, 'site'])->name('site');
+    Route::get('/profile_user', [App\Http\Controllers\Admin\ApplyController::class, 'profile'])->name('profile');
+    Route::get('/about', [App\Http\Controllers\Site\AboutController::class, 'index'])->name('about');
+    Route::get('/stratgey', [App\Http\Controllers\Site\PageController::class, 'index'])->name('stratgey');
+    Route::get('/instructions', [App\Http\Controllers\Site\PageController::class, 'instructions'])->name('instructions');
+    Route::get('/initiatives', [App\Http\Controllers\Site\PageController::class, 'initiatives'])->name('initiatives');
+    Route::get('/namazeg', [App\Http\Controllers\Site\PageController::class, 'namazeg'])->name('namazeg');
+    Route::get('/women_guide', [App\Http\Controllers\Site\PageController::class, 'guide'])->name('guide');
+    Route::get('/design_project', [App\Http\Controllers\Site\PageController::class, 'project_design'])->name('project_design');
+    Route::get('/registration_project', [App\Http\Controllers\Site\RegistrationController::class, 'index'])->name('project.signup');
+    Route::get('/training', [App\Http\Controllers\Site\PageController::class, 'training'])->name('training');
+    Route::get('/training-details', [App\Http\Controllers\Site\PageController::class, 'training_details'])->name('training.details');
+    Route::get('/success', [App\Http\Controllers\Site\PageController::class, 'successIndex'])->name('success');
 });
 ///////////////////////////////////////////// Dashboard site ///////////////////////////////////////////
 
-Route::middleware(['auth','admin'])->group(function (){
-    Route::get('/dashboard' ,[App\Http\Controllers\Admin\AdminController::class,'index'])  -> name('dashboard');
-    Route::get('/back' ,[App\Http\Controllers\Admin\AdminController::class,'back'])  -> name('back');
-    Route::get('/all_apply' ,[App\Http\Controllers\Admin\ApplyController::class,'index'])  -> name('admin.apply');
-    Route::get('/mopadra' ,[App\Http\Controllers\Admin\ApplyController::class,'mopdara'])  -> name('admin.mopdara');
-    Route::get('/user_apply{id}' ,[App\Http\Controllers\Admin\ApplyController::class,'show'])  -> name('admin.apply.show');
-
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('dashboard');
+    Route::get('/back', [App\Http\Controllers\Admin\AdminController::class, 'back'])->name('back');
+    Route::get('/all_apply', [App\Http\Controllers\Admin\ApplyController::class, 'index'])->name('admin.apply');
+    Route::get('/mopadra', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara'])->name('admin.mopdara');
+    Route::get('/user_apply{id}', [App\Http\Controllers\Admin\ApplyController::class, 'show'])->name('admin.apply.show');
 });

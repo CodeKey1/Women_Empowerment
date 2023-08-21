@@ -18,6 +18,12 @@ class PageController extends Controller
 
         return view('site.pages.training');
     }
+    public function successIndex()
+    {
+        //
+
+        return view('site.pages.projectSuccess');
+    }
     public function training_details()
     {
         //
@@ -28,7 +34,7 @@ class PageController extends Controller
         //
         $guide = Guide_Women::select()->get();
         $mopadarat = Mobadrat::select()->get();
-        return view('site.pages.namazeg',compact('mopadarat','guide'));
+        return view('site.pages.namazeg', compact('mopadarat', 'guide'));
     }
     /**
      * Display a listing of the resource.
@@ -38,7 +44,7 @@ class PageController extends Controller
         //
         $guide = Guide_Women::select()->get();
         $mopadarat = Mobadrat::select()->get();
-        return view('site.pages.index',compact('mopadarat','guide'));
+        return view('site.pages.index', compact('mopadarat', 'guide'));
     }
     /**
      * Display a listing of the resource.
@@ -47,7 +53,7 @@ class PageController extends Controller
     {
         //
         $mopadarat = Mobadrat::select()->get();
-        return view('site.pages.stratgey',compact('mopadarat'));
+        return view('site.pages.stratgey', compact('mopadarat'));
     }
     /**
      * Display a listing of the resource.
@@ -56,7 +62,7 @@ class PageController extends Controller
     {
         //
         $guide = Guide_Women::select()->get();
-        return view('site.pages.women_guide',compact('guide'));
+        return view('site.pages.women_guide', compact('guide'));
     }
     /**
      * Display a listing of the resource.
@@ -82,7 +88,7 @@ class PageController extends Controller
     {
         //
         $mopadarat = Mobadrat::select()->get();
-        return view('site.pages.initiatives',compact('mopadarat'));
+        return view('site.pages.initiatives', compact('mopadarat'));
     }
 
     /**
