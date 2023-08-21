@@ -200,7 +200,7 @@
                                                 id="t_year" class="form-control cashFlow"placeholder="">
                                         </div>
                                     </div>
-                                    <button type="submit" onclick="getNPV()" class="btn btn-success"
+                                    <button type="submit" onclick="calculateNPV()" class="btn btn-success"
                                         style="float: left;">احسب فرص النجاح</button>
                                 </div>
                             </div>
@@ -235,9 +235,9 @@
                                     </tr>
                                     <tr>
                                         <td>معدل العائد الداخلى</td>
-                                        <td id=""></td>
-                                        <td id=""></td>
-                                        <td id=""></td>
+                                        <td id="IRR"></td>
+                                        <td id="IRR_note"></td>
+                                        <td id="IRR_desc"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -248,16 +248,7 @@
         </div>
     </div>
     <script>
-        /**
-         * Calculates the Net Present Value of a given initial investment
-         * cost and an array of cash flow values with the specified discount rate.
-         *
-         * @param {number} rate - The discount rate percentage
-         * @param {number} initialCost - The initial investment
-         * @param {array} cashFlows - An array of future payment amounts
-         * @return {number} The calculated Net Present Value
-         */
-        function getNPV() {
+        function calculateNPV() {
             var rate = 18;
             var initialCost = parseInt(document.getElementById('capital').value);
             var cashFlows = [];
@@ -274,10 +265,16 @@
             ProfitIndecator = npv / ProfitIndecator;
             document.getElementById("report").style.display = "block";
             /*=========================================================================*/
+            /*=========================== IRR function ================================*/
+            /*=========================================================================*/
+            const flows = [-initialCost, cashFlows[0], cashFlows[1], cashFlows[2]];
+            const irr = calculateIRR(flows) * 100;
+            /*=========================================================================*/
             /*====================printing result in html==============================*/
             /*=========================================================================*/
             document.getElementById('NetPresentValue').innerHTML = Math.round(NetPresentValue);
             document.getElementById('ProfitIndecator').innerHTML = ProfitIndecator.toFixed(2);
+            document.getElementById('IRR').innerHTML = Math.round(irr) + "%";
             /*=========================================================================*/
             /*====================printnig description in html=========================*/
             /*=========================================================================*/
@@ -300,11 +297,11 @@
                 document.getElementById('ProfitIndecator_desc').innerHTML =
                     "من المتوقع أن يولد الاستثمار ربحًا كبيرًا جدًا. يكاد يكون من المؤكد أن يكون المشروع ناجحًا.";
                 document.getElementById('ProfitIndecator_note').innerHTML = "الاستثمار المتميز";
-            } else if (ProfitIndecator > 2 && ProfitIndecator < 3) {
+            } else if (ProfitIndecator > 2 && ProfitIndecator <= 3) {
                 document.getElementById('ProfitIndecator_desc').innerHTML =
                     "من المتوقع أن يولد الاستثمار ربحًا كبيرًا. من المحتمل جدًا أن يكون المشروع ناجحًا.";
                 document.getElementById('ProfitIndecator_note').innerHTML = "استثمار ممتاز";
-            } else if (ProfitIndecator > 1 && ProfitIndecator < 2) {
+            } else if (ProfitIndecator > 1 && ProfitIndecator <= 2) {
                 document.getElementById('ProfitIndecator_desc').innerHTML =
                     "من المتوقع أن يولد الاستثمار ربحًا. من المرجح أن يكون المشروع ناجحًا.";
                 document.getElementById('ProfitIndecator_note').innerHTML = "استثمار جيد";
@@ -313,6 +310,42 @@
                     "المشروع سيولد خسارة  قد يكون المشروع ناجحًا وقد لا يكون كذلك.";
                 document.getElementById('ProfitIndecator_note').innerHTML = "الاستثمار سيولد خسارة";
             }
+            //IRR
+            if (irr > 25) {
+                document.getElementById('IRR_desc').innerHTML =
+                    "استثمار نادر وعائد مرتفع للغاية. ضع في اعتبارك فقط إذا كنت من ذوي الخبرة والراحة في التعامل مع المخاطر.";
+                document.getElementById('IRR_note').innerHTML = "استثنائي";
+            } else if (irr > 20 && irr <= 25) {
+                document.getElementById('IRR_desc').innerHTML =
+                    "استثمار جيد للغاية ، ولكن كن على دراية بأن هناك دائمًا بعض المخاطر التي تنطوي عليها.";
+                document.getElementById('IRR_note').innerHTML = "ممتاز";
+            } else if (irr > 15 && irr <= 20) {
+                document.getElementById('IRR_desc').innerHTML =
+                    "ضع في اعتبارك الاستثمار إذا كنت مرتاحًا للمخاطر وكان الاستثمار متوافقًا مع أهدافك المالية.";
+                document.getElementById('IRR_note').innerHTML = "جيد";
+            } else if (irr > 10 && irr <= 15) {
+                document.getElementById('IRR_desc').innerHTML =
+                    "قد يكون استثمارًا جيدًا ، ولكن قم بأبحاثك للتأكد من أن المخاطرة مبررة.";
+                document.getElementById('IRR_note').innerHTML = "متوسط";
+            } else {
+                document.getElementById('IRR_desc').innerHTML =
+                    "يعتبر الاستثمار استثمارًا سيئًا. هذا يعني أن الاستثمار لن يولد ربحًا كافيًا لتعويض المستثمر عن المخاطر التي ينطوي عليها    في اعتبارك خيارات الاستثمار الأخرى ذات العوائد المرتفعة المحتملة.";
+                document.getElementById('IRR_note').innerHTML = "قليل";
+            }
+        }
+
+        function calculateIRR(cashFlows) {
+            const epsilon = 0.000001; // Desired precision
+            let irr = 0.1; // Initial guess for IRR
+            let npv;
+            do {
+                npv = 0;
+                for (let i = 0; i < cashFlows.length; i++) {
+                    npv += cashFlows[i] / Math.pow(1 + irr, i);
+                }
+                irr += epsilon;
+            } while (npv > 0);
+            return irr;
         }
     </script>
 @endsection
