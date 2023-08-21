@@ -14,25 +14,7 @@
                         <a href="#!" class="ed-micon"><i class="fa fa-bars"></i></a>
                         <div class="ed-mm-inn">
                             <a href="#!" class="ed-mi-close"><i class="fa fa-times"></i></a>
-                            {{-- <h4>All Courses</h4>
-                            <ul>
-                                <li><a href="course-details.html">Accounting/Finance</a></li>
-                                <li><a href="course-details.html">civil engineering</a></li>
-                                <li><a href="course-details.html">Art/Design</a></li>
-                                <li><a href="course-details.html">Marine Engineering</a></li>
-                                <li><a href="course-details.html">Business Management</a></li>
-                                <li><a href="course-details.html">Journalism/Writing</a></li>
-                                <li><a href="course-details.html">Physical Education</a></li>
-                                <li><a href="course-details.html">Political Science</a></li>
-                                <li><a href="course-details.html">Sciences</a></li>
-                                <li><a href="course-details.html">Statistics</a></li>
-                                <li><a href="course-details.html">Web Design/Development</a></li>
-                                <li><a href="course-details.html">SEO</a></li>
-                                <li><a href="course-details.html">Google Business</a></li>
-                                <li><a href="course-details.html">Graphics Design</a></li>
-                                <li><a href="course-details.html">Networking Courses</a></li>
-                                <li><a href="course-details.html">Information technology</a></li>
-                            </ul> --}}
+
                             <h4>الحساب الشخصي</h4>
                             <ul>
                                 <li><a href="#!" data-toggle="modal" data-target="#modal1">تسجيل الدخول</a></li>
@@ -46,12 +28,12 @@
                                 </li>
                                 <li><a href="{{ route('namazeg') }}"> النماذج المشرفة </a>
                                 </li>
-                                <li><a href="#"> التدريب </a>
-                                </li>
+                                {{-- <li><a href="#"> التدريب </a>
+                                </li> --}}
                                 <li><a href="{{ route('stratgey') }}"> الإستراتيجية </a>
                                 </li>
-                                <li><a href="#" class="mm-arr"> البيانات المفتوحى </a>
-                                </li>
+                                {{-- <li><a href="#" class="mm-arr"> البيانات المفتوحى </a>
+                                </li> --}}
                                 {{-- <li><a href="seminar.html">Seminar</a></li>
                                 <li><a href="events.html">Events</a></li>
                                 <li><a href="event-details.html">Event details</a></li>

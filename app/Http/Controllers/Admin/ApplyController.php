@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Mobadrat;
+use App\Models\Project_form;
+use App\Models\Project_owner;
+use App\Models\Project_plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,9 +18,10 @@ class ApplyController extends Controller
      */
     public function profile()
     {
-        //
-        $apply = Project::select()->where('id',Auth()->id())->get();
-        return view('site.pages.dashboard',compact('apply'));
+        //Auth()->id()
+        $project = Project::select()->where('user_id',Auth()->id())->get();
+        $apply = Project_owner::select()->where('user_id',Auth()->id())->get();
+        return view('site.pages.dashboard',compact('apply','project'));
     }
     /**
      * Display a listing of the resource.

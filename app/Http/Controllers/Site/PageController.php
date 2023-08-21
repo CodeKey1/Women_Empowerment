@@ -12,6 +12,17 @@ class PageController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function training()
+    {
+        //
+
+        return view('site.pages.training');
+    }
+    public function training_details()
+    {
+        //
+        return view('site.pages.course-details');
+    }
     public function namazeg()
     {
         //
