@@ -132,6 +132,10 @@
             content: '';
             border-color: #94a0b4;
         }
+
+        #report {
+            display: none;
+        }
     </style>
 @endsection
 @section('profile')
@@ -202,7 +206,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="udb-sec udb-cour-stat">
+                    <div class="udb-sec udb-cour-stat" id="report">
                         <h4><img src="images/icon/db3.png" alt="" /> تقرير فرص نجاح مشروعك </h4>
                         <p> التقرير </p>
                         <div class="pro-con-table">
@@ -268,6 +272,7 @@
             }
             NetPresentValue += npv;
             ProfitIndecator = npv / ProfitIndecator;
+            document.getElementById("report").style.display = "block";
             /*=========================================================================*/
             /*====================printing result in html==============================*/
             /*=========================================================================*/
