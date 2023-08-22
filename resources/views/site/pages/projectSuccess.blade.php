@@ -269,6 +269,7 @@
             /*=========================================================================*/
             const flows = [-initialCost, cashFlows[0], cashFlows[1], cashFlows[2]];
             const irr = calculateIRR(flows) * 100;
+            console.log("irr = " + calculateIRR(flows))
             /*=========================================================================*/
             /*====================printing result in html==============================*/
             /*=========================================================================*/
@@ -336,7 +337,7 @@
 
         function calculateIRR(cashFlows) {
             const epsilon = 0.000001; // Desired precision
-            let irr = 0.1; // Initial guess for IRR
+            let irr = 0; // Initial guess for IRR
             let npv;
             do {
                 npv = 0;
