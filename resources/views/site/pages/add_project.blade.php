@@ -38,148 +38,166 @@
                             </ul>
                             <div class="tab-content">
                                 <div id="home" class="tab-pane fade {{ !session('active') ? 'in active' : null }}">
-                                    <form class="form-horizontal" style="font-family: system-ui;"
-                                        action="{{ route('project.store') }}" method="POST"enctype="multipart/form-data">
-                                        @csrf
-                                        <h4 style="text-align: center;"> بيانات رائدة الأعمال </h4>
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-3"> رقم القومي <span
-                                                        style="color: red">*</span></label>
-                                                <input type="number" class="form-control" name="nid" placeholder=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-3"> الإسم رباعي <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="name"
-                                                    placeholder="يرجي ادخال الإسم رباعي" required>
-                                            </div>
 
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-3"> البريد الإلكتروني </label>
-                                                <input type="email" class="form-control" name="email"
-                                                    placeholder="البريد الإلكتروني ان وجد">
+                                    @if (!App\Models\Project_owner::where('user_id',Auth::user()->id)->exists('user_id'))
+                                        <form class="form-horizontal" style="font-family: system-ui;"
+                                            action="{{ route('project.store') }}"
+                                            method="POST"enctype="multipart/form-data">
+                                            @csrf
+                                            <h4 style="text-align: center;"> بيانات رائدة الأعمال </h4>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-3"> رقم القومي <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="number" class="form-control" name="nid" placeholder=""
+                                                        required>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-3"> الإسم رباعي <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="text" class="form-control" name="name"
+                                                        placeholder="يرجي ادخال الإسم رباعي" required>
+                                                </div>
+
                                             </div>
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-3"> التليفون <span
-                                                        style="color: red">*</span></label>
-                                                <input type="number" class="form-control" name="phone" required>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-3"> البريد الإلكتروني </label>
+                                                    <input type="email" class="form-control" name="email"
+                                                        placeholder="البريد الإلكتروني ان وجد">
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-3"> التليفون <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="number" class="form-control" name="phone" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-3"> عنوان رائدة الأعمال (المدينة -
-                                                    العنوان) <span style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="address" placeholder=""
-                                                    required>
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-3"> عنوان رائدة الأعمال (المدينة -
+                                                        العنوان) <span style="color: red">*</span></label>
+                                                    <input type="text" class="form-control" name="address" placeholder=""
+                                                        required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-3"> الرغبة في الحصول على تمويل
-                                                    <span style="color: red">*</span></label>
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-3"> الرغبة في الحصول على تمويل
+                                                        <span style="color: red">*</span></label>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <input type="radio" id="yes" name="fund" value="1"
+                                                        required>
+                                                    <label for="yes"> نعم </label>
+                                                    <input type="radio" id="no" name="fund" value="0">
+                                                    <label for="no">لا </label>
+                                                </div>
                                             </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input type="radio" id="yes" name="fund" value="1" required>
-                                                <label for="yes"> نعم </label>
-                                                <input type="radio" id="no" name="fund" value="0">
-                                                <label for="no">لا </label>
+                                            <div class="row">
+                                                {{-- <a data-toggle="tab" class="btn btn-danger">عودة</a> --}}
+                                                <button type="submit" name="formType" value="initial"
+                                                    class="btn">حفظ -
+                                                    التالي</button>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            {{-- <a data-toggle="tab" class="btn btn-danger">عودة</a> --}}
-                                            <button type="submit" name="formType" value="initial" class="btn">حفظ -
-                                                التالي</button>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    @else
+                                        <h4 style="text-align: center;color:green">تم تسجيل ! بيانات رائدة الأعمال </h4>
+                                    @endif
                                 </div>
+
+
                                 <div id="menu1"
                                     class="tab-pane fade tab {{ session('menu1_active') ? 'in active' : null }}">
-                                    <form class="form-horizontal" style="font-family: system-ui;"
-                                        action="{{ route('project.store') }}"
-                                        method="POST"enctype="multipart/form-data">
-                                        @csrf
-                                        <h4 style="text-align: center;"> بيانات المشروع </h4>
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-3"> اسم المشروع <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="name" required>
-                                                <input type="text" class="form-control" name="owner_id"
-                                                    value=" {{ Auth::user()->id }}" style="display: none;">
+                                    @if (!App\Models\Project::where('user_id',Auth::user()->id)->exists('user_id'))
+                                        <form class="form-horizontal" style="font-family: system-ui;"
+                                            action="{{ route('project.store') }}"
+                                            method="POST"enctype="multipart/form-data">
+                                            @csrf
+                                            <h4 style="text-align: center;"> بيانات المشروع </h4>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-3"> اسم المشروع <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="text" class="form-control" name="name" required>
+                                                    <input type="text" class="form-control" name="owner_id"
+                                                        value=" {{ Auth::user()->id }}" style="display: none;">
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-3"> مجال المشروع <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="text" class="form-control" name="category"
+                                                        placeholder="" required>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-3"> مجال المشروع <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="category"
-                                                    placeholder="" required>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> ملخص فكرة المشروع <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="text" class="form-control" name="idea" required>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> تاريخ البدء المتوقع <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="date" class="form-control" name="date" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> ملخص فكرة المشروع <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="idea" required>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-3"> أهداف المشروع <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="text" class="form-control" name="goal" required>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> التخطيط والابتكار في المشروع
+                                                        <span style="color: red">*</span></label>
+                                                    <input type="text" name="innovation" class="form-control"
+                                                        required>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> تاريخ البدء المتوقع <span
-                                                        style="color: red">*</span></label>
-                                                <input type="date" class="form-control" name="date" required>
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> كيف يولد المشروع مستقبل اكثر
+                                                        خضرة
+                                                        واستدامه <span style="color: red">*</span></label>
+                                                    <textarea class="form-control" name="future" cols="5" rows="5" required></textarea>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-3"> ذكاء المشروع <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="text" class="form-control" name="smart" required>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> الاثر المتوقع للمشروع <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="text" class="form-control" name="trail" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-3"> أهداف المشروع <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="goal" required>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> الموقع الألكتروني للمشروع
+                                                    </label>
+                                                    <input type="text" name="email" class="form-control">
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> مقر تنفيذ المشروع <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="text" name="location" class="form-control" required>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> التخطيط والابتكار في المشروع
-                                                    <span style="color: red">*</span></label>
-                                                <input type="text" name="innovation" class="form-control" required>
+                                            <div class="row">
+                                                <a data-toggle="tab" class="btn btn-danger" href="#home">عودة</a>
+                                                <button type="submit" name="formType" value="projectInitial"
+                                                    class="btn">حفظ -
+                                                    التالي</button>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> كيف يولد المشروع مستقبل اكثر خضرة
-                                                    واستدامه <span style="color: red">*</span></label>
-                                                <textarea class="form-control" name="future" cols="5" rows="5" required></textarea>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-3"> ذكاء المشروع <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="smart" required>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> الاثر المتوقع للمشروع <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" class="form-control" name="trail" required>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> الموقع الألكتروني للمشروع </label>
-                                                <input type="text" name="email" class="form-control">
-                                            </div>
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> مقر تنفيذ المشروع <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" name="location" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <a data-toggle="tab" class="btn btn-danger" href="#home">عودة</a>
-                                            <button type="submit" name="formType" value="projectInitial"
-                                                class="btn">حفظ -
-                                                التالي</button>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    @else
+                                        <h4 style="text-align: center;color:green">تم تسجيل !   بيانات المشروع  </h4>
+                                    @endif
                                 </div>
                                 <div id="menu2"
                                     class="tab-pane fade tab {{ session('menu2_active') ? 'in active' : null }}">
+                                    @if (!App\Models\Project_risk::where('user_id',Auth::user()->id)->exists('user_id'))
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -219,9 +237,13 @@
                                                 التالي</button>
                                         </div>
                                     </form>
+                                    @else
+                                        <h4 style="text-align: center;color:green">تم تسجيل ! المخاطر المحتملة للمشروع    </h4>
+                                    @endif
                                 </div>
                                 <div id="drasa"
                                     class="tab-pane fade tab {{ session('drasa_active') ? 'in active' : null }}">
+                                    @if (!App\Models\Project_study::where('user_id',Auth::user()->id)->exists('user_id'))
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -267,9 +289,14 @@
                                                 التالي</button>
                                         </div>
                                     </form>
+                                    @else
+                                        <h4 style="text-align: center;color:green">تم تسجيل ! دراسة جدوى المشروع   </h4>
+                                    @endif
                                 </div>
                                 <div id="plan"
                                     class="tab-pane fade tab {{ session('plan_active') ? 'in active' : null }}">
+                                    @if (!App\Models\Project_Plan::where('user_id',Auth::user()->id)->exists('user_id'))
+
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -320,9 +347,14 @@
                                                 التالي</button>
                                         </div>
                                     </form>
+                                    @else
+                                        <h4 style="text-align: center;color:green">تم تسجيل !   خطة المشروع  </h4>
+                                    @endif
                                 </div>
                                 <div id="template"
                                     class="tab-pane fade tab {{ session('template_active') ? 'in active' : null }}">
+                                    @if (!App\Models\Project_form::where('user_id',Auth::user()->id)->exists('user_id'))
+
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -391,9 +423,14 @@
                                                 التالي</button>
                                         </div>
                                     </form>
+                                    @else
+                                        <h4 style="text-align: center;color:green">تم تسجيل !  نموذج العمل   </h4>
+                                    @endif
                                 </div>
                                 <div id="mosher"
                                     class="tab-pane fade tab {{ session('mosher_active') ? 'in active' : null }}">
+                                    @if (!App\Models\Project_performane::where('user_id',Auth::user()->id)->exists('user_id'))
+
                                     <form class="form-horizontal" style="font-family: system-ui;"
                                         action="{{ route('project.store') }}"
                                         method="POST"enctype="multipart/form-data">
@@ -439,6 +476,9 @@
                                                 التالي</button>
                                         </div>
                                     </form>
+                                    @else
+                                        <h4 style="text-align: center;color:green">تم تسجيل !  مؤشرات أداء المشروع  </h4>
+                                    @endif
                                 </div>
                             </div>
                         </div>

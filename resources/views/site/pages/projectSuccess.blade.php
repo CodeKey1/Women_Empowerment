@@ -336,7 +336,7 @@
 
         function calculateIRR(cashFlows) {
             const epsilon = 0.000001; // Desired precision
-            let irr = 0.1; // Initial guess for IRR
+            let irr = 0.000001; // Initial guess for IRR
             let npv;
             do {
                 npv = 0;

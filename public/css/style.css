@@ -2355,6 +2355,8 @@ li {
 .pro-con-table td {
     padding: 10px;
     font-size: 13px;
+    text-align: center;
+    border-bottom: 1px solid #000;
 }
 .pro-edit {
     background: #203245;
