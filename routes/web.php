@@ -61,5 +61,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/back', [App\Http\Controllers\Admin\AdminController::class, 'back'])->name('back');
     Route::get('/all_apply', [App\Http\Controllers\Admin\ApplyController::class, 'index'])->name('admin.apply');
     Route::get('/mopadra', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara'])->name('admin.mopdara');
+    Route::get('/n-project', [App\Http\Controllers\Admin\AdminController::class, 'old_project'])->name('admin.oldproject');
+    Route::get('/courses', [App\Http\Controllers\Admin\AdminController::class, 'courses'])->name('admin.courses');
+    Route::get('/courses_create', [App\Http\Controllers\Admin\AdminController::class, 'coursescreate'])->name('admin.courses.create');
+    Route::post('/courses_store', [App\Http\Controllers\Admin\AdminController::class, 'courses_store'])->name('admin.courses.store');
+    Route::get('/n-project-create', [App\Http\Controllers\Admin\AdminController::class, 'create'])->name('admin.oldproject.create');
+    Route::post('/n-project-store', [App\Http\Controllers\Admin\AdminController::class, 'store'])->name('admin.oldproject.store');
     Route::get('/user_apply{id}', [App\Http\Controllers\Admin\ApplyController::class, 'show'])->name('admin.apply.show');
 });

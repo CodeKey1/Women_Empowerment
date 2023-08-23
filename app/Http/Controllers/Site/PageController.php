@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use App\Models\Guide_Women;
 use App\Models\Project;
 use App\Models\Project_owner;
@@ -12,6 +13,7 @@ use App\Models\Project_Plan;
 use App\Models\Project_form;
 use App\Models\Project_performane;
 use App\Models\Mobadrat;
+use App\Models\Old_Project;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,8 +26,8 @@ class PageController extends Controller
     public function training()
     {
         //
-
-        return view('site.pages.training');
+        $courses = Course::select()->get();
+        return view('site.pages.training',compact('courses'));
     }
     public function successIndex()
     {
@@ -49,8 +51,8 @@ class PageController extends Controller
     {
         //
         $guide = Guide_Women::select()->get();
-        $mopadarat = Mobadrat::select()->get();
-        return view('site.pages.namazeg_project');
+        $old_project = Old_Project::select()->get();
+        return view('site.pages.namazeg_project',compact('old_project'));
     }
     /**
      * Display a listing of the resource.

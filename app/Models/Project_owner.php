@@ -24,8 +24,8 @@ class Project_owner extends Model
         'updated_at',
     ];
 
-    public function project_name(){
+    public function UserID(){
 
-        return  $this->belongsTo(Project::class ,'project_id');
+        return  $this->belongsTo(User::class ,'user_id');
     }
 }
