@@ -19,5 +19,7 @@
 
         <li><a href="{{ route('admin.courses') }}" class="collapsible-header"><i class="fa fa-bullhorn" aria-hidden="true"></i> التدريب</a>
         </li>
+        <li><a href="{{ route('admin.data') }}" class="collapsible-header"><i class="fa fa-bullhorn" aria-hidden="true"></i> البيانات المفتوحة</a>
+        </li>
     </ul>
 </div>

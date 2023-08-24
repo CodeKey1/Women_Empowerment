@@ -6,7 +6,7 @@
         </li>
         <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> الرئيسية </a>
         </li>
-        <li class="active-bre"><a href="#"> الإحصائيات </a>
+        <li class="active-bre"><a href="#"> البيانات المفتوحة </a>
         </li>
 
     </ul>
@@ -14,7 +14,7 @@
     <!--== User Details ==-->
     <div>
 
-        <a href="{{ route('admin.oldproject.create') }}" class="ad-st-view" style=" "> اضافة نموذج جديد </a>
+        <a href="{{ route('admin.data.create') }}" class="ad-st-view" style=" "> اضافة بيانات مفتوحة جديد </a>
     </div>
 
     <div class="sb2-2-3">
@@ -22,7 +22,7 @@
             <div class="col-md-12">
                 <div class="box-inn-sp">
                     <div class="inn-title">
-                        <h4> نمازج المشاريع </h4>
+                        <h4> البيانات المفتوحة </h4>
                         <p> لرائدات أعمال </p>
                     </div>
                     <div class="tab-inn">
@@ -31,21 +31,19 @@
                                 <thead>
                                     <tr>
                                         <th> </th>
-                                        <th>الاسم</th>
-                                        <th>حذف</th>
+                                        <th>اسم البيان</th>
+                                        <th>تفاصيل</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @isset($old_project)
-                                        @foreach ($old_project as $num => $mopadras)
+                                    @isset($openData)
+                                        @foreach ($openData as $num => $data)
                                             <tr>
                                                 <td>{{ $num+1 }}
                                                 </td>
-                                                <td><a href="#"><span class="list-enq-name">{{ $mopadras->name }}</span></a>
+                                                <td><a href="#"><span class="list-enq-name">{{ $data->name }}</span></a>
                                                 </td>
-                                                <td><a href="{{ route('admin.oldproject.delete',$mopadras->id) }}" class="ad-st-view"> حذف </a></td>
-
-                                                
+                                                <td><a href="{{ route('admin.data.delete',$data->id) }}" class="ad-st-view"> حذف </a></td>
                                             </tr>
                                         @endforeach
                                     @endisset

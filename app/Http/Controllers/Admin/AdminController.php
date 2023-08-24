@@ -65,6 +65,12 @@ class AdminController extends Controller
             ]);
             return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
     }
+    public function courseDelete(string $id){
+        $course = Course::find($id);
+            $course->delete();
+            return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
+
+    }
     public function old_project()
     {
         //
@@ -99,6 +105,12 @@ class AdminController extends Controller
 
             ]);
             return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+
+    }
+    public function projectDelete(string $id){
+        $project = Old_Project::find($id);
+            $project->delete();
+            return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
 
     }
     public function show(string $id)

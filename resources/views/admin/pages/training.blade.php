@@ -43,7 +43,7 @@
                                                 </td>
                                                 <td><a href="#"><span class="list-enq-name">{{ $mopadras->name }}</span></a>
                                                 </td>
-                                                <td><a href="{{ route('admin.apply.show',$mopadras->id) }}" class="ad-st-view"> تعديل </a></td>
+                                                <td><a href="{{ route('admin.courses.delete',$mopadras->id) }}" class="ad-st-view"> حذف </a></td>
                                             </tr>
                                         @endforeach
                                     @endisset

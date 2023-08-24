@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Data;
 use App\Models\Guide_Women;
 use App\Models\Project;
 use App\Models\Project_owner;
@@ -79,8 +80,8 @@ class PageController extends Controller
     public function Data()
     {
         //
-        //$mopadarat = Mobadrat::select()->get();
-        return view('site.pages.openData');
+        $data = Data::select()->get();
+        return view('site.pages.openData',compact('data'));
     }
     /**
      * Display a listing of the resource.
@@ -172,5 +173,6 @@ class PageController extends Controller
     public function destroy(string $id)
     {
         //
+
     }
 }
