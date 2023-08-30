@@ -55,7 +55,7 @@
                                     <div class="cor-p4">
                                         <h3>عرض تقديمي</h3>
                                         @if ($item->video)
-                                            <video src="{{ $item->video }}" width="100%"></video>
+                                            <video src="{{ $item->video }}" controls autoplay muted width="100%"></video>
                                         @endif
                                         <br>
                                         @if ($item->presentation)
