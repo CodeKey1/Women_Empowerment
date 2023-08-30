@@ -11,7 +11,6 @@ class Courese_detail extends Model
     protected $table  = 'courese_detail';
     protected $fillable = [
         'course_id',
-        'details',
         'pre_req',
         'description',
         'for_whom',
