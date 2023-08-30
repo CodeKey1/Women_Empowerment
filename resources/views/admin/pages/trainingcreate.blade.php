@@ -32,28 +32,28 @@
                         @csrf
                             <div class="row">
                                 <div class="input-field col s12">
+                                    <label class="control-label"> اسم التدريب المشروع </label>
                                     <input type="text" name="name" class="validate" required >
-                                    <label class=""> اسم التدريب المشروع </label>
                                 </div>
                                 <div class="input-field col s12">
+                                    <label class="control-label"> تفاصيل التدريب </label>
                                     <textarea name="details" class="validate" required ></textarea>
-                                    <label > تفاصيل التدريب </label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <label class=""> معاد التدريب </label>
+                                    <label class="control-label"> معاد التدريب </label>
                                     <input type="date" name="date" class="validate" required >
                                 </div>
                                 <div class="input-field col s6">
-                                    <label class=""> تخصص التدريب </label>
+                                    <label class="control-label"> تخصص التدريب </label>
                                     <input type="text" name="cat" class="validate" required >
                                 </div>
 
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <label class=""> صورة للتدريب </label>
+                                    <label class="control-label"> صورة للتدريب </label>
                                     <input type="file" name="image[]" class="validate" required >
                                 </div>
 

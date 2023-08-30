@@ -6,12 +6,11 @@
             <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
                 <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
                 <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
-                <a href="{{ route('site') }}" class="logo"><img src="images/3.jpeg" alt="" />
+                <a href="{{ route('site') }}" class="logo"><img src="images/3.jpeg" alt="" style="width: 50px;"/>
                 </a>
             </div>
             <!--== SEARCH ==-->
             <div class="col-md-6 col-sm-6 mob-hide">
-
             </div>
             <!--== NOTIFICATION ==-->
             <div class="col-md-2 tab-hide">
@@ -19,7 +18,6 @@
 
                 </div>
             </div>
-
         </div>
     </div>
     <div class="container-fluid sb2">
