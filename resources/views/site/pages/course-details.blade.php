@@ -16,7 +16,6 @@
                                     <div class="cor-p1">
                                         <h2>تفاصيل التدريب</h2>
                                         <span>كل ما تحتاجه للتدريب</span>
-                                        <p>{{ $item->details }}</p>
                                     </div>
                                     <div class="cor-p4">
                                         <h3>متطلبات التدريب</h3>
