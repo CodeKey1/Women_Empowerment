@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Courese_detail;
 use App\Models\Course;
 use App\Models\Old_Project;
 use App\Models\Project_owner;
@@ -55,12 +56,35 @@ class AdminController extends Controller
             $upload[] = '';
         }
 
-        Course::create([
+
+        $course = Course::create([
                 "name" => $request['name'],
                 "details" => $request['details'],
                 "date" => $request['date'],
                 "cat" => $request['cat'],
                 "image" => implode('|', $upload),
+
+            ]);
+            $file = [];
+            if ($files = $request->file('video')) {
+                foreach ($files as $file) {
+                    $ext = strtolower($file->getClientOriginalName());
+                    $file_name = time() . '.' . $ext;
+                    $path = 'images/course';
+                    $file->move($path, $file_name);
+                    $video[] = $file_name;
+                }
+            } else {
+                $video[] = '';
+            }
+        Courese_detail::create([
+                "course_id" => $course->id,
+                "pre_req" => $request['pre_req'],
+                "description" => $request['description'],
+                "for_whom" => $request['for_whom'],
+                "location" => $request['location'],
+                "presentation" => $request['presentation'],
+                "video" => implode('|', $video)
 
             ]);
             return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);

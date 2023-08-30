@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="input-field col s6">
                                         <label class=""> لمن هذا التدريب</label>
-                                        <textarea name="details_all" cols="30" rows="10" class="validate" required></textarea>
+                                        <textarea name="for_whom" cols="30" rows="10" class="validate" required></textarea>
                                     </div>
                                     <div class="input-field col s6">
                                         <label class=""> مكان التدريب</label>
@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="input-field col s6">
                                         <label class=""> فيديو التدريب (ان وجد)</label>
-                                        <input type="file" name="video" class="validate">
+                                        <input type="file" name="video[]" class="validate">
                                     </div>
                                     <div class="input-field col s6">
                                         <label class=""> عرض تقديمي (ان وجد)</label>
