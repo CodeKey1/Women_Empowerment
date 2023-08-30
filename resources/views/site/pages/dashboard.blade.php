@@ -334,7 +334,7 @@
                                                 <td>{{ $projects->created_at->format('Y-d-m') }}</td>
                                                 <td>{{ $projects->category }}</td>
                                                 <td><span class="pro-edit">جاري</span></td>
-                                                <td><a href="#" class="ad-st-view"> عرض </a></td>
+                                                <td><a href="{{ route('viewProject') }}" class="ad-st-view"> عرض </a></td>
                                             </tr>
                                         @endforeach
                                     @endisset

@@ -24,13 +24,17 @@
                                 </thead>
 
                                 <tbody>
+                                    @isset($data)
+                                        @foreach ($data as $num => $dataopen)
                                     <tr>
-                                        <td style="text-align: center"> .. </td>
-                                        <td style="text-align: center"> .. </td>
-                                        <td style="text-align: center"> .. </td>
-                                        <td style="text-align: center"> .. </td>
-                                        <td style="text-align: center"><a href="#" class="ad-st-view"> عرض </a></td>
+                                        <td style="text-align: center"> {{ $num+1 }} </td>
+                                        <td style="text-align: center"> {{ $dataopen->name }} </td>
+                                        <td style="text-align: center"> {{ $dataopen->type }} </td>
+                                        <td style="text-align: center"> {{ $dataopen->date }} </td>
+                                        <td style="text-align: center"><a href="{{ URL::to('images/data/' . $dataopen->file) }}" class="ad-st-view"> عرض </a></td>
                                     </tr>
+                                    @endforeach
+                                    @endisset
                                 </tbody>
                             </table>
                         </div>

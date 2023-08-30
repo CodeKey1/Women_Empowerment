@@ -3,9 +3,21 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
+use App\Models\Data;
 use App\Models\Guide_Women;
+use App\Models\Project;
+use App\Models\Project_owner;
+use App\Models\Project_risk;
+use App\Models\Project_study;
+use App\Models\Project_Plan;
+use App\Models\Project_form;
+use App\Models\Project_performane;
 use App\Models\Mobadrat;
+use App\Models\Old_Project;
+use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -15,8 +27,8 @@ class PageController extends Controller
     public function training()
     {
         //
-
-        return view('site.pages.training');
+        $courses = Course::select()->get();
+        return view('site.pages.training',compact('courses'));
     }
     public function successIndex()
     {
@@ -24,10 +36,11 @@ class PageController extends Controller
 
         return view('site.pages.projectSuccess');
     }
-    public function training_details()
+    public function training_details(string $id)
     {
         //
-        return view('site.pages.course-details');
+        $courses = Course::select()->find($id);
+        return view('site.pages.course-details',compact('courses'));
     }
     public function namazeg()
     {
@@ -40,8 +53,8 @@ class PageController extends Controller
     {
         //
         $guide = Guide_Women::select()->get();
-        $mopadarat = Mobadrat::select()->get();
-        return view('site.pages.namazeg_project');
+        $old_project = Old_Project::select()->get();
+        return view('site.pages.namazeg_project',compact('old_project'));
     }
     /**
      * Display a listing of the resource.
@@ -68,8 +81,24 @@ class PageController extends Controller
     public function Data()
     {
         //
-        //$mopadarat = Mobadrat::select()->get();
-        return view('site.pages.openData');
+        $data = Data::select()->get();
+        return view('site.pages.openData',compact('data'));
+    }
+    /**
+     * Display a listing of the resource.
+     */
+    public function viewProject()
+    {
+        //
+        $type = Type::select()->get();
+        $Project_owner = Project_owner::select()->where('user_id',Auth::user()->id)->get();
+        $Project = Project::select()->where('user_id',Auth::user()->id)->get();
+        $Project_risk = Project_risk::select()->where('user_id',Auth::user()->id)->get();
+        $Project_study = Project_study::select()->where('user_id',Auth::user()->id)->get();
+        $Project_Plan = Project_Plan::select()->where('user_id',Auth::user()->id)->get();
+        $Project_form = Project_form::select()->where('user_id',Auth::user()->id)->get();
+        $Project_performane = Project_performane::select()->where('user_id',Auth::user()->id)->get();
+        return view('site.pages.viewProject', compact('type','Project_owner','Project','Project_risk','Project_study','Project_Plan','Project_form','Project_performane'));
     }
     /**
      * Display a listing of the resource.
@@ -145,5 +174,6 @@ class PageController extends Controller
     public function destroy(string $id)
     {
         //
+
     }
 }

@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wed-logo">
-                            <a href="{{ route('site') }}"><img src="images/3.jpeg" alt="" />
+                            <a href="{{ route('site') }}"><img src="images/women.png" alt="" style="width: 50px;" />
                             </a>
                         </div>
                         <div class="main-menu">

@@ -12,12 +12,17 @@
     </ul>
 </div>
     <!--== User Details ==-->
+    <div>
+
+        <a href="{{ route('admin.oldproject.create') }}" class="ad-st-view" style=" "> اضافة نموذج جديد </a>
+    </div>
+
     <div class="sb2-2-3">
         <div class="row">
             <div class="col-md-12">
                 <div class="box-inn-sp">
                     <div class="inn-title">
-                        <h4> جميع المتقدمين</h4>
+                        <h4> نمازج المشاريع </h4>
                         <p> لرائدات أعمال </p>
                     </div>
                     <div class="tab-inn">
@@ -27,16 +32,20 @@
                                     <tr>
                                         <th> </th>
                                         <th>الاسم</th>
+                                        <th>حذف</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @isset($mopadra)
-                                        @foreach ($mopadra as $num => $mopadras)
+                                    @isset($old_project)
+                                        @foreach ($old_project as $num => $mopadras)
                                             <tr>
                                                 <td>{{ $num+1 }}
                                                 </td>
                                                 <td><a href="#"><span class="list-enq-name">{{ $mopadras->name }}</span></a>
                                                 </td>
+                                                <td><a href="{{ route('admin.oldproject.delete',$mopadras->id) }}" class="ad-st-view"> حذف </a></td>
+
+                                                
                                             </tr>
                                         @endforeach
                                     @endisset

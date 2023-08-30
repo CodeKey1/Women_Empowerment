@@ -30,7 +30,7 @@
                                         <th>الهاتف</th>
                                         <th>البريد الالكتروني</th>
                                         <th>المركز / المدينة</th>
-                                        <th> نوع المشروع </th>
+
                                         <th>الحالة</th>
                                         <th>عرض</th>
                                     </tr>
@@ -45,13 +45,11 @@
                                                 </td>
                                                 <td>{{ $applys->phone }}</td>
                                                 <td>{{ $applys->email }}</td>
-                                                <td>{{ $applys->city }}</td>
-                                                <td>{{ $applys->project_type->name }}</td>
-
+                                                <td>{{ $applys->address }}</td>
                                                 <td>
                                                     <span class="label label-success">فعال</span>
                                                 </td>
-                                                <td><a href="{{ route('admin.apply.show',$applys->id) }}" class="ad-st-view"> عرض </a></td>
+                                                <td><a href="{{ route('admin.apply.show',$applys->user_id) }}" class="ad-st-view"> عرض </a></td>
                                             </tr>
                                         @endforeach
                                     @endisset

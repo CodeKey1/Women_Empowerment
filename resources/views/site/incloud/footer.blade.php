@@ -251,6 +251,7 @@
              </div>
          </div>
          <!-- FORGOT SECTION -->
+         @yield('modal')
          <div id="modal3" class="modal fade" role="dialog">
              <div class="log-in-pop">
                  <div class="log-in-pop-right">
