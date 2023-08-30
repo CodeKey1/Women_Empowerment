@@ -53,7 +53,9 @@ document.getElementById("submit").addEventListener("click", async (e) => {
                 headers: {
                     "Content-Type": "application/json",
                     authorization: `Bearer kufgdi88unvuyt5467yvnio8ytow475ny6wo57i67nbinyo5w7i6n7y5o7w6i`,
-                    // "authorization": `Bearer ${apiKey}`
+                    // "authorization": `Bearer ${apiKey}`,
+                    // 'Access-Control-Allow-Origin':'*',
+                    // 'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
                 },
             });
             if (response.status < 300) {
