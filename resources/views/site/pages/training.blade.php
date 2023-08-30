@@ -30,7 +30,7 @@
                                                 <li><a href="course-details.html"><i class="fa fa-bar-chart"
                                                             aria-hidden="true"></i>
                                                         للحجز</a> </li>
-                                                <li><a href="{{ route('training.details') }}"><i class="fa fa-eye"
+                                                <li><a href="{{ route('training.details',$courses->id) }}"><i class="fa fa-eye"
                                                             aria-hidden="true"></i> تفاصيل التدريب </a> </li>
 
                                             </ul>

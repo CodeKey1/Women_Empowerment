@@ -36,10 +36,11 @@ class PageController extends Controller
 
         return view('site.pages.projectSuccess');
     }
-    public function training_details()
+    public function training_details(string $id)
     {
         //
-        return view('site.pages.course-details');
+        $courses = Course::select()->find($id);
+        return view('site.pages.course-details',compact('courses'));
     }
     public function namazeg()
     {

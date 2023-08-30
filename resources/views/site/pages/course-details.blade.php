@@ -14,33 +14,12 @@
                             <div class="cor-p1">
                                 <h2>Biological Sciences</h2>
                                 <span>Category: Software Testing</span>
-                                <div class="share-btn">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook fb1"></i> Share On Facebook</a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-twitter tw1"></i> Share On Twitter</a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-google-plus gp1"></i> Share On Google Plus</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                
                             </div>
                             <div class="cor-p4">
-                                <h3>Course Details:</h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some form, by injected humour, or randomised words which don't
-                                    look even slightly believable. If you are going
-                                    to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
-                                    hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to
-                                    repeat predefined chunks as necessary, making
-                                    this the first true generator on the Internet. It uses a dictionary of over 200 Latin
-                                    words, combined with a handful of model sentence structures, to generate Lorem Ipsum
-                                    which looks reasonable. The generated Lorem
-                                    Ipsum is therefore always free from repetition, injected humour, or non-characteristic
-                                    words etc.</p>
-                                <p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-                                    Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-                                    including versions of Lorem Ipsum.</p>
+                                <h3> تفاصيل التدريب :  </h3>
+                                <p>...</p>
+
                             </div>
                             <div class="cor-p5">
                                 <h3>Course Syllabus</h3>
