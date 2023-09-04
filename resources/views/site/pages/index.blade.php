@@ -221,7 +221,7 @@
                                             <div class="ho-ev-date"><span>{{ $num + 1 }}</span><span></span>
                                             </div>
                                             <div class="ho-ev-link" style="width: 75%;">
-                                                <a href="events.html">
+                                                <a href="#">
                                                     <h4> {{ $guides->name }}</h4>
                                                 </a>
                                                 <p>{{ $guides->description }}</p>
@@ -247,7 +247,7 @@
                                             <div class="ho-ev-date"><span>{{ $num + 1 }}</span><span></span>
                                             </div>
                                             <div class="ho-ev-link" style="width: 75%;">
-                                                <a href="events.html">
+                                                <a href="#">
                                                     <h4> {{ $Mopadarat->name }}</h4>
                                                 </a>
                                                 <p>{{ $Mopadarat->description }}</p>
@@ -326,7 +326,7 @@
                                     <div class="ho-ev-date"><span>07</span><span>jan,2018</span>
                                     </div>
                                     <div class="ho-ev-link">
-                                        <a href="events.html">
+                                        <a href="#">
                                             <h4>Latinoo College Expo 2018</h4>
                                         </a>
                                         <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
@@ -337,7 +337,7 @@
                                     <div class="ho-ev-date"><span>12</span><span>jan,2018</span>
                                     </div>
                                     <div class="ho-ev-link">
-                                        <a href="events.html">
+                                        <a href="#">
                                             <h4>Training at Team Fabio Clemente</h4>
                                         </a>
                                         <p>Nulla at velit convallis venenatis.</p>
@@ -348,7 +348,7 @@
                                     <div class="ho-ev-date"><span>26</span><span>jan,2018</span>
                                     </div>
                                     <div class="ho-ev-link">
-                                        <a href="events.html">
+                                        <a href="#">
                                             <h4>Nulla at velit convallis</h4>
                                         </a>
                                         <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
@@ -359,7 +359,7 @@
                                     <div class="ho-ev-date"><span>18</span><span>jan,2018</span>
                                     </div>
                                     <div class="ho-ev-link">
-                                        <a href="events.html">
+                                        <a href="#">
                                             <h4>Admissions Information Session and Tour</h4>
                                         </a>
                                         <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>

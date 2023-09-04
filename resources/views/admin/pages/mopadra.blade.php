@@ -11,6 +11,10 @@
 
     </ul>
 </div>
+<div>
+
+    <a href="{{ route('admin.data.create') }}" class="ad-st-view" style=" "> اضافة  مبادرة جديدة جديد </a>
+</div>
     <!--== User Details ==-->
     <div class="sb2-2-3">
         <div class="row">
