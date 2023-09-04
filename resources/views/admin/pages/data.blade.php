@@ -39,11 +39,13 @@
                                     @isset($openData)
                                         @foreach ($openData as $num => $data)
                                             <tr>
-                                                <td>{{ $num+1 }}
+                                                <td>{{ $num+1 }}</td>
+                                                <td><a href="#"><span class="list-enq-name">{{ $data->name }}</span></a></td>
+                                                <td>
+                                                    <a href="{{ route('admin.data.delete',$data->id) }}" class="ad-st-view"> حذف </a>
+                                                    <a href="{{ route('admin.data.edit',$data->id) }}" class="ad-st-view"> تعديل </a>
                                                 </td>
-                                                <td><a href="#"><span class="list-enq-name">{{ $data->name }}</span></a>
-                                                </td>
-                                                <td><a href="{{ route('admin.data.delete',$data->id) }}" class="ad-st-view"> حذف </a></td>
+
                                             </tr>
                                         @endforeach
                                     @endisset

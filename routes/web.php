@@ -66,6 +66,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/courses_create', [App\Http\Controllers\Admin\AdminController::class, 'coursescreate'])->name('admin.courses.create');
     Route::post('/courses_store', [App\Http\Controllers\Admin\AdminController::class, 'courses_store'])->name('admin.courses.store');
     Route::get('/courses_delete{id}', [App\Http\Controllers\Admin\AdminController::class, 'courseDelete'])->name('admin.courses.delete');
+    Route::get('/courses_edit{id}', [App\Http\Controllers\Admin\AdminController::class, 'edit'])->name('admin.courses.edit');
+    Route::post('/courses_update{id}', [App\Http\Controllers\Admin\AdminController::class, 'course_update'])->name('admin.courses.update');
     Route::get('/n-project-create', [App\Http\Controllers\Admin\AdminController::class, 'create'])->name('admin.oldproject.create');
     Route::post('/n-project-store', [App\Http\Controllers\Admin\AdminController::class, 'store'])->name('admin.oldproject.store');
     Route::post('/n-project-update{id}', [App\Http\Controllers\Admin\AdminController::class, 'update'])->name('admin.oldproject.update');
@@ -75,5 +77,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/opendata_create', [App\Http\Controllers\Admin\DataController::class, 'create'])->name('admin.data.create');
     Route::post('/opendata_store', [App\Http\Controllers\Admin\DataController::class, 'store'])->name('admin.data.store');
     Route::get('/opendata_delete{id}', [App\Http\Controllers\Admin\DataController::class, 'destroy'])->name('admin.data.delete');
+    Route::get('/opendata_edit{id}', [App\Http\Controllers\Admin\DataController::class, 'edit'])->name('admin.data.edit');
+    Route::post('/opendata_update{id}', [App\Http\Controllers\Admin\DataController::class, 'update'])->name('admin.data.update');
 
 });

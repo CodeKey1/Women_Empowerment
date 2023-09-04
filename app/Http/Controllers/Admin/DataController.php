@@ -15,7 +15,7 @@ class DataController extends Controller
     {
         //
         $openData = Data::select()->get();
-        return view('admin.pages.data',compact('openData'));
+        return view('admin.pages.data', compact('openData'));
     }
 
     /**
@@ -32,6 +32,7 @@ class DataController extends Controller
      */
     public function store(Request $request)
     {
+        try{
         //
         $file = [];
         if ($files = $request->file('file')) {
@@ -47,13 +48,16 @@ class DataController extends Controller
         }
 
         Data::create([
-                "name" => $request['name'],
-                "type" => $request['type'],
-                "date" => $request['date'],
-                "file" => implode('|', $upload),
+            "name" => $request['name'],
+            "type" => $request['type'],
+            "date" => $request['date'],
+            "file" => implode('|', $upload),
 
-            ]);
-            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        ]);
+        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+    }catch (\Exception $ex) {
+        return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+    }
     }
 
     /**
@@ -62,6 +66,7 @@ class DataController extends Controller
     public function show(string $id)
     {
         //
+
     }
 
     /**
@@ -70,6 +75,8 @@ class DataController extends Controller
     public function edit(string $id)
     {
         //
+        $data = Data::select()->find($id);
+        return view('admin.pages.data_edit', compact('data'));
     }
 
     /**
@@ -78,6 +85,31 @@ class DataController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        try{
+            $file = [];
+            if ($files = $request->file('file')) {
+                foreach ($files as $file) {
+                    $ext = strtolower($file->getClientOriginalName());
+                    $file_name = time() . '.' . $ext;
+                    $path = 'images/data';
+                    $file->move($path, $file_name);
+                    $upload[] = $file_name;
+                }
+            } else {
+                $upload[] = '';
+            }
+            $data = Data::where('id', $id)->update([
+                "name" => $request['name'],
+                "type" => $request['type'],
+                "date" => $request['date'],
+                "file" => implode('|', $upload),
+            ]);
+            return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+        }
+      catch (\Exception $ex) {
+        return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+    }
+
     }
 
     /**
@@ -87,7 +119,7 @@ class DataController extends Controller
     {
         //
         $data = Data::find($id);
-            $data->delete();
-            return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
+        $data->delete();
+        return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
     }
 }
