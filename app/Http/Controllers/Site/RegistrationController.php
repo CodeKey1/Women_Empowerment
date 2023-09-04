@@ -56,7 +56,7 @@ class RegistrationController extends Controller
                         "address" => $request['address'],
                         "fund" => $request['fund'],
                         "project_id" => $project,
-                        "user_id" => Auth::user()->id,
+                        "user_id" => $project,
 
                     ]);
 
@@ -76,7 +76,7 @@ class RegistrationController extends Controller
                         "email" => $request['email'],
                         "date" => $request['date'],
                         "owner_id" => $project,
-                        "user_id" => Auth::user()->id,
+                        "user_id" => $project,
 
                     ]);
                     return redirect()->route('project.create')->with('menu2_active',true)->with('active',true)->with(['success' => 'تم الحفظ بيانات المشروع بنجاح']);
@@ -89,7 +89,7 @@ class RegistrationController extends Controller
                         "evaluation" => $request['evaluation'],
                         "procedures" => $request['procedures'],
                         "project_id" => $project,
-                        "user_id" => Auth::user()->id,
+                        "user_id" => $project,
                     ]);
                     return redirect()->route('project.create')->with('drasa_active',true)->with('active',true)->with(['success' => 'تم الحفظ المخاطر المحتملة للمشروع الأعمال بنجاح']);
                     break;
@@ -101,7 +101,7 @@ class RegistrationController extends Controller
                         "competitive" => $request['competitive'],
                         "market" => $request['market'],
                         "project_id" => $project,
-                        "user_id" => Auth::user()->id,
+                        "user_id" => $project,
                     ]);
                     return redirect()->route('project.create')->with('plan_active',true)->with('active',true)->with(['success' => 'تم الحفظ  دراسة جدوى المشروع الأعمال بنجاح']);
                     break;
@@ -119,7 +119,7 @@ class RegistrationController extends Controller
                             "responsible" => $responsible[$i],
                             "follower" => $follower[$i],
                             "project_id" => $project,
-                            "user_id" => Auth::user()->id,
+                            "user_id" => $project,
                         ]);
                     }
                     return redirect()->route('project.create')->with('template_active',true)->with('active',true)->with(['success' => 'تم الحفظ  خطة المشروع الأعمال بنجاح']);
@@ -136,7 +136,7 @@ class RegistrationController extends Controller
                         "partners" => $request['partners'],
                         "cost" => $request['cost'],
                         "project_id" => $project,
-                        "user_id" => Auth::user()->id,
+                        "user_id" => $project,
                     ]);
                     return redirect()->route('project.create')->with('mosher_active',true)->with('active',true)->with(['success' => 'تم الحفظ  نموذج العمل الأعمال بنجاح']);
                     break;
@@ -154,7 +154,7 @@ class RegistrationController extends Controller
                             "target" => $target[$i],
                             "measurement" => $measurement[$i],
                             "project_id" => $project,
-                            "user_id" => Auth::user()->id,
+                            "user_id" => $project,
                         ]);
                     }
                     return redirect()->back()->with(['success' => 'تم الحفظ مؤشرات أداء المشروع بنجاح']);
