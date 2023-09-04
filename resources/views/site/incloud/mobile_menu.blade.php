@@ -17,8 +17,32 @@
 
                             <h4>الحساب الشخصي</h4>
                             <ul>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal1">تسجيل الدخول</a></li>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal2">تسجيل جديد</a></li>
+                                @guest
+
+                                    @if (Route::has('register'))
+                                        {{-- <li><a href="#!" data-toggle="modal" data-target="#modal2"> تسجيل </a>
+                                        </li> --}}
+                                        <li><a href="{{ route('register') }}"> تسجيل </a>
+                                        </li>
+                                    @endif
+                                    @if (Route::has('login'))
+                                        {{-- <li><a href="#!" data-toggle="modal" data-target="#modal1"> تسجيل الدخول </a>
+                                        </li> --}}
+                                        <li><a href="{{ route('login') }}"> تسجيل </a>
+                                        </li>
+                                    @endif
+                                @else
+                                    <li><a href="{{ route('profile') }}" data-toggle="modal"> مرحباً :
+                                            {{ Auth::user()->name }} </a>
+                                    </li>
+                                    <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                            تسجيل خروج </a>
+                                        <form action="{{ route('logout') }}" method="POST" id="logout-form">
+                                            @csrf
+                                        </form>
+                                    @endguest
+
                             </ul>
                             <h4>الصفحات</h4>
                             <ul>

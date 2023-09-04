@@ -44,18 +44,18 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="n-form-com admiss-form">
                     <div class="col s12">
-                        <form class="s12" method="POST" action="{{ route('login') }}">
+                        <form class="s12" method="POST" action="{{ route('login') }}" class="needs-validation">
                             @csrf
                             <div>
                                 <div class="input-field s12">
-                                    <input type="email" data-ng-model="name" name="email" class="validate">
                                     <label>البريد الالكتروني</label>
+                                    <input type="email" data-ng-model="name" name="email" class="validate">
                                 </div>
                             </div>
                             <div>
                                 <div class="input-field s12">
-                                    <input type="password" name="password" class="validate">
                                     <label>الرقم السري</label>
+                                    <input type="password" name="password" class="validate">
                                 </div>
                             </div>
                             <div dir="rtl">

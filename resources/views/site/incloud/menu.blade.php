@@ -10,11 +10,15 @@
                                 @guest
 
                                     @if (Route::has('register'))
-                                        <li><a href="#!" data-toggle="modal" data-target="#modal2"> تسجيل </a>
+                                        {{-- <li><a href="#!" data-toggle="modal" data-target="#modal2"> تسجيل </a>
+                                        </li> --}}
+                                        <li><a href="{{ route('register') }}"> تسجيل </a>
                                         </li>
                                     @endif
                                     @if (Route::has('login'))
-                                        <li><a href="#!" data-toggle="modal" data-target="#modal1"> تسجيل الدخول </a>
+                                        {{-- <li><a href="#!" data-toggle="modal" data-target="#modal1"> تسجيل الدخول </a>
+                                        </li> --}}
+                                        <li><a href="{{ route('login') }}"> تسجيل الدخول </a>
                                         </li>
                                     @endif
                                 @else
@@ -45,7 +49,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wed-logo">
-                            <a href="{{ route('site') }}"><img src="images/women.png" alt="" style="width: 50px;" />
+                            <a href="{{ route('site') }}"><img src="images/women.png" alt=""
+                                    style="width: 50px;" />
                             </a>
                         </div>
                         <div class="main-menu">
