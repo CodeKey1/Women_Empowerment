@@ -44,22 +44,19 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="n-form-com admiss-form">
                     <div class="col s12">
-                        <form class="s12" method="POST" action="{{ route('login') }}">
+                        <form class="s12" method="POST" action="{{ route('login') }}" class="needs-validation">
                             @csrf
-                            <!-- Email Address -->
-                            <div class="mt-4">
-                                <x-input-label for="email" :value="__('البريد الإلكتروني')" />
-                                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
-                                    :value="old('email')" required autocomplete="username" />
-                                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            <div>
+                                <div class="input-field s12">
+                                    <label>البريد الالكتروني</label>
+                                    <input type="email" data-ng-model="name" name="email" class="validate">
+                                </div>
                             </div>
-                            <div class="mt-4">
-                                <x-input-label for="password" :value="__('الرقم السري')" />
-
-                                <x-text-input id="password" class="block mt-1 w-full" type="password" name="password"
-                                    required autocomplete="new-password" />
-
-                                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                            <div>
+                                <div class="input-field s12">
+                                    <label>الرقم السري</label>
+                                    <input type="password" name="password" class="validate">
+                                </div>
                             </div>
                             <div dir="rtl">
                                 <div class="input-field s4">

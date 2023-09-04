@@ -76,7 +76,6 @@
                             </ul>
                             <div class="tab-content">
                                 <div id="home" class="tab-pane fade {{ !session('active') ? 'in active' : null }}">
-
                                     @if (!App\Models\Project_owner::where('user_id', Auth::user()->id)->exists('user_id'))
                                         <form class="form-horizontal" style="font-family: system-ui;"
                                             action="{{ route('project.store') }}"
@@ -241,8 +240,12 @@
                                             <h4> المخاطر المحتملة للمشروع </h4>
                                             <div class="row">
                                                 <div class="col-md-2 ">
-                                                    <input type="button" onClick="divideBy()" Value="التقيم" />
-                                                    </span><p>الاحتمالية: <span id="result"></span></p>
+                                                    <label class="control-label "> التقيم </label>
+                                                    <div class="slidecontainer">
+                                                        <input type="button" onClick="divideBy()" Value="حساب التقيم" />
+                                                        </span>
+                                                        <p>الاحتمالية: <span id="result"></span></p>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-2 ">
                                                     <label class="control-label "> الإحتمال <span
@@ -250,8 +253,9 @@
                                                     <div class="slidecontainer">
                                                         <input type="range" name="degree" min="1"
                                                             max="5" value="1" name="possibility"
-                                                            style="margin: 0" id="myRange1" >
-                                                        <p>الاحتمالية: <span id="demo1" onkeyup="calculate()"></span></p>
+                                                            style="margin: 0" id="myRange1">
+                                                        <p>الاحتمالية: <span id="demo1" onkeyup="calculate()"></span>
+                                                        </p>
                                                     </div>
 
                                                 </div>
@@ -316,8 +320,8 @@
                                                         placeholder="الموارد والقدرات الفنية المطلوبة لتطوير وإطلاق المنتج أو الخدمة" required></textarea>
                                                 </div>
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <label class="control-label col-sm-6"> رأس المال المستثمر تدفقات الايرادات المحتملة <span
-                                                            style="color: red">*</span></label>
+                                                    <label class="control-label col-sm-6"> رأس المال المستثمر تدفقات
+                                                        الايرادات المحتملة <span style="color: red">*</span></label>
                                                     <textarea class="form-control" name="finance" cols="5" rows="5"
                                                         placeholder="رأس المال المستثمر تدفقات الايرادات المحتملة" required></textarea>
                                                 </div>
@@ -684,15 +688,13 @@
             output1.innerHTML = this.value;
         }
 
-        function divideBy()
-        {
-          num1 = document.getElementById(
-            "myRange").value;
-          num2 = document.getElementById(
-            "myRange1").value;
-          document.getElementById(
-            "result").innerHTML = num1 * num2;
+        function divideBy() {
+            num1 = document.getElementById(
+                "myRange").value;
+            num2 = document.getElementById(
+                "myRange1").value;
+            document.getElementById(
+                "result").innerHTML = num1 * num2;
         }
-
     </script>
 @endsection
