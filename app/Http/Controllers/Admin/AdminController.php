@@ -10,6 +10,7 @@ use App\Models\Course;
 use App\Models\Old_Project;
 use App\Models\Project_owner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -80,13 +81,17 @@ class AdminController extends Controller
             } else {
                 $video[] = '';
             }
+            $presentation = "";
+            if ($request->file('presentation')) {
+                $presentation = Storage::disk('public')->put('tranning', $request->file('presentation'));
+            }
             Courese_detail::create([
                 "course_id" => $course->id,
                 "pre_req" => $request['pre_req'],
                 "description" => $request['description'],
                 "for_whom" => $request['for_whom'],
                 "location" => $request['location'],
-                "presentation" => $request['presentation'],
+                "presentation" => $presentation,
                 "video" => implode('|', $video)
 
             ]);
@@ -155,17 +160,15 @@ class AdminController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        try{
-            Project_owner::where('user_id',$id)->update([
+        try {
+            Project_owner::where('user_id', $id)->update([
                 "state" => $request['state'],
 
             ]);
             return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
-        }catch(\Exception $ex){
+        } catch (\Exception $ex) {
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
-
-
     }
     public function destroy(string $id)
     {

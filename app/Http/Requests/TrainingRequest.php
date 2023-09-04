@@ -28,13 +28,13 @@ class TrainingRequest extends FormRequest
             'date' => 'required',
             'cat' => 'required',
             'cat' => 'required|max:255',
-            'image' => 'required',
+            'image' => ['required', 'max:1024'],
             'pre_req' => 'required',
             'description' => 'required',
             'for_whom' => 'required',
             'location' => 'required',
-            'presentation' => 'required',
-            'video' => 'required',
+            'presentation' => ['max:2048', 'mimetypes:application/pdf'],
+            'video' => ['max:10000'],
         ];
     }
     public function messages()
@@ -48,12 +48,17 @@ class TrainingRequest extends FormRequest
             'cat' => ' الحقل مطلوب ',
             'cat.max' => '  اقصي حد للحروف 255  ',
             'image' => ' الحقل مطلوب ',
+            //'image.mimes' => ' صورة فقط',
             'pre_req' => ' الحقل مطلوب ',
             'description' => ' الحقل مطلوب ',
             'for_whom' => ' الحقل مطلوب ',
             'location' => ' الحقل مطلوب ',
             'presentation' => ' الحقل مطلوب ',
-            'video' => ' الحقل مطلوب ',
+            'presentation.max' => ' حجم الملف اكبر من المطلوب 2 ميجا بحد اقصى',
+            'presentation.mimetypes' => 'PDF فقط',
+            //'video' => ' الحقل مطلوب ',
+            //'video.max' => ' حجم الملف اكبر من المطلوب 5 ميجا بحد اقصى',
+            // 'video.mimetypes' => 'mp4 - mpeg فقط',
 
         ];
     }

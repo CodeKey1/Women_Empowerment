@@ -61,7 +61,7 @@
                                         @if ($item->presentation)
                                             <h3>عرض تقديمي</h3>
                                             <a class="btn" target="_blank"
-                                                href="{{ URL::to('images/course/' . $item->presentation) }}">تحميل
+                                                href="{{ URL::to('storage/' . $item->presentation) }}">تحميل
                                                 العرض
                                                 التقديمي PDF</a>
                                         @endif

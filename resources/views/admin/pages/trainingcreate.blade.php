@@ -33,14 +33,14 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <label class=""> اسم التدريب المشروع </label>
-                                        <input type="text" name="name" class="validate" >
+                                        <input type="text" name="name" class="validate" required>
                                         @error('name')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="input-field col s12">
                                         <label> تفاصيل التدريب المختصر</label>
-                                        <input type="text" name="details" class="validate" >
+                                        <input type="text" name="details" class="validate" required>
                                         @error('details')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -49,14 +49,14 @@
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <label class=""> معاد التدريب </label>
-                                        <input type="date" name="date" class="validate" >
+                                        <input type="date" name="date" class="validate" required>
                                         @error('date')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="input-field col s6">
                                         <label class=""> تخصص التدريب </label>
-                                        <input type="text" name="cat" class="validate" >
+                                        <input type="text" name="cat" class="validate" required>
                                         @error('cat')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -66,7 +66,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <label class=""> صورة للتدريب </label>
-                                        <input type="file" name="image[]" class="validate" >
+                                        <input type="file" name="image[]" class="validate" required>
                                         @error('image')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -80,34 +80,34 @@
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <label class=""> متطلبات التدريب</label>
-                                        <textarea name="pre_req" cols="30" rows="10" class="validate" ></textarea>
+                                        <textarea name="pre_req" cols="30" rows="10" class="validate" required></textarea>
                                         @error('pre_req')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="input-field col s6">
                                         <label class=""> وصف التدريب</label>
-                                        <textarea name="description" cols="30" rows="10" class="validate" ></textarea>
+                                        <textarea name="description" cols="30" rows="10" class="validate" required></textarea>
                                         @error('description')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="input-field col s6">
                                         <label class=""> لمن هذا التدريب</label>
-                                        <textarea name="for_whom" cols="30" rows="10" class="validate" ></textarea>
+                                        <textarea name="for_whom" cols="30" rows="10" class="validate" required></textarea>
                                         @error('for_whom')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="input-field col s6">
                                         <label class=""> مكان التدريب</label>
-                                        <textarea name="location" cols="30" rows="10" class="validate" ></textarea>
+                                        <textarea name="location" cols="30" rows="10" class="validate" required></textarea>
                                         @error('location')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="input-field col s6">
-                                        <label class=""> فيديو التدريب (ان وجد)</label>
+                                        <label class=""> فيديو التدريب (ان وجد) <span></span></label>
                                         <input type="file" name="video[]" class="validate">
                                         @error('video')
                                             <span class="text-danger">{{ $message }}</span>
