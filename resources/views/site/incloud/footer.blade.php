@@ -74,8 +74,7 @@
                  <div class="col-md-4 foot-tc-mar-t-o">
                      <h4> العنوان </h4>
                      <p> أسوان ديوان عام المحافظة </p>
-                     <p>الهاتف: <a href="#!">+101-1231-4321</a></p>
-                     <p>البريد: <a href="#!">info@edu.com</a></p>
+                     <p>الهاتف: <a href="#!">+20 97 2483112</a></p>
                  </div>
                  {{-- <div class="col-md-4">
                     <h4>DOWNLOAD OUR FREE MOBILE APPS</h4>
@@ -89,16 +88,13 @@
                  <div class="col-md-4">
                      <h4> التواصل الإجتماعي</h4>
                      <ul>
-                         <li><a href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                         <li><a href="https://www.facebook.com/aswan.gov.eg?mibextid=ZbWKwL" target="_blank"><i
+                                     class="fa fa-facebook" aria-hidden="true"></i></a>
                          </li>
-                         <li><a href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                         <li><a href="https://www.youtube.com/@AswanGovernorate" target="_blank"><i
+                                     class="fa fa-youtube" aria-hidden="true"></i></a>
                          </li>
-                         <li><a href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                         </li>
-                         <li><a href="#!"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-                         </li>
-                         <li><a href="#!"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-                         </li>
+
                      </ul>
                  </div>
              </div>
@@ -115,180 +111,7 @@
              </div>
          </div>
      </section>
-     <!--SECTION LOGIN, REGISTER AND FORGOT PASSWORD-->
-     <section>
-         <!-- LOGIN SECTION -->
-         {{-- <div id="modal1" class="modal fade" role="dialog">
-             <div class="log-in-pop">
-                 <div class="log-in-pop-right" dir="rtl">
-                     <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png"
-                             alt="" />
-                     </a>
-                     <h4>تسجيل الدخول</h4>
-                     <form class="s12" method="POST" action="{{ route('login') }}" class="needs-validation">
-                         @csrf
-                         <div>
-                             <div class="input-field s12">
-                                 <label>البريد الالكتروني</label>
-                                 <input type="email" data-ng-model="name" name="email" class="validate" required>
-                             </div>
-                         </div>
-                         <div>
-                             <div class="input-field s12">
-                                 <label>الرقم السري</label>
-                                 <input type="password" name="password" class="validate" required>
-                             </div>
-                         </div>
-                         <div dir="rtl">
-                             <div class="input-field s4">
-                                 <input type="submit" value="تسجيل الدخول" class="waves-effect waves-light log-in-btn">
-                             </div>
-                         </div>
-                         <div>
-                             <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal"
-                                     data-target="#modal3">نسيت كلمة السر</a> | <a href="#" data-dismiss="modal"
-                                     data-toggle="modal" data-target="#modal2">انشاء حساب جديد</a> </div>
-                         </div>
-                     </form>
-                 </div>
-             </div>
-         </div> --}}
-         <!-- REGISTER SECTION -->
-         {{-- <div id="modal2" class="modal fade" dir="rtl" role="dialog">
-             <div class="log-in-pop">
-                 <form method="POST" action="{{ route('register') }}" class="needs-validation"
-                     onsubmit="return confirmSubmit()">
-                     @csrf
-                     <div class="log-in-pop-right">
-                         <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png"
-                                 alt="" />
-                         </a>
-                         <h4>تسجيل جديد</h4>
-                         <p>ستأخد بضع ثواني لانشاء حساب جديد</p>
-                         <div>
-                             <div class="input-field s12">
-                                 <label>اسم المستخدم</label>
-                                 <input type="text" data-ng-model="name" name="name" class="validate"
-                                     required>
-                             </div>
-                         </div>
-                         <div>
-                             <div class="input-field s12">
-                                 <label>البريد الالكتروني</label>
-                                 <input type="email" name="email" class="validate" required>
-                             </div>
-                         </div>
-                         <div>
-                             <div class="input-field s12">
-                                 <label>الرقم السري</label>
-                                 <input type="password" class="validate" name="password" required>
-                             </div>
-                         </div>
-                         <div>
-                             <div class="input-field s12">
-                                 <label>تأكيد الرقم السري</label>
-                                 <input type="password" class="validate" name="password_confirmation" required>
-                             </div>
-                         </div>
-                         <div>
-                             <div class="input-field s4">
-                                 <input type="submit" value="تسجيل" class="waves-effect waves-light log-in-btn">
-                             </div>
-                         </div>
-                         <div>
-                             <div class="input-field s12"> <a href="#" data-dismiss="modal"
-                                     data-toggle="modal" data-target="#modal1">لديك حساب بالفعل ! سجل دخول الان</a>
-                             </div>
-                         </div>
-                         <!-- Name -->
-                         {{-- <div>
-                                 <label for="name" :value="__('Name')"></label>
-                                 <input id="name" class="block mt-1 w-full" type="text"
-                                     name="name" :value="old('name')" required autofocus autocomplete="name" />
-                                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
-                             </div>
 
-                             <!-- Email Address -->
-                             <div class="input-field s12">
-                                 <label for="email" :value="__('Email')"></label>
-                                 <input id="email" class="block mt-1 w-full" type="email"
-                                     name="email" :value="old('email')" required autocomplete="username" />
-                                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
-                             </div>
-
-                             <!-- Password -->
-                             <div class="input-field s12">
-                                 <label for="password" :value="__('Password')" ></label>
-
-                                 <input id="password" class="block mt-1 w-full" type="password"
-                                     name="password" required autocomplete="new-password" />
-
-                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
-                             </div>
-
-                             <!-- Confirm Password -->
-                             <div class="input-field s12">
-                                 <label for="password_confirmation" :value="__('Confirm Password')" ></label>
-
-                                 <input id="password_confirmation" class="block mt-1 w-full" type="password"
-                                     name="password_confirmation" required autocomplete="new-password" />
-
-                                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-                             </div>
-
-                             <div class="flex items-center justify-end mt-4">
-                                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                                     href="{{ route('login') }}">
-                                     {{ __('Already registered?') }}
-                                 </a>
-
-                                 <button class="input-field s12">
-                                     {{ __('Register') }}
-                                 <button>
-                             </div> --}}
-                         </form>
-                     </div>
-                 </form>
-             </div>
-         </div> --}}
-         <!-- FORGOT SECTION -->
-         @yield('modal')
-         <div id="modal3" class="modal fade" role="dialog">
-             <div class="log-in-pop">
-                 <div class="log-in-pop-right">
-                     <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png"
-                             alt="" />
-                     </a>
-                     <h4>Forgot password</h4>
-                     <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                     <form class="s12">
-                         <div>
-                             <div class="input-field s12">
-                                 <input type="text" data-ng-model="name3" class="validate">
-                                 <label>User name or email id</label>
-                             </div>
-                         </div>
-                         <div>
-                             <div class="input-field s4">
-                                 <input type="submit" value="Submit" class="waves-effect waves-light log-in-btn">
-                             </div>
-                         </div>
-                         <div>
-                             <div class="input-field s12"> <a href="#" data-dismiss="modal"
-                                     data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> |
-                                 <a href="#" data-dismiss="modal" data-toggle="modal"
-                                     data-target="#modal2">Create a new
-                                     account</a>
-                             </div>
-                         </div>
-                     </form>
-                 </div>
-             </div>
-         </div>
-         @include('site.incloud.alertts.error')
-         @include('site.incloud.alertts.success')
-
-     </section>
      <div class="chat-icon" id="chatIcon" onclick="displayChat(1);">
          <h4>تحدث مع سولا</h4>
          <img src="images/sola.png" alt="">

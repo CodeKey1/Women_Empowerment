@@ -141,8 +141,6 @@
                 <ul>
                     <li><a href="#" class="pro-act">المشاريع</a></li>
                     <li><a href="{{ route('success') }}">فرص النجاح</a></li>
-                    <li><a href="#"> الإعدادات </a></li>
-
                 </ul>
             </div>
         </div>

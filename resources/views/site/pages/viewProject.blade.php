@@ -141,8 +141,6 @@
                 <ul>
                     <li><a href="{{ route('profile') }}" class="pro-act">المشاريع</a></li>
                     <li><a href="{{ route('success') }}">فرص النجاح</a></li>
-                    <li><a href="#"> الإعدادات </a></li>
-
                 </ul>
             </div>
         </div>
@@ -338,47 +336,35 @@
                                 </div>
                                 <div id="menu2"
                                     class="tab-pane fade tab {{ session('menu2_active') ? 'in active' : null }}">
-                                    @isset($Project_risk)
-                                        @foreach ($Project_risk as $Pr)
-                                            <form class="form-horizontal" style="font-family: system-ui;"
-                                                action="{{ route('project.store') }}"
-                                                method="POST"enctype="multipart/form-data">
-                                                @csrf
-                                                <h4> المخاطر المحتملة للمشروع </h4>
-                                                <div class="row">
-                                                    <div class="col-md-2 ">
-                                                        <label class="control-label "> التقيم <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" name="evaluation"
-                                                            value="{{ $Pr->evaluation }}" class="form-control" disabled>
-                                                    </div>
-                                                    <div class="col-md-2 ">
-                                                        <label class="control-label "> الإحتمال <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" name="possibility"
-                                                            value="{{ $Pr->possibility }}" class="form-control" disabled>
-                                                    </div>
-                                                    <div class="col-md-2 ">
-                                                        <label class="control-label "> الشدة <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" name="degree" value="{{ $Pr->degree }}"
-                                                            class="form-control" disabled>
-                                                    </div>
-                                                    <div class="col-md-6 ">
-                                                        <label class="control-label col-sm-3"> الخطر المحتمل <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" name="name" value="{{ $Pr->name }}"
-                                                            class="form-control" disabled>
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> اجراءات التعامل مع الخطر <span
-                                                                style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="procedures" cols="5" rows="5" disabled>{{ $Pr->procedures }}</textarea>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        @endforeach
-                                    @endisset
+                                    <h4> المخاطر المحتملة </h4>
+                                    <div class="tab-inn">
+                                        <div class="table-responsive table-desi">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>الخطر المحتمل</th>
+                                                        <th>الشدة</th>
+                                                        <th>الاحتمال</th>
+                                                        <th>التقيم</th>
+                                                        <th>اجرائات التعامل</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @isset($Project_risk)
+                                                        @foreach ($Project_risk as $Pr)
+                                                            <tr>
+                                                                <td>{{ $Pr->name }}</td>
+                                                                <td>{{ $Pr->degree }}</td>
+                                                                <td>{{ $Pr->possibility }}</td>
+                                                                <td>{{ $Pr->evaluation }}</td>
+                                                                <td>{{ $Pr->procedures }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    @endisset
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div id="drasa"
                                     class="tab-pane fade tab {{ session('drasa_active') ? 'in active' : null }}">
@@ -409,7 +395,8 @@
                                                             placeholder="الموارد والقدرات الفنية المطلوبة لتطوير وإطلاق المنتج أو الخدمة" disabled> {{ $Py->technical }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> الصالحيةاملالية تقييم التكاليف
+                                                        <label class="control-label col-sm-6"> الصالحيةاملالية تقييم
+                                                            التكاليف
                                                             وتدفقات
                                                             اإليرادات املحتملةلألعمال. <span
                                                                 style="color: red">*</span></label>
@@ -430,50 +417,35 @@
                                 </div>
                                 <div id="plan"
                                     class="tab-pane fade tab {{ session('plan_active') ? 'in active' : null }}">
-                                    @isset($Project_Plan)
-                                        @foreach ($Project_Plan as $Pp)
-                                            <form class="form-horizontal" style="font-family: system-ui;"
-                                                action="{{ route('project.store') }}"
-                                                method="POST"enctype="multipart/form-data">
-                                                @csrf
-                                                <h4> خطة المشروع </h4>
-                                                <div class="row" id="plane">
-                                                    <div class="col-md-3 ">
-                                                        <label class="control-label "> النهاية <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="date" name="end_date[]" value="{{ $Pp->end_date }}"
-                                                            class="form-control" disabled>
-                                                    </div>
-                                                    <div class="col-md-3 ">
-                                                        <label class="control-label "> البداية <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="date" name="start_date[]"
-                                                            value="{{ $Pp->start_date }}" class="form-control" disabled>
-                                                    </div>
-                                                    <div class="col-md-6 ">
-                                                        <label class="control-label col-sm-3"> المهام <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" name="name[]" value="{{ $Pp->name }}"
-                                                            class="form-control" disabled>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-6 ">
-                                                            <label class="control-label col-sm-3"> المتابعة <span
-                                                                    style="color: red">*</span></label>
-                                                            <input type="text" name="follower[]"
-                                                                value="{{ $Pp->follower }}" class="form-control" disabled>
-                                                        </div>
-                                                        <div class="col-md-6 ">
-                                                            <label class="control-label col-sm-3"> المسؤول <span
-                                                                    style="color: red">*</span></label>
-                                                            <input type="text" name="responsible[]"
-                                                                value="{{ $Pp->responsible }}" class="form-control" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        @endforeach
-                                    @endisset
+                                    <h4> خطة المشروع </h4>
+                                    <div class="tab-inn">
+                                        <div class="table-responsive table-desi">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>المهام</th>
+                                                        <th>البداية</th>
+                                                        <th>النهاية</th>
+                                                        <th>المسؤل</th>
+                                                        <th>المتابعة</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @isset($Project_Plan)
+                                                        @foreach ($Project_Plan as $Pp)
+                                                            <tr>
+                                                                <td>{{ $Pp->name }}</td>
+                                                                <td>{{ $Pp->start_date }}</td>
+                                                                <td>{{ $Pp->end_date }}</td>
+                                                                <td>{{ $Pp->responsible }}</td>
+                                                                <td>{{ $Pp->follower }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    @endisset
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div id="template"
                                     class="tab-pane fade tab {{ session('template_active') ? 'in active' : null }}">
@@ -498,14 +470,15 @@
                                                             placeholder=" المجموعات المستهدفة من العملاء الذين يستفيدون من القيمة المقدمة ويدفعون ثمنها" disabled>{{ $Pf->customer_categories }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> قنوات وصول المشروع للعملاء <span
-                                                                style="color: red">*</span></label>
+                                                        <label class="control-label col-sm-6"> قنوات وصول المشروع
+                                                            للعملاء
+                                                            <span style="color: red">*</span></label>
                                                         <textarea class="form-control" name="project_access" cols="3" rows="3"
                                                             placeholder=" الطرق التي يصل بها المشروع إلى الفئات العملاء ويتواصل معهم ويسلم لهم القيمة المقدمة " disabled>{{ $Pf->project_access }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> استراتيجية جذب العملاء: <span
-                                                                style="color: red">*</span></label>
+                                                        <label class="control-label col-sm-6"> استراتيجية جذب العملاء:
+                                                            <span style="color: red">*</span></label>
                                                         <textarea class="form-control" name="attract_clients" cols="3" rows="3"
                                                             placeholder=" الإستراتيجية التي يتبعها المشروع لجذب واسعاد العملاء" disabled>{{ $Pf->attract_clients }}</textarea>
                                                     </div>
@@ -528,15 +501,16 @@
                                                             placeholder=" الخطوات والإجراءات التي يقوم بها المشروع لتوليد وتسليم القيمة المقدمة " disabled>{{ $Pf->main_activity }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> الشركاء الرئيسين للمشروع <span
-                                                                style="color: red">*</span></label>
+                                                        <label class="control-label col-sm-6"> الشركاء الرئيسين للمشروع
+                                                            <span style="color: red">*</span></label>
                                                         <textarea class="form-control" name="partners" cols="3" rows="3"
                                                             placeholder=" هي الجهات التي تساهم في تزويد المشروع بالموارد أو تسانده في تنفيذ الأنشطة أو تزيد من قيمته" disabled>{{ $Pf->partners }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> التكاليف: <span
                                                                 style="color: red">*</span></label>
-                                                        <input class="form-control" name="cost" type="number" value="{{ $Pf->cost }}"
+                                                        <input class="form-control" name="cost" type="number"
+                                                            value="{{ $Pf->cost }}"
                                                             placeholder=" المصروفات التي يتحملها المشروع لإنشاء وتشغيل نموذج العمل."
                                                             disabled>
                                                     </div>
@@ -548,51 +522,41 @@
                                 </div>
                                 <div id="mosher"
                                     class="tab-pane fade tab {{ session('mosher_active') ? 'in active' : null }}">
-                                    @isset($Project_performane)
-                                        @foreach ($Project_performane as $Pff)
-                                    <form class="form-horizontal" style="font-family: system-ui;"
-                                        action="{{ route('project.store') }}"
-                                        method="POST"enctype="multipart/form-data">
-                                        @csrf
-                                        <h4> مؤشرات أداء المشروع </h4>
-                                        <div class="row" id="work_experience">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <label class="control-label col-sm-6"> مؤشر الأداء <span
-                                                        style="color: red">*</span></label>
-                                                <textarea class="form-control" name="name[]" cols="3" rows="3" disabled>{{ $Pff->name }}</textarea>
-                                            </div>
-                                            <div class="col-md-3 ">
-                                                <label class="control-label "> آلية القياس <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" name="measurement[]" class="form-control" value="{{ $Pff->measurement }}" disabled>
-                                            </div>
-                                            <div class="col-md-3 ">
-                                                <label class="control-label "> المستهدف <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" name="target[]" class="form-control"value="{{ $Pff->target }}"  disabled>
-                                            </div>
-                                            <div class="col-md-3 ">
-                                                <label class="control-label "> وحدة القياس <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" name="unit[]" class="form-control" value="{{ $Pff->unit }}"  disabled>
-                                            </div>
-                                            <div class="col-md-3 ">
-                                                <label class="control-label "> دورة القياس <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text" name="period[]" class="form-control" value="{{ $Pff->period }}" disabled>
-                                            </div>
+                                    <h4> مؤشرات أداء المشروع </h4>
+                                    <div class="tab-inn">
+                                        <div class="table-responsive table-desi">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>مؤشر الأداء</th>
+                                                        <th>دورة القياس</th>
+                                                        <th>وحدة القياس</th>
+                                                        <th>المستهدف</th>
+                                                        <th>آلية القياس</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @isset($Project_performane)
+                                                        @foreach ($Project_performane as $Pff)
+                                                            <tr>
+                                                                <td>{{ $Pff->name }}</td>
+                                                                <td>{{ $Pff->period }}</td>
+                                                                <td>{{ $Pff->unit }}</td>
+                                                                <td>{{ $Pff->target }}</td>
+                                                                <td>{{ $Pff->measurement }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    @endisset
+                                                </tbody>
+                                            </table>
                                         </div>
-                                    </form>
-                                    @endforeach
-                                    @endisset
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-@endsection
-@section('modal')
-@endsection
+        @endsection
+        @section('modal')
+        @endsection

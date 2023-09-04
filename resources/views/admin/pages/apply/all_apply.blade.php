@@ -30,7 +30,6 @@
                                         <th>الهاتف</th>
                                         <th>البريد الالكتروني</th>
                                         <th>المركز / المدينة</th>
-
                                         <th>الحالة</th>
                                         <th>عرض</th>
                                     </tr>
@@ -48,9 +47,9 @@
                                                 <td>{{ $applys->address }}</td>
                                                 <td>
                                                     @if ($applys->state == '1')
-                                                    <span class="label label-success">فعال</span>
+                                                        <span class="label label-success">فعال</span>
                                                     @elseif($applys->state == '0')
-                                                    <span class="label label-danger">غير فعال</span>
+                                                        <span class="label label-danger">غير فعال</span>
                                                     @endif
 
                                                 </td>
