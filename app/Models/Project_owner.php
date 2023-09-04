@@ -18,6 +18,7 @@ class Project_owner extends Model
         'phone',
         'address',
         'fund',
+        'state',
         'project_id',
         'user_id',
         'created_at',

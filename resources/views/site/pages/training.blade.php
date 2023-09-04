@@ -27,9 +27,7 @@
                                         <p> {{ $courses->date }}</p> <span class="home-top-cour-rat">4.2</span>
                                         <div class="hom-list-share">
                                             <ul>
-                                                <li><a href="course-details.html"><i class="fa fa-bar-chart"
-                                                            aria-hidden="true"></i>
-                                                        للحجز</a> </li>
+                                                
                                                 <li><a href="{{ route('training.details',$courses->id) }}"><i class="fa fa-eye"
                                                             aria-hidden="true"></i> تفاصيل التدريب </a> </li>
 

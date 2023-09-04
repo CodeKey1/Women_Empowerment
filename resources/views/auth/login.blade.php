@@ -46,17 +46,20 @@
                     <div class="col s12">
                         <form class="s12" method="POST" action="{{ route('login') }}">
                             @csrf
-                            <div>
-                                <div class="input-field s12">
-                                    <input type="email" data-ng-model="name" name="email" class="validate">
-                                    <label>البريد الالكتروني</label>
-                                </div>
+                            <!-- Email Address -->
+                            <div class="mt-4">
+                                <x-input-label for="email" :value="__('البريد الإلكتروني')" />
+                                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
+                                    :value="old('email')" required autocomplete="username" />
+                                <x-input-error :messages="$errors->get('email')" class="mt-2" />
                             </div>
-                            <div>
-                                <div class="input-field s12">
-                                    <input type="password" name="password" class="validate">
-                                    <label>الرقم السري</label>
-                                </div>
+                            <div class="mt-4">
+                                <x-input-label for="password" :value="__('الرقم السري')" />
+
+                                <x-text-input id="password" class="block mt-1 w-full" type="password" name="password"
+                                    required autocomplete="new-password" />
+
+                                <x-input-error :messages="$errors->get('password')" class="mt-2" />
                             </div>
                             <div dir="rtl">
                                 <div class="input-field s4">
@@ -65,8 +68,7 @@
                             </div>
                             <div>
                                 <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal"
-                                        data-target="#modal3">نسيت كلمة السر</a> | <a href="#" data-dismiss="modal"
-                                        data-toggle="modal" data-target="#modal2">انشاء حساب جديد</a> </div>
+                                        data-target="#modal3">نسيت كلمة السر</a> | <a href="{{ route('register') }}" >انشاء حساب جديد</a> </div>
                             </div>
                         </form>
                     </div>

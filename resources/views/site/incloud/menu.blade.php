@@ -10,11 +10,11 @@
                                 @guest
 
                                     @if (Route::has('register'))
-                                        <li><a href="#!" data-toggle="modal" data-target="#modal2"> تسجيل </a>
+                                        <li><a href="{{ route('register') }}" > تسجيل </a>
                                         </li>
                                     @endif
                                     @if (Route::has('login'))
-                                        <li><a href="#!" data-toggle="modal" data-target="#modal1"> تسجيل الدخول </a>
+                                        <li><a href="{{ route('login') }}" > تسجيل الدخول </a>
                                         </li>
                                     @endif
                                 @else

@@ -118,7 +118,7 @@
      <!--SECTION LOGIN, REGISTER AND FORGOT PASSWORD-->
      <section>
          <!-- LOGIN SECTION -->
-         <div id="modal1" class="modal fade" role="dialog">
+         {{-- <div id="modal1" class="modal fade" role="dialog">
              <div class="log-in-pop">
                  <div class="log-in-pop-right" dir="rtl">
                      <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png"
@@ -152,9 +152,9 @@
                      </form>
                  </div>
              </div>
-         </div>
+         </div> --}}
          <!-- REGISTER SECTION -->
-         <div id="modal2" class="modal fade" dir="rtl" role="dialog">
+         {{-- <div id="modal2" class="modal fade" dir="rtl" role="dialog">
              <div class="log-in-pop">
                  <form method="POST" action="{{ route('register') }}">
                      @csrf
@@ -199,57 +199,11 @@
                                      data-toggle="modal" data-target="#modal1">لديك حساب بالفعل ! سجل دخول الان</a>
                              </div>
                          </div>
-                             <!-- Name -->
-                             {{-- <div>
-                                 <label for="name" :value="__('Name')"></label>
-                                 <input id="name" class="block mt-1 w-full" type="text"
-                                     name="name" :value="old('name')" required autofocus autocomplete="name" />
-                                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
-                             </div>
-
-                             <!-- Email Address -->
-                             <div class="input-field s12">
-                                 <label for="email" :value="__('Email')"></label>
-                                 <input id="email" class="block mt-1 w-full" type="email"
-                                     name="email" :value="old('email')" required autocomplete="username" />
-                                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
-                             </div>
-
-                             <!-- Password -->
-                             <div class="input-field s12">
-                                 <label for="password" :value="__('Password')" ></label>
-
-                                 <input id="password" class="block mt-1 w-full" type="password"
-                                     name="password" required autocomplete="new-password" />
-
-                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
-                             </div>
-
-                             <!-- Confirm Password -->
-                             <div class="input-field s12">
-                                 <label for="password_confirmation" :value="__('Confirm Password')" ></label>
-
-                                 <input id="password_confirmation" class="block mt-1 w-full" type="password"
-                                     name="password_confirmation" required autocomplete="new-password" />
-
-                                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-                             </div>
-
-                             <div class="flex items-center justify-end mt-4">
-                                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                                     href="{{ route('login') }}">
-                                     {{ __('Already registered?') }}
-                                 </a>
-
-                                 <button class="input-field s12">
-                                     {{ __('Register') }}
-                                 <button>
-                             </div> --}}
                          </form>
                      </div>
                  </form>
              </div>
-         </div>
+         </div> --}}
          <!-- FORGOT SECTION -->
          @yield('modal')
          <div id="modal3" class="modal fade" role="dialog">
