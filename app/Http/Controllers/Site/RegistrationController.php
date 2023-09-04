@@ -56,11 +56,11 @@ class RegistrationController extends Controller
                         "address" => $request['address'],
                         "fund" => $request['fund'],
                         "project_id" => $project,
-                        "user_id" => Auth::user()->id,
+                        "user_id" => $project,
 
                     ]);
 
-                    return redirect()->route('project.create')->with('menu1_active',true)->with('active',true)->with(['success' => 'تم الحفظ بيانات رائدة الأعمال بنجاح']);
+                    return redirect()->route('project.create')->with('menu1_active', true)->with('active', true)->with(['success' => 'تم الحفظ بيانات رائدة الأعمال بنجاح']);
                     break;
                 case 'projectInitial':
                     Project::create([
@@ -76,22 +76,22 @@ class RegistrationController extends Controller
                         "email" => $request['email'],
                         "date" => $request['date'],
                         "owner_id" => $project,
-                        "user_id" => Auth::user()->id,
+                        "user_id" => $project,
 
                     ]);
-                    return redirect()->route('project.create')->with('menu2_active',true)->with('active',true)->with(['success' => 'تم الحفظ بيانات المشروع بنجاح']);
+                    return redirect()->route('project.create')->with('menu2_active', true)->with('active', true)->with(['success' => 'تم الحفظ بيانات المشروع بنجاح']);
                     break;
                 case 'projectRisk':
                     Project_risk::create([
                         "name" => $request['name'],
                         "degree" => $request['degree'],
                         "possibility" => $request['possibility'],
-                        "evaluation" => $request['evaluation'],
+                        "evaluation" => ($request['degree'] * $request['possibility']),
                         "procedures" => $request['procedures'],
                         "project_id" => $project,
-                        "user_id" => Auth::user()->id,
+                        "user_id" => $project,
                     ]);
-                    return redirect()->route('project.create')->with('drasa_active',true)->with('active',true)->with(['success' => 'تم الحفظ المخاطر المحتملة للمشروع الأعمال بنجاح']);
+                    return redirect()->route('project.create')->with('drasa_active', true)->with('active', true)->with(['success' => 'تم الحفظ المخاطر المحتملة للمشروع الأعمال بنجاح']);
                     break;
                 case 'projectStudy':
                     Project_study::create([
@@ -101,9 +101,9 @@ class RegistrationController extends Controller
                         "competitive" => $request['competitive'],
                         "market" => $request['market'],
                         "project_id" => $project,
-                        "user_id" => Auth::user()->id,
+                        "user_id" => $project,
                     ]);
-                    return redirect()->route('project.create')->with('plan_active',true)->with('active',true)->with(['success' => 'تم الحفظ  دراسة جدوى المشروع الأعمال بنجاح']);
+                    return redirect()->route('project.create')->with('plan_active', true)->with('active', true)->with(['success' => 'تم الحفظ  دراسة جدوى المشروع الأعمال بنجاح']);
                     break;
                 case 'projectPlan':
                     for ($i = 0; $i < count($request->name); $i++) {
@@ -119,10 +119,10 @@ class RegistrationController extends Controller
                             "responsible" => $responsible[$i],
                             "follower" => $follower[$i],
                             "project_id" => $project,
-                            "user_id" => Auth::user()->id,
+                            "user_id" => $project,
                         ]);
                     }
-                    return redirect()->route('project.create')->with('template_active',true)->with('active',true)->with(['success' => 'تم الحفظ  خطة المشروع الأعمال بنجاح']);
+                    return redirect()->route('project.create')->with('template_active', true)->with('active', true)->with(['success' => 'تم الحفظ  خطة المشروع الأعمال بنجاح']);
                     break;
                 case 'workForm':
                     Project_form::create([
@@ -136,9 +136,9 @@ class RegistrationController extends Controller
                         "partners" => $request['partners'],
                         "cost" => $request['cost'],
                         "project_id" => $project,
-                        "user_id" => Auth::user()->id,
+                        "user_id" => $project,
                     ]);
-                    return redirect()->route('project.create')->with('mosher_active',true)->with('active',true)->with(['success' => 'تم الحفظ  نموذج العمل الأعمال بنجاح']);
+                    return redirect()->route('project.create')->with('mosher_active', true)->with('active', true)->with(['success' => 'تم الحفظ  نموذج العمل الأعمال بنجاح']);
                     break;
                 case 'projectPeroformance':
                     for ($i = 0; $i < count($request->period); $i++) {
@@ -154,7 +154,7 @@ class RegistrationController extends Controller
                             "target" => $target[$i],
                             "measurement" => $measurement[$i],
                             "project_id" => $project,
-                            "user_id" => Auth::user()->id,
+                            "user_id" => $project,
                         ]);
                     }
                     return redirect()->back()->with(['success' => 'تم الحفظ مؤشرات أداء المشروع بنجاح']);

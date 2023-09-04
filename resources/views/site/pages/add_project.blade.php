@@ -251,10 +251,9 @@
                                                     <label class="control-label "> الإحتمال <span
                                                             style="color: red">*</span></label>
                                                     <div class="slidecontainer">
-                                                        <input type="range" name="degree" min="1"
-                                                            max="5" value="1" name="possibility"
-                                                            style="margin: 0" id="myRange1" onchange="divideBy()"
-                                                            required>
+                                                        <input type="range" min="1" max="5"
+                                                            value="0" name="possibility" style="margin: 0"
+                                                            id="myRange1" onchange="divideBy()" required>
                                                         <p>الاحتمالية: <span id="demo1" onkeyup="calculate()"></span>
                                                         </p>
                                                     </div>
@@ -265,7 +264,7 @@
                                                             style="color: red">*</span></label>
                                                     <div class="slidecontainer">
                                                         <input type="range" name="degree" min="1"
-                                                            max="5" value="1" style="margin: 0"
+                                                            max="5" value="0" style="margin: 0"
                                                             id="myRange" onchange="divideBy()" required>
                                                         <p>الشدة: <span id="demo" onkeyup="calculate()"></span></p>
                                                     </div>

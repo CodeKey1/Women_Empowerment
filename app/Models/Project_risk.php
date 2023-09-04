@@ -23,8 +23,9 @@ class Project_risk extends Model
         'updated_at',
     ];
 
-    public function project_name(){
+    public function project_name()
+    {
 
-        return  $this->belongsTo(Project::class ,'project_id');
+        return  $this->belongsTo(Project::class, 'project_id');
     }
 }
