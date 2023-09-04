@@ -107,14 +107,16 @@
                                         @enderror
                                     </div>
                                     <div class="input-field col s6">
-                                        <label class=""> فيديو التدريب (ان وجد) <span></span></label>
+                                        <label class=""> فيديو التدريب (ان وجد) <span style="color: red">فيديو MP4 لا
+                                                يتعدي 10 ميجا</span></label>
                                         <input type="file" name="video[]" class="validate">
                                         @error('video')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="input-field col s6">
-                                        <label class=""> عرض تقديمي (ان وجد)</label>
+                                        <label class=""> عرض تقديمي (ان وجد) <span style="color: red">PDF لا
+                                                يتعدي 2 ميجا</span></label>
                                         <input type="file" name="presentation" class="validate">
                                         @error('presentation')
                                             <span class="text-danger">{{ $message }}</span>

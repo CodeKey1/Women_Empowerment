@@ -23,8 +23,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="box-inn-sp admin-form">
-                        <form class="needs-validation" novalidate="" action="{{ route('admin.courses.update',$courses->id) }}"
-                            method="POST" enctype="multipart/form-data">
+                        <form class="needs-validation" novalidate=""
+                            action="{{ route('admin.courses.update', $courses->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="inn-title">
                                 <h4> اضافة تدريب</h4>
@@ -110,7 +111,8 @@
                                                 @enderror
                                             </div>
                                             <div class="input-field col s6">
-                                                <label class=""> فيديو التدريب (ان وجد)</label>
+                                                <label class=""> فيديو التدريب (ان وجد) <span style="color: red">فيديو لا
+                                                        يتعدي 10 ميجا</span></label>
                                                 <input type="file" name="video[]" class="validate"
                                                     value="{{ $Courese_->video }}">
                                                 @error('video')
@@ -118,26 +120,27 @@
                                                 @enderror
                                             </div>
                                             <div class="input-field col s6">
-                                                <label class=""> عرض تقديمي (ان وجد)</label>
+                                                <label class=""> عرض تقديمي (ان وجد) <span style="color: red">PDF لا
+                                                        يتعدي 2 ميجا</span></label>
                                                 <input type="file" name="presentation" class="validate"
                                                     value="{{ $Courese_->presentation }}">
                                                 @error('presentation')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            @endforeach
+                                        @endforeach
                                     @endisset
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <i class="waves-effect waves-light btn-large waves-input-wrapper" style="">
-                                                <input type="submit" class="waves-button-input" value="حفظ"> </i>
-                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="waves-effect waves-light btn-large waves-input-wrapper" style="">
+                                            <input type="submit" class="waves-button-input" value="حفظ"> </i>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        @endsection
+        </div>
+    @endsection
