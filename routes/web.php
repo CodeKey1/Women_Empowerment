@@ -68,6 +68,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/courses_delete{id}', [App\Http\Controllers\Admin\AdminController::class, 'courseDelete'])->name('admin.courses.delete');
     Route::get('/n-project-create', [App\Http\Controllers\Admin\AdminController::class, 'create'])->name('admin.oldproject.create');
     Route::post('/n-project-store', [App\Http\Controllers\Admin\AdminController::class, 'store'])->name('admin.oldproject.store');
+    Route::post('/n-project-update{id}', [App\Http\Controllers\Admin\AdminController::class, 'update'])->name('admin.oldproject.update');
     Route::get('/n-project-delete{id}', [App\Http\Controllers\Admin\AdminController::class, 'projectDelete'])->name('admin.oldproject.delete');
     Route::get('/user_apply{id}', [App\Http\Controllers\Admin\ApplyController::class, 'show'])->name('admin.apply.show');
     Route::get('/opendataa', [App\Http\Controllers\Admin\DataController::class, 'index'])->name('admin.data');

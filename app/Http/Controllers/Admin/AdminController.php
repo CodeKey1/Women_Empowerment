@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProjectRequest;
+use App\Http\Requests\TrainingRequest;
 use App\Models\Courese_detail;
 use App\Models\Course;
 use App\Models\Old_Project;
@@ -26,38 +28,39 @@ class AdminController extends Controller
     {
         //
         $apply = Project_owner::select()->get();
-        return view('admin.pages.dashboard',compact('apply'));
+        return view('admin.pages.dashboard', compact('apply'));
     }
     public function courses()
     {
         //
         $courses = Course::select()->get();
-        return view('admin.pages.training',compact('courses'));
+        return view('admin.pages.training', compact('courses'));
     }
     public function coursescreate()
     {
         //
         $courses = Course::select()->get();
-        return view('admin.pages.trainingcreate',compact('courses'));
+        return view('admin.pages.trainingcreate', compact('courses'));
     }
-    public function courses_store(Request $request)
+    public function courses_store(TrainingRequest $request)
     {
+        try {
 
-        $file = [];
-        if ($files = $request->file('image')) {
-            foreach ($files as $file) {
-                $ext = strtolower($file->getClientOriginalName());
-                $file_name = time() . '.' . $ext;
-                $path = 'images/course';
-                $file->move($path, $file_name);
-                $upload[] = $file_name;
+            $file = [];
+            if ($files = $request->file('image')) {
+                foreach ($files as $file) {
+                    $ext = strtolower($file->getClientOriginalName());
+                    $file_name = time() . '.' . $ext;
+                    $path = 'images/course';
+                    $file->move($path, $file_name);
+                    $upload[] = $file_name;
+                }
+            } else {
+                $upload[] = '';
             }
-        } else {
-            $upload[] = '';
-        }
 
 
-        $course = Course::create([
+            $course = Course::create([
                 "name" => $request['name'],
                 "details" => $request['details'],
                 "date" => $request['date'],
@@ -77,7 +80,7 @@ class AdminController extends Controller
             } else {
                 $video[] = '';
             }
-        Courese_detail::create([
+            Courese_detail::create([
                 "course_id" => $course->id,
                 "pre_req" => $request['pre_req'],
                 "description" => $request['description'],
@@ -88,25 +91,28 @@ class AdminController extends Controller
 
             ]);
             return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
-    public function courseDelete(string $id){
+    public function courseDelete(string $id)
+    {
         $course = Course::find($id);
-            $course->delete();
-            return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
-
+        $course->delete();
+        return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
     }
     public function old_project()
     {
         //
         $old_project = Old_Project::select()->get();
-        return view('admin.pages.old_project',compact('old_project'));
+        return view('admin.pages.old_project', compact('old_project'));
     }
     public function create()
     {
         //
         return view('admin.pages.old_project_create');
     }
-    public function store(Request $request)
+    public function store(ProjectRequest $request)
     {
         //
         $file = [];
@@ -122,20 +128,19 @@ class AdminController extends Controller
             $upload[] = '';
         }
 
-            Old_Project::create([
-                "name" => $request['name'],
-                "details" => $request['details'],
-                "image" => implode('|', $upload),
+        Old_Project::create([
+            "name" => $request['name'],
+            "details" => $request['details'],
+            "image" => implode('|', $upload),
 
-            ]);
-            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
-
+        ]);
+        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
     }
-    public function projectDelete(string $id){
+    public function projectDelete(string $id)
+    {
         $project = Old_Project::find($id);
-            $project->delete();
-            return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
-
+        $project->delete();
+        return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
     }
     public function show(string $id)
     {
@@ -150,6 +155,17 @@ class AdminController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        try{
+            Project_owner::where('user_id',$id)->update([
+                "state" => $request['state'],
+
+            ]);
+            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        }catch(\Exception $ex){
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
+
+
     }
     public function destroy(string $id)
     {

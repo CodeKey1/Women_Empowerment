@@ -65,8 +65,7 @@
                             </div>
                             <div>
                                 <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal"
-                                        data-target="#modal3">نسيت كلمة السر</a> | <a href="#" data-dismiss="modal"
-                                        data-toggle="modal" data-target="#modal2">انشاء حساب جديد</a> </div>
+                                        data-target="#modal3">نسيت كلمة السر</a> | <a href="{{ route('register') }}" >انشاء حساب جديد</a> </div>
                             </div>
                         </form>
                     </div>

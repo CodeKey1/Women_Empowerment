@@ -1,16 +1,16 @@
 @extends('admin.incloudes.admin')
 @section('content')
-<div class="sb2-2-2">
-    <ul>
-        <li class="page-back"><a href="{{ route('dashboard') }}"><i class="fa fa-backward" aria-hidden="true"></i> عودة </a>
-        </li>
-        <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> الرئيسية </a>
-        </li>
-        <li class="active-bre"><a href="#"> الإحصائيات </a>
-        </li>
+    <div class="sb2-2-2">
+        <ul>
+            <li class="page-back"><a href="{{ route('dashboard') }}"><i class="fa fa-backward" aria-hidden="true"></i> عودة </a>
+            </li>
+            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> الرئيسية </a>
+            </li>
+            <li class="active-bre"><a href="#"> الإحصائيات </a>
+            </li>
 
-    </ul>
-</div>
+        </ul>
+    </div>
     <!--== User Details ==-->
     <div class="sb2-2-3">
         <div class="row">
@@ -47,9 +47,15 @@
                                                 <td>{{ $applys->email }}</td>
                                                 <td>{{ $applys->address }}</td>
                                                 <td>
+                                                    @if ($applys->state == '1')
                                                     <span class="label label-success">فعال</span>
+                                                    @elseif($applys->state == '0')
+                                                    <span class="label label-danger">غير فعال</span>
+                                                    @endif
+
                                                 </td>
-                                                <td><a href="{{ route('admin.apply.show',$applys->user_id) }}" class="ad-st-view"> عرض </a></td>
+                                                <td><a href="{{ route('admin.apply.show', $applys->user_id) }}"
+                                                        class="ad-st-view"> عرض </a></td>
                                             </tr>
                                         @endforeach
                                     @endisset

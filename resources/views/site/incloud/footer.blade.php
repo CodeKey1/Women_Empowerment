@@ -118,7 +118,7 @@
      <!--SECTION LOGIN, REGISTER AND FORGOT PASSWORD-->
      <section>
          <!-- LOGIN SECTION -->
-         <div id="modal1" class="modal fade" role="dialog">
+         {{-- <div id="modal1" class="modal fade" role="dialog">
              <div class="log-in-pop">
                  <div class="log-in-pop-right" dir="rtl">
                      <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png"
@@ -152,9 +152,9 @@
                      </form>
                  </div>
              </div>
-         </div>
+         </div> --}}
          <!-- REGISTER SECTION -->
-         <div id="modal2" class="modal fade" dir="rtl" role="dialog">
+         {{-- <div id="modal2" class="modal fade" dir="rtl" role="dialog">
              <div class="log-in-pop">
                  <form method="POST" action="{{ route('register') }}" class="needs-validation"
                      onsubmit="return confirmSubmit()">
@@ -246,10 +246,11 @@
                                      {{ __('Register') }}
                                  <button>
                              </div> --}}
+                         </form>
                      </div>
                  </form>
              </div>
-         </div>
+         </div> --}}
          <!-- FORGOT SECTION -->
          @yield('modal')
          <div id="modal3" class="modal fade" role="dialog">
