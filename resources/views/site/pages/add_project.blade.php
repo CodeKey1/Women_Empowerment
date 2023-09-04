@@ -243,9 +243,8 @@
                                                 <div class="col-md-2 ">
                                                     <label class="control-label "> التقيم </label>
                                                     <div class="slidecontainer">
-                                                        <input type="button" onClick="divideBy()" Value="حساب التقيم" />
-                                                        </span>
-                                                        <p>الاحتمالية: <span id="result"></span></p>
+                                                        <input id="result" name="evaluation" type="button"
+                                                            Value="" />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2 ">
@@ -254,7 +253,8 @@
                                                     <div class="slidecontainer">
                                                         <input type="range" name="degree" min="1"
                                                             max="5" value="1" name="possibility"
-                                                            style="margin: 0" id="myRange1">
+                                                            style="margin: 0" id="myRange1" onchange="divideBy()"
+                                                            required>
                                                         <p>الاحتمالية: <span id="demo1" onkeyup="calculate()"></span>
                                                         </p>
                                                     </div>
@@ -266,7 +266,7 @@
                                                     <div class="slidecontainer">
                                                         <input type="range" name="degree" min="1"
                                                             max="5" value="1" style="margin: 0"
-                                                            id="myRange">
+                                                            id="myRange" onchange="divideBy()" required>
                                                         <p>الشدة: <span id="demo" onkeyup="calculate()"></span></p>
                                                     </div>
                                                 </div>
@@ -695,7 +695,7 @@
             num2 = document.getElementById(
                 "myRange1").value;
             document.getElementById(
-                "result").innerHTML = num1 * num2;
+                "result").value = num1 * num2;
         }
     </script>
 @endsection
