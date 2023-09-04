@@ -155,6 +155,61 @@ class AdminController extends Controller
     public function edit(string $id)
     {
         //
+        $courses = Course::select()->find($id);
+        $Courese_detail = Courese_detail::select()->where('course_id',$id)->get();
+        return view('admin.pages.course_edit',compact('courses','Courese_detail'));
+
+    }
+    public function course_update(TrainingRequest $request, string $id)
+    {
+        //
+        try{
+            $file = [];
+            if ($files = $request->file('image')) {
+                foreach ($files as $file) {
+                    $ext = strtolower($file->getClientOriginalName());
+                    $file_name = time() . '.' . $ext;
+                    $path = 'images/course';
+                    $file->move($path, $file_name);
+                    $upload[] = $file_name;
+                }
+            } else {
+                $upload[] = '';
+            }
+            Course::where('id',$id)->update([
+                "name" => $request['name'],
+                "details" => $request['details'],
+                "date" => $request['date'],
+                "cat" => $request['cat'],
+                "image" => implode('|', $upload),
+
+            ]);
+            $file = [];
+            if ($files = $request->file('video')) {
+                foreach ($files as $file) {
+                    $ext = strtolower($file->getClientOriginalName());
+                    $file_name = time() . '.' . $ext;
+                    $path = 'images/course';
+                    $file->move($path, $file_name);
+                    $video[] = $file_name;
+                }
+            } else {
+                $video[] = '';
+            }
+            Courese_detail::where('course_id',$id)->update([
+                "pre_req" => $request['pre_req'],
+                "description" => $request['description'],
+                "for_whom" => $request['for_whom'],
+                "location" => $request['location'],
+                "presentation" => $request['presentation'],
+                "video" => implode('|', $video)
+
+            ]);
+            return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+        }catch(\Exception $ex){
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
+
     }
 
     public function update(Request $request, string $id)
@@ -165,8 +220,8 @@ class AdminController extends Controller
                 "state" => $request['state'],
 
             ]);
-            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
-        } catch (\Exception $ex) {
+            return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+        }catch(\Exception $ex){
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
     }

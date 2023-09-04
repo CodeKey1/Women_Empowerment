@@ -13,6 +13,7 @@
                                         {{-- <li><a href="#!" data-toggle="modal" data-target="#modal2"> تسجيل </a>
                                         </li> --}}
                                         <li><a href="{{ route('register') }}"> تسجيل </a>
+
                                         </li>
                                     @endif
                                     @if (Route::has('login'))
