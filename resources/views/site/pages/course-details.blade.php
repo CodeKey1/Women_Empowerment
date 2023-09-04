@@ -52,18 +52,23 @@
                                     </div>
                                     <hr>
                                     <div class="cor-p4">
-                                        <h3>عرض تقديمي</h3>
                                         @if ($item->video)
-                                            <video src="{{ URL::to('images/course/' .$item->video) }}" controls autoplay muted width="100%"></video>
+                                            <h3>عرض تقديمي</h3>
+                                            <video src="{{ URL::to('images/course/' . $item->video) }}" controls autoplay muted
+                                                width="100%"></video>
                                         @endif
                                         <br>
                                         @if ($item->presentation)
-                                            here presentation
+                                            <h3>عرض تقديمي</h3>
+                                            <a class="btn" target="_blank"
+                                                href="{{ URL::to('images/course/' . $item->presentation) }}">تحميل
+                                                العرض
+                                                التقديمي PDF</a>
                                         @endif
                                     </div>
-                            </div>
-                            @endforeach
-                        @endisset
+                                @endforeach
+                            @endisset
+                        </div>
                     </div>
 
                 </div>

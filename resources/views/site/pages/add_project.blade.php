@@ -99,9 +99,10 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-12 col-xs-12">
-                                                    <label class="control-label col-sm-3"> البريد الإلكتروني </label>
+                                                    <label class="control-label col-sm-3"> البريد الإلكتروني <span
+                                                            style="color: red">*</span></label>
                                                     <input type="email" class="form-control" name="email"
-                                                        placeholder="البريد الإلكتروني ان وجد">
+                                                        placeholder="البريد الإلكتروني ان وجد" required>
                                                 </div>
                                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                                     <label class="control-label col-sm-3"> التليفون <span
