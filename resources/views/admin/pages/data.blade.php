@@ -1,16 +1,14 @@
 @extends('admin.incloudes.admin')
 @section('content')
-<div class="sb2-2-2">
-    <ul>
-        <li class="page-back"><a href="{{ route('dashboard') }}"><i class="fa fa-backward" aria-hidden="true"></i> عودة </a>
-        </li>
-        <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> الرئيسية </a>
-        </li>
-        <li class="active-bre"><a href="#"> البيانات المفتوحة </a>
-        </li>
+    <div class="sb2-2-2">
+        <ul>
+            <li><i class="fa fa-home" aria-hidden="true"></i> الرئيسية
+            </li>
+            <li class="active-bre">البيانات المفتوحة
+            </li>
 
-    </ul>
-</div>
+        </ul>
+    </div>
     <!--== User Details ==-->
     <div>
 
@@ -23,7 +21,6 @@
                 <div class="box-inn-sp">
                     <div class="inn-title">
                         <h4> البيانات المفتوحة </h4>
-                        <p> لرائدات أعمال </p>
                     </div>
                     <div class="tab-inn">
                         <div class="table-responsive table-desi">
@@ -39,11 +36,17 @@
                                     @isset($openData)
                                         @foreach ($openData as $num => $data)
                                             <tr>
-                                                <td>{{ $num+1 }}</td>
-                                                <td><a href="#"><span class="list-enq-name">{{ $data->name }}</span></a></td>
+                                                <td>{{ $num + 1 }}</td>
+                                                <td><a href="#"><span class="list-enq-name">{{ $data->name }}</span></a>
+                                                </td>
                                                 <td>
-                                                    <a href="{{ route('admin.data.delete',$data->id) }}" class="ad-st-view"> حذف </a>
-                                                    <a href="{{ route('admin.data.edit',$data->id) }}" class="ad-st-view"> تعديل </a>
+                                                    <a href="{{ route('admin.data.edit', $data->id) }}" class="ad-st-view">
+                                                        تعديل
+                                                    </a><br>
+                                                    <a href="{{ route('admin.data.delete', $data->id) }}" class="ad-st-view"
+                                                        onclick="return confirmSubmit()">
+                                                        حذف
+                                                    </a>
                                                 </td>
 
                                             </tr>

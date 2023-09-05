@@ -152,18 +152,17 @@ class AdminController extends Controller
         //
     }
 
-    public function edit(string $id)
+    public function course_edit(string $id)
     {
         //
         $courses = Course::select()->find($id);
-        $Courese_detail = Courese_detail::select()->where('course_id',$id)->get();
-        return view('admin.pages.course_edit',compact('courses','Courese_detail'));
-
+        $Courese_detail = Courese_detail::select()->where('course_id', $id)->get();
+        return view('admin.pages.trainingedit', compact('courses', 'Courese_detail'));
     }
     public function course_update(TrainingRequest $request, string $id)
     {
         //
-        try{
+        try {
             $file = [];
             if ($files = $request->file('image')) {
                 foreach ($files as $file) {
@@ -176,7 +175,7 @@ class AdminController extends Controller
             } else {
                 $upload[] = '';
             }
-            Course::where('id',$id)->update([
+            Course::where('id', $id)->update([
                 "name" => $request['name'],
                 "details" => $request['details'],
                 "date" => $request['date'],
@@ -196,7 +195,7 @@ class AdminController extends Controller
             } else {
                 $video[] = '';
             }
-            Courese_detail::where('course_id',$id)->update([
+            Courese_detail::where('course_id', $id)->update([
                 "pre_req" => $request['pre_req'],
                 "description" => $request['description'],
                 "for_whom" => $request['for_whom'],
@@ -206,11 +205,42 @@ class AdminController extends Controller
 
             ]);
             return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
-        }catch(\Exception $ex){
+        } catch (\Exception $ex) {
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
-
     }
+
+    public function project_edit(string $id)
+    {
+        $projects = Old_Project::select()->find($id);
+        return view('admin.pages.old_project_edit', compact('projects'));
+    }
+
+    public function project_update(Request $request, string $id)
+    {
+        $file = [];
+        if ($files = $request->file('image')) {
+            foreach ($files as $file) {
+                $ext = strtolower($file->getClientOriginalName());
+                $file_name = time() . '.' . $ext;
+                $path = 'images/ng';
+                $file->move($path, $file_name);
+                $upload[] = $file_name;
+            }
+        } else {
+            $upload[] = '';
+        }
+
+        Old_Project::where('id', $id)->update([
+            "name" => $request['name'],
+            "details" => $request['details'],
+            "image" => implode('|', $upload),
+
+        ]);
+        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+    }
+
+
 
     public function update(Request $request, string $id)
     {
@@ -221,7 +251,7 @@ class AdminController extends Controller
 
             ]);
             return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
-        }catch(\Exception $ex){
+        } catch (\Exception $ex) {
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
     }

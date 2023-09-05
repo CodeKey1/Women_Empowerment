@@ -6,11 +6,11 @@
         <!--== breadcrumbs ==-->
         <div class="sb2-2-2">
             <ul>
-                <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> الرئيسية </a>
+                <li><i class="fa fa-home" aria-hidden="true"></i> الرئيسية
                 </li>
-                <li class="active-bre"><a href="#"> اضافة تدريب</a>
+                <li class="active-bre"> تعديل التدريب
                 </li>
-                <li class="page-back"><a href="{{ route('admin.apply') }}"><i class="fa fa-backward" aria-hidden="true"></i>
+                <li class="page-back"><a href="{{ route('admin.courses') }}"><i class="fa fa-backward" aria-hidden="true"></i>
                         عودة </a>
                 </li>
             </ul>
@@ -67,7 +67,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <label class=""> صورة للتدريب </label>
+                                        <label class=""> صورة للتدريب <span style="color: red">يجب اضافة الصورة مرة
+                                                اخرى حال التعديل</span></label>
                                         <input type="file" name="image[]" value="{{ $courses->file }}" class="validate">
                                         @error('image')
                                             <span class="text-danger">{{ $message }}</span>

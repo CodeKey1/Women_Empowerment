@@ -2,11 +2,9 @@
 @section('content')
     <div class="sb2-2-2">
         <ul>
-            <li class="page-back"><a href="{{ route('dashboard') }}"><i class="fa fa-backward" aria-hidden="true"></i> عودة </a>
+            <li><i class="fa fa-home" aria-hidden="true"></i> الرئيسية
             </li>
-            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> الرئيسية </a>
-            </li>
-            <li class="active-bre"><a href="#"> الإحصائيات </a>
+            <li class="active-bre"> نماذج المشاريع
             </li>
 
         </ul>
@@ -23,7 +21,6 @@
                 <div class="box-inn-sp">
                     <div class="inn-title">
                         <h4> نماذج المشاريع </h4>
-                        <p> لرائدات أعمال </p>
                     </div>
                     <div class="tab-inn">
                         <div class="table-responsive table-desi">
@@ -44,10 +41,14 @@
                                                 <td><a href="#"><span
                                                             class="list-enq-name">{{ $mopadras->name }}</span></a>
                                                 </td>
-                                                <td><a href="{{ route('admin.oldproject.delete', $mopadras->id) }}"
-                                                        class="ad-st-view"> حذف </a></td>
-
-
+                                                <td>
+                                                    <a href="{{ route('admin.oldproject.edit', $mopadras->id) }}"
+                                                        class="ad-st-view">
+                                                        تعديل
+                                                    </a><br>
+                                                    <a href="{{ route('admin.oldproject.delete', $mopadras->id) }}"
+                                                        class="ad-st-view" onclick="return confirmSubmit()"> حذف </a>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     @endisset

@@ -1,16 +1,14 @@
 @extends('admin.incloudes.admin')
 @section('content')
-<div class="sb2-2-2">
-    <ul>
-        <li class="page-back"><a href="{{ route('dashboard') }}"><i class="fa fa-backward" aria-hidden="true"></i> عودة </a>
-        </li>
-        <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> الرئيسية </a>
-        </li>
-        <li class="active-bre"><a href="#"> التدريبات </a>
-        </li>
+    <div class="sb2-2-2">
+        <ul>
+            <li><i class="fa fa-home" aria-hidden="true"></i> الرئيسية
+            </li>
+            <li class="active-bre"> التدريبات
+            </li>
 
-    </ul>
-</div>
+        </ul>
+    </div>
     <!--== User Details ==-->
     <div>
 
@@ -22,8 +20,7 @@
             <div class="col-md-12">
                 <div class="box-inn-sp">
                     <div class="inn-title">
-                        <h4> نمازج المشاريع </h4>
-                        <p> لرائدات أعمال </p>
+                        <h4> التدريبات </h4>
                     </div>
                     <div class="tab-inn">
                         <div class="table-responsive table-desi">
@@ -39,13 +36,16 @@
                                     @isset($courses)
                                         @foreach ($courses as $num => $mopadras)
                                             <tr>
-                                                <td>{{ $num+1 }}
+                                                <td>{{ $num + 1 }}
                                                 </td>
-                                                <td><a href="#"><span class="list-enq-name">{{ $mopadras->name }}</span></a>
+                                                <td><a href="#"><span
+                                                            class="list-enq-name">{{ $mopadras->name }}</span></a>
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('admin.courses.delete',$mopadras->id) }}" class="ad-st-view"> حذف </a>
-                                                    <a href="{{ route('admin.courses.edit',$mopadras->id) }}" class="ad-st-view"> تعديل </a>
+                                                    <a href="{{ route('admin.courses.edit', $mopadras->id) }}"
+                                                        class="ad-st-view"> تعديل </a><br>
+                                                    <a href="{{ route('admin.courses.delete', $mopadras->id) }}"
+                                                        class="ad-st-view" onclick="return confirmSubmit()"> حذف </a>
                                                 </td>
                                             </tr>
                                         @endforeach
