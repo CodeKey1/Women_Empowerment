@@ -56,6 +56,9 @@ class AdminController extends Controller
     }
     public function users_delete(string $id)
     {
+        $User = User::find($id);
+        $User->delete();
+        return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
     }
 
     public function courses()
