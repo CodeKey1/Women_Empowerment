@@ -29,7 +29,7 @@
                                     <tr>
                                         <th> </th>
                                         <th>الاسم</th>
-                                        <th>حذف</th>
+                                        <th>تفاصيل</th>
                                     </tr>
                                 </thead>
                                 <tbody>

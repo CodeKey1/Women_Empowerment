@@ -22,9 +22,9 @@ class ApplyController extends Controller
     public function profile()
     {
         //Auth()->id()
-        $project = Project::select()->where('user_id',Auth()->id())->get();
-        $apply = Project_owner::select()->where('user_id',Auth()->id())->get();
-        return view('site.pages.dashboard',compact('apply','project'));
+        $project = Project::select()->where('user_id', Auth()->id())->get();
+        $apply = Project_owner::select()->where('user_id', Auth()->id())->get();
+        return view('site.pages.dashboard', compact('apply', 'project'));
     }
     /**
      * Display a listing of the resource.
@@ -33,14 +33,48 @@ class ApplyController extends Controller
     {
         //
         $apply = Project_owner::select()->get();
-        return view('admin.pages.apply.all_apply',compact('apply'));
+        return view('admin.pages.apply.all_apply', compact('apply'));
     }
 
     public function mopdara()
     {
         //
         $mopadra = Mobadrat::select()->get();
-        return view('admin.pages.mopadra',compact('mopadra'));
+        return view('admin.pages.mopadra', compact('mopadra'));
+    }
+
+    public function mopdara_create()
+    {
+        return view('admin.pages.mopadracreate');
+    }
+    public function mopdara_edit(String $id)
+    {
+        $mopdara = Mobadrat::select()->find($id);
+        return view('admin.pages.mopadraedit', compact('mopdara'));
+    }
+
+    public function mopdara_store(Request $request)
+    {
+        Mobadrat::create([
+            "name" => $request['name'],
+            "description" => $request['details'],
+        ]);
+        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+    }
+    public function mopdara_update(Request $request, string $id)
+    {
+        Mobadrat::where('id', $id)->update([
+            "name" => $request['name'],
+            "description" => $request['details'],
+        ]);
+        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+    }
+
+    public function mopdara_delete(string $id)
+    {
+        $course = Mobadrat::find($id);
+        $course->delete();
+        return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
     }
 
     /**
@@ -72,7 +106,7 @@ class ApplyController extends Controller
         $apply4 =  Project_form::select()->where('user_id', $id)->get();
         $apply5 = Project_plan::select()->where('user_id', $id)->get();
         $apply6 = Project_performane::select()->where('user_id', $id)->get();
-        return view('admin.pages.apply.view',compact('apply','apply1','apply2','apply3','apply4','apply5','apply6'));
+        return view('admin.pages.apply.view', compact('apply', 'apply1', 'apply2', 'apply3', 'apply4', 'apply5', 'apply6'));
     }
 
     /**

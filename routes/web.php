@@ -61,7 +61,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/back', [App\Http\Controllers\Admin\AdminController::class, 'back'])->name('back');
     Route::get('/all_apply', [App\Http\Controllers\Admin\ApplyController::class, 'index'])->name('admin.apply');
     Route::get('/mopadra', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara'])->name('admin.mopdara');
-    Route::get('/mopadra_create', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara'])->name('admin.mopdara');
+    Route::get('/mopadra-create', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara_create'])->name('admin.mopdara.create');
+    Route::post('/mopadra-store', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara_store'])->name('admin.mopdara.store');
+    Route::get('/mopadra-edit{id}', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara_edit'])->name('admin.mopdara.edit');
+    Route::post('/mopadra-update{id}', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara_update'])->name('admin.mopdara.update');
+    Route::get('/mopadra-delete{id}', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara_delete'])->name('admin.mopdara.delete');
     Route::get('/n-project', [App\Http\Controllers\Admin\AdminController::class, 'old_project'])->name('admin.oldproject');
     Route::get('/courses', [App\Http\Controllers\Admin\AdminController::class, 'courses'])->name('admin.courses');
     Route::get('/courses_create', [App\Http\Controllers\Admin\AdminController::class, 'coursescreate'])->name('admin.courses.create');
