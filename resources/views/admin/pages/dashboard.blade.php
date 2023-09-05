@@ -28,11 +28,9 @@
                                 <thead>
                                     <tr>
                                         <th> </th>
-                                        <th>الاسم</th>
+                                        <th>اسم المستخدم</th>
                                         <th>الهاتف</th>
-                                        <th>البريد الالكتروني</th>
                                         <th>المركز / المدينة</th>
-
                                         <th>الحالة</th>
                                         <th>عرض</th>
                                     </tr>
@@ -46,12 +44,12 @@
                                                 <td><a href="#"><span class="list-enq-name">{{ $applys->name }}</span></a>
                                                 </td>
                                                 <td>{{ $applys->phone }}</td>
-                                                <td>{{ $applys->email }}</td>
                                                 <td>{{ $applys->address }}</td>
                                                 <td>
                                                     <span class="label label-success">فعال</span>
                                                 </td>
-                                                <td><a href="{{ route('admin.apply.show',$applys->user_id) }}" class="ad-st-view"> عرض </a></td>
+                                                <td><a href="{{ route('admin.apply.show', $applys->user_id) }}"
+                                                        class="ad-st-view"> عرض </a></td>
                                             </tr>
                                         @endforeach
                                     @endisset

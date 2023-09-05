@@ -4,11 +4,13 @@
         <li><a href="{{ route('dashboard') }}" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i>
                 الرئيسية </a>
         </li>
-        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> جميع
-                المتقدمين </a>
+        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>
+                المستخدمين</a>
             <div class="collapsible-body left-sub-menu">
                 <ul>
-                    <li><a href="{{ route('admin.apply') }}"> المتقدمين </a>
+                    <li><a href="{{ route('users') }}"> المستخدمين </a>
+                    </li>
+                    <li><a href="{{ route('admin.apply') }}"> المشاريع </a>
                     </li>
                 </ul>
             </div>

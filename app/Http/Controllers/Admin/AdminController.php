@@ -9,7 +9,9 @@ use App\Models\Courese_detail;
 use App\Models\Course;
 use App\Models\Old_Project;
 use App\Models\Project_owner;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -31,6 +33,31 @@ class AdminController extends Controller
         $apply = Project_owner::select()->get();
         return view('admin.pages.dashboard', compact('apply'));
     }
+    public function users()
+    {
+        //
+        $users = User::select()->get();
+        return view('admin.pages.users', compact('users'));
+    }
+
+    public function users_edit(string $id)
+    {
+        $users = User::select()->find($id);
+        return view('admin.pages.user_edit', compact('users'));
+    }
+    public function users_update(Request $request, string $id)
+    {
+        User::where('id', $id)->update([
+            "name" => $request['name'],
+            "email" => $request['email'],
+            'password' => Hash::make($request->password),
+        ]);
+        return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+    }
+    public function users_delete(string $id)
+    {
+    }
+
     public function courses()
     {
         //
