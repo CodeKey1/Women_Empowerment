@@ -135,6 +135,13 @@
     </style>
 @endsection
 @section('profile')
+    @if (session('logged'))
+        <script>
+            setTimeout(function() {
+                alert("loged in successfully");
+            }, 100);
+        </script>
+    @endif
     <div class="pro-menu">
         <div class="container" style="direction: rtl">
             <div class="col-md-9 col-md-offset-3">

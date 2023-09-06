@@ -1,5 +1,6 @@
 @extends('site.site')
 @section('content')
+
     <!-- DISCOVER MORE -->
     <section>
         <div class="container com-sp pad-bot-70">
