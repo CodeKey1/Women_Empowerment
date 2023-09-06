@@ -71,6 +71,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/mopadra-edit{id}', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara_edit'])->name('admin.mopdara.edit');
     Route::post('/mopadra-update{id}', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara_update'])->name('admin.mopdara.update');
     Route::get('/mopadra-delete{id}', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara_delete'])->name('admin.mopdara.delete');
+
+    Route::get('/ershadat', [App\Http\Controllers\Admin\ApplyController::class, 'ershadat'])->name('admin.ershadat');
+    Route::get('/ershadat-create', [App\Http\Controllers\Admin\ApplyController::class, 'ershadat_create'])->name('admin.ershadat.create');
+    Route::post('/ershadat-store', [App\Http\Controllers\Admin\ApplyController::class, 'ershadat_store'])->name('admin.ershadat.store');
+    Route::get('/ershadat-edit{id}', [App\Http\Controllers\Admin\ApplyController::class, 'ershadat_edit'])->name('admin.ershadat.edit');
+    Route::post('/ershadat-update{id}', [App\Http\Controllers\Admin\ApplyController::class, 'ershadat_update'])->name('admin.ershadat.update');
+    Route::get('/ershadat-delete{id}', [App\Http\Controllers\Admin\ApplyController::class, 'ershadat_delete'])->name('admin.ershadat.delete');
+
     Route::get('/n-project', [App\Http\Controllers\Admin\AdminController::class, 'old_project'])->name('admin.oldproject');
     Route::get('/courses', [App\Http\Controllers\Admin\AdminController::class, 'courses'])->name('admin.courses');
     Route::get('/courses_create', [App\Http\Controllers\Admin\AdminController::class, 'coursescreate'])->name('admin.courses.create');

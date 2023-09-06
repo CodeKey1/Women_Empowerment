@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Guide_Women;
 use App\Models\Project;
 use App\Models\Project_risk;
 use App\Models\Project_study;
@@ -42,7 +43,6 @@ class ApplyController extends Controller
         $mopadra = Mobadrat::select()->get();
         return view('admin.pages.mopadra', compact('mopadra'));
     }
-
     public function mopdara_create()
     {
         return view('admin.pages.mopadracreate');
@@ -52,7 +52,6 @@ class ApplyController extends Controller
         $mopdara = Mobadrat::select()->find($id);
         return view('admin.pages.mopadraedit', compact('mopdara'));
     }
-
     public function mopdara_store(Request $request)
     {
         Mobadrat::create([
@@ -69,10 +68,47 @@ class ApplyController extends Controller
         ]);
         return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
     }
-
     public function mopdara_delete(string $id)
     {
         $course = Mobadrat::find($id);
+        $course->delete();
+        return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
+    }
+
+    public function ershadat()
+    {
+        //
+        $ershadat = Guide_Women::select()->get();
+        return view('admin.pages.ershadat', compact('ershadat'));
+    }
+    public function ershadat_create()
+    {
+        return view('admin.pages.ershadatcreate');
+    }
+    public function ershadat_edit(String $id)
+    {
+        $ershadat = Guide_Women::select()->find($id);
+        return view('admin.pages.ershadatedit', compact('ershadat'));
+    }
+    public function ershadat_store(Request $request)
+    {
+        Guide_Women::create([
+            "name" => $request['name'],
+            "description" => $request['details'],
+        ]);
+        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+    }
+    public function ershadat_update(Request $request, string $id)
+    {
+        Guide_Women::where('id', $id)->update([
+            "name" => $request['name'],
+            "description" => $request['details'],
+        ]);
+        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+    }
+    public function ershadat_delete(string $id)
+    {
+        $course = Guide_Women::find($id);
         $course->delete();
         return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
     }

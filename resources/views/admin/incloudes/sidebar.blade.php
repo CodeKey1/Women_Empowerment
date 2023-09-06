@@ -18,6 +18,8 @@
 
         <li><a href="{{ route('admin.mopdara') }}"><i class="fa fa-image" aria-hidden="true"></i> المبادرات </a>
         </li>
+        <li><a href="{{ route('admin.ershadat') }}"><i class="fa fa-image" aria-hidden="true"></i> الارشادات </a>
+        </li>
         <li><a href="{{ route('admin.oldproject') }}"><i class="fa fa-external-link-square" aria-hidden="true"></i>
                 نماذج مشاريع </a>
         </li>
