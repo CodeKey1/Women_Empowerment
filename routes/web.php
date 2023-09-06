@@ -32,6 +32,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/add_project', [App\Http\Controllers\Site\RegistrationController::class, 'create'])->name('project.create');
     Route::post('/project_store', [App\Http\Controllers\Site\RegistrationController::class, 'store'])->name('project.store');
+    Route::post('/project_update{id}', [App\Http\Controllers\Site\RegistrationController::class, 'update'])->name('project.edit');
 });
 
 ///////////////////////////////////////////// front site ///////////////////////////////////////////

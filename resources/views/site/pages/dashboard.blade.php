@@ -317,7 +317,7 @@
                                         <th> اسم المشروع </th>
                                         <th> وقت التقديم </th>
                                         <th> فئة المشروع </th>
-                                        <th> حالة </th>
+                                        {{-- <th> حالة </th> --}}
                                         <th>View</th>
                                     </tr>
                                 </thead>
@@ -331,7 +331,7 @@
                                                 <td>{{ $projects->name }}</td>
                                                 <td>{{ $projects->created_at->format('Y-d-m') }}</td>
                                                 <td>{{ $projects->category }}</td>
-                                                <td><span class="pro-edit">جاري</span></td>
+                                                {{-- <td>{{ $projects->state }}</td> --}}
                                                 <td><a href="{{ route('viewProject') }}" class="ad-st-view"> عرض </a></td>
                                             </tr>
                                         @endforeach

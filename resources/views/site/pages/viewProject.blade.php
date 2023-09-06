@@ -184,60 +184,66 @@
                                     @isset($Project_owner)
                                         @foreach ($Project_owner as $PO)
                                             <form class="form-horizontal" style="font-family: system-ui;"
-                                                action="{{ route('project.store') }}"
-                                                method="POST"enctype="multipart/form-data">
+                                                action="{{ route('project.edit', $PO->id) }}"
+                                                onsubmit="return confirmSubmit();" method="POST"enctype="multipart/form-data">
                                                 @csrf
                                                 <h4 style="text-align: center;"> بيانات رائدة الأعمال </h4>
+                                                <h4 style="text-align: center;">حالة المشروع "
+                                                    @if ($PO->state == 0)
+                                                        مرفوض
+                                                    @elseif($PO->state == 1)
+                                                        مقبول
+                                                    @else
+                                                        جاري
+                                                    @endif
+                                                    "
+                                                </h4>
                                                 <div class="row">
                                                     <div class="col-md-6 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-3"> رقم القومي <span
                                                                 style="color: red">*</span></label>
-                                                        <input type="number" class="form-control" name="nid"
-                                                            value="{{ $PO->nid }}" disabled>
+                                                        <input type="text" pattern="[0-9]{14,14}" maxlength="14"
+                                                            minlength="14" class="form-control" name="nid"
+                                                            value="{{ $PO->nid }}" title="رقم البطاقة مكون من 14 رقم">
                                                     </div>
                                                     <div class="col-md-6 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-3"> الإسم رباعي <span
                                                                 style="color: red">*</span></label>
                                                         <input type="text" class="form-control" name="name"
-                                                            value="{{ $PO->name }}" disabled>
+                                                            value="{{ $PO->name }}">
                                                     </div>
-
-                                                </div>
-                                                <div class="row">
                                                     <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-3"> البريد الإلكتروني </label>
+                                                        <label class="control-label col-sm-3"> البريد الإلكتروني <span
+                                                                style="color: red">*</span></label>
                                                         <input type="email" class="form-control" name="email"
-                                                            value="{{ $PO->email }}" disabled>
+                                                            value="{{ $PO->email }}">
                                                     </div>
                                                     <div class="col-md-6 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-3"> التليفون <span
                                                                 style="color: red">*</span></label>
-                                                        <input type="number" class="form-control" name="phone"
-                                                            value="{{ $PO->phone }}" disabled>
+                                                        <input type="text" pattern="[0-9]{10,11}" maxlength="11"
+                                                            minlength="10" class="form-control" name="phone"
+                                                            value="{{ $PO->phone }}" title="رقم الهاتف مكون من 11 رقم">
                                                     </div>
-                                                </div>
-                                                <div class="row">
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-3"> عنوان رائدة الأعمال (المدينة -
                                                             العنوان) <span style="color: red">*</span></label>
                                                         <input type="text" class="form-control" name="address"
-                                                            value="{{ $PO->address }}" disabled>
+                                                            value="{{ $PO->address }}">
                                                     </div>
-                                                </div>
-                                                {{-- <div class="row">
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-3"> الرغبة في الحصول على تمويل
                                                             <span style="color: red">*</span></label>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <input type="radio" id="yes" name="fund" value="1"
-                                                            >
+                                                        <input type="radio" id="yes" name="fund" value="1">
                                                         <label for="yes"> نعم </label>
-                                                        <input type="radio" id="no" name="fund" value="0"
-                                                            >
+                                                        <input type="radio" id="no" name="fund" value="0">
                                                         <label for="no">لا </label>
                                                     </div>
-                                                </div> --}}
+                                                    <button type="submit" name="formType" value="initial"
+                                                        class="btn">تعديل</button>
+                                                </div>
                                             </form>
                                         @endforeach
                                     @endisset
@@ -247,7 +253,8 @@
                                     @isset($Project)
                                         @foreach ($Project as $P)
                                             <form class="form-horizontal" style="font-family: system-ui;"
-                                                action="{{ route('project.store') }}"
+                                                action="{{ route('project.edit', $P->id) }}"
+                                                onsubmit="return confirmSubmit();"
                                                 method="POST"enctype="multipart/form-data">
                                                 @csrf
                                                 <h4 style="text-align: center;"> بيانات المشروع </h4>
@@ -256,7 +263,7 @@
                                                         <label class="control-label col-sm-3"> اسم المشروع <span
                                                                 style="color: red">*</span></label>
                                                         <input type="text" class="form-control" name="name"
-                                                            value="{{ $P->name }}" disabled>
+                                                            value="{{ $P->name }}">
                                                         <input type="text" class="form-control" name="owner_id"
                                                             value=" {{ Auth::user()->id }}" style="display: none;">
                                                     </div>
@@ -264,7 +271,7 @@
                                                         <label class="control-label col-sm-3"> مجال المشروع <span
                                                                 style="color: red">*</span></label>
                                                         <input type="text" class="form-control" name="category"
-                                                            value="{{ $P->category }}" disabled>
+                                                            value="{{ $P->category }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -272,13 +279,13 @@
                                                         <label class="control-label col-sm-6"> ملخص فكرة المشروع <span
                                                                 style="color: red">*</span></label>
                                                         <input type="text" class="form-control" name="idea"
-                                                            value="{{ $P->idea }}" disabled>
+                                                            value="{{ $P->idea }}">
                                                     </div>
                                                     <div class="col-md-6 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> تاريخ البدء المتوقع <span
                                                                 style="color: red">*</span></label>
                                                         <input type="date" class="form-control" name="date"
-                                                            value="{{ $P->date }}" disabled>
+                                                            value="{{ $P->date }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -286,13 +293,13 @@
                                                         <label class="control-label col-sm-3"> أهداف المشروع <span
                                                                 style="color: red">*</span></label>
                                                         <input type="text" class="form-control" name="goal"
-                                                            value="{{ $P->goal }}" disabled>
+                                                            value="{{ $P->goal }}">
                                                     </div>
                                                     <div class="col-md-6 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> التخطيط والابتكار في المشروع
                                                             <span style="color: red">*</span></label>
                                                         <input type="text" name="innovation" class="form-control"
-                                                            value="{{ $P->innovation }}" disabled>
+                                                            value="{{ $P->innovation }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -300,19 +307,19 @@
                                                         <label class="control-label col-sm-6"> كيف يولد المشروع مستقبل اكثر
                                                             خضرة
                                                             واستدامه <span style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="future" cols="5" rows="5" disabled> {{ $P->future }}</textarea>
+                                                        <textarea class="form-control" name="future" cols="5" rows="5"> {{ $P->future }}</textarea>
                                                     </div>
                                                     <div class="col-md-6 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-3"> ذكاء المشروع <span
                                                                 style="color: red">*</span></label>
                                                         <input type="text" class="form-control" name="smart"
-                                                            value="{{ $P->smart }}" disabled>
+                                                            value="{{ $P->smart }}">
                                                     </div>
                                                     <div class="col-md-6 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> الاثر المتوقع للمشروع <span
                                                                 style="color: red">*</span></label>
                                                         <input type="text" class="form-control" name="trail"
-                                                            value="{{ $P->trail }}" disabled>
+                                                            value="{{ $P->trail }}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -320,16 +327,19 @@
                                                         <label class="control-label col-sm-6"> الموقع الألكتروني للمشروع
                                                         </label>
                                                         <input type="text" name="email" value="{{ $P->email }}"
-                                                            class="form-control" disabled>
+                                                            class="form-control">
                                                     </div>
                                                     <div class="col-md-6 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> مقر تنفيذ المشروع <span
                                                                 style="color: red">*</span></label>
                                                         <input type="text" name="location" value="{{ $P->location }}"
-                                                            class="form-control" disabled>
+                                                            class="form-control">
                                                     </div>
                                                 </div>
-
+                                                <div class="row">
+                                                    <button type="submit" name="formType" value="projectInitial"
+                                                        class="btn">تعديل</button>
+                                                </div>
                                             </form>
                                         @endforeach
                                     @endisset
@@ -371,7 +381,8 @@
                                     @isset($Project_study)
                                         @foreach ($Project_study as $Py)
                                             <form class="form-horizontal" style="font-family: system-ui;"
-                                                action="{{ route('project.store') }}"
+                                                action="{{ route('project.edit', $Py->id) }}"
+                                                onsubmit="return confirmSubmit();"
                                                 method="POST"enctype="multipart/form-data">
                                                 @csrf
                                                 <h4>دراسة جدوى المشروع</h4>
@@ -380,19 +391,18 @@
                                                         <label class="control-label col-sm-6"> تحليل السوق <span
                                                                 style="color: red">*</span></label>
                                                         <textarea class="form-control" name="market" cols="5" rows="5"
-                                                            placeholder="تقييم حجم السوق المستهدف وإمكانيات نموه واتجاهاته" disabled> {{ $Py->market }}</textarea>
+                                                            placeholder="تقييم حجم السوق المستهدف وإمكانيات نموه واتجاهاته"> {{ $Py->market }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> التحليل التنافسي <span
                                                                 style="color: red">*</span></label>
                                                         <textarea class="form-control" name="competitive" cols="5" rows="5"
-                                                            placeholder="تقييم نقاط القوة والضعف في المنافسة." disabled> {{ $Py->competitive }}</textarea>
+                                                            placeholder="تقييم نقاط القوة والضعف في المنافسة."> {{ $Py->competitive }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> الجدوى الفنية <span
                                                                 style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="technical" cols="5" rows="5"
-                                                            placeholder="الموارد والقدرات الفنية المطلوبة لتطوير وإطلاق المنتج أو الخدمة" disabled> {{ $Py->technical }}</textarea>
+                                                        <textarea class="form-control" name="technical" cols="5" rows="5"> {{ $Py->technical }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> الصالحيةاملالية تقييم
@@ -401,15 +411,16 @@
                                                             اإليرادات املحتملةلألعمال. <span
                                                                 style="color: red">*</span></label>
                                                         <textarea class="form-control" name="finance" cols="5" rows="5"
-                                                            placeholder="رأس المال المستثمر تدفقات الايرادات المحتملة" disabled>{{ $Py->finance }}</textarea>
+                                                            placeholder="رأس المال المستثمر تدفقات الايرادات المحتملة">{{ $Py->finance }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> ملخص لنتائج الدراسةوتوصيات
                                                             لستقبل
                                                             المشروع <span style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="recommendation" cols="5" rows="5" placeholder="" disabled> {{ $Py->recommendation }}</textarea>
+                                                        <textarea class="form-control" name="recommendation" cols="5" rows="5" placeholder=""> {{ $Py->recommendation }}</textarea>
                                                     </div>
-
+                                                    <button type="submit" name="formType" value="projectStudy"
+                                                        class="btn">تعديل</button>
                                                 </div>
                                             </form>
                                         @endforeach
@@ -452,7 +463,8 @@
                                     @isset($Project_form)
                                         @foreach ($Project_form as $Pf)
                                             <form class="form-horizontal" style="font-family: system-ui;"
-                                                action="{{ route('project.store') }}"
+                                                action="{{ route('project.edit', $Pf->id) }}"
+                                                onsubmit="return confirmSubmit();"
                                                 method="POST"enctype="multipart/form-data">
                                                 @csrf
                                                 <h4> نموذج العمل </h4>
@@ -460,62 +472,53 @@
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> القيمة المقدمة: <span
                                                                 style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="provided_value" cols="3" rows="3"
-                                                            placeholder=" المنفعة أو الحل الذي يقدمه المشروع للعملاء لحل مشكلة أو احتياج معين " disabled> {{ $Pf->provided_value }}</textarea>
+                                                        <textarea class="form-control" name="provided_value" cols="3" rows="3"> {{ $Pf->provided_value }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> فئات العملاء <span
                                                                 style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="customer_categories" cols="3" rows="3"
-                                                            placeholder=" المجموعات المستهدفة من العملاء الذين يستفيدون من القيمة المقدمة ويدفعون ثمنها" disabled>{{ $Pf->customer_categories }}</textarea>
+                                                        <textarea class="form-control" name="customer_categories" cols="3" rows="3">{{ $Pf->customer_categories }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> قنوات وصول المشروع
                                                             للعملاء
                                                             <span style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="project_access" cols="3" rows="3"
-                                                            placeholder=" الطرق التي يصل بها المشروع إلى الفئات العملاء ويتواصل معهم ويسلم لهم القيمة المقدمة " disabled>{{ $Pf->project_access }}</textarea>
+                                                        <textarea class="form-control" name="project_access" cols="3" rows="3">{{ $Pf->project_access }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> استراتيجية جذب العملاء:
                                                             <span style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="attract_clients" cols="3" rows="3"
-                                                            placeholder=" الإستراتيجية التي يتبعها المشروع لجذب واسعاد العملاء" disabled>{{ $Pf->attract_clients }}</textarea>
+                                                        <textarea class="form-control" name="attract_clients" cols="3" rows="3">{{ $Pf->attract_clients }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> مصادر الدخل: <span
                                                                 style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="income_source" cols="3" rows="3"
-                                                            placeholder=" آلية تحديد سعر وطريقة تحصيل الأموال من العملاء مقابل القيمة المقدمة " disabled>{{ $Pf->income_source }}</textarea>
+                                                        <textarea class="form-control" name="income_source" cols="3" rows="3">{{ $Pf->income_source }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> الموارد الرئيسية: <span
                                                                 style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="main_resorce" cols="3" rows="3"
-                                                            placeholder=" الأصول والأشخاص والأدوات والشركاء التي يحتاجها المشروع لتقديم وتسليم القيمة المقدمة" disabled>{{ $Pf->main_resorce }}</textarea>
+                                                        <textarea class="form-control" name="main_resorce" cols="3" rows="3">{{ $Pf->main_resorce }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> الأنشطة الرئيسية: <span
                                                                 style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="main_activity" cols="3" rows="3"
-                                                            placeholder=" الخطوات والإجراءات التي يقوم بها المشروع لتوليد وتسليم القيمة المقدمة " disabled>{{ $Pf->main_activity }}</textarea>
+                                                        <textarea class="form-control" name="main_activity" cols="3" rows="3">{{ $Pf->main_activity }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> الشركاء الرئيسين للمشروع
                                                             <span style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="partners" cols="3" rows="3"
-                                                            placeholder=" هي الجهات التي تساهم في تزويد المشروع بالموارد أو تسانده في تنفيذ الأنشطة أو تزيد من قيمته" disabled>{{ $Pf->partners }}</textarea>
+                                                        <textarea class="form-control" name="partners" cols="3" rows="3">{{ $Pf->partners }}</textarea>
                                                     </div>
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <label class="control-label col-sm-6"> التكاليف: <span
                                                                 style="color: red">*</span></label>
                                                         <input class="form-control" name="cost" type="number"
-                                                            value="{{ $Pf->cost }}"
-                                                            placeholder=" المصروفات التي يتحملها المشروع لإنشاء وتشغيل نموذج العمل."
-                                                            disabled>
+                                                            value="{{ $Pf->cost }}">
                                                     </div>
+                                                    <button type="submit" name="formType" value="workForm"
+                                                        class="btn">تعديل</button>
                                                 </div>
-
                                             </form>
                                         @endforeach
                                     @endisset

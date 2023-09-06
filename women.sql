@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2023 at 09:26 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Sep 06, 2023 at 02:18 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,14 +36,7 @@ CREATE TABLE `coures` (
   `cat` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `coures`
---
-
-INSERT INTO `coures` (`id`, `name`, `details`, `image`, `date`, `cat`, `created_at`, `updated_at`) VALUES
-(11, 'hdfhdfh', 'dfhdfhdf', '1693407677.منصة رائدات الأعمال محمد مختار (1).pptx', '2023-08-18', 'hdfhdfh', '2023-08-30 12:01:17', '2023-08-30 12:01:17');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -62,14 +55,7 @@ CREATE TABLE `courese_detail` (
   `presentation` varchar(128) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `courese_detail`
---
-
-INSERT INTO `courese_detail` (`id`, `course_id`, `pre_req`, `description`, `for_whom`, `location`, `video`, `presentation`, `created_at`, `updated_at`) VALUES
-(1, 11, 'dfhdfh', 'dfdfh', 'dfhdfh', 'dfhdfh', '1693407677.منصة رائدة الأعمال and 1 more page - profile 1 - microsoft​ edge 2023-08-30 17-52-59.mp4', 'C:\\xampp\\tmp\\php6F21.tmp', '2023-08-30 12:01:17', '2023-08-30 12:01:17');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -85,7 +71,7 @@ CREATE TABLE `data` (
   `file` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -95,11 +81,11 @@ CREATE TABLE `data` (
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -115,7 +101,7 @@ CREATE TABLE `guide_women` (
   `description` varchar(500) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `guide_women`
@@ -147,7 +133,7 @@ CREATE TABLE `initiatives` (
   `text` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -157,7 +143,7 @@ CREATE TABLE `initiatives` (
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -183,14 +169,14 @@ CREATE TABLE `mobadrat` (
   `description` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `mobadrat`
 --
 
 INSERT INTO `mobadrat` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
-(2, 'رزق جديد', 'تدريبات متنوعة لتأهيل سيدات أسوان فى التفصيل والطباعة والأركت تدعم التنمة المستدامة', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'رزق جديد', 'تدريبات متنوعة لتأهيل سيدات أسوان فى التفصيل والطباعة والأركت تدعم التنمة المستدامة', '0000-00-00 00:00:00', '2023-09-05 09:48:05'),
 (3, 'انتاج مميز رزق مميز', '  ورش عمل في المشغولات اليدوية، لتأهيل السيدات والفتيات لإقتحام سوق العمل، مؤهلة بمهارات تضمن إنتاجا مميزا بخامات صديقة للبيئة', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (4, 'صنعتك فى ايدك', 'تنفيذ أدوات حرفية وأعمال نحاس وتطريز وكروشية وعرجون ومكرميات وخيامية وسبيته باستخدام تدوير المخلفات ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (5, 'تعالى اعرفى دورك فى التغيرات المناخية', 'مبادرة توعوية للتغيرات المناخية لسيدات أسوان لحث السيدات على ابتكار تنفيذ مشروعات اقتصادية تتواكب مع قضية تغيرات المناخ، فى إطار التحضيرات لقمة المناخ الـ27.', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -254,7 +240,7 @@ CREATE TABLE `old-project` (
   `image` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -263,8 +249,8 @@ CREATE TABLE `old-project` (
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -276,11 +262,11 @@ CREATE TABLE `password_reset_tokens` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -310,17 +296,14 @@ CREATE TABLE `project` (
   `updated_at` date DEFAULT NULL,
   `owner_id` int(11) DEFAULT NULL,
   `user_id` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `project`
 --
 
 INSERT INTO `project` (`id`, `name`, `category`, `idea`, `goal`, `innovation`, `future`, `location`, `smart`, `trail`, `email`, `date`, `created_at`, `updated_at`, `owner_id`, `user_id`) VALUES
-(12, 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'صناعي', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه .', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', '2023-08-15', '2023-08-15', '2023-08-15', 1, 1),
-(13, 'dfgdfg', 'dfgdfg', 'dfgdfg', 'dfgdfg', 'dfgdfg', 'dfgdfgd', 'dfgdfg', 'gdfg', 'dfgdf', 'dfgdfg', '2023-08-17', '2023-08-15', '2023-08-15', 1, NULL),
-(14, 'rth', 'rthr', 'rth', 'rth', 'rth', 'rth', 'rth', 'rth', 'rth', 'trh', '2023-08-31', '2023-08-15', '2023-08-15', 1, NULL),
-(15, 'dsfsdf', 'sdfsdf', 'fsdfsdf', 'sdfsdf', 'sdfsdf', 'sdfsdf', 'sdf', 'sdf', 'sdfsdf', 'sdfsdf', '2023-09-08', '2023-08-15', '2023-08-15', 1, NULL);
+(12, 'تصميم وتطوير', 'صناعي', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاج', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', '2023-08-03', '2023-08-15', '2023-09-06', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -343,17 +326,14 @@ CREATE TABLE `project_form` (
   `updated_at` date DEFAULT NULL,
   `project_id` int(11) NOT NULL,
   `user_id` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `project_form`
 --
 
 INSERT INTO `project_form` (`id`, `provided_value`, `customer_categories`, `project_access`, `attract_clients`, `income_source`, `main_resorce`, `main_activity`, `partners`, `cost`, `created_at`, `updated_at`, `project_id`, `user_id`) VALUES
-(3, 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر رتصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر رتصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر رتصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر رتصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', 2000, '2023-08-15', '2023-08-15', 1, 1),
-(4, 'dfg', 'dfg', 'fdg', 'fdg', 'dfg', 'dfg', 'dfg', 'dfg', 1000, '2023-08-15', '2023-08-15', 1, NULL),
-(5, 'rth', 'rthr', 'th', 'rthr', 'th', 'rth', 'rth', 'rthrt', 222, '2023-08-15', '2023-08-15', 1, NULL),
-(6, 'sdg', 'sg', 'sdg', 'sdg', 'sdg', 'sdg', 'sdg', 'sdg', 2000, '2023-08-15', '2023-08-15', 1, NULL);
+(3, 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تم وتطوير وانشاء اي حاجه في اي حاجه ر رتصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه فشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر رتصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه ففي اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر رتصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطور وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميمشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', 2000000, '2023-08-15', '2023-09-06', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -363,38 +343,25 @@ INSERT INTO `project_form` (`id`, `provided_value`, `customer_categories`, `proj
 
 CREATE TABLE `project_owner` (
   `id` int(11) NOT NULL,
-  `nid` bigint(14) NOT NULL,
+  `nid` bigint(15) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
-  `phone` int(11) NOT NULL,
+  `phone` bigint(12) NOT NULL,
   `address` varchar(255) NOT NULL,
   `fund` int(11) NOT NULL,
+  `state` int(11) DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `project_id` int(11) DEFAULT NULL,
   `user_id` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `project_owner`
 --
 
-INSERT INTO `project_owner` (`id`, `nid`, `email`, `name`, `phone`, `address`, `fund`, `created_at`, `updated_at`, `project_id`, `user_id`) VALUES
-(11, 54, NULL, 'fgdfg', 54, 'hd', 1, '2023-08-02 12:56:41', '2023-08-02 12:56:41', NULL, 1),
-(12, 547, NULL, 'dfh', 457, 't', 1, '2023-08-02 12:57:53', '2023-08-02 12:57:53', NULL, 0),
-(13, 346, NULL, 'sdgsd', 346, 'dfg', 1, '2023-08-02 12:59:48', '2023-08-02 12:59:48', NULL, 0),
-(14, 546, NULL, 'fgdfg', 456, 'tth', 1, '2023-08-02 13:01:55', '2023-08-02 13:01:55', NULL, 0),
-(15, 32, NULL, 'fsdf', 23, 'gsdg', 1, '2023-08-02 13:08:03', '2023-08-02 13:08:03', NULL, 0),
-(16, 34, NULL, 'gfdgd', 34, '34', 1, '2023-08-02 13:10:33', '2023-08-02 13:10:33', NULL, 0),
-(17, 54, NULL, 'dhdfh', 54, 'thfdh', 1, '2023-08-02 13:54:30', '2023-08-02 13:54:30', 1, 0),
-(18, 29208152801048, 'm@mail.com', 'mohamed mokhtar ahmed', 1022048333, 'aswan,aswan,', 1, '2023-08-15 06:03:26', '2023-08-15 06:03:26', 1, 0),
-(19, 2920815288632, 'g@h.com', 'ggggg', 1022048333, 'fddfgdfg', 1, '2023-08-15 07:38:57', '2023-08-15 07:38:57', 1, 0),
-(20, 4456, 't@f.com', 'fgdfg', 54645, 'rtrt', 1, '2023-08-15 07:41:24', '2023-08-15 07:41:24', 1, 0),
-(21, 54, 's@s.com', 'fgdfg', 54, 'dgfg', 1, '2023-08-15 07:44:59', '2023-08-15 07:44:59', 1, 0),
-(22, 456, 'f@t.com', 'rgerer', 4564, 'rthrth', 1, '2023-08-15 07:45:30', '2023-08-15 07:45:30', 1, 0),
-(23, 4334, 'f@g.com', 'rrgeg', 3434, 'dgdfg', 1, '2023-08-15 07:51:00', '2023-08-15 07:51:00', 1, 0),
-(24, 54, 'fg@vg.com', 'ghfghfgh', 45, 'eheth', 1, '2023-08-15 07:52:06', '2023-08-15 07:52:06', 1, 0),
-(25, 54, 's@s.com', 'يبيبل', 45, 'df', 1, '2023-08-15 07:56:01', '2023-08-15 07:56:01', 1, 0);
+INSERT INTO `project_owner` (`id`, `nid`, `email`, `name`, `phone`, `address`, `fund`, `state`, `created_at`, `updated_at`, `project_id`, `user_id`) VALUES
+(11, 23452345234523, 'b@daf.dsfg', 'شبسي سيشب سشيبشس سشي', 54523452345, 'sdf gsdf gsdfgsdfg', 0, 2, '2023-08-02 12:56:41', '2023-09-06 09:18:19', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -413,20 +380,14 @@ CREATE TABLE `project_performane` (
   `updated_at` date DEFAULT NULL,
   `project_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `project_performane`
 --
 
 INSERT INTO `project_performane` (`id`, `name`, `period`, `unit`, `target`, `measurement`, `created_at`, `updated_at`, `project_id`, `user_id`) VALUES
-(7, 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر رتصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', '2023-08-15', '2023-08-15', 1, NULL),
-(8, 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر رتصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', '2023-08-15', '2023-08-15', 1, NULL),
-(9, 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه ر تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه ر رتصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', '2023-08-15', '2023-08-15', 1, NULL),
-(10, 'dfgdfg', 'dfg', 'dfg', 'dfg', 'fdg', '2023-08-15', '2023-08-15', 1, NULL),
-(11, 'fdg', 'fdg', 'fdg', 'fdg', 'fdg', '2023-08-15', '2023-08-15', 1, NULL),
-(12, 'rth', 'rth', 'trh', 'rth', 'trh', '2023-08-15', '2023-08-15', 1, NULL),
-(13, 'dsg', 'sdg', 'sdg', 'sdg', 'dsg', '2023-08-15', '2023-08-15', 1, NULL);
+(14, 'dsfa', 'sdf asd', 'fas df', 'asdf', 'sda fsad', '2023-09-04', '2023-09-04', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -445,7 +406,7 @@ CREATE TABLE `project_plan` (
   `updated_at` date DEFAULT NULL,
   `project_id` int(11) NOT NULL,
   `user_id` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `project_plan`
@@ -453,12 +414,7 @@ CREATE TABLE `project_plan` (
 
 INSERT INTO `project_plan` (`id`, `name`, `start_date`, `end_date`, `responsible`, `follower`, `created_at`, `updated_at`, `project_id`, `user_id`) VALUES
 (1, 'ghj', '2023-08-24', '2023-08-19', 'ghj', 'ghj', '2023-08-02', '2023-08-02', 1, 1),
-(2, 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', '2023-08-15', '2023-09-02', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', '2023-08-15', '2023-08-15', 1, NULL),
-(3, 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', '2023-08-15', '2023-09-02', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', '2023-08-15', '2023-08-15', 1, NULL),
-(4, 'dfgdfg', '2023-08-01', '2023-08-03', 'dfg', 'dfg', '2023-08-15', '2023-08-15', 1, NULL),
-(5, 'fdgdfg', '2023-09-01', '2023-08-16', 'fdgdfg', 'dfg', '2023-08-15', '2023-08-15', 1, NULL),
-(6, 'rth', '2023-08-01', '2023-08-03', 'rth', 'rth', '2023-08-15', '2023-08-15', 1, NULL),
-(7, 'fgh', '2023-08-17', '2023-08-03', 'fgh', 'fgh', '2023-08-15', '2023-08-15', 1, NULL);
+(2, 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', '2023-08-15', '2023-09-02', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه', '2023-08-15', '2023-08-15', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -468,26 +424,24 @@ INSERT INTO `project_plan` (`id`, `name`, `start_date`, `end_date`, `responsible
 
 CREATE TABLE `project_risk` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `degree` varchar(255) NOT NULL,
-  `possibility` varchar(255) NOT NULL,
-  `evaluation` varchar(255) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `degree` int(11) NOT NULL,
+  `possibility` int(11) NOT NULL,
+  `evaluation` int(11) DEFAULT NULL,
   `procedures` text NOT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
   `project_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `project_risk`
 --
 
 INSERT INTO `project_risk` (`id`, `name`, `degree`, `possibility`, `evaluation`, `procedures`, `created_at`, `updated_at`, `project_id`, `user_id`) VALUES
-(3, 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه', '10', '9', '10', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه .', '2023-08-15', '2023-08-15', 1, 1),
-(4, 'dfgdfg', 'fdg', 'dfg', 'dfg', 'dfgdffdg', '2023-08-15', '2023-08-15', 1, NULL),
-(5, 'rth', 'rth', 'rth', 'rth', 'rth', '2023-08-15', '2023-08-15', 1, NULL),
-(6, 'ghfgh', 'fgh', 'fgh', 'fgh', 'fgh', '2023-08-15', '2023-08-15', 1, NULL);
+(3, '0', 10, 9, 22, 'sfdasdf asdf asdf', '2023-08-15', '2023-08-15', 1, 1),
+(4, '0', 0, 0, 0, 'dfgdffdg', '2023-08-15', '2023-08-15', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -506,17 +460,14 @@ CREATE TABLE `project_study` (
   `updated_at` date DEFAULT NULL,
   `project_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `project_study`
 --
 
 INSERT INTO `project_study` (`id`, `recommendation`, `finance`, `technical`, `competitive`, `market`, `created_at`, `updated_at`, `project_id`, `user_id`) VALUES
-(3, 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه .', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه .', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه .', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه .', 'تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه تصميم وتطوير وانشاء اي حاجه في اي حاجه .', '2023-08-15', '2023-08-15', 1, NULL),
-(4, 'dfgdfg', 'dfgdfg', 'fdgdfg', 'dfgdfg', 'dfgdfgdfg', '2023-08-15', '2023-08-15', 1, NULL),
-(5, 'rth', 'rth', 'rthrth', 'rth', 'rth', '2023-08-15', '2023-08-15', 1, NULL),
-(6, 'fgh', 'fgh', 'fgh', 'fghfgh', 'fghfgh', '2023-08-15', '2023-08-15', 1, NULL);
+(7, 'sad fsadf asdfب سشي بسشيب', 'sad fsad fsadfشسي بشسي شسي', 'fsad fasdf sadf sadfsadf سشيبشس يب', 'f asdf asdf sdشسيب شسيبشسيب', 'سشيبسشيب', '2023-09-04', '2023-09-06', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -529,7 +480,7 @@ CREATE TABLE `type` (
   `name` varchar(150) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `type`
@@ -547,12 +498,12 @@ INSERT INTO `type` (`id`, `name`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `role` varchar(100) DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -562,14 +513,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'خديجة', 'mmelnobey92@gmail.com', 'admin', NULL, '$2y$10$hq9xBIts1iahQYlhgh9bDeN3WEwg1QnJV8c838owrAQZjpxMTqS2C', NULL, '2023-06-11 08:07:55', '2023-06-11 08:07:55'),
-(2, 'مستخدم', 'admin@invest.gov', 'user', NULL, '$2y$10$rNPKuSu8rQ2aeTz.DiZT4uegnd..C4lUedfz74V/5C.eqzo8cxz9a', NULL, '2023-06-13 10:58:16', '2023-06-13 10:58:16'),
-(3, 'aa', 'aa@mail.com', NULL, NULL, '$2y$10$AP/qNt0gP1hgNMhDJPca0.0JH2vXeAG22fhRzEcCevfJ4iFJVsqqK', NULL, '2023-08-20 05:12:06', '2023-08-20 05:12:06'),
-(4, 'aaa', 'aa@aa.com', NULL, NULL, '$2y$10$Qifq6pfBjQLV5F95LNbdberZi/P0qXzQNnjZjl.815u6IWFmY/l7W', NULL, '2023-08-20 05:23:51', '2023-08-20 05:23:51'),
-(5, 'd', 'd@f', NULL, NULL, '$2y$10$TLK2mr7O75cnnIQOPCyD6ek9GQ8tnvv9W0ZGWWURdHG2dkzCsfJWm', NULL, '2023-08-20 05:27:03', '2023-08-20 05:27:03'),
-(6, 'sss', 'mmelnobey902@gmail.com', NULL, NULL, '$2y$10$bTvl4HJ/1OrT/10CfZUeuOTGFDorFQmTywdN/jG.//beNd/RGTQ4.', NULL, '2023-08-20 06:47:26', '2023-08-20 06:47:26'),
-(7, 'ddd', 'mmelnobey9002@gmail.com', 'user', NULL, '$2y$10$KUNYLrvBwhPKVcnLQ1lzHO9NcAaygf1TU2GwVK0nRjnpEeDWIET/O', NULL, '2023-08-20 06:49:10', '2023-08-20 06:49:10'),
-(8, 'dd', 'a@a.com', 'user', NULL, '$2y$10$Zvc.rw7HywlaOP15559/LeGz.Vt2b7/z13BwMin8fIsJ.V0dgqI.W', NULL, '2023-08-20 06:50:59', '2023-08-20 06:50:59');
+(1, 'خديجة', 'mmelnobey92@gmail.com', 'admin', NULL, '$2y$10$hq9xBIts1iahQYlhgh9bDeN3WEwg1QnJV8c838owrAQZjpxMTqS2C', NULL, '2023-06-11 08:07:55', '2023-06-11 08:07:55');
 
 --
 -- Indexes for dumped tables
@@ -715,19 +659,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `coures`
 --
 ALTER TABLE `coures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `courese_detail`
 --
 ALTER TABLE `courese_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -757,13 +701,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `mobadrat`
 --
 ALTER TABLE `mobadrat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `old-project`
 --
 ALTER TABLE `old-project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -775,43 +719,43 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `project_form`
 --
 ALTER TABLE `project_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `project_owner`
 --
 ALTER TABLE `project_owner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `project_performane`
 --
 ALTER TABLE `project_performane`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `project_plan`
 --
 ALTER TABLE `project_plan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `project_risk`
 --
 ALTER TABLE `project_risk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `project_study`
 --
 ALTER TABLE `project_study`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `type`
@@ -823,7 +767,7 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

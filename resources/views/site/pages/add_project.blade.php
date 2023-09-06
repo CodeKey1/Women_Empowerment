@@ -86,8 +86,9 @@
                                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                                     <label class="control-label col-sm-3"> رقم القومي <span
                                                             style="color: red">*</span></label>
-                                                    <input type="number" class="form-control" name="nid" placeholder=""
-                                                        required>
+                                                    <input type="text" pattern="[0-9]{14,14}" maxlength="14"
+                                                        minlength="14" title="رقم البطاقة مكون من 14 رقم"
+                                                        class="form-control" name="nid" placeholder="" required>
                                                 </div>
                                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                                     <label class="control-label col-sm-3"> الإسم رباعي <span
@@ -107,7 +108,9 @@
                                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                                     <label class="control-label col-sm-3"> التليفون <span
                                                             style="color: red">*</span></label>
-                                                    <input type="number" class="form-control" name="phone" required>
+                                                    <input type="text" pattern="[0-9]{10,11}" maxlength="11"
+                                                        minlength="10" title="رقم الهاتف مكون من 11 رقم"
+                                                        class="form-control" name="phone" required>
                                                 </div>
                                             </div>
                                             <div class="row">

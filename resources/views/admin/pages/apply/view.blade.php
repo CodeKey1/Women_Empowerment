@@ -400,6 +400,7 @@
                                             <option value="" disabled selected> اختر التقييم
                                             </option>
                                             <option value="1"> مقبول </option>
+                                            <option value="2"> جاري المراجعة </option>
                                             <option value="0"> مرفوض </option>
                                         </select>
                                     </div>
