@@ -150,26 +150,30 @@ class AdminController extends Controller
     public function store(ProjectRequest $request)
     {
         //
-        $file = [];
-        if ($files = $request->file('image')) {
-            foreach ($files as $file) {
-                $ext = strtolower($file->getClientOriginalName());
-                $file_name = time() . '.' . $ext;
-                $path = 'images/ng';
-                $file->move($path, $file_name);
-                $upload[] = $file_name;
+        try {
+            $file = [];
+            if ($files = $request->file('image')) {
+                foreach ($files as $file) {
+                    $ext = strtolower($file->getClientOriginalName());
+                    $file_name = time() . '.' . $ext;
+                    $path = 'images/ng';
+                    $file->move($path, $file_name);
+                    $upload[] = $file_name;
+                }
+            } else {
+                $upload[] = '';
             }
-        } else {
-            $upload[] = '';
+
+            Old_Project::create([
+                "name" => $request['name'],
+                "details" => $request['details'],
+                "image" => implode('|', $upload),
+
+            ]);
+            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
-
-        Old_Project::create([
-            "name" => $request['name'],
-            "details" => $request['details'],
-            "image" => implode('|', $upload),
-
-        ]);
-        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
     }
     public function projectDelete(string $id)
     {
@@ -248,26 +252,30 @@ class AdminController extends Controller
 
     public function project_update(Request $request, string $id)
     {
-        $file = [];
-        if ($files = $request->file('image')) {
-            foreach ($files as $file) {
-                $ext = strtolower($file->getClientOriginalName());
-                $file_name = time() . '.' . $ext;
-                $path = 'images/ng';
-                $file->move($path, $file_name);
-                $upload[] = $file_name;
+        try {
+            $file = [];
+            if ($files = $request->file('image')) {
+                foreach ($files as $file) {
+                    $ext = strtolower($file->getClientOriginalName());
+                    $file_name = time() . '.' . $ext;
+                    $path = 'images/ng';
+                    $file->move($path, $file_name);
+                    $upload[] = $file_name;
+                }
+            } else {
+                $upload[] = '';
             }
-        } else {
-            $upload[] = '';
+
+            Old_Project::where('id', $id)->update([
+                "name" => $request['name'],
+                "details" => $request['details'],
+                "image" => implode('|', $upload),
+
+            ]);
+            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
-
-        Old_Project::where('id', $id)->update([
-            "name" => $request['name'],
-            "details" => $request['details'],
-            "image" => implode('|', $upload),
-
-        ]);
-        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
     }
 
 

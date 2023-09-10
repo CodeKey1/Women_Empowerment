@@ -32,32 +32,32 @@ class DataController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-        //
-        $file = [];
-        if ($files = $request->file('file')) {
-            foreach ($files as $file) {
-                $ext = strtolower($file->getClientOriginalName());
-                $file_name = time() . '.' . $ext;
-                $path = 'images/data';
-                $file->move($path, $file_name);
-                $upload[] = $file_name;
+        try {
+            //
+            $file = [];
+            if ($files = $request->file('file')) {
+                foreach ($files as $file) {
+                    $ext = strtolower($file->getClientOriginalName());
+                    $file_name = time() . '.' . $ext;
+                    $path = 'images/data';
+                    $file->move($path, $file_name);
+                    $upload[] = $file_name;
+                }
+            } else {
+                $upload[] = '';
             }
-        } else {
-            $upload[] = '';
+
+            Data::create([
+                "name" => $request['name'],
+                "type" => $request['type'],
+                "date" => $request['date'],
+                "file" => implode('|', $upload),
+
+            ]);
+            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
-
-        Data::create([
-            "name" => $request['name'],
-            "type" => $request['type'],
-            "date" => $request['date'],
-            "file" => implode('|', $upload),
-
-        ]);
-        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
-    }catch (\Exception $ex) {
-        return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
-    }
     }
 
     /**
@@ -85,7 +85,7 @@ class DataController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        try{
+        try {
             $file = [];
             if ($files = $request->file('file')) {
                 foreach ($files as $file) {
@@ -105,11 +105,9 @@ class DataController extends Controller
                 "file" => implode('|', $upload),
             ]);
             return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
-      catch (\Exception $ex) {
-        return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
-    }
-
     }
 
     /**
