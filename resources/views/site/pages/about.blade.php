@@ -17,68 +17,7 @@
                     </div>
                     <div class="ed-about-sec1">
                         <div class="ed-advan">
-                            <ul>
-                                <li>
-                                    <div class="ed-ad-img">
-                                        <img src="images/adv/1.png" alt="">
-                                    </div>
-                                    <div class="ed-ad-dec">
-                                        <h4> الجوائز </h4>
-                                        <p> </p>
-
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="ed-ad-img">
-                                        <img src="images/adv/2.png" alt="">
-                                    </div>
-                                    <div class="ed-ad-dec">
-                                        <h4> فريق الدعم </h4>
-                                        <p> </p>
-
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="ed-ad-img">
-                                        <img src="images/adv/3.png" alt="">
-                                    </div>
-                                    <div class="ed-ad-dec">
-                                        <h4> الإرشادات </h4>
-                                        <p> </p>
-
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="ed-ad-img">
-                                        <img src="images/adv/4.png" alt="">
-                                    </div>
-                                    <div class="ed-ad-dec">
-                                        <h4> التقديم </h4>
-                                        <p> </p>
-
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="ed-ad-img">
-                                        <img src="images/adv/5.png" alt="">
-                                    </div>
-                                    <div class="ed-ad-dec">
-                                        <h4> التسوق الشبكي </h4>
-                                        <p> </p>
-
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="ed-ad-img">
-                                        <img src="images/adv/6.png" alt="">
-                                    </div>
-                                    <div class="ed-ad-dec">
-                                        <h4> التدريب </h4>
-                                        <p> </p>
-
-                                    </div>
-                                </li>
-                            </ul>
+                            
                         </div>
                     </div>
                     <div class="ed-about-sec1">

@@ -54,25 +54,37 @@ class ApplyController extends Controller
     }
     public function mopdara_store(Request $request)
     {
-        Mobadrat::create([
-            "name" => $request['name'],
-            "description" => $request['details'],
-        ]);
-        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        try {
+            Mobadrat::create([
+                "name" => $request['name'],
+                "description" => $request['details'],
+            ]);
+            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
     public function mopdara_update(Request $request, string $id)
     {
-        Mobadrat::where('id', $id)->update([
-            "name" => $request['name'],
-            "description" => $request['details'],
-        ]);
-        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        try {
+            Mobadrat::where('id', $id)->update([
+                "name" => $request['name'],
+                "description" => $request['details'],
+            ]);
+            return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
     public function mopdara_delete(string $id)
     {
-        $course = Mobadrat::find($id);
-        $course->delete();
-        return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
+        try {
+            $course = Mobadrat::find($id);
+            $course->delete();
+            return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
 
     public function ershadat()
@@ -92,25 +104,37 @@ class ApplyController extends Controller
     }
     public function ershadat_store(Request $request)
     {
+        try {
         Guide_Women::create([
             "name" => $request['name'],
             "description" => $request['details'],
         ]);
         return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+    } catch (\Exception $ex) {
+        return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+    }
     }
     public function ershadat_update(Request $request, string $id)
     {
-        Guide_Women::where('id', $id)->update([
-            "name" => $request['name'],
-            "description" => $request['details'],
-        ]);
-        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        try {
+            Guide_Women::where('id', $id)->update([
+                "name" => $request['name'],
+                "description" => $request['details'],
+            ]);
+            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
     public function ershadat_delete(string $id)
     {
+        try {
         $course = Guide_Women::find($id);
         $course->delete();
         return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
+    } catch (\Exception $ex) {
+        return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+    }
     }
 
     /**
