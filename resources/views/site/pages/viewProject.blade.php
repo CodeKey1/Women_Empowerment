@@ -363,11 +363,12 @@
                                                     @isset($Project_risk)
                                                         @foreach ($Project_risk as $Pr)
                                                             <tr>
-                                                                <td>{{ $Pr->name }}</td>
-                                                                <td>{{ $Pr->degree }}</td>
-                                                                <td>{{ $Pr->possibility }}</td>
-                                                                <td>{{ $Pr->evaluation }}</td>
-                                                                <td>{{ $Pr->procedures }}</td>
+                                                                <td><input type="text" value="{{ $Pr->name }}"></td>
+                                                                <td><input type="text" value="{{ $Pr->degree }}"></td>
+                                                                <td><input type="text" value="{{ $Pr->possibility }}">
+                                                                </td>
+                                                                <td><input type="text" value="{{ $Pr->evaluation }}"></td>
+                                                                <td><input type="text" value="{{ $Pr->procedures }}"></td>
                                                             </tr>
                                                         @endforeach
                                                     @endisset
