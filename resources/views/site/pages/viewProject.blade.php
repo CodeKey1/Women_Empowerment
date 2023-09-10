@@ -347,6 +347,58 @@
                                 <div id="menu2"
                                     class="tab-pane fade tab {{ session('menu2_active') ? 'in active' : null }}">
                                     <h4> المخاطر المحتملة </h4>
+                                    <form class="form-horizontal" style="font-family: system-ui;"
+                                        action="{{ route('project.store') }}"
+                                        method="POST"enctype="multipart/form-data">
+                                        @csrf
+                                        <h4>اضافة مخاطر محتملة للمشروع </h4>
+                                        <div class="row">
+                                            <div class="col-md-2 ">
+                                                <label class="control-label "> التقيم </label>
+                                                <div class="slidecontainer">
+                                                    <input id="result" name="evaluation" type="button"
+                                                        Value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 ">
+                                                <label class="control-label "> الإحتمال <span
+                                                        style="color: red">*</span></label>
+                                                <div class="slidecontainer">
+                                                    <input type="range" min="1" max="5" value="0"
+                                                        name="possibility" style="margin: 0" id="myRange1"
+                                                        onchange="divideBy()" required>
+                                                    <p>الاحتمالية: <span id="demo1" onkeyup="calculate()"></span>
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-2 ">
+                                                <label class="control-label "> الشدة <span
+                                                        style="color: red">*</span></label>
+                                                <div class="slidecontainer">
+                                                    <input type="range" name="degree" min="1" max="5"
+                                                        value="0" style="margin: 0" id="myRange"
+                                                        onchange="divideBy()" required>
+                                                    <p>الشدة: <span id="demo" onkeyup="calculate()"></span></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <label class="control-label col-sm-3"> الخطر المحتمل <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" name="name" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-6"> اجراءات التعامل مع الخطر <span
+                                                        style="color: red">*</span></label>
+                                                <textarea class="form-control" name="procedures" cols="5" rows="5" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <button type="submit" name="formType" value="projectRisk"
+                                                class="btn">حفظ</button>
+                                        </div>
+                                    </form>
+                                    <h4>المخاطر السابقة</h4>
                                     <div class="tab-inn">
                                         <div class="table-responsive table-desi">
                                             <table class="table table-hover">
@@ -357,19 +409,39 @@
                                                         <th>الاحتمال</th>
                                                         <th>التقيم</th>
                                                         <th>اجرائات التعامل</th>
+                                                        <th></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     @isset($Project_risk)
                                                         @foreach ($Project_risk as $Pr)
-                                                            <tr>
-                                                                <td><input type="text" value="{{ $Pr->name }}"></td>
-                                                                <td><input type="text" value="{{ $Pr->degree }}"></td>
-                                                                <td><input type="text" value="{{ $Pr->possibility }}">
-                                                                </td>
-                                                                <td><input type="text" value="{{ $Pr->evaluation }}"></td>
-                                                                <td><input type="text" value="{{ $Pr->procedures }}"></td>
-                                                            </tr>
+                                                            <form class="form-horizontal" style="font-family: system-ui;"
+                                                                action="{{ route('project.edit', $Pr->id) }}"
+                                                                method="POST"enctype="multipart/form-data">
+                                                                @csrf
+                                                                <tr>
+                                                                    <td><input type="text" name="name"
+                                                                            value="{{ $Pr->name }}">
+                                                                    </td>
+                                                                    <td><input type="number" name="degree"
+                                                                            value="{{ $Pr->degree }}" min="1"
+                                                                            max="5">
+                                                                    </td>
+                                                                    <td><input type="number" name="possibility"
+                                                                            value="{{ $Pr->possibility }}" min="1"
+                                                                            max="5">
+                                                                    </td>
+                                                                    <td><input name="evaluation" type="button"
+                                                                            Value="{{ $Pr->evaluation }}">
+                                                                    </td>
+                                                                    <td><input type="text" name="procedures"
+                                                                            value="{{ $Pr->procedures }}">
+                                                                    </td>
+                                                                    <td><button type="submit" name="formType"
+                                                                            value="projectRisk" class="btn">تعديل</button>
+                                                                    </td>
+                                                                </tr>
+                                                            </form>
                                                         @endforeach
                                                     @endisset
                                                 </tbody>
@@ -430,6 +502,44 @@
                                 <div id="plan"
                                     class="tab-pane fade tab {{ session('plan_active') ? 'in active' : null }}">
                                     <h4> خطة المشروع </h4>
+                                    <form class="form-horizontal" style="font-family: system-ui;"
+                                        action="{{ route('project.store') }}"
+                                        method="POST"enctype="multipart/form-data">
+                                        @csrf
+                                        <h4> اضافة خطة المشروع </h4>
+                                        <div class="row" id="plane">
+                                            <div class="col-md-3 ">
+                                                <label class="control-label "> النهاية <span
+                                                        style="color: red">*</span></label>
+                                                <input type="date" name="end_date[]" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-3 ">
+                                                <label class="control-label "> البداية <span
+                                                        style="color: red">*</span></label>
+                                                <input type="date" name="start_date[]" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <label class="control-label col-sm-3"> المهام <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" name="name[]" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <label class="control-label col-sm-3"> المتابعة <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" name="follower[]" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <label class="control-label col-sm-3"> المسؤول <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" name="responsible[]" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <button type="submit" name="formType" value="projectPlan"
+                                                class="btn">حفظ</button>
+                                        </div>
+                                    </form>
+                                    <h4>الخطط السابقة</h4>
                                     <div class="tab-inn">
                                         <div class="table-responsive table-desi">
                                             <table class="table table-hover">
@@ -440,18 +550,33 @@
                                                         <th>النهاية</th>
                                                         <th>المسؤل</th>
                                                         <th>المتابعة</th>
+                                                        <th></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     @isset($Project_Plan)
                                                         @foreach ($Project_Plan as $Pp)
-                                                            <tr>
-                                                                <td>{{ $Pp->name }}</td>
-                                                                <td>{{ $Pp->start_date }}</td>
-                                                                <td>{{ $Pp->end_date }}</td>
-                                                                <td>{{ $Pp->responsible }}</td>
-                                                                <td>{{ $Pp->follower }}</td>
-                                                            </tr>
+                                                            <form class="form-horizontal" style="font-family: system-ui;"
+                                                                action="{{ route('project.edit', $Pp->id) }}" method="POST"
+                                                                enctype="multipart/form-data">
+                                                                @csrf
+                                                                <tr>
+                                                                    <td><input type="text" name="name"
+                                                                            value="{{ $Pp->name }}"></td>
+                                                                    <td><input type="date" name="start_date"
+                                                                            value="{{ $Pp->start_date }}"></td>
+                                                                    <td><input type="date" name="end_date"
+                                                                            value="{{ $Pp->end_date }}"></td>
+                                                                    <td><input type="text" name="responsible"
+                                                                            value="{{ $Pp->responsible }}"></td>
+                                                                    <td><input type="text" name="follower"
+                                                                            value="{{ $Pp->follower }}"></td>
+                                                                    <td>
+                                                                        <button type="submit" name="formType"
+                                                                            value="projectPlan" class="btn">تعديل</button>
+                                                                    </td>
+                                                                </tr>
+                                                            </form>
                                                         @endforeach
                                                     @endisset
                                                 </tbody>
@@ -527,6 +652,44 @@
                                 <div id="mosher"
                                     class="tab-pane fade tab {{ session('mosher_active') ? 'in active' : null }}">
                                     <h4> مؤشرات أداء المشروع </h4>
+                                    <form class="form-horizontal" style="font-family: system-ui;"
+                                        action="{{ route('project.store') }}"
+                                        method="POST"enctype="multipart/form-data">
+                                        @csrf
+                                        <h4>اضافة مؤشر أداء المشروع </h4>
+                                        <div class="row" id="work_experience">
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-6"> مؤشر الأداء <span
+                                                        style="color: red">*</span></label>
+                                                <textarea class="form-control" name="name[]" cols="3" rows="3" placeholder="  " required></textarea>
+                                            </div>
+                                            <div class="col-md-3 ">
+                                                <label class="control-label "> آلية القياس <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" name="measurement[]" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-3 ">
+                                                <label class="control-label "> المستهدف <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" name="target[]" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-3 ">
+                                                <label class="control-label "> وحدة القياس <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" name="unit[]" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-3 ">
+                                                <label class="control-label "> دورة القياس <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" name="period[]" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <button type="submit" name="formType" value="projectPeroformance"
+                                                class="btn">حفظ</button>
+                                        </div>
+                                    </form>
+                                    <h4>المؤشرات السابقة</h4>
                                     <div class="tab-inn">
                                         <div class="table-responsive table-desi">
                                             <table class="table table-hover">
@@ -537,18 +700,32 @@
                                                         <th>وحدة القياس</th>
                                                         <th>المستهدف</th>
                                                         <th>آلية القياس</th>
+                                                        <th></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     @isset($Project_performane)
                                                         @foreach ($Project_performane as $Pff)
-                                                            <tr>
-                                                                <td>{{ $Pff->name }}</td>
-                                                                <td>{{ $Pff->period }}</td>
-                                                                <td>{{ $Pff->unit }}</td>
-                                                                <td>{{ $Pff->target }}</td>
-                                                                <td>{{ $Pff->measurement }}</td>
-                                                            </tr>
+                                                            <form class="form-horizontal" style="font-family: system-ui;"
+                                                                action="{{ route('project.edit', $Pff->id) }}"
+                                                                method="POST"enctype="multipart/form-data">
+                                                                @csrf
+                                                                <tr>
+                                                                    <td><input type="text" name="name"
+                                                                            value="{{ $Pff->name }}"></td>
+                                                                    <td><input type="text" name="period"
+                                                                            value="{{ $Pff->period }}"></td>
+                                                                    <td><input type="text" name="unit"
+                                                                            value="{{ $Pff->unit }}"></td>
+                                                                    <td><input type="text" name="target"
+                                                                            value="{{ $Pff->target }}"></td>
+                                                                    <td><input type="text" name="measurement"
+                                                                            value="{{ $Pff->measurement }}"></td>
+                                                                    <td><button type="submit" name="formType"
+                                                                            value="projectPeroformance"
+                                                                            class="btn">تعديل</button></td>
+                                                                </tr>
+                                                            </form>
                                                         @endforeach
                                                     @endisset
                                                 </tbody>
@@ -561,6 +738,30 @@
                     </div>
                 </div>
             </div>
+            <script>
+                var evalue = document.getElementById("evalue");
+                var slider = document.getElementById("myRange");
+                var slider1 = document.getElementById("myRange1");
+                var output = document.getElementById("demo");
+                var output1 = document.getElementById("demo1");
+                output.innerHTML = slider.value;
+
+                slider.oninput = function() {
+                    output.innerHTML = this.value;
+                }
+                slider1.oninput = function() {
+                    output1.innerHTML = this.value;
+                }
+
+                function divideBy() {
+                    num1 = document.getElementById(
+                        "myRange").value;
+                    num2 = document.getElementById(
+                        "myRange1").value;
+                    document.getElementById(
+                        "result").value = num1 * num2;
+                }
+            </script>
         @endsection
         @section('modal')
         @endsection

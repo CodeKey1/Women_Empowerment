@@ -61,7 +61,7 @@ class RegistrationController extends Controller
 
                     ]);
 
-                    return redirect()->route('project.create')->with('menu1_active', true)->with('active', true)->with(['success' => 'تم الحفظ بيانات رائدة الأعمال بنجاح']);
+                    return redirect()->back()->with('menu1_active', true)->with('active', true)->with(['success' => 'تم الحفظ بيانات رائدة الأعمال بنجاح']);
                     break;
                 case 'projectInitial':
                     Project::create([
@@ -80,7 +80,7 @@ class RegistrationController extends Controller
                         "user_id" => $project,
 
                     ]);
-                    return redirect()->route('project.create')->with('menu2_active', true)->with('active', true)->with(['success' => 'تم الحفظ بيانات المشروع بنجاح']);
+                    return redirect()->back()->with('menu2_active', true)->with('active', true)->with(['success' => 'تم الحفظ بيانات المشروع بنجاح']);
                     break;
                 case 'projectRisk':
                     Project_risk::create([
@@ -92,7 +92,7 @@ class RegistrationController extends Controller
                         "project_id" => $project,
                         "user_id" => $project,
                     ]);
-                    return redirect()->route('project.create')->with('drasa_active', true)->with('active', true)->with(['success' => 'تم الحفظ المخاطر المحتملة للمشروع الأعمال بنجاح']);
+                    return redirect()->back()->with('drasa_active', true)->with('active', true)->with(['success' => 'تم الحفظ المخاطر المحتملة للمشروع الأعمال بنجاح']);
                     break;
                 case 'projectStudy':
                     Project_study::create([
@@ -104,7 +104,7 @@ class RegistrationController extends Controller
                         "project_id" => $project,
                         "user_id" => $project,
                     ]);
-                    return redirect()->route('project.create')->with('plan_active', true)->with('active', true)->with(['success' => 'تم الحفظ  دراسة جدوى المشروع الأعمال بنجاح']);
+                    return redirect()->back()->with('plan_active', true)->with('active', true)->with(['success' => 'تم الحفظ  دراسة جدوى المشروع الأعمال بنجاح']);
                     break;
                 case 'projectPlan':
                     for ($i = 0; $i < count($request->name); $i++) {
@@ -123,7 +123,7 @@ class RegistrationController extends Controller
                             "user_id" => $project,
                         ]);
                     }
-                    return redirect()->route('project.create')->with('template_active', true)->with('active', true)->with(['success' => 'تم الحفظ  خطة المشروع الأعمال بنجاح']);
+                    return redirect()->back()->with('template_active', true)->with('active', true)->with(['success' => 'تم الحفظ  خطة المشروع الأعمال بنجاح']);
                     break;
                 case 'workForm':
                     Project_form::create([
@@ -139,7 +139,7 @@ class RegistrationController extends Controller
                         "project_id" => $project,
                         "user_id" => $project,
                     ]);
-                    return redirect()->route('project.create')->with('mosher_active', true)->with('active', true)->with(['success' => 'تم الحفظ  نموذج العمل الأعمال بنجاح']);
+                    return redirect()->back()->with('mosher_active', true)->with('active', true)->with(['success' => 'تم الحفظ  نموذج العمل الأعمال بنجاح']);
                     break;
                 case 'projectPeroformance':
                     for ($i = 0; $i < count($request->period); $i++) {
@@ -221,20 +221,18 @@ class RegistrationController extends Controller
                     return redirect()->route('viewProject')->with('plan_active', true)->with('active', true)->with(['success' => 'تم الحفظ  دراسة جدوى المشروع الأعمال بنجاح']);
                     break;
                 case 'projectPlan':
-                    for ($i = 0; $i < count($request->name); $i++) {
-                        $name[] = $request->name[$i];
-                        $start_date[] = $request->start_date[$i];
-                        $end_date[] = $request->end_date[$i];
-                        $responsible[] = $request->responsible[$i];
-                        $follower[] = $request->follower[$i];
-                        Project_Plan::where('id', $id)->update([
-                            "name" => $name[$i],
-                            "start_date" => $start_date[$i],
-                            "end_date" => $end_date[$i],
-                            "responsible" => $responsible[$i],
-                            "follower" => $follower[$i],
-                        ]);
-                    }
+                    $name = $request->name;
+                    $start_date = $request->start_date;
+                    $end_date = $request->end_date;
+                    $responsible = $request->responsible;
+                    $follower = $request->follower;
+                    Project_Plan::where('id', $id)->update([
+                        "name" => $name,
+                        "start_date" => $start_date,
+                        "end_date" => $end_date,
+                        "responsible" => $responsible,
+                        "follower" => $follower,
+                    ]);
                     return redirect()->route('viewProject')->with('template_active', true)->with('active', true)->with(['success' => 'تم الحفظ  خطة المشروع الأعمال بنجاح']);
                     break;
                 case 'workForm':
@@ -252,20 +250,13 @@ class RegistrationController extends Controller
                     return redirect()->route('viewProject')->with('mosher_active', true)->with('active', true)->with(['success' => 'تم الحفظ  نموذج العمل الأعمال بنجاح']);
                     break;
                 case 'projectPeroformance':
-                    for ($i = 0; $i < count($request->period); $i++) {
-                        $name[] = $request->name[$i];
-                        $unit[] = $request->unit[$i];
-                        $target[] = $request->target[$i];
-                        $measurement[] = $request->measurement[$i];
-                        $period[] = $request->period[$i];
-                        Project_performane::where('id', $id)->update([
-                            "name" => $name[$i],
-                            "period" => $period[$i],
-                            "unit" => $unit[$i],
-                            "target" => $target[$i],
-                            "measurement" => $measurement[$i],
-                        ]);
-                    }
+                    Project_performane::where('id', $id)->update([
+                        "name" => $request->name,
+                        "period" => $request->unit,
+                        "unit" => $request->target,
+                        "target" => $request->measurement,
+                        "measurement" => $request->period,
+                    ]);
                     return redirect()->back()->with(['success' => 'تم الحفظ مؤشرات أداء المشروع بنجاح']);
                     break;
             }
