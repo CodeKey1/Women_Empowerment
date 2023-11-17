@@ -154,13 +154,7 @@
                     <div class="col s12">
                         <div class="cor-p5">
                             <ul class="nav nav-tabs search-top">
-                                <li class="{{ !session('active') ? 'active' : null }} ">
-                                    <a data-toggle="tab" href="#home">
-                                        <img src="images/icon/cor4.png" alt="">
-                                        <span> بيانات رائدة الأعمال</span>
-                                    </a>
-                                </li>
-                                <li class="{{ session('menu1_active') ? 'active' : null }}"><a data-toggle="tab"
+                                <li class="{{ !session('active') ? 'active' : null }}"><a data-toggle="tab"
                                         href="#menu1"><img src="images/icon/cor3.png" alt=""><span> المشروع
                                         </span></a></li>
                                 <li class="{{ session('menu2_active') ? 'active' : null }}"><a data-toggle="tab"
@@ -180,175 +174,101 @@
                                             المشروع </span></a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="home" class="tab-pane fade {{ !session('active') ? 'in active' : null }}">
-                                    @isset($Project_owner)
-                                        @foreach ($Project_owner as $PO)
-                                            <form class="form-horizontal" style="font-family: system-ui;"
-                                                action="{{ route('project.edit', $PO->id) }}"
-                                                onsubmit="return confirmSubmit();" method="POST"enctype="multipart/form-data">
-                                                @csrf
-                                                <h4 style="text-align: center;"> بيانات رائدة الأعمال </h4>
-                                                <h4 style="text-align: center;">حالة المشروع "
-                                                    @if ($PO->state == 0)
-                                                        مرفوض
-                                                    @elseif($PO->state == 1)
-                                                        مقبول
-                                                    @else
-                                                        جاري
-                                                    @endif
-                                                    "
-                                                </h4>
-                                                <div class="row">
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-3"> رقم القومي <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" pattern="[0-9]{14,14}" maxlength="14"
-                                                            minlength="14" class="form-control" name="nid"
-                                                            value="{{ $PO->nid }}" title="رقم البطاقة مكون من 14 رقم">
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-3"> الإسم رباعي <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" class="form-control" name="name"
-                                                            value="{{ $PO->name }}">
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-3"> البريد الإلكتروني <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="email" class="form-control" name="email"
-                                                            value="{{ $PO->email }}">
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-3"> التليفون <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" pattern="[0-9]{10,11}" maxlength="11"
-                                                            minlength="10" class="form-control" name="phone"
-                                                            value="{{ $PO->phone }}" title="رقم الهاتف مكون من 11 رقم">
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-3"> عنوان رائدة الأعمال (المدينة -
-                                                            العنوان) <span style="color: red">*</span></label>
-                                                        <input type="text" class="form-control" name="address"
-                                                            value="{{ $PO->address }}">
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-3"> الرغبة في الحصول على تمويل
-                                                            <span style="color: red">*</span></label>
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <input type="radio" id="yes" name="fund" value="1">
-                                                        <label for="yes"> نعم </label>
-                                                        <input type="radio" id="no" name="fund" value="0">
-                                                        <label for="no">لا </label>
-                                                    </div>
-                                                    <button type="submit" name="formType" value="initial"
-                                                        class="btn">تعديل</button>
-                                                </div>
-                                            </form>
-                                        @endforeach
-                                    @endisset
-                                </div>
-                                <div id="menu1"
-                                    class="tab-pane fade tab {{ session('menu1_active') ? 'in active' : null }}">
-                                    @isset($Project)
-                                        @foreach ($Project as $P)
-                                            <form class="form-horizontal" style="font-family: system-ui;"
-                                                action="{{ route('project.edit', $P->id) }}"
-                                                onsubmit="return confirmSubmit();"
-                                                method="POST"enctype="multipart/form-data">
-                                                @csrf
-                                                <h4 style="text-align: center;"> بيانات المشروع </h4>
-                                                <div class="row">
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-3"> اسم المشروع <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" class="form-control" name="name"
-                                                            value="{{ $P->name }}">
-                                                        <input type="text" class="form-control" name="owner_id"
-                                                            value=" {{ Auth::user()->id }}" style="display: none;">
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-3"> مجال المشروع <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" class="form-control" name="category"
-                                                            value="{{ $P->category }}">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> ملخص فكرة المشروع <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" class="form-control" name="idea"
-                                                            value="{{ $P->idea }}">
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> تاريخ البدء المتوقع <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="date" class="form-control" name="date"
-                                                            value="{{ $P->date }}">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-3"> أهداف المشروع <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" class="form-control" name="goal"
-                                                            value="{{ $P->goal }}">
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> التخطيط والابتكار في المشروع
-                                                            <span style="color: red">*</span></label>
-                                                        <input type="text" name="innovation" class="form-control"
-                                                            value="{{ $P->innovation }}">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> كيف يولد المشروع مستقبل اكثر
-                                                            خضرة
-                                                            واستدامه <span style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="future" cols="5" rows="5"> {{ $P->future }}</textarea>
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-3"> ذكاء المشروع <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" class="form-control" name="smart"
-                                                            value="{{ $P->smart }}">
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> الاثر المتوقع للمشروع <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" class="form-control" name="trail"
-                                                            value="{{ $P->trail }}">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> الموقع الألكتروني للمشروع
-                                                        </label>
-                                                        <input type="text" name="email" value="{{ $P->email }}"
-                                                            class="form-control">
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> مقر تنفيذ المشروع <span
-                                                                style="color: red">*</span></label>
-                                                        <input type="text" name="location" value="{{ $P->location }}"
-                                                            class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <button type="submit" name="formType" value="projectInitial"
-                                                        class="btn">تعديل</button>
-                                                </div>
-                                            </form>
-                                        @endforeach
-                                    @endisset
+                                <div id="menu1" class="tab-pane fade tab {{ !session('active') ? 'in active' : null }}">
+                                    <form class="form-horizontal" style="font-family: system-ui;"
+                                        action="{{ route('project.edit', $Project->id) }}"
+                                        onsubmit="return confirmSubmit();" method="POST"enctype="multipart/form-data">
+                                        @csrf
+                                        <h4 style="text-align: center;"> بيانات المشروع </h4>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-3"> اسم المشروع <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" name="name"
+                                                    value="{{ $Project->name }}">
+                                                <input type="text" class="form-control" name="owner_id"
+                                                    value=" {{ Auth::user()->id }}" style="display: none;">
+                                            </div>
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-3"> مجال المشروع <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" name="category"
+                                                    value="{{ $Project->category }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-6"> ملخص فكرة المشروع <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" name="idea"
+                                                    value="{{ $Project->idea }}">
+                                            </div>
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-6"> تاريخ البدء المتوقع <span
+                                                        style="color: red">*</span></label>
+                                                <input type="date" class="form-control" name="date"
+                                                    value="{{ $Project->date }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-3"> أهداف المشروع <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" name="goal"
+                                                    value="{{ $Project->goal }}">
+                                            </div>
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-6"> التخطيط والابتكار في المشروع
+                                                    <span style="color: red">*</span></label>
+                                                <input type="text" name="innovation" class="form-control"
+                                                    value="{{ $Project->innovation }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-6"> كيف يولد المشروع مستقبل اكثر
+                                                    خضرة
+                                                    واستدامه <span style="color: red">*</span></label>
+                                                <textarea class="form-control" name="future" cols="5" rows="5"> {{ $Project->future }}</textarea>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-3"> ذكاء المشروع <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" name="smart"
+                                                    value="{{ $Project->smart }}">
+                                            </div>
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-6"> الاثر المتوقع للمشروع <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" class="form-control" name="trail"
+                                                    value="{{ $Project->trail }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-6"> الموقع الألكتروني للمشروع
+                                                </label>
+                                                <input type="text" name="email" value="{{ $Project->email }}"
+                                                    class="form-control">
+                                            </div>
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <label class="control-label col-sm-6"> مقر تنفيذ المشروع <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text" name="location" value="{{ $Project->location }}"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <button type="submit" name="formType" value="projectInitial"
+                                                class="btn">تعديل</button>
+                                        </div>
+                                    </form>
                                 </div>
                                 <div id="menu2"
                                     class="tab-pane fade tab {{ session('menu2_active') ? 'in active' : null }}">
                                     <h4> المخاطر المحتملة </h4>
                                     <form class="form-horizontal" style="font-family: system-ui;"
-                                        action="{{ route('project.store') }}"
+                                        action="{{ route('project.edit.store', $Project->id) }}"
                                         method="POST"enctype="multipart/form-data">
                                         @csrf
                                         <h4>اضافة مخاطر محتملة للمشروع </h4>
@@ -503,7 +423,7 @@
                                     class="tab-pane fade tab {{ session('plan_active') ? 'in active' : null }}">
                                     <h4> خطة المشروع </h4>
                                     <form class="form-horizontal" style="font-family: system-ui;"
-                                        action="{{ route('project.store') }}"
+                                        action="{{ route('project.edit.store', $Project->id) }}"
                                         method="POST"enctype="multipart/form-data">
                                         @csrf
                                         <h4> اضافة خطة المشروع </h4>
@@ -669,7 +589,7 @@
                                     class="tab-pane fade tab {{ session('mosher_active') ? 'in active' : null }}">
                                     <h4> مؤشرات أداء المشروع </h4>
                                     <form class="form-horizontal" style="font-family: system-ui;"
-                                        action="{{ route('project.store') }}"
+                                        action="{{ route('project.edit.store', $Project->id) }}"
                                         method="POST"enctype="multipart/form-data">
                                         @csrf
                                         <h4>اضافة مؤشر أداء المشروع </h4>

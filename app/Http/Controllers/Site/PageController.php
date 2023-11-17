@@ -88,18 +88,17 @@ class PageController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function viewProject()
+    public function viewProject(string $id)
     {
         //
         $type = Type::select()->get();
-        $Project_owner = Project_owner::select()->where('user_id', Auth::user()->id)->get();
-        $Project = Project::select()->where('user_id', Auth::user()->id)->get();
-        $Project_risk = Project_risk::select()->where('user_id', Auth::user()->id)->get();
-        $Project_study = Project_study::select()->where('user_id', Auth::user()->id)->get();
-        $Project_Plan = Project_Plan::select()->where('user_id', Auth::user()->id)->get();
-        $Project_form = Project_form::select()->where('user_id', Auth::user()->id)->get();
-        $Project_performane = Project_performane::select()->where('user_id', Auth::user()->id)->get();
-        return view('site.pages.viewProject', compact('type', 'Project_owner', 'Project', 'Project_risk', 'Project_study', 'Project_Plan', 'Project_form', 'Project_performane'));
+        $Project = Project::select()->where('id', $id)->first();
+        $Project_risk = Project_risk::select()->where('project_id', $id)->get();
+        $Project_study = Project_study::select()->where('project_id', $id)->get();
+        $Project_Plan = Project_Plan::select()->where('project_id', $id)->get();
+        $Project_form = Project_form::select()->where('project_id', $id)->get();
+        $Project_performane = Project_performane::select()->where('project_id', $id)->get();
+        return view('site.pages.viewProject', compact('type', 'Project', 'Project_risk', 'Project_study', 'Project_Plan', 'Project_form', 'Project_performane'));
     }
     /**
      * Display a listing of the resource.
