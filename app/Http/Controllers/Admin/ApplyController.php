@@ -23,8 +23,8 @@ class ApplyController extends Controller
     public function profile()
     {
         //Auth()->id()
-        $project = Project::select()->where('user_id', Auth()->id())->get();
-        $apply = Project_owner::select()->where('user_id', Auth()->id())->get();
+        $apply = Project_owner::select()->where('user_id', Auth()->id())->first();
+        $project = Project::select()->where('owner_id', $apply->id)->get();
         return view('site.pages.dashboard', compact('apply', 'project'));
     }
     /**
@@ -105,14 +105,14 @@ class ApplyController extends Controller
     public function ershadat_store(Request $request)
     {
         try {
-        Guide_Women::create([
-            "name" => $request['name'],
-            "description" => $request['details'],
-        ]);
-        return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
-    } catch (\Exception $ex) {
-        return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
-    }
+            Guide_Women::create([
+                "name" => $request['name'],
+                "description" => $request['details'],
+            ]);
+            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
     public function ershadat_update(Request $request, string $id)
     {
@@ -129,12 +129,12 @@ class ApplyController extends Controller
     public function ershadat_delete(string $id)
     {
         try {
-        $course = Guide_Women::find($id);
-        $course->delete();
-        return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
-    } catch (\Exception $ex) {
-        return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
-    }
+            $course = Guide_Women::find($id);
+            $course->delete();
+            return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
 
     /**

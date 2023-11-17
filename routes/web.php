@@ -31,7 +31,10 @@ require __DIR__ . '/auth.php';
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/add_project', [App\Http\Controllers\Site\RegistrationController::class, 'create'])->name('project.create');
-    Route::post('/project_store', [App\Http\Controllers\Site\RegistrationController::class, 'store'])->name('project.store');
+    Route::post('/project_initial_store', [App\Http\Controllers\Site\RegistrationController::class, 'Initial_store'])->name('project.Initial_store');
+    Route::post('/project_store{id}', [App\Http\Controllers\Site\RegistrationController::class, 'project_store'])->name('project.store');
+    Route::get('/create_project{id}', [App\Http\Controllers\Site\RegistrationController::class, 'create_project'])->name('project.data');
+    Route::post('/project_data_store{id}', [App\Http\Controllers\Site\RegistrationController::class, 'store'])->name('project.data.store');
     Route::post('/project_update{id}', [App\Http\Controllers\Site\RegistrationController::class, 'update'])->name('project.edit');
 });
 
@@ -53,7 +56,7 @@ Route::group(['namespace' => 'guest'], function () {
     Route::get('/training', [App\Http\Controllers\Site\PageController::class, 'training'])->name('training');
     Route::get('/training-details{id}', [App\Http\Controllers\Site\PageController::class, 'training_details'])->name('training.details');
     Route::get('/success', [App\Http\Controllers\Site\PageController::class, 'successIndex'])->name('success');
-    Route::get('/viewProject', [App\Http\Controllers\Site\PageController::class, 'viewProject'])->name('viewProject');
+    Route::get('/viewProject{id}', [App\Http\Controllers\Site\PageController::class, 'viewProject'])->name('viewProject');
 });
 ///////////////////////////////////////////// Dashboard site ///////////////////////////////////////////
 
