@@ -30,8 +30,14 @@ class AdminController extends Controller
     public function index()
     {
         //
+
+        return view('admin.pages.dashboard');
+    }
+    public function apply_project()
+    {
+        //
         $apply = Project_owner::select()->get();
-        return view('admin.pages.dashboard', compact('apply'));
+        return view('admin.pages.apply.all_apply', compact('apply'));
     }
     public function users()
     {

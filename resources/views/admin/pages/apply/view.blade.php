@@ -158,23 +158,23 @@
                                 @foreach ($apply2 as $num => $Apply2)
                                     <form>
                                         <div class="row">
-                                            <div class="input-field col s12">
+                                            <div class="input-field col s3">
                                                 <label class="control-label"> الخطر المحتمل * </label>
-                                                <textarea type="text" class="validate" disabled>{{ $Apply2->name }}</textarea>
+                                                <input type="number" class="validate" value="{{ $Apply2->name }}" disabled>
                                             </div>
-                                            <div class="input-field col s12">
+                                            <div class="input-field col s3">
                                                 <label class="control-label"> الشدة </label>
-                                                <textarea type="number" class="validate"disabled>{{ $Apply2->degree }}</textarea>
+                                                <input type="number" class="validate"disabled value="{{ $Apply2->degree }}">
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
+
+
+                                            <div class="input-field col s3">
                                                 <label class="control-label"> الإحتمال </label>
-                                                <textarea type="number" class="validate"disabled>{{ $Apply2->possibility }}</textarea>
+                                                <input type="number" class="validate"disabled value="{{ $Apply2->possibility }}">
                                             </div>
-                                            <div class="input-field col s12">
+                                            <div class="input-field col s3">
                                                 <label class="control-label"> التقيم </label>
-                                                <textarea type="email" class="validate" disabled> {{ $Apply2->evaluation }}</textarea>
+                                                <input type="number" class="validate" disabled value="{{ $Apply2->evaluation }}">
                                             </div>
                                         </div>
                                         <div class="row">

@@ -1,15 +1,7 @@
 @extends('admin.incloudes.admin')
 @section('content')
     <div class="sb2-2-2">
-        <ul>
-            <li class="page-back"><a href="{{ route('dashboard') }}"><i class="fa fa-backward" aria-hidden="true"></i> عودة </a>
-            </li>
-            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> الرئيسية </a>
-            </li>
-            <li class="active-bre"><a href="#"> الإحصائيات </a>
-            </li>
 
-        </ul>
     </div>
     <!--== User Details ==-->
     <div class="sb2-2-3">
@@ -26,9 +18,8 @@
                                 <thead>
                                     <tr>
                                         <th> </th>
-                                        <th>الاسم</th>
+                                        <th>اسم المستخدم</th>
                                         <th>الهاتف</th>
-                                        <th>البريد الالكتروني</th>
                                         <th>المركز / المدينة</th>
                                         <th>الحالة</th>
                                         <th>عرض</th>
@@ -43,15 +34,9 @@
                                                 <td><a href="#"><span class="list-enq-name">{{ $applys->name }}</span></a>
                                                 </td>
                                                 <td>{{ $applys->phone }}</td>
-                                                <td>{{ $applys->email }}</td>
                                                 <td>{{ $applys->address }}</td>
                                                 <td>
-                                                    @if ($applys->state == '1')
-                                                        <span class="label label-success">فعال</span>
-                                                    @elseif($applys->state == '0')
-                                                        <span class="label label-danger">غير فعال</span>
-                                                    @endif
-
+                                                    <span class="label label-success">فعال</span>
                                                 </td>
                                                 <td><a href="{{ route('admin.apply.show', $applys->user_id) }}"
                                                         class="ad-st-view"> عرض </a></td>

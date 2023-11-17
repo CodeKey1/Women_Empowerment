@@ -59,12 +59,14 @@ Route::group(['namespace' => 'guest'], function () {
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('dashboard');
+
     Route::get('/users', [App\Http\Controllers\Admin\AdminController::class, 'users'])->name('users');
     Route::get('/users-edit{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_edit'])->name('user.edit');
     Route::post('/users-update{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_update'])->name('user.update');
     Route::get('/users-delete{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_delete'])->name('user.delete');
     Route::get('/back', [App\Http\Controllers\Admin\AdminController::class, 'back'])->name('back');
-    Route::get('/all_apply', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.apply');
+
+    Route::get('/all_apply', [App\Http\Controllers\Admin\AdminController::class, 'apply_project'])->name('admin.apply');
     Route::get('/mopadra', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara'])->name('admin.mopdara');
     Route::get('/mopadra-create', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara_create'])->name('admin.mopdara.create');
     Route::post('/mopadra-store', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara_store'])->name('admin.mopdara.store');
