@@ -18,13 +18,12 @@ class Project_performane extends Model
         'target',
         'measurement',
         'project_id',
-        'user_id',
         'created_at',
         'updated_at',
     ];
 
-    public function project_name(){
-
-        return  $this->belongsTo(Project::class ,'project_id');
+    public function project_name()
+    {
+        return  $this->belongsTo(Project::class, 'project_id');
     }
 }

@@ -19,14 +19,13 @@ class Project_owner extends Model
         'address',
         'fund',
         'state',
-        'project_id',
         'user_id',
         'created_at',
         'updated_at',
     ];
 
-    public function UserID(){
-
-        return  $this->belongsTo(User::class ,'user_id');
+    public function UserName()
+    {
+        return  $this->belongsTo(User::class, 'user_id');
     }
 }

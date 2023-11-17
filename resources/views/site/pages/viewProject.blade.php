@@ -398,7 +398,7 @@
                                                 class="btn">حفظ</button>
                                         </div>
                                     </form>
-                                    <h4>المخاطر السابقة</h4>
+                                    <h4>سجل المخاطر </h4>
                                     <div class="tab-inn">
                                         <div class="table-responsive table-desi">
                                             <table class="table table-hover">
@@ -539,7 +539,7 @@
                                                 class="btn">حفظ</button>
                                         </div>
                                     </form>
-                                    <h4>الخطط السابقة</h4>
+                                    <h4>سجل الخطط </h4>
                                     <div class="tab-inn">
                                         <div class="table-responsive table-desi">
                                             <table class="table table-hover">
@@ -594,54 +594,70 @@
                                                 method="POST"enctype="multipart/form-data">
                                                 @csrf
                                                 <h4> نموذج العمل </h4>
+                                                <div class="row" dir="rtl">
+                                                    <div class="col col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <label class="control-label"> فئات العملاء <span
+                                                                    style="color: red">*</span></label>
+                                                            <textarea class="form-control" name="customer_categories" cols="3" rows="15">{{ $Pf->customer_categories }}</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <label class="control-label"> استراتيجية جذب العملاء:
+                                                                <span style="color: red">*</span></label>
+                                                            <textarea class="form-control" name="attract_clients" cols="3" rows="8">{{ $Pf->attract_clients }}</textarea>
+                                                        </div>
+                                                        <div class="w-100"></div>
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <label class="control-label"> قنوات وصول المشروع
+                                                                للعملاء
+                                                                <span style="color: red">*</span></label>
+                                                            <textarea class="form-control" name="project_access" cols="3" rows="8">{{ $Pf->project_access }}</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <label class="control-label"> القيمة المقدمة: <span
+                                                                    style="color: red">*</span></label>
+                                                            <textarea class="form-control" name="provided_value" cols="3" rows="15"> {{ $Pf->provided_value }}</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <label class="control-label"> الموارد الرئيسية: <span
+                                                                    style="color: red">*</span></label>
+                                                            <textarea class="form-control" name="main_resorce" cols="3" rows="8">{{ $Pf->main_resorce }}</textarea>
+                                                        </div>
+                                                        <div class="w-100"></div>
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <label class="control-label"> الأنشطة الرئيسية: <span
+                                                                    style="color: red">*</span></label>
+                                                            <textarea class="form-control" name="main_activity" cols="3" rows="8">{{ $Pf->main_activity }}</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <label class="control-label"> الشركاء الرئيسين للمشروع
+                                                                <span style="color: red">*</span></label>
+                                                            <textarea class="form-control" name="partners" cols="3" rows="15">{{ $Pf->partners }}</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="row">
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> القيمة المقدمة: <span
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <label class="control-label"> مصادر الدخل: <span
                                                                 style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="provided_value" cols="3" rows="3"> {{ $Pf->provided_value }}</textarea>
+                                                        <textarea class="form-control" name="income_source" cols="3" rows="2">{{ $Pf->income_source }}</textarea>
                                                     </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> فئات العملاء <span
-                                                                style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="customer_categories" cols="3" rows="3">{{ $Pf->customer_categories }}</textarea>
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> قنوات وصول المشروع
-                                                            للعملاء
-                                                            <span style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="project_access" cols="3" rows="3">{{ $Pf->project_access }}</textarea>
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> استراتيجية جذب العملاء:
-                                                            <span style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="attract_clients" cols="3" rows="3">{{ $Pf->attract_clients }}</textarea>
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> مصادر الدخل: <span
-                                                                style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="income_source" cols="3" rows="3">{{ $Pf->income_source }}</textarea>
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> الموارد الرئيسية: <span
-                                                                style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="main_resorce" cols="3" rows="3">{{ $Pf->main_resorce }}</textarea>
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> الأنشطة الرئيسية: <span
-                                                                style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="main_activity" cols="3" rows="3">{{ $Pf->main_activity }}</textarea>
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> الشركاء الرئيسين للمشروع
-                                                            <span style="color: red">*</span></label>
-                                                        <textarea class="form-control" name="partners" cols="3" rows="3">{{ $Pf->partners }}</textarea>
-                                                    </div>
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                        <label class="control-label col-sm-6"> التكاليف: <span
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <label class="control-label"> التكاليف: <span
                                                                 style="color: red">*</span></label>
                                                         <input class="form-control" name="cost" type="number"
-                                                            value="{{ $Pf->cost }}">
+                                                            value="{{ $Pf->cost }}" min="0">
                                                     </div>
+                                                </div>
+                                                <div class="row">
                                                     <button type="submit" name="formType" value="workForm"
                                                         class="btn">تعديل</button>
                                                 </div>
@@ -689,7 +705,7 @@
                                                 class="btn">حفظ</button>
                                         </div>
                                     </form>
-                                    <h4>المؤشرات السابقة</h4>
+                                    <h4> سجل المؤشرات </h4>
                                     <div class="tab-inn">
                                         <div class="table-responsive table-desi">
                                             <table class="table table-hover">

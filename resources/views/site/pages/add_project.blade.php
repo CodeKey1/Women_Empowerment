@@ -415,61 +415,67 @@
                                             method="POST"enctype="multipart/form-data">
                                             @csrf
                                             <h4> نموذج العمل </h4>
+                                            <div class="row" dir="rtl">
+                                                <div class="col col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> فئات العملاء <span
+                                                                style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="customer_categories" cols="3" rows="15" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> استراتيجية جذب العملاء:
+                                                            <span style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="attract_clients" cols="3" rows="8" required></textarea>
+                                                    </div>
+                                                    <div class="w-100"></div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> قنوات وصول المشروع
+                                                            للعملاء
+                                                            <span style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="project_access" cols="3" rows="8" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> القيمة المقدمة: <span
+                                                                style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="provided_value" cols="3" rows="15" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> الموارد الرئيسية: <span
+                                                                style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="main_resorce" cols="3" rows="8" required></textarea>
+                                                    </div>
+                                                    <div class="w-100"></div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> الأنشطة الرئيسية: <span
+                                                                style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="main_activity" cols="3" rows="8" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> الشركاء الرئيسين للمشروع
+                                                            <span style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="partners" cols="3" rows="15" required></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="row">
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <label class="control-label col-sm-6"> القيمة المقدمة: <span
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <label class="control-label"> مصادر الدخل: <span
                                                             style="color: red">*</span></label>
-                                                    <textarea class="form-control" name="provided_value" cols="3" rows="3"
-                                                        placeholder=" المنفعة أو الحل الذي يقدمه المشروع للعملاء لحل مشكلة أو احتياج معين " required></textarea>
+                                                    <textarea class="form-control" name="income_source" cols="3" rows="2" required></textarea>
                                                 </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <label class="control-label col-sm-6"> فئات العملاء <span
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <label class="control-label"> التكاليف: <span
                                                             style="color: red">*</span></label>
-                                                    <textarea class="form-control" name="customer_categories" cols="3" rows="3"
-                                                        placeholder=" المجموعات المستهدفة من العملاء الذين يستفيدون من القيمة المقدمة ويدفعون ثمنها" required></textarea>
-                                                </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <label class="control-label col-sm-6"> قنوات وصول المشروع للعملاء <span
-                                                            style="color: red">*</span></label>
-                                                    <textarea class="form-control" name="project_access" cols="3" rows="3"
-                                                        placeholder=" الطرق التي يصل بها المشروع إلى الفئات العملاء ويتواصل معهم ويسلم لهم القيمة المقدمة " required></textarea>
-                                                </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <label class="control-label col-sm-6"> استراتيجية جذب العملاء: <span
-                                                            style="color: red">*</span></label>
-                                                    <textarea class="form-control" name="attract_clients" cols="3" rows="3"
-                                                        placeholder=" الإستراتيجية التي يتبعها المشروع لجذب واسعاد العملاء" required></textarea>
-                                                </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <label class="control-label col-sm-6"> مصادر الدخل: <span
-                                                            style="color: red">*</span></label>
-                                                    <textarea class="form-control" name="income_source" cols="3" rows="3"
-                                                        placeholder=" آلية تحديد سعر وطريقة تحصيل الأموال من العملاء مقابل القيمة المقدمة " required></textarea>
-                                                </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <label class="control-label col-sm-6"> الموارد الرئيسية: <span
-                                                            style="color: red">*</span></label>
-                                                    <textarea class="form-control" name="main_resorce" cols="3" rows="3"
-                                                        placeholder=" الأصول والأشخاص والأدوات والشركاء التي يحتاجها المشروع لتقديم وتسليم القيمة المقدمة" required></textarea>
-                                                </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <label class="control-label col-sm-6"> الأنشطة الرئيسية: <span
-                                                            style="color: red">*</span></label>
-                                                    <textarea class="form-control" name="main_activity" cols="3" rows="3"
-                                                        placeholder=" الخطوات والإجراءات التي يقوم بها المشروع لتوليد وتسليم القيمة المقدمة " required></textarea>
-                                                </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <label class="control-label col-sm-6"> الشركاء الرئيسين للمشروع <span
-                                                            style="color: red">*</span></label>
-                                                    <textarea class="form-control" name="partners" cols="3" rows="3"
-                                                        placeholder=" هي الجهات التي تساهم في تزويد المشروع بالموارد أو تسانده في تنفيذ الأنشطة أو تزيد من قيمته" required></textarea>
-                                                </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <label class="control-label col-sm-6"> التكاليف: <span
-                                                            style="color: red">*</span></label>
-                                                    <input class="form-control" name="cost" type="number"
-                                                        placeholder=" المصروفات التي يتحملها المشروع لإنشاء وتشغيل نموذج العمل."
-                                                        required>
+                                                    <input class="form-control" name="cost" min="0"
+                                                        type="number" required>
                                                 </div>
                                             </div>
                                             <div class="row">

@@ -24,13 +24,12 @@ class Project extends Model
         'email',
         'date',
         'owner_id',
-        'user_id',
         'created_at',
         'updated_at',
     ];
 
-    public function project_owner(){
-
-        return  $this->belongsTo(Project_owner::class ,'owner_id');
+    public function project_owner()
+    {
+        return  $this->belongsTo(Project_owner::class, 'owner_id');
     }
 }

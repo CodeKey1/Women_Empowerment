@@ -60,6 +60,8 @@
                                 </li>
                                 <li><a href="{{ route('stratgey') }}"> الإستراتيجية </a>
                                 </li>
+                                <li><a href="{{ route('training') }}"> الاخبار </a>
+                                </li>
                                 <li><a href="{{ route('training') }}"> التدريب </a>
                                 </li>
                                 <li><a href="{{ route('namazeg') }}"> النماذج المشرفة </a>
