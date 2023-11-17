@@ -58,6 +58,7 @@ Route::group(['namespace' => 'guest'], function () {
     Route::get('/training-details{id}', [App\Http\Controllers\Site\PageController::class, 'training_details'])->name('training.details');
     Route::get('/success', [App\Http\Controllers\Site\PageController::class, 'successIndex'])->name('success');
     Route::get('/viewProject{id}', [App\Http\Controllers\Site\PageController::class, 'viewProject'])->name('viewProject');
+    Route::get('/viewOwner', [App\Http\Controllers\Site\PageController::class, 'viewOwner'])->name('viewOwner');
 });
 ///////////////////////////////////////////// Dashboard site ///////////////////////////////////////////
 

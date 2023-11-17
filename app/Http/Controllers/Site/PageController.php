@@ -100,6 +100,11 @@ class PageController extends Controller
         $Project_performane = Project_performane::select()->where('project_id', $id)->get();
         return view('site.pages.viewProject', compact('type', 'Project', 'Project_risk', 'Project_study', 'Project_Plan', 'Project_form', 'Project_performane'));
     }
+    public function viewOwner()
+    {
+        $Project_owner = Project_owner::select()->where('user_id', Auth::user()->id)->first();
+        return view('site.pages.viewOwner', compact('Project_owner'));
+    }
     /**
      * Display a listing of the resource.
      */
