@@ -92,7 +92,7 @@ class PageController extends Controller
     {
         //
         $type = Type::select()->get();
-        $Project = Project::select()->where('id', $id)->get();
+        $Project = Project::select()->where('id', $id)->first();
         $Project_risk = Project_risk::select()->where('project_id', $id)->get();
         $Project_study = Project_study::select()->where('project_id', $id)->get();
         $Project_Plan = Project_Plan::select()->where('project_id', $id)->get();

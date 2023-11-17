@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/project_store{id}', [App\Http\Controllers\Site\RegistrationController::class, 'project_store'])->name('project.store');
     Route::get('/create_project{id}', [App\Http\Controllers\Site\RegistrationController::class, 'create_project'])->name('project.data');
     Route::post('/project_data_store{id}', [App\Http\Controllers\Site\RegistrationController::class, 'store'])->name('project.data.store');
+    Route::post('/project_edit_store{id}', [App\Http\Controllers\Site\RegistrationController::class, 'edit_store'])->name('project.edit.store');
     Route::post('/project_update{id}', [App\Http\Controllers\Site\RegistrationController::class, 'update'])->name('project.edit');
 });
 

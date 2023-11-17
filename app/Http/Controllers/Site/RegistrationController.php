@@ -177,6 +177,96 @@ class RegistrationController extends Controller
         }
     }
 
+    public function edit_store(Request $request, string $id)
+    {
+        try {
+            $form = $request['formType'];
+            switch ($form) {
+                case 'projectRisk':
+                    Project_risk::create([
+                        "name" => $request['name'],
+                        "degree" => $request['degree'],
+                        "possibility" => $request['possibility'],
+                        "evaluation" => ($request['degree'] * $request['possibility']),
+                        "procedures" => $request['procedures'],
+                        "project_id" => $id,
+                    ]);
+                    $owner_id = $id;
+                    return redirect()->route('viewProject', ['id' => $owner_id])->with('drasa_active', true)->with('active', true)->with(['success' => 'تم الحفظ المخاطر المحتملة للمشروع الأعمال بنجاح']);
+                    break;
+                    // case 'projectStudy':
+                    //     Project_study::create([
+                    //         "recommendation" => $request['recommendation'],
+                    //         "finance" => $request['finance'],
+                    //         "technical" => $request['technical'],
+                    //         "competitive" => $request['competitive'],
+                    //         "market" => $request['market'],
+                    //         "project_id" => $id,
+                    //     ]);
+                    //     $owner_id = $id;
+                    //     return redirect()->route('viewProject', ['id' => $owner_id])->with('plan_active', true)->with('active', true)->with(['success' => 'تم الحفظ  دراسة جدوى المشروع الأعمال بنجاح']);
+                    //     break;
+                case 'projectPlan':
+                    for ($i = 0; $i < count($request->name); $i++) {
+                        $name[] = $request->name[$i];
+                        $start_date[] = $request->start_date[$i];
+                        $end_date[] = $request->end_date[$i];
+                        $responsible[] = $request->responsible[$i];
+                        $follower[] = $request->follower[$i];
+                        Project_Plan::create([
+                            "name" => $name[$i],
+                            "start_date" => $start_date[$i],
+                            "end_date" => $end_date[$i],
+                            "responsible" => $responsible[$i],
+                            "follower" => $follower[$i],
+                            "project_id" => $id,
+                        ]);
+                    }
+                    $owner_id = $id;
+                    return redirect()->route('viewProject', ['id' => $owner_id])->with('template_active', true)->with('active', true)->with(['success' => 'تم الحفظ  خطة المشروع الأعمال بنجاح']);
+                    break;
+                    // case 'workForm':
+                    //     Project_form::create([
+                    //         "provided_value" => $request['provided_value'],
+                    //         "customer_categories" => $request['customer_categories'],
+                    //         "project_access" => $request['project_access'],
+                    //         "attract_clients" => $request['attract_clients'],
+                    //         "income_source" => $request['income_source'],
+                    //         "main_resorce" => $request['main_resorce'],
+                    //         "main_activity" => $request['main_activity'],
+                    //         "partners" => $request['partners'],
+                    //         "cost" => $request['cost'],
+                    //         "project_id" => $id,
+                    //     ]);
+                    //     $owner_id = $id;
+                    //     return redirect()->route('viewProject', ['id' => $owner_id])->with('mosher_active', true)->with('active', true)->with(['success' => 'تم الحفظ  نموذج العمل الأعمال بنجاح']);
+                    //     break;
+                case 'projectPeroformance':
+                    for ($i = 0; $i < count($request->period); $i++) {
+                        $name[] = $request->name[$i];
+                        $unit[] = $request->unit[$i];
+                        $target[] = $request->target[$i];
+                        $measurement[] = $request->measurement[$i];
+                        $period[] = $request->period[$i];
+                        Project_performane::create([
+                            "name" => $name[$i],
+                            "period" => $period[$i],
+                            "unit" => $unit[$i],
+                            "target" => $target[$i],
+                            "measurement" => $measurement[$i],
+                            "project_id" => $id,
+                        ]);
+                    }
+                    $owner_id = $id;
+                    return redirect()->route('viewProject', ['id' => $owner_id])->with(['success' => 'تم الحفظ مؤشرات أداء المشروع بنجاح']);
+                    break;
+            }
+            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
+    }
+
     public function update(Request $request, string $id)
     {
         try {
