@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2023 at 07:00 PM
+-- Generation Time: Nov 18, 2023 at 11:53 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -205,6 +205,24 @@ INSERT INTO `mobadrat` (`id`, `name`, `description`, `created_at`, `updated_at`)
 (4, 'الاسوانية ممكن', 'تهدف الى زيادة دور المراه في المشاركة في المشروعات الخضراء', '2023-09-09 22:13:25', '2023-09-09 22:13:25'),
 (5, 'ابنه الملك', 'تهدف الى التدريب على كيفية كتابة دراسات الجدوى', '2023-09-09 22:13:45', '2023-09-09 22:13:45'),
 (6, 'اكتشفي نفسك', 'تهدف الى الاجابة عن اسئلة يتم من خلالها التعرف على الشمروع المناسب لك ِ', '2023-09-09 22:14:03', '2023-09-09 22:14:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `brief` varchar(128) NOT NULL,
+  `details` varchar(512) NOT NULL,
+  `date` date NOT NULL,
+  `image` varchar(128) DEFAULT NULL,
+  `video` varchar(128) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -574,6 +592,12 @@ ALTER TABLE `mobadrat`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `old-project`
 --
 ALTER TABLE `old-project`
@@ -709,6 +733,12 @@ ALTER TABLE `mobadrat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `old-project`
 --
 ALTER TABLE `old-project`
@@ -724,7 +754,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `project_form`
