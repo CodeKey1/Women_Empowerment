@@ -7,9 +7,10 @@ use App\Http\Requests\ProjectRequest;
 use App\Http\Requests\TrainingRequest;
 use App\Models\Courese_detail;
 use App\Models\Course;
-use App\Models\Old_Project;
+use App\Models\Model_Project;
 use App\Models\Project_owner;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -37,19 +38,18 @@ class AdminController extends Controller
     {
         //
         $apply = Project_owner::select()->get();
-        return view('admin.pages.apply.all_apply', compact('apply'));
+        return view('Dashboard.dashboard', compact('apply'));
     }
     public function users()
     {
-        //
         $users = User::select()->get();
-        return view('admin.pages.users', compact('users'));
+        return view('Dashboard.users', compact('users'));
     }
 
     public function users_edit(string $id)
     {
         $users = User::select()->find($id);
-        return view('admin.pages.user_edit', compact('users'));
+        return view('Dashboard.pages.user_edit', compact('users'));
     }
     public function users_update(Request $request, string $id)
     {
@@ -71,18 +71,17 @@ class AdminController extends Controller
     {
         //
         $courses = Course::select()->get();
-        return view('admin.pages.training', compact('courses'));
+        return view('Dashboard.training', compact('courses'));
     }
     public function coursescreate()
     {
         //
         $courses = Course::select()->get();
-        return view('admin.pages.trainingcreate', compact('courses'));
+        return view('Dashboard.pages.trainingcreate', compact('courses'));
     }
     public function courses_store(TrainingRequest $request)
     {
         try {
-
             $file = [];
             if ($files = $request->file('image')) {
                 foreach ($files as $file) {
@@ -142,16 +141,17 @@ class AdminController extends Controller
         $course->delete();
         return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
     }
+
     public function old_project()
     {
         //
-        $old_project = Old_Project::select()->get();
-        return view('admin.pages.old_project', compact('old_project'));
+        $old_project = Model_Project::select()->get();
+        return view('Dashboard.pages.old_project', compact('old_project'));
     }
     public function create()
     {
         //
-        return view('admin.pages.old_project_create');
+        return view('Dashboard.pages.old_project_create');
     }
     public function store(ProjectRequest $request)
     {
@@ -170,7 +170,7 @@ class AdminController extends Controller
                 $upload[] = '';
             }
 
-            Old_Project::create([
+            Model_Project::create([
                 "name" => $request['name'],
                 "details" => $request['details'],
                 "image" => implode('|', $upload),
@@ -183,13 +183,9 @@ class AdminController extends Controller
     }
     public function projectDelete(string $id)
     {
-        $project = Old_Project::find($id);
+        $project = Model_Project::find($id);
         $project->delete();
         return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
-    }
-    public function show(string $id)
-    {
-        //
     }
 
     public function course_edit(string $id)
@@ -197,7 +193,7 @@ class AdminController extends Controller
         //
         $courses = Course::select()->find($id);
         $Courese_detail = Courese_detail::select()->where('course_id', $id)->get();
-        return view('admin.pages.trainingedit', compact('courses', 'Courese_detail'));
+        return view('Dashboard.pages.trainingedit', compact('courses', 'Courese_detail'));
     }
     public function course_update(TrainingRequest $request, string $id)
     {
@@ -252,8 +248,8 @@ class AdminController extends Controller
 
     public function project_edit(string $id)
     {
-        $projects = Old_Project::select()->find($id);
-        return view('admin.pages.old_project_edit', compact('projects'));
+        $projects = Model_Project::select()->find($id);
+        return view('Dashboard.pages.old_project_edit', compact('projects'));
     }
 
     public function project_update(Request $request, string $id)
@@ -272,7 +268,7 @@ class AdminController extends Controller
                 $upload[] = '';
             }
 
-            Old_Project::where('id', $id)->update([
+            Model_Project::where('id', $id)->update([
                 "name" => $request['name'],
                 "details" => $request['details'],
                 "image" => implode('|', $upload),

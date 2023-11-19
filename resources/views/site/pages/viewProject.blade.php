@@ -371,7 +371,52 @@
                                 </div>
                                 <div id="drasa"
                                     class="tab-pane fade tab {{ session('drasa_active') ? 'in active' : null }}">
-                                    @isset($Project_study)
+                                    @if ($Project_study->isEmpty())
+                                        <form class="form-horizontal" style="font-family: system-ui;"
+                                            action="{{ route('project.edit.store', $Project->id) }}" method="POST"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <h4>دراسة جدوى المشروع</h4>
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> تحليل السوق <span
+                                                            style="color: red">*</span></label>
+                                                    <textarea class="form-control" name="market" cols="5" rows="5"
+                                                        placeholder="تقييم حجم السوق المستهدف وإمكانيات نموه واتجاهاته" required></textarea>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> التحليل التنافسي <span
+                                                            style="color: red">*</span></label>
+                                                    <textarea class="form-control" name="competitive" cols="5" rows="5"
+                                                        placeholder="تقييم نقاط القوة والضعف في المنافسة." required></textarea>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> الجدوى الفنية <span
+                                                            style="color: red">*</span></label>
+                                                    <textarea class="form-control" name="technical" cols="5" rows="5"
+                                                        placeholder="الموارد والقدرات الفنية المطلوبة لتطوير وإطلاق المنتج أو الخدمة" required></textarea>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> رأس المال المستثمر تدفقات
+                                                        الايرادات المحتملة <span style="color: red">*</span></label>
+                                                    <textarea class="form-control" name="finance" cols="5" rows="5"
+                                                        placeholder="رأس المال المستثمر تدفقات الايرادات المحتملة" required></textarea>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <label class="control-label col-sm-6"> ملخص لنتائج الدراسةوتوصيات
+                                                        لستقبل
+                                                        المشروع <span style="color: red">*</span></label>
+                                                    <textarea class="form-control" name="recommendation" cols="5" rows="5" placeholder="" required></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <a data-toggle="tab" class="btn btn-danger" href="#menu2">عودة</a>
+                                                <button type="submit" name="formType" value="projectStudy"
+                                                    class="btn">حفظ -
+                                                    التالي</button>
+                                            </div>
+                                        </form>
+                                    @else
                                         @foreach ($Project_study as $Py)
                                             <form class="form-horizontal" style="font-family: system-ui;"
                                                 action="{{ route('project.edit', $Py->id) }}"
@@ -417,7 +462,7 @@
                                                 </div>
                                             </form>
                                         @endforeach
-                                    @endisset
+                                    @endif
                                 </div>
                                 <div id="plan"
                                     class="tab-pane fade tab {{ session('plan_active') ? 'in active' : null }}">
@@ -506,7 +551,84 @@
                                 </div>
                                 <div id="template"
                                     class="tab-pane fade tab {{ session('template_active') ? 'in active' : null }}">
-                                    @isset($Project_form)
+                                    @if ($Project_form->isEmpty())
+                                        <form class="form-horizontal" style="font-family: system-ui;"
+                                            action="{{ route('project.edit.store', $Project->id) }}" method="POST"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <h4> نموذج العمل </h4>
+                                            <div class="row" dir="rtl">
+                                                <div class="col col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> فئات العملاء <span
+                                                                style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="customer_categories" cols="3" rows="15" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> استراتيجية جذب العملاء:
+                                                            <span style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="attract_clients" cols="3" rows="8" required></textarea>
+                                                    </div>
+                                                    <div class="w-100"></div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> قنوات وصول المشروع
+                                                            للعملاء
+                                                            <span style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="project_access" cols="3" rows="8" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> القيمة المقدمة: <span
+                                                                style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="provided_value" cols="3" rows="15" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> الموارد الرئيسية: <span
+                                                                style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="main_resorce" cols="3" rows="8" required></textarea>
+                                                    </div>
+                                                    <div class="w-100"></div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> الأنشطة الرئيسية: <span
+                                                                style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="main_activity" cols="3" rows="8" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="control-label"> الشركاء الرئيسين للمشروع
+                                                            <span style="color: red">*</span></label>
+                                                        <textarea class="form-control" name="partners" cols="3" rows="15" required></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <label class="control-label"> مصادر الدخل: <span
+                                                            style="color: red">*</span></label>
+                                                    <input class="form-control" name="income_source" class="form-control"
+                                                        required>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <label class="control-label"> التكاليف: <span
+                                                            style="color: red">*</span></label>
+                                                    <input class="form-control" name="cost" min="0"
+                                                        type="number" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <a data-toggle="tab" class="btn btn-danger" href="#plan">عودة</a>
+                                                <button type="submit" name="formType" value="workForm"
+                                                    class="btn">حفظ -
+                                                    التالي</button>
+                                            </div>
+                                        </form>
+                                    @else
                                         @foreach ($Project_form as $Pf)
                                             <form class="form-horizontal" style="font-family: system-ui;"
                                                 action="{{ route('project.edit', $Pf->id) }}"
@@ -583,7 +705,7 @@
                                                 </div>
                                             </form>
                                         @endforeach
-                                    @endisset
+                                    @endif
                                 </div>
                                 <div id="mosher"
                                     class="tab-pane fade tab {{ session('mosher_active') ? 'in active' : null }}">

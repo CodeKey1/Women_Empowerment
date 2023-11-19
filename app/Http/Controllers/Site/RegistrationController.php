@@ -194,18 +194,18 @@ class RegistrationController extends Controller
                     $owner_id = $id;
                     return redirect()->route('viewProject', ['id' => $owner_id])->with('drasa_active', true)->with('active', true)->with(['success' => 'تم الحفظ المخاطر المحتملة للمشروع الأعمال بنجاح']);
                     break;
-                    // case 'projectStudy':
-                    //     Project_study::create([
-                    //         "recommendation" => $request['recommendation'],
-                    //         "finance" => $request['finance'],
-                    //         "technical" => $request['technical'],
-                    //         "competitive" => $request['competitive'],
-                    //         "market" => $request['market'],
-                    //         "project_id" => $id,
-                    //     ]);
-                    //     $owner_id = $id;
-                    //     return redirect()->route('viewProject', ['id' => $owner_id])->with('plan_active', true)->with('active', true)->with(['success' => 'تم الحفظ  دراسة جدوى المشروع الأعمال بنجاح']);
-                    //     break;
+                case 'projectStudy':
+                    Project_study::create([
+                        "recommendation" => $request['recommendation'],
+                        "finance" => $request['finance'],
+                        "technical" => $request['technical'],
+                        "competitive" => $request['competitive'],
+                        "market" => $request['market'],
+                        "project_id" => $id,
+                    ]);
+                    $owner_id = $id;
+                    return redirect()->route('viewProject', ['id' => $owner_id])->with('plan_active', true)->with('active', true)->with(['success' => 'تم الحفظ  دراسة جدوى المشروع الأعمال بنجاح']);
+                    break;
                 case 'projectPlan':
                     for ($i = 0; $i < count($request->name); $i++) {
                         $name[] = $request->name[$i];
@@ -225,22 +225,22 @@ class RegistrationController extends Controller
                     $owner_id = $id;
                     return redirect()->route('viewProject', ['id' => $owner_id])->with('template_active', true)->with('active', true)->with(['success' => 'تم الحفظ  خطة المشروع الأعمال بنجاح']);
                     break;
-                    // case 'workForm':
-                    //     Project_form::create([
-                    //         "provided_value" => $request['provided_value'],
-                    //         "customer_categories" => $request['customer_categories'],
-                    //         "project_access" => $request['project_access'],
-                    //         "attract_clients" => $request['attract_clients'],
-                    //         "income_source" => $request['income_source'],
-                    //         "main_resorce" => $request['main_resorce'],
-                    //         "main_activity" => $request['main_activity'],
-                    //         "partners" => $request['partners'],
-                    //         "cost" => $request['cost'],
-                    //         "project_id" => $id,
-                    //     ]);
-                    //     $owner_id = $id;
-                    //     return redirect()->route('viewProject', ['id' => $owner_id])->with('mosher_active', true)->with('active', true)->with(['success' => 'تم الحفظ  نموذج العمل الأعمال بنجاح']);
-                    //     break;
+                case 'workForm':
+                    Project_form::create([
+                        "provided_value" => $request['provided_value'],
+                        "customer_categories" => $request['customer_categories'],
+                        "project_access" => $request['project_access'],
+                        "attract_clients" => $request['attract_clients'],
+                        "income_source" => $request['income_source'],
+                        "main_resorce" => $request['main_resorce'],
+                        "main_activity" => $request['main_activity'],
+                        "partners" => $request['partners'],
+                        "cost" => $request['cost'],
+                        "project_id" => $id,
+                    ]);
+                    $owner_id = $id;
+                    return redirect()->route('viewProject', ['id' => $owner_id])->with('mosher_active', true)->with('active', true)->with(['success' => 'تم الحفظ  نموذج العمل الأعمال بنجاح']);
+                    break;
                 case 'projectPeroformance':
                     for ($i = 0; $i < count($request->period); $i++) {
                         $name[] = $request->name[$i];

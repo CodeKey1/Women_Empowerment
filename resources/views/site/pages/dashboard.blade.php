@@ -166,7 +166,10 @@
                         </li>
                         <div class="semi-deta">
                             <ul>
-                                <li style="width: 100%;">رائدة أعمال </li>
+                                <li style="width: 60%;">رائدة أعمال </li>
+                                <a href="{{ route('viewOwner') }}" style="color: white; font-weight: bolder;">
+                                    <li style="width: 100%;"> الاعـــدادات </li>
+                                </a>
                             </ul>
                         </div>
                     </ul>
@@ -189,7 +192,6 @@
                                         <th> عرض </th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     @isset($apply)
                                         @foreach ($project as $num => $projects)
