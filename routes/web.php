@@ -55,6 +55,7 @@ Route::group(['namespace' => 'guest'], function () {
     Route::get('/design_project', [App\Http\Controllers\Site\PageController::class, 'project_design'])->name('project_design');
     Route::get('/registration_project', [App\Http\Controllers\Site\RegistrationController::class, 'index'])->name('project.signup');
     Route::get('/training', [App\Http\Controllers\Site\PageController::class, 'training'])->name('training');
+    Route::get('/news', [App\Http\Controllers\Site\PageController::class, 'news'])->name('news');
     Route::get('/training-details{id}', [App\Http\Controllers\Site\PageController::class, 'training_details'])->name('training.details');
     Route::get('/success', [App\Http\Controllers\Site\PageController::class, 'successIndex'])->name('success');
     Route::get('/viewProject{id}', [App\Http\Controllers\Site\PageController::class, 'viewProject'])->name('viewProject');

@@ -31,6 +31,11 @@ class PageController extends Controller
         $courses = Course::select()->get();
         return view('site.pages.training', compact('courses'));
     }
+    public function news()
+    {
+        //$courses = Course::select()->get();
+        return view('site.pages.news');
+    }
     public function successIndex()
     {
         //

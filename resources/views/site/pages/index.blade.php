@@ -1,7 +1,7 @@
-@extends('site.site')
+{{-- @extends('site.site')
 @section('content')
 
-    <!-- DISCOVER MORE -->
+
     <section>
         <div class="container com-sp pad-bot-70">
             <div class="row">
@@ -59,32 +59,10 @@
                 </div>
 
             </div>
-            {{-- <div class="row">
-                <div class="ed-course">
-
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="ed-course-in">
-                            <a class="course-overlay" href="all-courses.html">
-                                <img src="images/h-about1.jpg" alt="">
-                                <span>Couse</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <div class="ed-course-in">
-                            <a class="course-overlay" href="db-time-line.html">
-                                <img src="images/h-adm.jpg" alt="">
-                                <span>Exam Time Line</span>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div> --}}
         </div>
     </section>
 
-    <!-- POPULAR COURSES -->
+
     <section class="pop-cour" style="direction: rtl">
         <div class="container com-sp pad-bot-70">
             <div class="row">
@@ -198,7 +176,7 @@
         </div>
     </section>
 
-    <!-- UPCOMING EVENTS -->
+
     <section style="direction: rtl">
         <div class="container com-sp pad-bot-0">
             <div class="row">
@@ -268,110 +246,711 @@
         </div>
     </section>
 
-    <!-- NEWS AND EVENTS -->
-    {{-- <section>
-        <div class="container com-sp">
-            <div class="row">
-                <div class="con-title">
-                    <h2>News and <span>Events</span></h2>
-                    <p>Fusce id sem at ligula laoreet hendrerit venenatis sed purus. Ut pellentesque maximus lacus, nec pharetra augue.</p>
+@endsection --}}
+
+ @include('Site.includes.Header')
+<div class="page-wraper">
+    @include('Site.includes.menu')
+    <!-- Content -->
+    <div class="page-content bg-white">
+        @include('Site.includes.slider')
+        <div class="content-block" dir="">
+            <!-- Our Services -->
+            <div class="section-area content-inner service-info-bx">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="service-bx">
+                                <div class="action-box">
+                                    <img src="assets/images/our-services/pic1.jpg" alt="">
+                                </div>
+                                <div class="info-bx text-center">
+                                    <div class="feature-box-sm radius bg-white">
+                                        <i class="fa fa-bank text-primary"></i>
+                                    </div>
+                                    <h4><a href="#">Best Industry Leaders</a></h4>
+                                    <a href="#" class="btn radius-xl">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="service-bx">
+                                <div class="action-box">
+                                    <img src="assets/images/our-services/pic2.jpg" alt="">
+                                </div>
+                                <div class="info-bx text-center">
+                                    <div class="feature-box-sm radius bg-white">
+                                        <i class="fa fa-book text-primary"></i>
+                                    </div>
+                                    <h4><a href="#">Learn Courses Online</a></h4>
+                                    <a href="#" class="btn radius-xl">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="service-bx m-b0">
+                                <div class="action-box">
+                                    <img src="assets/images/our-services/pic3.jpg" alt="">
+                                </div>
+                                <div class="info-bx text-center">
+                                    <div class="feature-box-sm radius bg-white">
+                                        <i class="fa fa-file-text-o text-primary"></i>
+                                    </div>
+                                    <h4><a href="#">Book Library & Store</a></h4>
+                                    <a href="#" class="btn radius-xl">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="bot-gal h-gal ho-event-mob-bot-sp">
-                        <h4>Photo Gallery</h4>
-                        <ul>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/8.jpg" alt="">
-                            </li>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/9.jpg" alt="">
-                            </li>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/10.jpg" alt="">
-                            </li>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/11.jpg" alt="">
-                            </li>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/1.jpg" alt="">
-                            </li>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/2.jpg" alt="">
-                            </li>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/3.jpg" alt="">
-                            </li>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/4.jpg" alt="">
-                            </li>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/5.jpg" alt="">
-                            </li>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/6.jpg" alt="">
-                            </li>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/7.jpg" alt="">
-                            </li>
-                            <li><img class="materialboxed" data-caption="Education master image captions" src="images/ami/8.jpg" alt="">
-                            </li>
-                        </ul>
+            <!-- Our Services END -->
+
+            <!-- Popular Courses -->
+            {{-- <div class="section-area section-sp2 popular-courses-bx">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 m-b30">
+                                    <div class="feature-container">
+                                        <div class="feature-md text-white m-b20">
+                                            <a href="#" class="icon-cell"><img
+                                                    src="assets/images/icon/icon1.png" alt="" /></a>
+                                        </div>
+                                        <div class="icon-content">
+                                            <h5 class="ttr-tilte"> الجائزة </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 m-b30">
+                                    <div class="feature-container">
+                                        <div class="feature-md text-white m-b20">
+                                            <a href="#" class="icon-cell"><img
+                                                    src="assets/images/icon/icon2.png" alt="" /></a>
+                                        </div>
+                                        <div class="icon-content">
+                                            <h5 class="ttr-tilte"> مبدأ المنصة </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 m-b30">
+                                    <div class="feature-container">
+                                        <div class="feature-md text-white m-b20">
+                                            <a href="#" class="icon-cell"><img
+                                                    src="assets/images/icon/icon3.png" alt="" /></a>
+                                        </div>
+                                        <div class="icon-content">
+                                            <h5 class="ttr-tilte"> مفتاح النجاح </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 m-b30">
+                                    <div class="feature-container">
+                                        <div class="feature-md text-white m-b20">
+                                            <a href="#" class="icon-cell"><img
+                                                    src="assets/images/icon/icon4.png" alt="" /></a>
+                                        </div>
+                                        <div class="icon-content">
+                                            <h5 class="ttr-tilte"> فلسفتنا </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="bot-gal h-vid ho-event-mob-bot-sp">
-                        <h4>Video Gallery</h4>
-                        <iframe src="https://www.youtube.com/embed/2WqFtiR4-F4?autoplay=0&amp;showinfo=0&amp;controls=0" allowfullscreen></iframe>
-                        <h5>Maecenas sollicitudin lacinia</h5>
-                        <p>Maecenas finibus neque a tellus auctor mattis. Aliquam tempor varius ornare. Maecenas dignissim leo leo, nec posuere purus finibus vitae.</p>
-                        <p>Quisque vitae neque at tellus malesuada convallis. Phasellus in lectus vitae ex euismod interdum non a lorem. Nulla bibendum. Curabitur mi odio, tempus quis risus cursus.</p>
+            </div> --}}
+            <!-- Popular Courses END -->
+            <!-- Popular Courses -->
+            <div class="section-area section-sp2 popular-courses-bx">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 heading-bx left">
+                            <h2 class="title-head">نمـاذج المشاريـع </h2>
+
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="bot-gal h-blog ho-event">
-                        <h4>News & Event</h4>
-                        <div class="ho-event">
-                            <ul>
-                                <li>
-                                    <div class="ho-ev-date"><span>07</span><span>jan,2018</span>
+                    <div class="row">
+                        <div class="courses-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+                            <div class="item">
+                                <div class="cours-bx">
+                                    <div class="action-box">
+                                        <img src="assets/images/courses/pic1.jpg" alt="">
+                                        <a href="#" class="btn">Read More</a>
                                     </div>
-                                    <div class="ho-ev-link">
-                                        <a href="#">
-                                            <h4>Latinoo College Expo 2018</h4>
-                                        </a>
-                                        <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
-                                        <span>9:15 am – 5:00 pm</span>
+                                    <div class="info-bx text-center">
+                                        <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+                                        <span>Programming</span>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="ho-ev-date"><span>12</span><span>jan,2018</span>
+                                    <div class="cours-more-info">
+                                        <div class="review">
+                                            <span>3 Review</span>
+                                            <ul class="cours-star">
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price">
+                                            <del>$190</del>
+                                            <h5>$120</h5>
+                                        </div>
                                     </div>
-                                    <div class="ho-ev-link">
-                                        <a href="#">
-                                            <h4>Training at Team Fabio Clemente</h4>
-                                        </a>
-                                        <p>Nulla at velit convallis venenatis.</p>
-                                        <span>9:15 am – 5:00 pm</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="cours-bx">
+                                    <div class="action-box">
+                                        <img src="assets/images/courses/pic2.jpg" alt="">
+                                        <a href="#" class="btn">Read More</a>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="ho-ev-date"><span>26</span><span>jan,2018</span>
+                                    <div class="info-bx text-center">
+                                        <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+                                        <span>Programming</span>
                                     </div>
-                                    <div class="ho-ev-link">
-                                        <a href="#">
-                                            <h4>Nulla at velit convallis</h4>
-                                        </a>
-                                        <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
-                                        <span>9:15 am – 5:00 pm</span>
+                                    <div class="cours-more-info">
+                                        <div class="review">
+                                            <span>3 Review</span>
+                                            <ul class="cours-star">
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price">
+                                            <del>$190</del>
+                                            <h5>$120</h5>
+                                        </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="ho-ev-date"><span>18</span><span>jan,2018</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="cours-bx">
+                                    <div class="action-box">
+                                        <img src="assets/images/courses/pic3.jpg" alt="">
+                                        <a href="#" class="btn">Read More</a>
                                     </div>
-                                    <div class="ho-ev-link">
-                                        <a href="#">
-                                            <h4>Admissions Information Session and Tour</h4>
-                                        </a>
-                                        <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
-                                        <span>9:15 am – 5:00 pm</span>
+                                    <div class="info-bx text-center">
+                                        <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+                                        <span>Programming</span>
                                     </div>
-                                </li>
-                            </ul>
+                                    <div class="cours-more-info">
+                                        <div class="review">
+                                            <span>3 Review</span>
+                                            <ul class="cours-star">
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price">
+                                            <del>$190</del>
+                                            <h5>$120</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="cours-bx">
+                                    <div class="action-box">
+                                        <img src="assets/images/courses/pic4.jpg" alt="">
+                                        <a href="#" class="btn">Read More</a>
+                                    </div>
+                                    <div class="info-bx text-center">
+                                        <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+                                        <span>Programming</span>
+                                    </div>
+                                    <div class="cours-more-info">
+                                        <div class="review">
+                                            <span>3 Review</span>
+                                            <ul class="cours-star">
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price">
+                                            <del>$190</del>
+                                            <h5>$120</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Popular Courses END -->
+
+            <!-- Form -->
+            <div class="section-area section-sp1 ovpr-dark bg-fix online-cours"
+                style="background-image:url(assets/images/background/bg1.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center text-white">
+                            <h2>Online Courses To Learn</h2>
+                            <h5>Own Your Feature Learning New Skills Online</h5>
+
+                        </div>
+                    </div>
+                    <div class="mw800 m-auto">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <div class="cours-search-bx m-b30">
+                                    <div class="icon-box">
+                                        <h3><i class="ti-user"></i><span class="counter">5</span>M</h3>
+                                    </div>
+                                    <span class="cours-search-text">Over 5 million student</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="cours-search-bx m-b30">
+                                    <div class="icon-box">
+                                        <h3><i class="ti-book"></i><span class="counter">30</span>K</h3>
+                                    </div>
+                                    <span class="cours-search-text">30,000 Courses.</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <div class="cours-search-bx m-b30">
+                                    <div class="icon-box">
+                                        <h3><i class="ti-layout-list-post"></i><span class="counter">20</span>K
+                                        </h3>
+                                    </div>
+                                    <span class="cours-search-text">Learn Anythink Online.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Form END -->
+            <div class="section-area section-sp2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center heading-bx">
+                            <h2 class="title-head m-b0"> التدريبــات </h2>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div
+                            class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0  m-b30">
+                            <div class="item">
+                                <div class="event-bx">
+                                    <div class="action-box">
+                                        <img src="assets/images/event/pic4.jpg" alt="">
+                                    </div>
+                                    <div class="info-bx d-flex">
+                                        <div>
+                                            <div class="event-time">
+                                                <div class="event-date">29</div>
+                                                <div class="event-month">October</div>
+                                            </div>
+                                        </div>
+                                        <div class="event-info">
+                                            <h4 class="event-title"><a href="#">Education Autumn Tour
+                                                    2019</a></h4>
+                                            <ul class="media-post">
+                                                <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am
+                                                        8:00am</a></li>
+                                                <li><a href="#"><i class="fa fa-map-marker"></i> Berlin,
+                                                        Germany</a></li>
+                                            </ul>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry. Lorem Ipsum has been the industry's standard dummy text
+                                                ever since the..</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="event-bx">
+                                    <div class="action-box">
+                                        <img src="assets/images/event/pic3.jpg" alt="">
+                                    </div>
+                                    <div class="info-bx d-flex">
+                                        <div>
+                                            <div class="event-time">
+                                                <div class="event-date">29</div>
+                                                <div class="event-month">October</div>
+                                            </div>
+                                        </div>
+                                        <div class="event-info">
+                                            <h4 class="event-title"><a href="#">Education Autumn Tour
+                                                    2019</a></h4>
+                                            <ul class="media-post">
+                                                <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am
+                                                        8:00am</a></li>
+                                                <li><a href="#"><i class="fa fa-map-marker"></i> Berlin,
+                                                        Germany</a></li>
+                                            </ul>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry. Lorem Ipsum has been the industry's standard dummy text
+                                                ever since the..</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="event-bx">
+                                    <div class="action-box">
+                                        <img src="assets/images/event/pic2.jpg" alt="">
+                                    </div>
+                                    <div class="info-bx d-flex">
+                                        <div>
+                                            <div class="event-time">
+                                                <div class="event-date">29</div>
+                                                <div class="event-month">October</div>
+                                            </div>
+                                        </div>
+                                        <div class="event-info">
+                                            <h4 class="event-title"><a href="#">Education Autumn Tour
+                                                    2019</a></h4>
+                                            <ul class="media-post">
+                                                <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am
+                                                        8:00am</a></li>
+                                                <li><a href="#"><i class="fa fa-map-marker"></i> Berlin,
+                                                        Germany</a></li>
+                                            </ul>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry. Lorem Ipsum has been the industry's standard dummy text
+                                                ever since the..</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="#" class="btn"> كل التدريبات </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="section-area section-sp2 bg-fix ovbl-dark"
+                style="background-image:url(assets/images/background/bg1.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-white heading-bx left">
+                            <h2 class="title-head text-uppercase"> أقـوال مأثـورة <span></span></h2>
+
+                        </div>
+                    </div>
+                    <div class="testimonial-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+                        <div class="item">
+                            <div class="testimonial-bx">
+                                <div class="testimonial-thumb">
+                                    <img src="assets/images/testimonials/pic1.jpg" alt="">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h5 class="name">Peter Packer</h5>
+                                    <p>-Art Director</p>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the
+                                        1500s, when an unknown printer took a galley of type...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-bx">
+                                <div class="testimonial-thumb">
+                                    <img src="assets/images/testimonials/pic2.jpg" alt="">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h5 class="name">Peter Packer</h5>
+                                    <p>-Art Director</p>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the
+                                        1500s, when an unknown printer took a galley of type...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonials END -->
+
+            <!-- Recent News -->
+            <div class="section-area section-sp2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 heading-bx left">
+                            <h2 class="title-head"> الأخبــار </h2>
+                        </div>
+                    </div>
+                    <div class="recent-news-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+                        <div class="item">
+                            <div class="recent-news">
+                                <div class="action-box">
+                                    <img src="assets/images/blog/latest-blog/pic1.jpg" alt="">
+                                </div>
+                                <div class="info-bx">
+                                    <ul class="media-post">
+                                        <li><a href="#"><i class="fa fa-calendar"></i>Jan 02 2019</a></li>
+                                        <li><a href="#"><i class="fa fa-user"></i>By William</a></li>
+                                    </ul>
+                                    <h5 class="post-title"><a href="blog-details.html">This Story Behind Education
+                                            Will Haunt You Forever.</a></h5>
+                                    <p>Knowing that, you’ve optimised your pages countless amount of times, written
+                                        tons.</p>
+                                    <div class="post-extra">
+                                        <a href="#" class="btn-link">READ MORE</a>
+                                        <a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>20
+                                            Comment</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="recent-news">
+                                <div class="action-box">
+                                    <img src="assets/images/blog/latest-blog/pic2.jpg" alt="">
+                                </div>
+                                <div class="info-bx">
+                                    <ul class="media-post">
+                                        <li><a href="#"><i class="fa fa-calendar"></i>Feb 05 2019</a></li>
+                                        <li><a href="#"><i class="fa fa-user"></i>By John</a></li>
+                                    </ul>
+                                    <h5 class="post-title"><a href="blog-details.html">What Will Education Be Like
+                                            In The Next 50 Years?</a></h5>
+                                    <p>As desperate as you are right now, you have done everything you can on your.
+                                    </p>
+                                    <div class="post-extra">
+                                        <a href="#" class="btn-link">READ MORE</a>
+                                        <a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>14
+                                            Comment</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="recent-news">
+                                <div class="action-box">
+                                    <img src="assets/images/blog/latest-blog/pic3.jpg" alt="">
+                                </div>
+                                <div class="info-bx">
+                                    <ul class="media-post">
+                                        <li><a href="#"><i class="fa fa-calendar"></i>April 14 2019</a></li>
+                                        <li><a href="#"><i class="fa fa-user"></i>By George</a></li>
+                                    </ul>
+                                    <h5 class="post-title"><a href="blog-details.html">Master The Skills Of
+                                            Education And Be.</a></h5>
+                                    <p>You will see in the guide all my years of valuable experience together with.
+                                    </p>
+                                    <div class="post-extra">
+                                        <a href="#" class="btn-link">READ MORE</a>
+                                        <a href="#" class="comments-bx"><i class="fa fa-comments-o"></i>23
+                                            Comment</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Recent News End -->
+
         </div>
-    </section> --}}
-@endsection
+        <!-- contact area END -->
+    </div>
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner1.jpg);">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white">Frequently Asked Questions</h1>
+                </div>
+            </div>
+        </div>
+        <!-- contact area -->
+        <div class="content-block">
+            <!-- Your Faq -->
+            <div class="section-area section-sp1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="heading-bx left">
+                                <h2 class="m-b10 title-head">  <span>   ارشادات رائدات الاعمال </span></h2>
+
+                            </div>
+
+                            <div class="ttr-accordion m-b30 faq-bx" id="accordion1">
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq1" class="collapsed"
+                                                data-parent="#faq1">
+                                                Why won't my payment go through? </a>
+                                        </h6>
+                                    </div>
+                                    <div id="faq1" class="acod-body collapse">
+                                        <div class="acod-content">Web design aorem apsum dolor sit amet, adipiscing
+                                            elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam
+                                            erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq2" class="collapsed"
+                                                data-parent="#faq2">
+                                                How do I get a refund?</a>
+                                        </h6>
+                                    </div>
+                                    <div id="faq2" class="acod-body collapse">
+                                        <div class="acod-content">Graphic design aorem apsum dolor sit amet,
+                                            adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna
+                                            aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq3" class="collapsed"
+                                                data-parent="#faq3">
+                                                How do I redeem a coupon? </a>
+                                        </h6>
+                                    </div>
+                                    <div id="faq3" class="acod-body collapse">
+                                        <div class="acod-content">Developement aorem apsum dolor sit amet,
+                                            adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna
+                                            aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq4" class="collapsed"
+                                                data-parent="#faq4">
+                                                Why aren't my courses showing in my account? </a>
+                                        </h6>
+                                    </div>
+                                    <div id="faq4" class="acod-body collapse">
+                                        <div class="acod-content">Developement aorem apsum dolor sit amet,
+                                            adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna
+                                            aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq5" class="collapsed"
+                                                data-parent="#faq5">
+                                                Changing account name </a>
+                                        </h6>
+                                    </div>
+                                    <div id="faq5" class="acod-body collapse">
+                                        <div class="acod-content">Developement aorem apsum dolor sit amet,
+                                            adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna
+                                            aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="heading-bx left">
+                                <h2 class="m-b10 title-head"> <span> مبادرات رائدات الاعمال </span></h2>
+                            </div>
+
+                            <div class="ttr-accordion m-b30 faq-bx" id="accordion2">
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq11" class="collapsed"
+                                                data-parent="#faq11">
+                                                Why won't my payment go through? </a>
+                                        </h6>
+                                    </div>
+                                    <div id="faq11" class="acod-body collapse">
+                                        <div class="acod-content">Web design aorem apsum dolor sit amet, adipiscing
+                                            elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam
+                                            erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq22" class="collapsed"
+                                                data-parent="#faq22">
+                                                How do I get a refund?</a>
+                                        </h6>
+                                    </div>
+                                    <div id="faq22" class="acod-body collapse">
+                                        <div class="acod-content">Graphic design aorem apsum dolor sit amet,
+                                            adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna
+                                            aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq33" class="collapsed"
+                                                data-parent="#faq33">
+                                                How do I redeem a coupon? </a>
+                                        </h6>
+                                    </div>
+                                    <div id="faq33" class="acod-body collapse">
+                                        <div class="acod-content">Developement aorem apsum dolor sit amet,
+                                            adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna
+                                            aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq44" class="collapsed"
+                                                data-parent="#faq44">
+                                                Why aren't my courses showing in my account? </a>
+                                        </h6>
+                                    </div>
+                                    <div id="faq44" class="acod-body collapse">
+                                        <div class="acod-content">Developement aorem apsum dolor sit amet,
+                                            adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna
+                                            aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq55" class="collapsed"
+                                                data-parent="#faq55">
+                                                Changing account name </a>
+                                        </h6>
+                                    </div>
+                                    <div id="faq55" class="acod-body collapse">
+                                        <div class="acod-content">Developement aorem apsum dolor sit amet,
+                                            adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna
+                                            aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Your Faq End -->
+        </div>
+        <!-- contact area END -->
+    </div>
+    <!-- Content END-->
+    @include('Site.includes.subfooter')
+</div>
+@include('Site.includes.Footer')
+
