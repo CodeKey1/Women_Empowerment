@@ -61,21 +61,122 @@ class AdminEditController extends Controller
     //**************************** //
     public function data_update(Request $request, string $id)
     {
+        try {
+            $file = "";
+            if ($request->file('file')) {
+                $file = Storage::disk('public')->put('data', $request->file('file'));
+            }
+            $data = Data::where('id', $id)->update([
+                "name" => $request['name'],
+                "type" => $request['type'],
+                "date" => $request['date'],
+                "file" => $file,
+            ]);
+            return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
     public function ershadat_update(Request $request, string $id)
     {
+        try {
+            Guide_Women::where('id', $id)->update([
+                "name" => $request['name'],
+                "description" => $request['details'],
+            ]);
+            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
     public function mopadrat_update(Request $request, string $id)
     {
+        try {
+            Mobadrat::where('id', $id)->update([
+                "name" => $request['name'],
+                "description" => $request['details'],
+            ]);
+            return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
     public function news_update(Request $request, string $id)
     {
+        try {
+            $image = "";
+            if ($request->file('image')) {
+                $image = Storage::disk('public')->put('news', $request->file('image'));
+            }
+            $video = "";
+            if ($request->file('video')) {
+                $video = Storage::disk('public')->put('news', $request->file('video'));
+            }
+            News::where('id', $id)->update([
+                "name" => $request['name'],
+                "brief" => $request['brief'],
+                "details" => $request['details'],
+                "date" => $request['date'],
+                "image" => $image,
+                "video" => $video,
+            ]);
+            return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد' . $ex]);
+        }
     }
     public function projects_update(Request $request, string $id)
     {
+        try {
+            $file = "";
+            if ($request->file('image')) {
+                $file = Storage::disk('public')->put('project-model', $request->file('image'));
+            }
+            Model_Project::where('id', $id)->update([
+                "name" => $request['name'],
+                "details" => $request['details'],
+                "image" => $file,
+            ]);
+            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
     public function courses_update(Request $request, string $id)
     {
+        try {
+            $image = "";
+            if ($request->file('image')) {
+                $image = Storage::disk('public')->put('training', $request->file('image'));
+            }
+            Course::where('id', $id)->update([
+                "name" => $request['name'],
+                "details" => $request['details'],
+                "date" => $request['date'],
+                "cat" => $request['cat'],
+                "image" => $image,
+            ]);
+            //details
+            $video = "";
+            if ($request->file('video')) {
+                $video = Storage::disk('public')->put('training', $request->file('video'));
+            }
+            $presentation = "";
+            if ($request->file('presentation')) {
+                $presentation = Storage::disk('public')->put('training', $request->file('presentation'));
+            }
+            Courese_detail::where('course_id', $id)->update([
+                "pre_req" => $request['pre_req'],
+                "description" => $request['description'],
+                "for_whom" => $request['for_whom'],
+                "location" => $request['location'],
+                "presentation" => $presentation,
+                "video" => $video,
+            ]);
+            return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
     }
     //**************************** //
     //***********Delete*********** //

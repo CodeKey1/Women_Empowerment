@@ -44,7 +44,7 @@
                     <div class="form-group col-6">
                         <label class="col-form-label">ملف البيان </label>
                         <div>
-                            <input class="form-control" type="file" name="file[]">
+                            <input class="form-control" type="file" name="file">
                         </div>
                     </div>
                     <div class="seperator"></div>

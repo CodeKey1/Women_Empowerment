@@ -42,7 +42,7 @@
                                 مرة
                                 اخرى</span></label>
                         <div>
-                            <input class="form-control" type="file" name="image[]">
+                            <input class="form-control" type="file" name="image">
                             @error('image')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

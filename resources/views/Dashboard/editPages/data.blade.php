@@ -49,7 +49,7 @@
                                 مرة
                                 اخرى </span></label>
                         <div>
-                            <input class="form-control" type="file" name="file[]">
+                            <input class="form-control" type="file" name="file">
                         </div>
                     </div>
                     <div class="seperator"></div>

@@ -56,24 +56,15 @@ class AdminAddController extends Controller
     {
         try {
             //
-            $file = [];
-            if ($files = $request->file('file')) {
-                foreach ($files as $file) {
-                    $ext = strtolower($file->getClientOriginalName());
-                    $file_name = time() . '.' . $ext;
-                    $path = 'images/data';
-                    $file->move($path, $file_name);
-                    $upload[] = $file_name;
-                }
-            } else {
-                $upload[] = '';
+            $file = "";
+            if ($request->file('file')) {
+                $file = Storage::disk('public')->put('data', $request->file('file'));
             }
-
             Data::create([
                 "name" => $request['name'],
                 "type" => $request['type'],
                 "date" => $request['date'],
-                "file" => implode('|', $upload),
+                "file" => $file,
 
             ]);
             return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
@@ -132,23 +123,14 @@ class AdminAddController extends Controller
     public function projects_store(Request $request)
     {
         try {
-            $file = [];
-            if ($files = $request->file('image')) {
-                foreach ($files as $file) {
-                    $ext = strtolower($file->getClientOriginalName());
-                    $file_name = time() . '.' . $ext;
-                    $path = 'images/ng';
-                    $file->move($path, $file_name);
-                    $upload[] = $file_name;
-                }
-            } else {
-                $upload[] = '';
+            $file = "";
+            if ($request->file('image')) {
+                $file = Storage::disk('public')->put('project-model', $request->file('image'));
             }
-
             Model_Project::create([
                 "name" => $request['name'],
                 "details" => $request['details'],
-                "image" => implode('|', $upload),
+                "image" => $file,
 
             ]);
             return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
