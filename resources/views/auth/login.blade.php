@@ -1,4 +1,4 @@
-{{-- @extends('site.page')
+@extends('site.page')
 @section('css')
     <style>
         .slidecontainer {
@@ -74,9 +74,9 @@
         </div>
     </section>
     <!--SECTION END-->
-@endsection --}}
+@endsection
 
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 
@@ -205,5 +205,5 @@
 <script src='assets/vendors/switcher/switcher.js'></script>
 </body>
 
-</html>
+</html> --}}
 

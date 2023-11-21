@@ -71,6 +71,7 @@
                             <table class="table table-bordered" style="direction: rtl; ">
                                 <thead>
                                     <tr>
+                                        <th scope="col"> # </th>
                                         <th scope="col">اسم البيان</th>
                                         <th scope="col">نوع البيان</th>
                                         <th scope="col">السنة</th>
@@ -84,9 +85,9 @@
                                                 <td style="text-align: center"> {{ $dataopen->name }} </td>
                                                 <td style="text-align: center"> {{ $dataopen->type }} </td>
                                                 <td style="text-align: center"> {{ $dataopen->date }} </td>
-                                                <td style="text-align: center"><a
+                                                {{-- <td style="text-align: center"><a
                                                         href="{{ URL::to('images/data/' . $dataopen->file) }}"
-                                                        target="_blank" class="ad-st-view"> عرض </a></td>
+                                                        target="_blank" class="ad-st-view"> عرض </a></td> --}}
                                             </tr>
                                         @endforeach
                                     @endisset

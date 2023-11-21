@@ -15,7 +15,8 @@ use App\Models\Project_Plan;
 use App\Models\Project_form;
 use App\Models\Project_performane;
 use App\Models\Mobadrat;
-use App\Models\Old_Project;
+use App\Models\Model_Project;
+use App\Models\News;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,13 +29,21 @@ class PageController extends Controller
     public function training()
     {
         //
+        $type = Type::select()->get();
         $courses = Course::select()->get();
-        return view('site.pages.training', compact('courses'));
+        return view('site.pages.training', compact('courses','type'));
     }
     public function news()
     {
         //$courses = Course::select()->get();
-        return view('site.pages.news');
+        $news = News::select()->get();
+        return view('site.pages.news',compact('news'));
+    }
+    public function news_details(string $id)
+    {
+        $new = News::whereId($id)->firstOrFail();
+        $news = News::select()->find($id);
+        return view('site.pages.news_details',compact('news','new'));
     }
     public function successIndex()
     {
@@ -58,9 +67,16 @@ class PageController extends Controller
     public function namazeg_project()
     {
         //
-        $guide = Guide_Women::select()->get();
-        $old_project = Old_Project::select()->get();
-        return view('site.pages.namazeg_project', compact('old_project'));
+        //$guide = Guide_Women::select()->get();
+        $old_project = Model_Project::select()->get();
+        return view('site.pages.namazeg_project',compact('old_project'));
+    }
+    public function namazeg_projectGet(string $id)
+    {
+        //
+        //$guide = Guide_Women::select()->get();
+        $old_project = Model_Project::select()->find($id);
+        return view('site.pages.namazeg_project_details',compact('old_project'));
     }
     /**
      * Display a listing of the resource.
@@ -68,9 +84,13 @@ class PageController extends Controller
     public function site()
     {
         //
+        $type = Type::select()->get();
+        $courses = Course::select()->get();
+        $news = News::select()->get();
+        $old_project = Model_Project::select()->get();
         $guide = Guide_Women::select()->get();
         $mopadarat = Mobadrat::select()->get();
-        return view('site.pages.index', compact('mopadarat', 'guide'));
+        return view('site.pages.index', compact('mopadarat', 'guide','old_project','news','courses','type'));
     }
     /**
      * Display a listing of the resource.

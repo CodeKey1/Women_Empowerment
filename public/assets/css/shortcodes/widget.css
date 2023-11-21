@@ -1,5 +1,6 @@
 .widget {
     margin-bottom: 50px;
+    text-align: right;
 }
 .widget-title {
     position: relative;
@@ -244,7 +245,7 @@
 	display: table-cell;
     vertical-align: middle;
 }
-.recent-posts-entry .widget-post, 
+.recent-posts-entry .widget-post,
 .recent-posts-entry .ttr-post-info{
     overflow: hidden;
 }
@@ -270,7 +271,7 @@
 }
 .widget_calendar tr {
     border-bottom: 1px solid #eee;
-} 
+}
 .widget_calendar table {
     border-collapse: collapse;
     margin: 0;
@@ -292,7 +293,7 @@
     border-bottom: 1px solid;
     font-weight: 600;
 }
-.calendar_wrap th ,tfoot td { 
+.calendar_wrap th ,tfoot td {
 	background:#ff5e14;
 }
 .widget_calendar caption {
@@ -312,7 +313,7 @@
 .widget_tag_cloud a:hover {
     background-color: #000;
 	color:#fff;
-	
+
 }
 .widget_tag_cloud.radius a{
 	border-radius:40px;

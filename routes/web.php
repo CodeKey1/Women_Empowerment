@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+Route::get('/registermm', function () {
+    return view('site.registration');
+});
 
 Route::middleware('auth')->group(function () {
     //Route::get('/profile_user', function () {return view('site.pages.dashboard'); })->name('profile');
@@ -51,11 +53,13 @@ Route::group(['namespace' => 'guest'], function () {
     Route::get('/initiatives', [App\Http\Controllers\Site\PageController::class, 'initiatives'])->name('initiatives');
     Route::get('/namazeg', [App\Http\Controllers\Site\PageController::class, 'namazeg'])->name('namazeg');
     Route::get('/namazeg-project', [App\Http\Controllers\Site\PageController::class, 'namazeg_project'])->name('namazeg-project');
+    Route::get('/namazeg-project_details{id}', [App\Http\Controllers\Site\PageController::class, 'namazeg_projectget'])->name('namazeg-project_details');
     Route::get('/women_guide', [App\Http\Controllers\Site\PageController::class, 'guide'])->name('guide');
     Route::get('/design_project', [App\Http\Controllers\Site\PageController::class, 'project_design'])->name('project_design');
     Route::get('/registration_project', [App\Http\Controllers\Site\RegistrationController::class, 'index'])->name('project.signup');
     Route::get('/training', [App\Http\Controllers\Site\PageController::class, 'training'])->name('training');
     Route::get('/news', [App\Http\Controllers\Site\PageController::class, 'news'])->name('news');
+    Route::get('/news-details{id}', [App\Http\Controllers\Site\PageController::class, 'news_details'])->name('news.details');
     Route::get('/training-details{id}', [App\Http\Controllers\Site\PageController::class, 'training_details'])->name('training.details');
     Route::get('/success', [App\Http\Controllers\Site\PageController::class, 'successIndex'])->name('success');
     Route::get('/viewProject{id}', [App\Http\Controllers\Site\PageController::class, 'viewProject'])->name('viewProject');

@@ -52,7 +52,7 @@
             <div class="container clearfix">
                 <!-- Header Logo ==== -->
                 <div class="menu-logo">
-                    <a href="index.html"><img src="assets/images/logo-white.png" alt=""></a>
+                    <a href="{{route('site')}}"><img src="assets/images/logo-white.png" alt=""></a>
                 </div>
                 <!-- Mobile Nav Button ==== -->
                 <button class="navbar-toggler collapsed menuicon justify-content-end" type="button"
@@ -68,7 +68,7 @@
                 <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown"
                     style ="direction: rtl;">
                     <div class="menu-logo">
-                        <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+                        <a href="{{route('site')}}"><img src="assets/images/logo.png" alt=""></a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="{{ route('site') }}"> الرئيسية </a>

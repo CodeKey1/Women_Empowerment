@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="d-flex align-items-stretch">
                     <div class="pt-logo mr-auto">
-                        <a href="index.html"><img src="assets/images/logo-white.png" alt="" /></a>
+                        <a href="{{route('site')}}"><img src="assets/images/logo-white.png" alt="" /></a>
                     </div>
                     {{-- <div class="pt-social-link">
                         <p>منصة مسرعات المشروعات الخضراء الذكية لرائدات الاعمال</p>
@@ -44,35 +44,35 @@
                     <div class="row">
                         <div class="col-4 col-lg-4 col-md-4 col-sm-4">
                             <div class="widget footer_widget">
-                                <h5 class="footer-title">Company</h5>
+                                <h5 class="footer-title">المنصة</h5>
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about-1.html">About</a></li>
-                                    <li><a href="faq-1.html">FAQs</a></li>
-                                    <li><a href="contact-1.html">Contact</a></li>
+                                    <li><a href="{{route('site')}}"> الرئيسية </a></li>
+                                    <li><a href="{{ route('about') }}"> عن المنصة</a></li>
+                                    <li><a href="{{ route('guide') }}"> الإرشادات </a></li>
+                                    <li><a href="contact-1.html"> التواصل </a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-4 col-lg-4 col-md-4 col-sm-4">
                             <div class="widget footer_widget">
-                                <h5 class="footer-title">Get In Touch</h5>
+                                <h5 class="footer-title">التفاعل </h5>
                                 <ul>
-                                    <li><a href="http://educhamp.themetrades.com/admin/index.html">Dashboard</a>
+                                    <li><a href="{{route('login')}}"> تسجيل دخول </a>
                                     </li>
-                                    <li><a href="blog-classic-grid.html">Blog</a></li>
-                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                    <li><a href="event.html">Event</a></li>
+                                    <li><a href="{{ route('news') }}">الأخبار</a></li>
+                                    <li><a href="{{ route('stratgey') }}">الإستراتيجية</a></li>
+                                    <li><a href=""></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-4 col-lg-4 col-md-4 col-sm-4">
                             <div class="widget footer_widget">
-                                <h5 class="footer-title">Courses</h5>
+                                <h5 class="footer-title">التدريبات</h5>
                                 <ul>
-                                    <li><a href="courses.html">Courses</a></li>
+                                    <li><a href="{{ route('training') }}">التدريبات</a></li>
                                     <li><a href="courses-details.html">Details</a></li>
-                                    <li><a href="membership.html">Membership</a></li>
-                                    <li><a href="profile.html">Profile</a></li>
+                                    <li><a href="membership.html">الشركاء</a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a target="_blank"
-                        href="https://www.templateshub.net">Templates Hub</a></div>
+                        href="http://aswan.gov.eg"> مركز المعلومات والتحول الرقمي ـ محافظة أسوان </a></div>
             </div>
         </div>
     </div>

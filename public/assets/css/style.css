@@ -2109,7 +2109,7 @@ footer .widget_services ul li:hover {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
 }
 
 .footer_widget ul li a {
@@ -2269,6 +2269,8 @@ button.back-to-top {
 .recent-news.blog-lg .info-bx {
     border: 0;
     padding: 20px 0 0 0;
+    text-align: justify;
+    direction: rtl;
 }
 
 .blog-post .post-title,
