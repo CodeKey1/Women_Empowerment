@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2023 at 11:53 AM
+-- Generation Time: Nov 19, 2023 at 01:54 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -43,7 +43,7 @@ CREATE TABLE `coures` (
 --
 
 INSERT INTO `coures` (`id`, `name`, `details`, `image`, `date`, `cat`, `created_at`, `updated_at`) VALUES
-(15, 'التسويق الالكتروني', 'تدريب يعمل على التعريف بالتسويق الالكتروني لمنتجاتك', '1694302722.screenshot 2023-09-02 230913.jpg', '2023-09-05', 'ريادة اعمال', '2023-09-10 06:14:31', '2023-09-10 06:38:42');
+(26, 'asdf asd f', 'sadf asdf asdf a', 'training/zjE7SOuUTynMjGe8FIOBrEdraeCQVDVhYp5UJLrK.jpg', '2023-11-09', 'asd fasd fasdf', '2023-11-19 10:44:22', '2023-11-19 10:44:22');
 
 -- --------------------------------------------------------
 
@@ -69,13 +69,7 @@ CREATE TABLE `courese_detail` (
 --
 
 INSERT INTO `courese_detail` (`id`, `course_id`, `pre_req`, `description`, `for_whom`, `location`, `video`, `presentation`, `created_at`, `updated_at`) VALUES
-(5, 15, 'ان تكوني رائده اعمال مسجلة لدينا', 'تدريب يعمل على التعريف بالتسويق الالكتروني لمنتجاتك', 'رائدات الاعمال', 'مركز التدريب', '', 'C:\\xampp\\tmp\\php4BAE.tmp', '2023-09-10 06:14:31', '2023-09-10 06:38:42'),
-(6, 16, 'Tested', 'Tested', 'Teste', 'Tested', '1694301588.5de9d2acae82e0659fb0bee3644ac672.mp4', 'C:\\xampp\\tmp\\php2D.tmp', '2023-09-10 06:16:19', '2023-09-10 06:19:48'),
-(7, 17, 'd fasd f', 'sad fas', 'sa dfsa dfasd f', 'sad f', '1694348775.منصة رائدة الأعمال - google chrome 2023-09-04 13-13-26.mp4', 'tranning/bNghCpfQEPTEoUp3TmpaRyHLa9rN1W3GACnw7mnr.pdf', '2023-09-10 19:26:15', '2023-09-10 19:26:15'),
-(8, 18, 'd fasd f', 'sad fas', 'sa dfsa dfasd f', 'sad f', '1694348858.منصة رائدة الأعمال - google chrome 2023-09-04 13-13-26.mp4', 'tranning/O7CqN1ox0NC7PtU8aLw7HW32rJiVRvRtKzU8qJUa.pdf', '2023-09-10 19:27:38', '2023-09-10 19:27:38'),
-(9, 19, 'f asdf asdf', 'fsa fd sa', 'fsad fasd fas', 'f da fasd', '1694349076.منصة رائدة الأعمال - google chrome 2023-09-04 13-13-26.mp4', 'tranning/TSNuyCgIwS628xjAZljPDRmF6O117o5rGMKgAtmW.pdf', '2023-09-10 19:31:16', '2023-09-10 19:31:16'),
-(10, 20, 'gsdf g', 'dsf gsdf', 'f gsd sgdf', 'sdf gsd', '1694352314.منصة رائدة الأعمال - google chrome 2023-09-04 13-13-26.mp4', 'tranning/EJ3RdIS5hcZA41AUr2Ek9O2mwzumBGUgu8teJdsr.pdf', '2023-09-10 20:25:14', '2023-09-10 20:25:14'),
-(11, 21, 'f gsdfd', 'sdf gs', 'gs dfg sdf', 'gsdf', '1694352944.منصة رائدة الأعمال - google chrome 2023-09-04 13-13-26.mp4', 'tranning/jvfBJXYEPm0b3dSz8N8FVHrVpbp69WOwVEBwqPln.pdf', '2023-09-10 20:35:44', '2023-09-10 20:35:44');
+(12, 26, 'gf sdfg', 'sdfg sdfg sdfg', 'sdfgs', 'df gsdfg', 'training/gJTwwrgOSUdwKUP8tHbTl9b6GwXf7DwKnFqLOxLR.mp4', 'training/8Y2jBpBqJ5qUjMMTKko4p6FXVmTzL0H6bWv7yYfS.pdf', '2023-11-19 10:44:22', '2023-11-19 10:44:22');
 
 -- --------------------------------------------------------
 
@@ -223,6 +217,13 @@ CREATE TABLE `news` (
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `name`, `brief`, `details`, `date`, `image`, `video`, `created_at`, `updated_at`) VALUES
+(4, 'بيللسيب', 'سيبلسيب', 'بيسلسيبلسيبل', '2023-11-08', 'news/lpNfe2GALKzr6VeJABHI8234K1qXcA8eyD9rNubA.png', 'news/f5OMbq5CUTEz3DBrZrrkAcIYkt2R28VWprzlhHVb.mp4', '2023-11-19 10:28:27', '2023-11-19 10:28:27');
 
 -- --------------------------------------------------------
 
@@ -688,19 +689,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `coures`
 --
 ALTER TABLE `coures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `courese_detail`
 --
 ALTER TABLE `courese_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -712,7 +713,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `guide_women`
 --
 ALTER TABLE `guide_women`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `initiatives`
@@ -730,19 +731,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `mobadrat`
 --
 ALTER TABLE `mobadrat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `old-project`
 --
 ALTER TABLE `old-project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

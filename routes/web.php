@@ -127,25 +127,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard-projects-model-delete{id}', [App\Http\Controllers\Admin\AdminEditController::class, 'projects_delete'])->name('dashboard.project.model.delete');
     Route::get('/dashboard-courses-delete{id}', [App\Http\Controllers\Admin\AdminEditController::class, 'courses_delete'])->name('dashboard.courses.delete');
 
-
-
-
-
-
-
+    //not configerd yet
     Route::get('/user_apply{id}', [App\Http\Controllers\Admin\ApplyController::class, 'show'])->name('admin.apply.show');
     Route::get('/users-edit{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_edit'])->name('user.edit');
     Route::post('/users-update{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_update'])->name('user.update');
     Route::get('/users-delete{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_delete'])->name('user.delete');
     Route::get('/all_apply', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.apply');
-
-    Route::post('/opendata_update{id}', [App\Http\Controllers\Admin\DataController::class, 'update'])->name('admin.data.update');
-
-    Route::post('/ershadat-update{id}', [App\Http\Controllers\Admin\ApplyController::class, 'ershadat_update'])->name('admin.ershadat.update');
-
-    Route::post('/mopadra-update{id}', [App\Http\Controllers\Admin\ApplyController::class, 'mopdara_update'])->name('admin.mopdara.update');
-
-    Route::post('/n-project-update{id}', [App\Http\Controllers\Admin\AdminController::class, 'project_update'])->name('admin.oldproject.update');
-
-    Route::post('/courses_update{id}', [App\Http\Controllers\Admin\AdminController::class, 'course_update'])->name('admin.courses.update');
 });

@@ -21,10 +21,23 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('dashboard.users') }}" class="ttr-material-button">
+                    <a href="#" class="ttr-material-button">
                         <span class="ttr-icon"><i class="ti-user"></i></span>
                         <span class="ttr-label">المستخدمين</span>
+                        <span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
                     </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('dashboard.users') }}" class="ttr-material-button"><span
+                                    class="ttr-label">المستخدمين</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="ttr-material-button"><span class="ttr-label">المشاريع</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="ttr-material-button"><span class="ttr-label">التدريب</span></a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="{{ route('dashboard.mopadrat') }}" class="ttr-material-button">

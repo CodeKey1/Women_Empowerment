@@ -39,7 +39,7 @@
                     <div class="form-group col-6">
                         <label class="col-form-label">صورة المشروع </label>
                         <div>
-                            <input class="form-control" type="file" name="image[]">
+                            <input class="form-control" type="file" name="image">
                             @error('image')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
