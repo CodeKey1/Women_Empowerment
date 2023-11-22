@@ -35,9 +35,9 @@ class RegistrationController extends Controller
         $type = Type::select()->get();
         if (Project_owner::where('user_id', Auth::user()->id)->exists('user_id')) {
             $owner_id = Project_owner::where('user_id', Auth::user()->id)->first();
-            return view('site.pages.add_project_owner', compact('type', 'owner_id'));
+            return view('site.registration', compact('type', 'owner_id'));
         }
-        return view('site.pages.add_project_owner', compact('type'));
+        return view('site.registration', compact('type'));
     }
 
     public function create_project(string $id)

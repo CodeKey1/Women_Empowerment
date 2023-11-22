@@ -5,13 +5,13 @@
             <div class="container">
                 <div class="d-flex align-items-stretch">
                     <div class="pt-logo mr-auto">
-                        <a href="{{route('site')}}"><img src="assets/images/logo-white.png" alt="" /></a>
+                        <a href="{{ route('site') }}"><img src="assets/images/logo-white.png" alt="" /></a>
                     </div>
                     {{-- <div class="pt-social-link">
                         <p>منصة مسرعات المشروعات الخضراء الذكية لرائدات الاعمال</p>
                     </div> --}}
                     <div class="pt-btn-join">
-                        <a href="#" class="btn ">سجـل مشرعـك </a>
+                        <a href="{{ route('project.create') }}" class="btn ">سجـل مشرعـك </a>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                             <div class="widget footer_widget">
                                 <h5 class="footer-title">المنصة</h5>
                                 <ul>
-                                    <li><a href="{{route('site')}}"> الرئيسية </a></li>
+                                    <li><a href="{{ route('site') }}"> الرئيسية </a></li>
                                     <li><a href="{{ route('about') }}"> عن المنصة</a></li>
                                     <li><a href="{{ route('guide') }}"> الإرشادات </a></li>
                                     <li><a href="contact-1.html"> التواصل </a></li>
@@ -57,7 +57,7 @@
                             <div class="widget footer_widget">
                                 <h5 class="footer-title">التفاعل </h5>
                                 <ul>
-                                    <li><a href="{{route('login')}}"> تسجيل دخول </a>
+                                    <li><a href="{{ route('login') }}"> تسجيل دخول </a>
                                     </li>
                                     <li><a href="{{ route('news') }}">الأخبار</a></li>
                                     <li><a href="{{ route('stratgey') }}">الإستراتيجية</a></li>
@@ -107,8 +107,8 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a target="_blank"
-                        href="http://aswan.gov.eg"> مركز المعلومات والتحول الرقمي ـ محافظة أسوان </a></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a target="_blank" href="http://aswan.gov.eg">
+                        مركز المعلومات والتحول الرقمي ـ محافظة أسوان </a></div>
             </div>
         </div>
     </div>

@@ -1,381 +1,266 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <!-- META ============================================= -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <meta name="robots" content="" />
-
-    <!-- DESCRIPTION -->
-    <meta name="description" content="EduChamp : Education HTML Template" />
-
-    <!-- OG -->
-    <meta property="og:title" content="EduChamp : Education HTML Template" />
-    <meta property="og:description" content="EduChamp : Education HTML Template" />
-    <meta property="og:image" content="" />
-    <meta name="format-detection" content="telephone=no">
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-    <!-- PAGE TITLE HERE ============================================= -->
-    <title>EduChamp : Education HTML Template </title>
-
-
-
-    <link rel="stylesheet" type="text/css" href="css.css">
-
-
-</head>
-<body id="bg">
-    <div class="user_card">
-        <span></span>
-        <div class="circle">
-            <span><img src="images/women.png" alt="" style="width: 50px;"></span>
-        </div>
-        <div class="circle_right">
-            <span><img src="images/women.png" alt="" style="width: 50px;"></span>
-        </div>
-        {{-- <div class="social">
-            <span><i class="fa fa-share-alt"></i></span>
-            <span><i class="fa fa-heart"></i></span>
-        </div> --}}
-        <div class="user_name">
-            <h3>Peter Hawkins</h3>
-            <div class="detail">
-                <p><a href="#">Izmar,Turkey</a>Hiring</p>
-                {{-- <p>17 last day . 94Apply</p> --}}
+@include('Site.includes.Header')
+<div class="page-wraper">
+    @include('Site.includes.menu')
+    <div class="content-block">
+        <div class="page-content bg-white">
+            <!-- inner page banner -->
+            <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner1.jpg);">
+                <div class="container">
+                    <div class="page-banner-entry">
+                        <h2 class="text-white" style="margin-top: 130px;"> سجلي مشروعك الان</h2>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-<div class="container">
-
-    <div class="card">
-        <div class="form">
-            <div class="left-side">
-                <div class="left-heading">
-                    <h3> تسجيل المشروع </h3>
-                </div>
-                <div class="steps-content">
-                    <h3>الخطوة <span class="step-number">1</span></h3>
-                    {{-- <p class="step-number-content active">Enter your personal information to get closer to companies.</p>
-                    <p class="step-number-content d-none">Get to know better by adding your diploma,certificate and education life.</p>
-                    <p class="step-number-content d-none">Help companies get to know you better by telling then about your past experiences.</p>
-                    <p class="step-number-content d-none">Add your profile piccture and let companies find youy fast.</p> --}}
-                </div>
-                <ul class="progress-bar">
-                    <li class="active">المخاطر المحتملة للمشروع</li>
-                    <li>دراسة جدوى المشروع</li>
-                    <li> خطة المشروع</li>
-                    <li>نموذج العمل</li>
-                    <li>مؤشرات أداء المشروع</li>
-
-                </ul>
-
-
-
-            </div>
-            <div class="right-side">
-                <div class="main active">
-                    <small><i class="fa fa-smile-o"></i></small>
-                    <div class="text">
-                        <h2>Your Personal Information</h2>
-                        <p>Enter your personal information to get closer to copanies.</p>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required require id="user_name">
-                            <span>First Name</span>
+            <div class="page-content bg-white">
+                <div class="content-block">
+                    <div class="section-area section-sp1">
+                        <div class="container">
+                            <div class="row" dir="rtl">
+                                <div class="col-lg-3 col-md-4 col-sm-12 m-b30">
+                                    <div class="profile-bx text-center">
+                                        <div class="profile-info">
+                                            <h4>خطوات تسجيل المشروع</h4>
+                                        </div>
+                                        <div class="profile-tabnav">
+                                            <ul class="nav nav-tabs">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#info"><i
+                                                            class="ti-user"></i>بيانات رائدة الأعمال</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#project"><i
+                                                            class="ti-book"></i>المشروع</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-sm-12 m-b30">
+                                    <div class="profile-content-bx">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="info">
+                                                <div class="profile-head">
+                                                    <h3>بيانات رائدة الاعمال</h3>
+                                                </div>
+                                                @if (!App\Models\Project_owner::where('user_id', Auth::user()->id)->exists('user_id'))
+                                                    <form class="form-horizontal" style="font-family: system-ui;"
+                                                        action="{{ route('project.Initial_store') }}"
+                                                        method="POST"enctype="multipart/form-data">
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> الإسم رباعي <span
+                                                                        style="color: red">*</span></label>
+                                                                <input type="text" class="form-control"
+                                                                    name="name" placeholder="يرجي ادخال الإسم رباعي"
+                                                                    required>
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> رقم القومي <span
+                                                                        style="color: red">*</span></label>
+                                                                <input type="text" pattern="[0-9]{14,14}"
+                                                                    maxlength="14" minlength="14"
+                                                                    title="رقم البطاقة مكون من 14 رقم"
+                                                                    class="form-control" name="nid"
+                                                                    placeholder="رقم البطاقة مكون من 14 رقم" required>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> البريد الإلكتروني
+                                                                    <span style="color: red">*</span></label>
+                                                                <input type="email" class="form-control"
+                                                                    name="email"
+                                                                    placeholder="البريد الإلكتروني ان وجد" required>
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> التليفون <span
+                                                                        style="color: red">*</span></label>
+                                                                <input type="text" pattern="[0-9]{10,11}"
+                                                                    maxlength="11" minlength="10"
+                                                                    title="رقم الهاتف مكون من 11 رقم"
+                                                                    class="form-control" name="phone"
+                                                                    placeholder="رقم الهاتف مكون من 11 رقم" required>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> عنوان رائدة الأعمال
+                                                                    (المدينة -
+                                                                    العنوان) <span style="color: red">*</span></label>
+                                                                <input type="text" class="form-control"
+                                                                    name="address" placeholder="العنوان التفصيلي"
+                                                                    required>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> الرغبة في الحصول
+                                                                    على
+                                                                    تمويل
+                                                                    <span style="color: red">*</span></label>
+                                                                <div style="text-align: justify">
+                                                                    <input type="radio" id="yes" name="fund"
+                                                                        value="1" required>
+                                                                    <label for="yes"> نعم </label>
+                                                                    <input type="radio" id="no" name="fund"
+                                                                        value="0">
+                                                                    <label for="no"> لا </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row" style="justify-content: space-around;">
+                                                            <button type="submit" name="formType" value="initial"
+                                                                class="btn">حفظ -
+                                                                التالي</button>
+                                                        </div>
+                                                        <br>
+                                                    </form>
+                                                @else
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                                            <h3>تم تسجيل بيانات رائدة الاعمال</h3>
+                                                            <a data-toggle="tab" class="btn" href="#project">سجل
+                                                                مشروع
+                                                                جديد</a>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                @endif
+                                            </div>
+                                            <div class="tab-pane" id="project">
+                                                <div class="profile-head">
+                                                    <h3>بيانات المشروع </h3>
+                                                </div>
+                                                @isset($owner_id)
+                                                    <form class="form-horizontal" style="font-family: system-ui;"
+                                                        action="{{ route('project.store', $owner_id) }}" method="POST"
+                                                        enctype="multipart/form-data">
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> اسم المشروع <span
+                                                                        style="color: red">*</span></label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="اسم المشروع" name="name" required>
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> مجال المشروع <span
+                                                                        style="color: red">*</span></label>
+                                                                <input type="text" class="form-control"
+                                                                    name="category" placeholder="مجال المشروع" required>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> ملخص فكرة المشروع
+                                                                    <span style="color: red">*</span></label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="فكرة المشروع" name="idea" required>
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> تاريخ البدء المتوقع
+                                                                    <span style="color: red">*</span></label>
+                                                                <input type="date" class="form-control" name="date"
+                                                                    required>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> أهداف المشروع <span
+                                                                        style="color: red">*</span></label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="اهداف المشروع" name="goal" required>
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> التخطيط والابتكار في
+                                                                    المشروع
+                                                                    <span style="color: red">*</span></label>
+                                                                <input type="text" name="innovation"
+                                                                    class="form-control" placeholder="تخطيط المشروع"
+                                                                    required>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <label class="control-label "> كيف يولد المشروع
+                                                                    مستقبل اكثر
+                                                                    خضرة
+                                                                    واستدامه <span style="color: red">*</span></label>
+                                                                <textarea class="form-control" name="future" cols="5" rows="5" required></textarea>
+                                                            </div>
+                                                            <br>
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> ذكاء المشروع <span
+                                                                        style="color: red">*</span></label>
+                                                                <input type="text" class="form-control" name="smart"
+                                                                    required>
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> الاثر المتوقع
+                                                                    للمشروع <span style="color: red">*</span></label>
+                                                                <input type="text" class="form-control "
+                                                                    name="trail" required>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> مقر تنفيذ المشروع
+                                                                    <span style="color: red">*</span></label>
+                                                                <input type="text" name="location"
+                                                                    class="form-control" required>
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                <label class="control-label col-12"> الموقع الألكتروني
+                                                                    للمشروع
+                                                                </label>
+                                                                <input type="text" name="email"
+                                                                    class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row" style="justify-content: space-around;">
+                                                            <a data-toggle="tab" class="btn btn-danger"
+                                                                href="#home">عودة</a>
+                                                            <button type="submit" name="formType" value="projectInitial"
+                                                                class="btn">حفظ -
+                                                                التالي</button>
+                                                        </div>
+                                                        <br>
+                                                    </form>
+                                                @else
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                                            <h3>برجاء تسجيل بيانات رائدة الاعمال</h3>
+                                                            <a data-toggle="tab" class="btn" href="#info">سجل
+                                                                البيانات
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                @endisset
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Last Name</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>Phone number</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>E-mail Address</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <select>
-                                <option>Select Country</option>
-                                <option>India</option>
-                                <option>France</option>
-                                <option>UK</option>
-                                <option>USA</option>
-                                <option>Germany</option>
-                                <option>Russia</option>
-                                <option>China</option>
-                                <option>Japan</option>
-                                <option>Pakistan</option>
-                            </select>
-
-                        </div>
-                        <div class="input-div">
-
-                            <select>
-                                <option>Select City</option>
-                                <option>New Delhi</option>
-                                <option>Paris</option>
-                                <option>London</option>
-                                <option>Washington D.C.</option>
-                                <option>Berlin</option>
-                                <option>Moscow</option>
-                                <option>Bejing</option>
-                                <option>Tokyo</option>
-                                <option>Islamabad</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required require id="user_name">
-                            <span>First Name</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Last Name</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>Phone number</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>E-mail Address</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <select>
-                                <option>Select Country</option>
-                                <option>India</option>
-                                <option>France</option>
-                                <option>UK</option>
-                                <option>USA</option>
-                                <option>Germany</option>
-                                <option>Russia</option>
-                                <option>China</option>
-                                <option>Japan</option>
-                                <option>Pakistan</option>
-                            </select>
-
-                        </div>
-                        <div class="input-div">
-
-                            <select>
-                                <option>Select City</option>
-                                <option>New Delhi</option>
-                                <option>Paris</option>
-                                <option>London</option>
-                                <option>Washington D.C.</option>
-                                <option>Berlin</option>
-                                <option>Moscow</option>
-                                <option>Bejing</option>
-                                <option>Tokyo</option>
-                                <option>Islamabad</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <button class="next_button">Next Step</button>
-                    </div>
-                </div>
-                <div class="main">
-                    <small><i class="fa fa-smile-o"></i></small>
-                    <div class="text">
-                        <h2>Education</h2>
-                        <p>Inform companies about your education life.</p>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>School Name</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Board Name</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>College/University name</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <select>
-                                <option>Select Course</option>
-                                <option>BCA</option>
-                                <option>B-TECH</option>
-                                <option>BA</option>
-                                <option>B-COM</option>
-                                <option>B-SC</option>
-                                <option>MBA</option>
-                                <option>MCA</option>
-                                <option>M-COM</option>
-                                <option>M-TECH</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="buttons button_space">
-                        <button class="back_button">Back</button>
-                        <button class="next_button">Next Step</button>
-                    </div>
-                </div>
-                <div class="main">
-                    <small><i class="fa fa-smile-o"></i></small>
-                    <div class="text">
-                        <h2>Work Experiences</h2>
-                        <p>Can you talk about your past work experience?</p>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>Experience 1</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>Position</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Experience 2</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Position</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Experience 3</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Position</span>
-                        </div>
-                    </div>
-                    <div class="buttons button_space">
-                        <button class="back_button">Back</button>
-                        <button class="next_button">Next Step</button>
-                    </div>
-                </div>
-                <div class="main">
-                    <small><i class="fa fa-smile-o"></i></small>
-                    <div class="text">
-                        <h2>Work Experiences</h2>
-                        <p>Can you talk about your past work experience?</p>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>Experience 1</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>Position</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Experience 2</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Position</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Experience 3</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Position</span>
-                        </div>
-                    </div>
-                    <div class="buttons button_space">
-                        <button class="back_button">Back</button>
-                        <button class="next_button">Next Step</button>
-                    </div>
-                </div>
-                <div class="main">
-                    <small><i class="fa fa-smile-o"></i></small>
-                    <div class="text">
-                        <h2>Work Experiences</h2>
-                        <p>Can you talk about your past work experience?</p>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>Experience 1</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required require>
-                            <span>Position</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Experience 2</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Position</span>
-                        </div>
-                    </div>
-                    <div class="input-text">
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Experience 3</span>
-                        </div>
-                        <div class="input-div">
-                            <input type="text" required>
-                            <span>Position</span>
-                        </div>
-                    </div>
-                    <div class="buttons button_space">
-                        <button class="back_button">Back</button>
-                        <button class="next_button">Next Step</button>
-                    </div>
-                </div>
-                 <div class="main">
-                     <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                         <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                    </svg>
-                    <div class="text congrats">
-                        <h2>Congratulations!</h2>
-                        <p>Thanks Mr./Mrs. <span class="shown_name"></span> your information have been submitted successfully for the future reference we will contact you soon.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- External JavaScripts -->
-<script src="app.js"></script>
-
-</body>
-
-</html>
+@include('Site.includes.subfooter')
+</div>
+@include('Site.includes.Footer')
