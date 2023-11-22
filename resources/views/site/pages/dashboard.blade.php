@@ -192,7 +192,7 @@
                                         <th> عرض </th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                {{-- <tbody>
                                     @isset($apply)
                                         @foreach ($project as $num => $projects)
                                             <tr>
@@ -206,7 +206,7 @@
                                             </tr>
                                         @endforeach
                                     @endisset
-                                </tbody>
+                                </tbody> --}}
                             </table>
                         </div>
                     </div>

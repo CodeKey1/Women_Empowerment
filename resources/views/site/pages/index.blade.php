@@ -1,183 +1,3 @@
-{{-- @extends('site.site')
-@section('content')
-
-
-    <section>
-        <div class="container com-sp pad-bot-70">
-            <div class="row">
-                <div class="con-title">
-                    <h2>ر حلة <span>رائدات أعمال</span></h2>
-                    <p> رحلة رائدات اعمال المشروعات الذكية بأسوان </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="col-md-12">
-                        <div class="ed-course-in">
-                            <a class="course-overlay">
-                                <img src="images/rehla.jpeg" alt="">
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="ed-course">
-                        <div class="col-md-6 col-sm-4 col-xs-12">
-                            <div class="ed-course-in">
-                                <a class="course-overlay">
-                                    <img src="images/660.png" alt="">
-                                    <span>مرحلة التفكير </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-4 col-xs-12">
-                            <div class="ed-course-in">
-                                <a class="course-overlay">
-                                    <img src="images/100.jpg" alt="">
-                                    <span> مرحلة تخطيط الأعمال </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-4 col-xs-12">
-                            <div class="ed-course-in">
-                                <a class="course-overlay">
-                                    <img src="images/99.jpg" alt="">
-                                    <span> مرحلة التنفيذ </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-4 col-xs-12">
-                            <div class="ed-course-in">
-                                <a class="course-overlay">
-                                    <img src="images/77.jpg" alt="">
-                                    <span>مرحلة النمو والتوسع </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <section class="pop-cour" style="direction: rtl">
-        <div class="container com-sp pad-bot-70">
-            <div class="row">
-                <div class="con-title">
-                    <h2> نماذج <span> مشاريع </span></h2>
-                    <p> نماذج مشاريع ناجحة </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div>
-                        <!--POPULAR COURSES-->
-                        <div class="home-top-cour">
-                            <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3"> <img src="images/project/1.jpg" alt=""> </div>
-                            <!--POPULAR COURSES: CONTENT-->
-                            <div class="col-md-9 home-top-cour-desc">
-                                <a href="{{ route('namazeg') }}">
-                                    <h3> مجال المشغولات اليدوية </h3>
-                                </a>
-                                <h4> </h4>
-                                <p>فكرة مشروع محل بيع المشغولات اليدوية في إنتاج الأعمال اليدوية البسيطة التي يُمكن
-                                    استخدامها في تزيين المنازل وترتيبها، كالوسائد وقواعد الأكواب والأطباق والملاعق، أو
-                                    الإكسسوارات
-                                </p> <span class="home-top-cour-rat">4.2</span>
-                                <div class="hom-list-share">
-                                    <ul>
-                                        <li><a href="{{ route('namazeg') }}"><i class="fa fa-bar-chart"
-                                                    aria-hidden="true"></i>
-                                                عرض المشروع </a> </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!--POPULAR COURSES-->
-                        <div class="home-top-cour">
-                            <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3"> <img src="images/project/3.jpg" alt=""> </div>
-                            <!--POPULAR COURSES: CONTENT-->
-                            <div class="col-md-9 home-top-cour-desc">
-                                <a href="{{ route('namazeg') }}">
-                                    <h3> تسميد عضوى </h3>
-                                </a>
-                                <h4> </h4>
-                                <p>مشروع يقوم على استخدام روث الحيوانات وعمل كمبوست </p> <span
-                                    class="home-top-cour-rat">4.2</span>
-                                <div class="hom-list-share">
-                                    <ul>
-                                        <li><a href="{{ route('namazeg') }}"><i class="fa fa-bar-chart"
-                                                    aria-hidden="true"></i>
-                                                عرض المشروع </a> </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div>
-                        <!--POPULAR COURSES-->
-                        <div class="home-top-cour">
-                            <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3"> <img src="images/project/2.jpg" alt=""> </div>
-                            <!--POPULAR COURSES: CONTENT-->
-                            <div class="col-md-9 home-top-cour-desc">
-                                <a href="{{ route('namazeg') }}">
-                                    <h3> تدوير الملابس </h3>
-                                </a>
-                                <h4> </h4>
-                                <p>جمع الألبسة القديمة والمنتجات الأخرى القابلة لإعادة التدوير، واستفادة منها من خلال
-                                    إصلاحها و إعادة استخدامها في صنع منتجات جديدة، ثم بيعها مرّة أخرى.</p> <span
-                                    class="home-top-cour-rat">4.2</span>
-                                <div class="hom-list-share">
-                                    <ul>
-                                        <li><a href="{{ route('namazeg') }}"><i class="fa fa-bar-chart"
-                                                    aria-hidden="true"></i>
-                                                عرض المشروع </a> </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!--POPULAR COURSES-->
-                        <div class="home-top-cour">
-                            <!--POPULAR COURSES IMAGE-->
-                            <div class="col-md-3"> <img src="images/project/4.jpg" alt=""> </div>
-                            <!--POPULAR COURSES: CONTENT-->
-                            <div class="col-md-9 home-top-cour-desc">
-                                <a href="{{ route('namazeg') }}">
-                                    <h3>متجر هدايا صديق للبيئة </h3>
-                                </a>
-                                <h4> </h4>
-                                <p> مشروع يقوم على بيع هدايا صديقه للبئية من اول ورق التغليف حتى الهديه </p> <span
-                                    class="home-top-cour-rat">4.2</span>
-                                <div class="hom-list-share">
-                                    <ul>
-                                        <li><a href="{{ route('namazeg') }}"><i class="fa fa-bar-chart"
-                                                    aria-hidden="true"></i>
-                                                عرض المشروع </a> </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-@endsection --}}
-
 @include('Site.includes.Header')
 <div class="page-wraper">
     @include('Site.includes.menu')
@@ -274,8 +94,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center text-white">
-                            <h2>Online Courses To Learn</h2>
-                            <h5>Own Your Feature Learning New Skills Online</h5>
+                            <h2>دورات عبر المنصة للتعلم</h2>
+                            <h5>امتلكي ميزتكي لتعلم مهارات جديدة عبر المنصة
+                            </h5>
 
                         </div>
                     </div>
@@ -284,17 +105,17 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="cours-search-bx m-b30">
                                     <div class="icon-box">
-                                        <h3><i class="ti-user"></i><span class="counter">5</span>M</h3>
+                                        <h3><i class="ti-user"></i><span class="counter">3</span>K</h3>
                                     </div>
-                                    <span class="cours-search-text">Over 5 million student</span>
+                                    <span class="cours-search-text">3000</span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <div class="cours-search-bx m-b30">
                                     <div class="icon-box">
-                                        <h3><i class="ti-book"></i><span class="counter">30</span>K</h3>
+                                        <h3><i class="ti-book"></i><span class="counter">100</span></h3>
                                     </div>
-                                    <span class="cours-search-text">30,000 Courses.</span>
+                                    <span class="cours-search-text">100 </span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-12">
@@ -303,7 +124,7 @@
                                         <h3><i class="ti-layout-list-post"></i><span class="counter">20</span>K
                                         </h3>
                                     </div>
-                                    <span class="cours-search-text">Learn Anythink Online.</span>
+                                    <span class="cours-search-text"> تدريبات عامة </span>
                                 </div>
                             </div>
                         </div>
@@ -325,34 +146,34 @@
                             @isset($courses)
                                 @foreach ($courses as $num => $Courses)
                                     {{-- @if ($num <= 1) --}}
-                                        <div class="item">
-                                            <div class="event-bx">
-                                                <div class="action-box">
-                                                    <img src="{{ asset('storage/' . $Courses->image) }}" alt="">
+                                    <div class="item">
+                                        <div class="event-bx">
+                                            <div class="action-box">
+                                                <img src="{{ asset('storage/' . $Courses->image) }}" alt="">
+                                            </div>
+                                            <div class="info-bx d-flex">
+                                                <div>
+                                                    <div class="event-time">
+                                                        <div class="event-date">29</div>
+                                                        <div class="event-month">October</div>
+                                                    </div>
                                                 </div>
-                                                <div class="info-bx d-flex">
-                                                    <div>
-                                                        <div class="event-time">
-                                                            <div class="event-date">29</div>
-                                                            <div class="event-month">October</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="event-info">
-                                                        <h4 class="event-title"><a href="#"> {{ $Courses->name }}</a></h4>
-                                                        <ul class="media-post">
-                                                            <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am
-                                                                    8:00am</a></li>
-                                                            <li><a href="#"><i class="fa fa-map-marker"></i> Berlin,
-                                                                    Germany</a></li>
-                                                        </ul>
-                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                            industry. Lorem Ipsum has been the industry's standard dummy
-                                                            text
-                                                            ever since the..</p>
-                                                    </div>
+                                                <div class="event-info">
+                                                    <h4 class="event-title"><a href="#"> {{ $Courses->name }}</a></h4>
+                                                    <ul class="media-post">
+                                                        <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am
+                                                                8:00am</a></li>
+                                                        <li><a href="#"><i class="fa fa-map-marker"></i> Berlin,
+                                                                Germany</a></li>
+                                                    </ul>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                        industry. Lorem Ipsum has been the industry's standard dummy
+                                                        text
+                                                        ever since the..</p>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                     {{-- @endif --}}
                                 @endforeach
                             @endisset
@@ -462,10 +283,36 @@
     </div>
     <div class="page-content bg-white">
         <!-- inner page banner -->
-        <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner1.jpg);">
+        <div class="section-area section-sp2 bg-fix ovbl-dark"
+            style="background-image:url(assets/images/background/bg1.jpg);padding-bottom: 40px;">
             <div class="container">
-                <div class="page-banner-entry">
-                    <h1 class="text-white"> الشركاء </h1>
+                <div class="row">
+                    <div class="col-md-12 text-white heading-bx left">
+                        <h2 class="title-head text-uppercase"> الشركــاء<span></span></h2>
+
+                    </div>
+                </div>
+                <div class="recent-news-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+                    <div class="item">
+                        <div class="testimonial-thumb" style="position: relative !important">
+                            <img src="assets/images/testimonials/pic1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="item"style="width: 100px">
+                        <div class="testimonial-thumb" style="position: relative !important">
+                            <img src="assets/images/testimonials/pic1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="item"style="width: 100px">
+                        <div class="testimonial-thumb" style="position: relative !important">
+                            <img src="assets/images/testimonials/pic1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="item"style="width: 100px">
+                        <div class="testimonial-thumb"style="position: relative !important">
+                            <img src="assets/images/testimonials/pic2.jpg" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -2902,7 +2902,7 @@ button.back-to-top {
 
 .courses-search-bx .focused .input-group label,
 .contact-bx .focused .input-group label {
-    top: -8px;
+    top: -14px;
     font-size: 10px;
     color: var(--primary);
 }
@@ -2915,7 +2915,8 @@ button.back-to-top {
 .contact-bx .input-group .form-control {
     border-width: 0 0 1px 0;
     background-color: rgba(0, 0, 0, 0);
-    padding: 10px 0;
+    padding: 10px 10px;
+    text-align: right;
 }
 
 .contact-bx .heading-bx {

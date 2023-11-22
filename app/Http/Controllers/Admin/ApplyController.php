@@ -24,7 +24,8 @@ class ApplyController extends Controller
     {
         //Auth()->id()
         $apply = Project_owner::select()->where('user_id', Auth()->id())->first();
-        $project = Project::select()->where('owner_id', $apply->id)->get();
+        $project = Project::select()->get();
+        //$project = Project::select()->where('owner_id', $apply->id)->get();
         return view('site.pages.dashboard', compact('apply', 'project'));
     }
     /**

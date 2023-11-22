@@ -1,82 +1,4 @@
-@extends('site.page')
-@section('css')
-    <style>
-        .slidecontainer {
-            width: 100%;
-        }
-
-        .slider {
-            -webkit-appearance: none !important;
-            width: 100% !important;
-            height: 25px !important;
-            background: #d3d3d3 !important;
-            outline: none !important;
-            opacity: 0.7 !important;
-            -webkit-transition: .2s !important;
-            transition: opacity .2s !important;
-        }
-
-        .slider:hover {
-            opacity: 1 !important;
-        }
-
-        .slider::-webkit-slider-thumb {
-            -webkit-appearance: none !important;
-            appearance: none !important;
-            width: 25px !important;
-            height: 25px !important;
-            background: #04AA6D !important;
-            cursor: pointer !important;
-        }
-
-        .slider::-moz-range-thumb {
-            width: 25px !important;
-            height: 25px !important;
-            background: #04AA6D !important;
-            cursor: pointer !important;
-        }
-    </style>
-@endsection
-@section('content')
-    <!--SECTION START-->
-    <section class="h-quote">
-        <div class="container" style="direction: rtl;">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="n-form-com admiss-form">
-                    <div class="col s12">
-                        <form class="s12" method="POST" action="{{ route('login') }}" class="needs-validation">
-                            @csrf
-                            <div>
-                                <div class="input-field s12">
-                                    <label>البريد الالكتروني</label>
-                                    <input type="email" data-ng-model="name" name="email" class="validate">
-                                </div>
-                            </div>
-                            <div>
-                                <div class="input-field s12">
-                                    <label>الرقم السري</label>
-                                    <input type="password" name="password" class="validate">
-                                </div>
-                            </div>
-                            <div dir="rtl">
-                                <div class="input-field s4">
-                                    <input type="submit" value="تسجيل الدخول" class="waves-effect waves-light log-in-btn">
-                                </div>
-                            </div>
-                            <div>
-                                <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal"
-                                        data-target="#modal3">نسيت كلمة السر</a> | <a href="{{ route('register') }}" >انشاء حساب جديد</a> </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--SECTION END-->
-@endsection
-
-{{-- <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 
@@ -136,51 +58,52 @@
 	<div id="loading-icon-bx"></div>
 	<div class="account-form">
 		<div class="account-head" style="background-image:url(assets/images/background/bg2.jpg);">
-			<a href="index.html"><img src="assets/images/logo-white-2.png" alt=""></a>
+			<a href="index.html"><img src="assets/images/logo-white-2.png" alt="" style="width: 80% !important;"></a>
 		</div>
 		<div class="account-form-inner">
 			<div class="account-container">
 				<div class="heading-bx left">
-					<h2 class="title-head" style="float: left !important">Login to your <span>Account</span></h2>
-					<p>Don't have an account? <a href="register.html">Create one here</a></p>
+					<h2 class="title-head"> لحسابك <span>  تسجيل دخول </span></h2>
+					<p> هل لديك حساب ؟ <a href="{{ route('register') }}"> إضافة حساب </a></p>
 				</div>
-				<form class="contact-bx">
-					<div class="row placeani">
-						<div class="col-lg-12">
+				<form class="contact-bx" method="POST" action="{{ route('login') }}" class="needs-validation">
+                    @csrf
+					<div class="row placeani" style="display: inline !important;">
+						<div class="col-lg-12" style="margin-top: 15px;">
 							<div class="form-group">
 								<div class="input-group">
-									<label>Your Name</label>
-									<input name="dzName" type="text" required="" class="form-control">
+									<label> البريد الإلكتروني </label>
+									<input name="email" type="text" required="" class="form-control">
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="form-group">
 								<div class="input-group">
-									<label>Your Password</label>
-									<input name="dzEmail" type="password" class="form-control" required="">
+									<label> الرقم السري </label>
+									<input name="password" type="password" class="form-control" required="">
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="form-group form-forget">
+                                <a href="#" class="ml-auto"> </a>
 								<div class="custom-control custom-checkbox">
 									<input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-									<label class="custom-control-label" for="customControlAutosizing">Remember me</label>
+									<label class="custom-control-label" for="customControlAutosizing"> تذكرني </label>
 								</div>
-								<a href="forget-password.html" class="ml-auto">Forgot Password?</a>
 							</div>
 						</div>
 						<div class="col-lg-12 m-b30">
-							<button name="submit" type="submit" value="Submit" class="btn button-md">Login</button>
+							<button  type="submit" value="Submit" class="btn button-md"> تسجيل دخول </button>
 						</div>
-						<div class="col-lg-12">
+						{{-- <div class="col-lg-12">
 							<h6>Login with Social media</h6>
 							<div class="d-flex">
 								<a class="btn flex-fill m-r5 facebook" href="#"><i class="fa fa-facebook"></i>Facebook</a>
 								<a class="btn flex-fill m-l5 google-plus" href="#"><i class="fa fa-google-plus"></i>Google Plus</a>
 							</div>
-						</div>
+						</div> --}}
 					</div>
 				</form>
 			</div>
@@ -205,5 +128,5 @@
 <script src='assets/vendors/switcher/switcher.js'></script>
 </body>
 
-</html> --}}
+</html>
 

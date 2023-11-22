@@ -39,15 +39,22 @@
                                                 <td>{{ $num + 1 }}</td>
                                                 <td>{{ $data->name }}</td>
                                                 <td>{{ $data->brief }}</td>
-                                                <td>
-                                                    <a href="{{ route('dashboard.news.edit', $data->id) }}"
-                                                        class="ad-st-view">
-                                                        تعديل
-                                                    </a><br>
-                                                    <a href="{{ route('dashboard.news.delete', $data->id) }}"
-                                                        class="ad-st-view" onclick="return confirmSubmit()">
-                                                        حذف
-                                                    </a>
+                                                <td style="text-align: end;">
+                                                    <a href="{{ route('dashboard.news.edit', $data->id) }}" class="btn green inline" style="padding: 7px;">تعديل</a>
+                                                    <a href="{{ route('dashboard.news.delete', $data->id) }}" class="btn red inline"style="padding: 7px;">حذف</a>
+                                                    {{-- <div >
+                                                        <span class="notification-icon dashbg-yellow">
+                                                            <a href=""
+                                                                class="ad-st-view"><i class="fa fa-edit"></i>
+                                                            </a>
+                                                        </span>
+                                                        <span class="notification-icon dashbg-yellow">
+                                                            <a href=""
+                                                                class="ad-st-view" onclick="return confirmSubmit()"><i
+                                                                    class="fa fa-trash"></i>
+                                                            </a>
+                                                        </span>
+                                                    </div> --}}
                                                 </td>
                                             </tr>
                                         @endforeach

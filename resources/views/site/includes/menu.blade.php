@@ -6,7 +6,7 @@
             <div class="row d-flex justify-content-between">
                 <div class="topbar-left">
                     <ul>
-                        <li><a href="#"> منصة مسرعات المشروعات الخضراء الذكية لرائدات
+                        <li><a href="#"> منصة  لرائدات
                                 الاعمال باسوان </a></li>
                     </ul>
                 </div>
@@ -32,8 +32,7 @@
                                 </li>
                             @endif
                         @else
-                            <li><a href="{{ route('profile') }}" data-toggle="modal"> مرحباً :
-                                    {{ Auth::user()->name }} </a>
+                            <li><a href="{{ route('profile') }}" data-toggle="modal">  {{ Auth::user()->name }} : مرحباً </a>
                             </li>
                             <li><a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();" style="color: #f0ae06;">
@@ -74,20 +73,18 @@
                         <li class="active"><a href="{{ route('site') }}"> الرئيسية </a>
                         </li>
                         <li><a href="{{ route('about') }}">عن المنصة </a>
-
                         </li>
                         <li class="add-mega-menu"><a href="{{ route('namazeg-project') }}">نماذج مشاريع </a>
-
                         </li>
-
                         <li class="nav-dashboard"><a href="{{ route('training') }}">التدريب </a>
-
                         </li>
                         <li class="nav-dashboard"><a href="{{ route('stratgey') }}">الإستراتيجية </i></a>
-
+                        </li>
+                        <li class="nav-dashboard"><a href="{{ route('initiatives') }}">المبادرات </a>
+                        </li>
+                        <li class="nav-dashboard"><a href="{{ route('instructions') }}">الإرشادات </a>
                         </li>
                         <li class="nav-dashboard"><a href="{{ route('news') }}">الأخبار </a>
-
                         </li>
                         <li class="nav-dashboard"><a href="{{ route('Data') }}"> البيانات المفتوحة</a>
                         </li>
