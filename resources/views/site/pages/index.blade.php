@@ -1,3 +1,4 @@
+
 @include('Site.includes.Header')
 <div class="page-wraper">
     @include('Site.includes.menu')

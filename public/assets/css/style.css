@@ -3490,6 +3490,7 @@ button.back-to-top {
     padding: 10px 15px 10px 30px;
     border-bottom: 1px solid #e9e9e9;
     align-items: center;
+    direction: rtl;
 }
 
 .profile-head .feature-filters {

@@ -32,7 +32,7 @@
                                 </li>
                             @endif
                         @else
-                            <li><a href="{{ route('profile') }}" data-toggle="modal">  {{ Auth::user()->name }} : مرحباً </a>
+                            <li><a href="{{ route('profile') }}">  {{ Auth::user()->name }} : مرحباً </a>
                             </li>
                             <li><a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();" style="color: #f0ae06;">
