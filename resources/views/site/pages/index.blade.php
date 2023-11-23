@@ -1,4 +1,3 @@
-
 @include('Site.includes.Header')
 <div class="page-wraper">
     @include('Site.includes.menu')
@@ -56,27 +55,11 @@
                                                     <img src="{{ URL::to('images/ng/' . $N_project->image) }}"
                                                         alt="">
                                                     <a href="{{ route('namazeg-project_details', $N_project->id) }}"
-                                                        class="btn"> للمذيد </a>
+                                                        class="btn"> للمزيد </a>
                                                 </div>
                                                 <div class="info-bx text-center">
                                                     <h5><a href="#">{{ $N_project->name }}</a></h5>
                                                     {{-- <span> {{ $N_project->details }} </span> --}}
-                                                </div>
-                                                <div class="cours-more-info">
-                                                    <div class="review">
-                                                        <span>3 Review</span>
-                                                        <ul class="cours-star">
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="price">
-                                                        <del>$190</del>
-                                                        <h5>$120</h5>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,7 +91,7 @@
                                     <div class="icon-box">
                                         <h3><i class="ti-user"></i><span class="counter">3</span>K</h3>
                                     </div>
-                                    <span class="cours-search-text">3000</span>
+                                    <span class="cours-search-text">مستفيد</span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6">
@@ -116,7 +99,7 @@
                                     <div class="icon-box">
                                         <h3><i class="ti-book"></i><span class="counter">100</span></h3>
                                     </div>
-                                    <span class="cours-search-text">100 </span>
+                                    <span class="cours-search-text">مشروع </span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-12">
@@ -132,7 +115,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Form END -->
+
+            <!-- training -->
             <div class="section-area section-sp2">
                 <div class="container">
                     <div class="row">
@@ -146,36 +130,26 @@
                             class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0  m-b30">
                             @isset($courses)
                                 @foreach ($courses as $num => $Courses)
-                                    {{-- @if ($num <= 1) --}}
-                                    <div class="item">
+                                    <div class="item" dir="rtl">
                                         <div class="event-bx">
                                             <div class="action-box">
                                                 <img src="{{ asset('storage/' . $Courses->image) }}" alt="">
                                             </div>
-                                            <div class="info-bx d-flex">
+                                            <div class="info-bx d-flex" style="justify-content: space-around;">
                                                 <div>
                                                     <div class="event-time">
-                                                        <div class="event-date">29</div>
-                                                        <div class="event-month">October</div>
+                                                        <div class="event-month">
+                                                            {{ \Carbon\Carbon::parse($Courses->date)->format('d-m') }}</div>
+                                                        <div class="event-month">
+                                                            {{ \Carbon\Carbon::parse($Courses->date)->format('Y') }}</div>
                                                     </div>
                                                 </div>
                                                 <div class="event-info">
                                                     <h4 class="event-title"><a href="#"> {{ $Courses->name }}</a></h4>
-                                                    <ul class="media-post">
-                                                        <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am
-                                                                8:00am</a></li>
-                                                        <li><a href="#"><i class="fa fa-map-marker"></i> Berlin,
-                                                                Germany</a></li>
-                                                    </ul>
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                        industry. Lorem Ipsum has been the industry's standard dummy
-                                                        text
-                                                        ever since the..</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    {{-- @endif --}}
                                 @endforeach
                             @endisset
                         </div>
@@ -245,33 +219,28 @@
                     <div class="recent-news-carousel owl-carousel owl-btn-1 col-12 p-lr0">
                         @isset($news)
                             @foreach ($news as $num => $News)
-                                @if ($num < 4)
-                                    <div class="item">
-                                        <div class="recent-news">
-                                            <div class="action-box">
-                                                <img src="{{ asset('storage/' . $News->image) }}" alt="">
-                                            </div>
-                                            <div class="info-bx">
-                                                <ul class="media-post">
-                                                    <li><a href="#"><i
-                                                                class="fa fa-calendar"></i>{{ $News->date }}</a>
-                                                    </li>
-                                                    <li><a href="#"><i class="fa fa-user"></i>بواسطة : المسؤل</a>
-                                                    </li>
-                                                </ul>
-                                                <h5 class="post-title"><a href="blog-details.html"> {{ $News->name }}
-                                                    </a></h5>
-                                                <p> {{ $News->brief }} </p>
-                                                <div class="post-extra">
-                                                    <a href="{{ route('news.details', $News->id) }}" class="btn-link">
-                                                        للمذيد </a>
-                                                    <a href="#" class="comments-bx"><i
-                                                            class="fa fa-comments-o"></i>20 Comment</a>
-                                                </div>
+                                <div class="item">
+                                    <div class="recent-news">
+                                        <div class="action-box">
+                                            <img src="{{ asset('storage/' . $News->image) }}" alt="">
+                                        </div>
+                                        <div class="info-bx">
+                                            <ul class="media-post">
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar"></i>{{ $News->date }}</a>
+                                                </li>
+                                            </ul>
+                                            <h5 class="post-title"><a href="blog-details.html"> {{ $News->name }}
+                                                </a></h5>
+                                            <p> {{ $News->brief }} </p>
+                                            <div class="post-extra">
+                                                <a href="{{ route('news.details', $News->id) }}" class="btn-link">
+                                                    للمزيد </a>
+
                                             </div>
                                         </div>
                                     </div>
-                                @endif
+                                </div>
                             @endforeach
                         @endisset
                     </div>
