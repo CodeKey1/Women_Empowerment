@@ -20,8 +20,8 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- FAVICONS ICON ============================================= -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <link rel="icon" href="assets/images/logo-white.png" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo-white.png" />
 
     <!-- PAGE TITLE HERE ============================================= -->
     <title>منصة لرائدات الاعمال باسوان</title>
