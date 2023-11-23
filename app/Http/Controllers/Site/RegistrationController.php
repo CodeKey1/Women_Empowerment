@@ -18,38 +18,17 @@ use Illuminate\Support\Facades\Auth;
 class RegistrationController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-        $type = Type::select()->get();
-        return view('site.pages.registration', compact('type'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
+     * initial project data store
      */
     public function create()
     {
         $type = Type::select()->get();
         if (Project_owner::where('user_id', Auth::user()->id)->exists('user_id')) {
             $owner_id = Project_owner::where('user_id', Auth::user()->id)->first();
-            return view('site.registration', compact('type', 'owner_id'));
+            return view('site.initial_registration', compact('type', 'owner_id'));
         }
-        return view('site.registration', compact('type'));
+        return view('site.initial_registration', compact('type'));
     }
-
-    public function create_project(string $id)
-    {
-        //
-        $owner_id = $id;
-        $type = Type::select()->get();
-        return view('site.pages.add_project', compact('type', 'owner_id'));
-    }
-    /**
-     * Store a newly created resource in storage.
-     */
     public function Initial_store(Request $request)
     {
         $project = Auth()->id();
@@ -64,9 +43,8 @@ class RegistrationController extends Controller
             "user_id" => $project,
         ]);
         $owner_id = $owner_id->id;
-        return redirect()->back()->with('menu1_active', true)->with('active', true)->with(['success' => 'تم الحفظ بيانات رائدة الأعمال بنجاح']);
+        return redirect()->back()->with('project_active', true)->with(['success' => 'تم الحفظ بيانات رائدة الأعمال بنجاح']);
     }
-
     public function project_store(Request $request, string $id)
     {
         $project = Project::create([
@@ -84,9 +62,18 @@ class RegistrationController extends Controller
             "owner_id" => $id,
         ]);
         $owner_id = $project->id;
-        return redirect()->route('project.data', ['id' => $owner_id])->with('menu2_active', true)->with('active', true)->with(['success' => 'تم الحفظ بيانات المشروع بنجاح']);
+        return redirect()->route('project.data', ['id' => $owner_id])->with('risk_active', true)->with(['success' => 'تم الحفظ بيانات المشروع بنجاح']);
     }
-
+    /**
+     * remaning project data store
+     */
+    public function create_project(string $id)
+    {
+        //
+        $owner_id = $id;
+        $type = Type::select()->get();
+        return view('site.initial_data_registration', compact('type', 'owner_id'));
+    }
     public function store(Request $request, string $id)
     {
         try {
@@ -176,7 +163,20 @@ class RegistrationController extends Controller
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
     }
-
+    /**
+     * initial project data edit
+     */
+    public function edit_index(string $id)
+    {
+        $type = Type::select()->get();
+        $Project = Project::select()->where('id', $id)->first();
+        $Project_risk = Project_risk::select()->where('project_id', $id)->get();
+        $Project_study = Project_study::select()->where('project_id', $id)->first();
+        $Project_Plan = Project_Plan::select()->where('project_id', $id)->get();
+        $Project_form = Project_form::select()->where('project_id', $id)->first();
+        $Project_performane = Project_performane::select()->where('project_id', $id)->get();
+        return view('site.project_data_update', compact('type', 'Project', 'Project_risk', 'Project_study', 'Project_Plan', 'Project_form', 'Project_performane'));
+    }
     public function edit_store(Request $request, string $id)
     {
         try {
@@ -266,7 +266,6 @@ class RegistrationController extends Controller
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
     }
-
     public function update(Request $request, string $id)
     {
         // try {

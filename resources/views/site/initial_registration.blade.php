@@ -24,11 +24,13 @@
                                         <div class="profile-tabnav">
                                             <ul class="nav nav-tabs">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" data-toggle="tab" href="#info"><i
-                                                            class="ti-user"></i>بيانات رائدة الأعمال</a>
+                                                    <a class="nav-link {{ !session('project_active') ? 'active' : null }}"
+                                                        data-toggle="tab" href="#info"><i class="ti-user"></i>بيانات
+                                                        رائدة الأعمال</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" data-toggle="tab" href="#project"><i
+                                                    <a class="nav-link {{ session('project_active') ? 'active' : null }}"
+                                                        data-toggle="tab" href="#project"><i
                                                             class="ti-book"></i>المشروع</a>
                                                 </li>
                                             </ul>
@@ -38,7 +40,8 @@
                                 <div class="col-lg-9 col-md-8 col-sm-12 m-b30">
                                     <div class="profile-content-bx">
                                         <div class="tab-content">
-                                            <div class="tab-pane active" id="info">
+                                            <div class="tab-pane {{ !session('project_active') ? 'active' : null }}"
+                                                id="info">
                                                 <div class="profile-head">
                                                     <h3>بيانات رائدة الاعمال</h3>
                                                 </div>
@@ -133,7 +136,8 @@
                                                     <br>
                                                 @endif
                                             </div>
-                                            <div class="tab-pane" id="project">
+                                            <div class="tab-pane {{ session('project_active') ? 'active' : null }}"
+                                                id="project">
                                                 <div class="profile-head">
                                                     <h3>بيانات المشروع </h3>
                                                 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2023 at 01:54 PM
+-- Generation Time: Nov 22, 2023 at 03:40 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -43,7 +43,7 @@ CREATE TABLE `coures` (
 --
 
 INSERT INTO `coures` (`id`, `name`, `details`, `image`, `date`, `cat`, `created_at`, `updated_at`) VALUES
-(26, 'asdf asd f', 'sadf asdf asdf a', 'training/zjE7SOuUTynMjGe8FIOBrEdraeCQVDVhYp5UJLrK.jpg', '2023-11-09', 'asd fasd fasdf', '2023-11-19 10:44:22', '2023-11-19 10:44:22');
+(27, 'asdf asd f', 'sadf asdf asdf a', 'training/E6fRq0grSch66OUYHhBLjpCD2v3R9pKTv6rRQAMp.png', '2023-11-09', 'asd fasd fasdf', '2023-11-20 06:40:51', '2023-11-20 06:40:51');
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,7 @@ CREATE TABLE `courese_detail` (
 --
 
 INSERT INTO `courese_detail` (`id`, `course_id`, `pre_req`, `description`, `for_whom`, `location`, `video`, `presentation`, `created_at`, `updated_at`) VALUES
-(12, 26, 'gf sdfg', 'sdfg sdfg sdfg', 'sdfgs', 'df gsdfg', 'training/gJTwwrgOSUdwKUP8tHbTl9b6GwXf7DwKnFqLOxLR.mp4', 'training/8Y2jBpBqJ5qUjMMTKko4p6FXVmTzL0H6bWv7yYfS.pdf', '2023-11-19 10:44:22', '2023-11-19 10:44:22');
+(13, 27, 'gf sdfg', 'sdfg sdfg sdfg', 'sdfgs', 'df gsdfg', 'training/KYyrjw3rGquomRtp204w9YpjH6lxYNqlsH2vTg5T.mp4', 'training/SJ1JQGXQHUO5wOVczeY9tbBoL3PD3NiNWMrPGDKl.pdf', '2023-11-20 06:40:51', '2023-11-20 06:40:51');
 
 -- --------------------------------------------------------
 
@@ -92,7 +92,6 @@ CREATE TABLE `data` (
 --
 
 INSERT INTO `data` (`id`, `name`, `type`, `date`, `file`, `created_at`, `updated_at`) VALUES
-(6, 'عدد السيدات المشتركات في مسرعات المشروعات الخضراء الذكية', '35934 سيدة', '2023-07-01', '', '2023-09-10 04:11:51', '2023-09-10 04:11:51'),
 (7, 'نسبة استخدام مصادر الطاقة المتجددة في المشروعات', '70%', '2023-07-01', '', '2023-09-10 04:15:45', '2023-09-10 04:15:45'),
 (8, 'نسبة الحفاظ على الموارد الطبيعية ذات الصلة بالمشروع', '95%', '2023-07-01', '', '2023-09-10 04:16:15', '2023-09-10 04:16:15'),
 (9, 'مساهمة المشروع فى تحقيق بأهداف التنمية المستدامة الأممية', '98%', '2023-07-01', '', '2023-09-10 04:24:25', '2023-09-10 04:24:25');
@@ -223,7 +222,7 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `name`, `brief`, `details`, `date`, `image`, `video`, `created_at`, `updated_at`) VALUES
-(4, 'بيللسيب', 'سيبلسيب', 'بيسلسيبلسيبل', '2023-11-08', 'news/lpNfe2GALKzr6VeJABHI8234K1qXcA8eyD9rNubA.png', 'news/f5OMbq5CUTEz3DBrZrrkAcIYkt2R28VWprzlhHVb.mp4', '2023-11-19 10:28:27', '2023-11-19 10:28:27');
+(4, 'شسيلباسشي شسيب', 'سيب شسي بسش بشسي بسشب', 'بيسلسيبلسيبلشسي بسش يبش بشسي بسش يسبش شسي', '2023-11-01', 'news/fGH1S4vTSSo314dKtyB0iI3K7zgAjEpXiEIPWjRz.jpg', 'news/ZLN3BwTer0fazj0x4hKifs6o8yWkHQqN03EGkLBJ.mp4', '2023-11-19 10:28:27', '2023-11-20 06:45:05');
 
 -- --------------------------------------------------------
 
@@ -248,7 +247,8 @@ INSERT INTO `old-project` (`id`, `name`, `details`, `image`, `created_at`, `upda
 (4, 'ونجى', 'اللي ميعرفناش احنا أختين  بنسعي ونشتغل وننتعلم و ونسافر ووضع خطط عمل علشان  نتعلم ونقف علي أرض صلبة مشروعنا', '1694292749.e003daea996544ce44e8fb36869cf898.jpg', '2023-09-10 03:52:30', '2023-09-10 03:52:30'),
 (5, 'جداريات اسوان', 'الجدارية  دي تعبر عن الامل والانتماء والحب للبلد', '1694292930.whatsapp image 2023-08-20 at 6.04.15 pm.jpeg', '2023-09-10 03:55:30', '2023-09-10 03:55:30'),
 (6, 'منشر الامل للتجفيف', 'الحفاظ على البيئة ، زيادة العملة الصعبة من خلال التصدير', '1694293011.whatsapp image 2023-08-22 at 3.57.14 pm.jpeg', '2023-09-10 03:56:51', '2023-09-10 03:56:51'),
-(7, 'الموضه المستدامة', 'يعمل على استخدام اقمشة صديقه للبيئة', '1694293706.screenshot 2023-09-02 230913.jpg', '2023-09-10 04:08:26', '2023-09-10 04:08:26');
+(7, 'الموضه المستدامة', 'يعمل على استخدام اقمشة صديقه للبيئة', '1694293706.screenshot 2023-09-02 230913.jpg', '2023-09-10 04:08:26', '2023-09-10 04:08:26'),
+(9, 'dfgsdfg sdfg s', 'dfgsdf gsdfg sdfg sdfg', 'project-model/BCvlGEWXkUtcxbWRUsJk67nPtgjgI8FfUeKlhavV.png', '2023-11-20 06:37:40', '2023-11-20 06:38:05');
 
 -- --------------------------------------------------------
 
@@ -306,14 +306,6 @@ CREATE TABLE `project` (
   `updated_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `project`
---
-
-INSERT INTO `project` (`id`, `name`, `category`, `idea`, `goal`, `innovation`, `future`, `location`, `smart`, `trail`, `email`, `date`, `owner_id`, `state`, `created_at`, `updated_at`) VALUES
-(41, 'dfsd sdfg sdfg sdfg', 'sdfg sdf gsdf', 'sdf gsdf', 's dfgsdf', 'gsdf g', 'gsdf gsdf', 'sdfg sdfgs', 'f gsdfg', 'gsd fgsd', NULL, '2023-11-01', 79, 'قيد المراجعة', '2023-11-17', '2023-11-17'),
-(42, 'يبلاييبلا بيل ايبل ابيلاي', 'يبلايب لايبلا', 'يبل ابيل ايبل اي', 'بيل ايبل', 'بل ايبل ا', 'ايبلا يبلا يبل', 'يبلابلايبل ايبلا يبلا', 'يبلا بيلا يبلا', 'ا يبلا', NULL, '2023-11-15', 79, 'قيد المراجعة', '2023-11-17', '2023-11-17');
-
 -- --------------------------------------------------------
 
 --
@@ -336,14 +328,6 @@ CREATE TABLE `project_form` (
   `updated_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `project_form`
---
-
-INSERT INTO `project_form` (`id`, `provided_value`, `customer_categories`, `project_access`, `attract_clients`, `income_source`, `main_resorce`, `main_activity`, `partners`, `cost`, `project_id`, `created_at`, `updated_at`) VALUES
-(12, 'd fas', 'df asdf as', 'asd fasd fasdf', 'd fasdfa s', 'sfa asdf asdfasd fasd', 'sd fas', 'asdf asdf asd', 'asdf a', 324234, 41, '2023-11-17', '2023-11-17'),
-(16, 'as df', 'asd fasd fas', 'd fasd fas', 'asd f', 'fsaf asdf asdf', 'asd f', 'd fasd fasdf', 'asd f', 452, 42, '2023-11-17', '2023-11-17');
-
 -- --------------------------------------------------------
 
 --
@@ -363,13 +347,6 @@ CREATE TABLE `project_owner` (
   `user_id` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `project_owner`
---
-
-INSERT INTO `project_owner` (`id`, `nid`, `email`, `name`, `phone`, `address`, `fund`, `created_at`, `updated_at`, `user_id`) VALUES
-(79, 54345634563456, 'fdhfghd@sgh.sdfg', 'gfhdfgh dfg hdfg hdfg hdfg', 56345643564, 'sdfg sdf gsdfgsdfgsd', 1, '2023-11-17 13:29:13', '2023-11-17 13:29:13', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -387,13 +364,6 @@ CREATE TABLE `project_performane` (
   `updated_at` date DEFAULT NULL,
   `project_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `project_performane`
---
-
-INSERT INTO `project_performane` (`id`, `name`, `period`, `unit`, `target`, `measurement`, `created_at`, `updated_at`, `project_id`) VALUES
-(24, 'sdfg sdf', 'gsdf', 'gsdf', 'gsdf', 'gsdf gsdfg', '2023-11-17', '2023-11-17', 41);
 
 -- --------------------------------------------------------
 
@@ -413,13 +383,6 @@ CREATE TABLE `project_plan` (
   `project_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `project_plan`
---
-
-INSERT INTO `project_plan` (`id`, `name`, `start_date`, `end_date`, `responsible`, `follower`, `created_at`, `updated_at`, `project_id`) VALUES
-(18, 'sdf gsdfsd', '2023-11-02', '2023-11-07', 'fdsg sdf', 'gsdf g sdfg', '2023-11-17', '2023-11-17', 41);
-
 -- --------------------------------------------------------
 
 --
@@ -438,17 +401,6 @@ CREATE TABLE `project_risk` (
   `project_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `project_risk`
---
-
-INSERT INTO `project_risk` (`id`, `name`, `degree`, `possibility`, `evaluation`, `procedures`, `created_at`, `updated_at`, `project_id`) VALUES
-(33, 'sdfgs df', 3, 4, 12, 'gsdf sdfg sdf gsdfg', '2023-11-17', '2023-11-17', 41),
-(34, 'يبلا بيل ابي', 5, 4, 20, 'يبل ايبل ايب لاي بلايب لاي', '2023-11-17', '2023-11-17', 41),
-(35, 'asd fasd f', 5, 3, 15, 'asd fasd fas dfas', '2023-11-17', '2023-11-17', 41),
-(36, 'سيل سيبل', 3, 3, 9, 'سيبل سيب لسيب لسيب', '2023-11-17', '2023-11-17', 41),
-(37, 'reg', 5, 2, 10, 'fdg sdfg sd', '2023-11-17', '2023-11-17', 42);
-
 -- --------------------------------------------------------
 
 --
@@ -466,14 +418,6 @@ CREATE TABLE `project_study` (
   `updated_at` date DEFAULT NULL,
   `project_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `project_study`
---
-
-INSERT INTO `project_study` (`id`, `recommendation`, `finance`, `technical`, `competitive`, `market`, `created_at`, `updated_at`, `project_id`) VALUES
-(17, 'gsdfg sdf g', 'sdf gsdf gsdf', 'gs dfgsdf g', 'sdf gsdf gsdf', 'sfdg sdf gsdfg', '2023-11-17', '2023-11-17', 41),
-(18, 'vjhk', 'jhvjhkfjkh', 'v', 'hjvjhghj', 'sfdg sdfg sdfg `', '2023-11-17', '2023-11-17', 42);
 
 -- --------------------------------------------------------
 
@@ -689,13 +633,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `coures`
 --
 ALTER TABLE `coures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `courese_detail`
 --
 ALTER TABLE `courese_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `data`
@@ -743,7 +687,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `old-project`
 --
 ALTER TABLE `old-project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -755,7 +699,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `project_form`
@@ -767,7 +711,7 @@ ALTER TABLE `project_form`
 -- AUTO_INCREMENT for table `project_owner`
 --
 ALTER TABLE `project_owner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `project_performane`
