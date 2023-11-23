@@ -361,12 +361,12 @@
                                             <div class="panel">
                                                 <div class="acod-head">
                                                     <h6 class="acod-title">
-                                                        <a data-toggle="collapse" href="#faq{{ $num + 1 }}"
-                                                            class="collapsed" data-parent="#faq{{ $num + 1 }}">
+                                                        <a data-toggle="collapse" href="#faq{{ $num + 6 }}"
+                                                            class="collapsed" data-parent="#faq{{ $num + 6 }}">
                                                             {{ $Mopadarat->name }} </a>
                                                     </h6>
                                                 </div>
-                                                <div id="faq{{ $num + 1 }}" class="acod-body collapse">
+                                                <div id="faq{{ $num + 6 }}" class="acod-body collapse">
                                                     <div class="acod-content"> {{ $Mopadarat->description }} </div>
                                                 </div>
                                             </div>
