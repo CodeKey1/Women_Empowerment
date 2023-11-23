@@ -23,10 +23,11 @@ class ApplyController extends Controller
     public function profile()
     {
         //Auth()->id()
+        $Project_owner = Project_owner::select()->where('user_id', Auth::user()->id)->first();
         $apply = Project_owner::select()->where('user_id', Auth()->id())->first();
         $project = Project::select()->get();
         //$project = Project::select()->where('owner_id', $apply->id)->get();
-        return view('site.pages.dashboard', compact('apply', 'project'));
+        return view('site.pages.dashboard', compact('apply', 'project','Project_owner'));
     }
     /**
      * Display a listing of the resource.
@@ -37,7 +38,6 @@ class ApplyController extends Controller
         $apply = Project_owner::select()->get();
         return view('admin.pages.apply.all_apply', compact('apply'));
     }
-
     public function mopdara()
     {
         //
@@ -87,7 +87,6 @@ class ApplyController extends Controller
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
     }
-
     public function ershadat()
     {
         //
@@ -137,7 +136,6 @@ class ApplyController extends Controller
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -145,7 +143,6 @@ class ApplyController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -153,7 +150,6 @@ class ApplyController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      */
@@ -169,7 +165,6 @@ class ApplyController extends Controller
         $apply6 = Project_performane::select()->where('user_id', $id)->get();
         return view('admin.pages.apply.view', compact('apply', 'apply1', 'apply2', 'apply3', 'apply4', 'apply5', 'apply6'));
     }
-
     /**
      * Show the form for editing the specified resource.
      */
@@ -177,7 +172,6 @@ class ApplyController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      */
@@ -185,7 +179,6 @@ class ApplyController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      */

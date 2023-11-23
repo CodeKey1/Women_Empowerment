@@ -2710,7 +2710,7 @@ button.back-to-top {
 }
 
 .testimonial-bx .testimonial-info:after {
-    content: "\f10e";
+    /* content: "\f10e"; */
     position: absolute;
     font-family: fontawesome;
     font-size: 50px;

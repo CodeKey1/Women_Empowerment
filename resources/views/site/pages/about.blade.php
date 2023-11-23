@@ -50,7 +50,7 @@
             </div>
             <!-- Our Story END ==== -->
             <!-- Our Status ==== -->
-            <div class="section-area content-inner section-sp1">
+            {{-- <div class="section-area content-inner section-sp1">
                 <div class="container">
                     <div class="section-content">
                         <div class="row">
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- Our Status END ==== -->
         </div>
         <!-- contact area END -->
