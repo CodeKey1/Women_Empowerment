@@ -18,49 +18,39 @@
                 <div class="container">
                     <div class="ttr-blog-grid-3 row" id="masonry">
                         @isset($news)
-                        @foreach ($news as $num => $News)
-                            @if ($num <= 1)
+                            @foreach ($news as $num => $News)
                                 <div class="post action-card col-lg-4 col-md-6 col-sm-12 col-xs-12 m-b40">
                                     <div class="recent-news">
                                         <div class="action-box">
-                                            <img src="{{ asset('storage/'. $News->image ) }}" alt="">
+                                            <img src="{{ asset('storage/' . $News->image) }}" alt="">
                                         </div>
                                         <div class="info-bx">
                                             <ul class="media-post">
-                                                <li><a href="#"><i class="fa fa-calendar"></i> {{ $News->date }} </a></li>
+                                                <li><a href="#"><i class="fa fa-calendar"></i> {{ $News->date }}
+                                                    </a></li>
                                                 <li><a href="#"><i class="fa fa-user"></i> بواسطة : المسؤل </a></li>
                                             </ul>
-                                            <h5 class="post-title"><a href="blog-details.html"> {{ $News->name }} </a></h5>
+                                            <h5 class="post-title"><a href="blog-details.html"> {{ $News->name }} </a>
+                                            </h5>
                                             <p> </p>
                                             <div class="post-extra">
-                                                <a href="{{ route('news.details',$News->id) }}" class="btn-link"> للمذيد </a>
+                                                <a href="{{ route('news.details', $News->id) }}" class="btn-link"> للمذيد
+                                                </a>
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            @endif
-                        @endforeach
-                    @endisset
+                            @endforeach
+                        @endisset
+                    </div>
                 </div>
-                <!-- Pagination ==== -->
-                <div class="pagination-bx rounded-sm gray clearfix">
-                    <ul class="pagination">
-                        <li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li class="next"><a href="#">Next <i class="ti-arrow-right"></i></a></li>
-                    </ul>
-                </div>
-                <!-- Pagination END ==== -->
             </div>
+            <!-- Blog Grid END ==== -->
         </div>
-        <!-- Blog Grid END ==== -->
+        <!-- contact area END -->
     </div>
-    <!-- contact area END -->
-</div>
-<!-- Content END-->
-@include('Site.includes.subfooter')
+    <!-- Content END-->
+    @include('Site.includes.subfooter')
 </div>
 @include('Site.includes.Footer')

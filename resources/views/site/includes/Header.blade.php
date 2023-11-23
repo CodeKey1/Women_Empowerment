@@ -11,20 +11,20 @@
     <meta name="robots" content="" />
 
     <!-- DESCRIPTION -->
-    <meta name="description" content="EduChamp : Education HTML Template" />
+    <meta name="description" content="منصة لرائدات الاعمال باسوان" />
 
     <!-- OG -->
-    <meta property="og:title" content="EduChamp : Education HTML Template" />
-    <meta property="og:description" content="EduChamp : Education HTML Template" />
+    <meta property="og:title" content="منصة لرائدات الاعمال باسوان" />
+    <meta property="og:description" content="منصة لرائدات الاعمال باسوان" />
     <meta property="og:image" content="" />
     <meta name="format-detection" content="telephone=no">
 
     <!-- FAVICONS ICON ============================================= -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <link rel="icon" href="assets/images/logo-white.png" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo-white.png" />
 
     <!-- PAGE TITLE HERE ============================================= -->
-    <title>EduChamp : Education HTML Template </title>
+    <title>منصة لرائدات الاعمال باسوان</title>
 
     <!-- MOBILE SPECIFIC ============================================= -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,4 +56,5 @@
     <!-- REVOLUTION SLIDER END -->
     @yield('css')
 </head>
+
 <body id="bg">

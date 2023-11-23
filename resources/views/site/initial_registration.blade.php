@@ -25,12 +25,13 @@
                                             <ul class="nav nav-tabs">
                                                 <li class="nav-item">
                                                     <a class="nav-link {{ !session('project_active') ? 'active' : null }}"
-                                                        data-toggle="tab" href="#info"><i class="ti-user"></i>بيانات
+                                                        data-toggle="tab" href="#info" style="float: right;"><i
+                                                            class="ti-user"></i>بيانات
                                                         رائدة الأعمال</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link {{ session('project_active') ? 'active' : null }}"
-                                                        data-toggle="tab" href="#project"><i
+                                                        data-toggle="tab" href="#project" style="float: right;"><i
                                                             class="ti-book"></i>المشروع</a>
                                                 </li>
                                             </ul>
@@ -128,9 +129,6 @@
                                                     <div class="row">
                                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                                             <h3>تم تسجيل بيانات رائدة الاعمال</h3>
-                                                            <a data-toggle="tab" class="btn" href="#project">سجل
-                                                                مشروع
-                                                                جديد</a>
                                                         </div>
                                                     </div>
                                                     <br>
@@ -233,8 +231,6 @@
                                                         </div>
                                                         <br>
                                                         <div class="row" style="justify-content: space-around;">
-                                                            <a data-toggle="tab" class="btn btn-danger"
-                                                                href="#home">عودة</a>
                                                             <button type="submit" name="formType" value="projectInitial"
                                                                 class="btn">حفظ -
                                                                 التالي</button>
@@ -246,9 +242,6 @@
                                                     <div class="row">
                                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                                             <h3>برجاء تسجيل بيانات رائدة الاعمال</h3>
-                                                            <a data-toggle="tab" class="btn" href="#info">سجل
-                                                                البيانات
-                                                            </a>
                                                         </div>
                                                     </div>
                                                     <br>
