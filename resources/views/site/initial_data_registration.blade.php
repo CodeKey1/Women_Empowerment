@@ -126,8 +126,6 @@
                                                             <br>
                                                             <div class="row"
                                                                 style="justify-content: space-around;">
-                                                                <a data-toggle="tab" class="btn btn-danger"
-                                                                    href="#menu1">عودة</a>
                                                                 <button type="submit" name="formType"
                                                                     value="projectRisk" class="btn">حفظ -
                                                                     التالي</button>
@@ -139,7 +137,8 @@
                                                         <div class="row">
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                                 <h3>تم تسجيل هذه البيانات</h3>
-                                                                <h4>للتعديل <a href="{{ route('profile') }}">اضغط
+                                                                <h4>للتعديل <a
+                                                                        href="{{ route('viewProject', $owner_id) }}">اضغط
                                                                         هنا</a>
                                                                 </h4>
                                                             </div>
@@ -211,8 +210,6 @@
                                                             <br>
                                                             <div class="row"
                                                                 style="justify-content: space-around;">
-                                                                <a data-toggle="tab" class="btn btn-danger"
-                                                                    href="#menu2">عودة</a>
                                                                 <button type="submit" name="formType"
                                                                     value="projectStudy" class="btn">حفظ -
                                                                     التالي</button>
@@ -224,7 +221,8 @@
                                                         <div class="row">
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                                 <h3>تم تسجيل هذه البيانات</h3>
-                                                                <h4>للتعديل <a href="{{ route('profile') }}">اضغط
+                                                                <h4>للتعديل <a
+                                                                        href="{{ route('viewProject', $owner_id) }}">اضغط
                                                                         هنا</a>
                                                                 </h4>
                                                             </div>
@@ -293,8 +291,6 @@
                                                             </div>
                                                             <div class="row"
                                                                 style="justify-content: space-around;">
-                                                                <a data-toggle="tab" class="btn btn-danger"
-                                                                    href="#drasa">عودة</a>
                                                                 <button type="submit" name="formType"
                                                                     value="projectPlan" class="btn">حفظ -
                                                                     التالي</button>
@@ -306,7 +302,8 @@
                                                         <div class="row">
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                                 <h3>تم تسجيل هذه البيانات</h3>
-                                                                <h4>للتعديل <a href="{{ route('profile') }}">اضغط
+                                                                <h4>للتعديل <a
+                                                                        href="{{ route('viewProject', $owner_id) }}">اضغط
                                                                         هنا</a>
                                                                 </h4>
                                                             </div>
@@ -393,8 +390,6 @@
                                                             <br>
                                                             <div class="row"
                                                                 style="justify-content: space-around;">
-                                                                <a data-toggle="tab" class="btn btn-danger"
-                                                                    href="#plan">عودة</a>
                                                                 <button type="submit" name="formType"
                                                                     value="workForm" class="btn">حفظ -
                                                                     التالي</button>
@@ -406,7 +401,8 @@
                                                         <div class="row">
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                                 <h3>تم تسجيل هذه البيانات</h3>
-                                                                <h4>للتعديل <a href="{{ route('profile') }}">اضغط
+                                                                <h4>للتعديل <a
+                                                                        href="{{ route('viewProject', $owner_id) }}">اضغط
                                                                         هنا</a>
                                                                 </h4>
                                                             </div>
@@ -483,8 +479,6 @@
                                                             </div>
                                                             <div class="row"
                                                                 style="justify-content: space-around;">
-                                                                <a data-toggle="tab" class="btn btn-danger"
-                                                                    href="#template">عودة</a>
                                                                 <button type="submit" name="formType"
                                                                     value="projectPeroformance" class="btn">حفظ -
                                                                     التالي</button>
@@ -495,7 +489,8 @@
                                                         <div class="row">
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                                 <h3>تم تسجيل هذه البيانات</h3>
-                                                                <h4>للتعديل <a href="{{ route('profile') }}">اضغط
+                                                                <h4>للتعديل <a
+                                                                        href="{{ route('viewProject', $owner_id) }}">اضغط
                                                                         هنا</a>
                                                                 </h4>
                                                             </div>

@@ -11,11 +11,11 @@
     <meta name="robots" content="" />
 
     <!-- DESCRIPTION -->
-    <meta name="description" content="EduChamp : Education HTML Template" />
+    <meta name="description" content="منصة لرائدات الاعمال باسوان" />
 
     <!-- OG -->
-    <meta property="og:title" content="EduChamp : Education HTML Template" />
-    <meta property="og:description" content="EduChamp : Education HTML Template" />
+    <meta property="og:title" content="منصة لرائدات الاعمال باسوان" />
+    <meta property="og:description" content="منصة لرائدات الاعمال باسوان" />
     <meta property="og:image" content="" />
     <meta name="format-detection" content="telephone=no">
 
@@ -24,7 +24,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo-white.png" />
 
     <!-- PAGE TITLE HERE ============================================= -->
-    <title> منصة  لرائدات الاعمال باسوان  </title>
+    <title>منصة لرائدات الاعمال باسوان</title>
 
     <!-- MOBILE SPECIFIC ============================================= -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,4 +56,5 @@
     <!-- REVOLUTION SLIDER END -->
     @yield('css')
 </head>
+
 <body id="bg">

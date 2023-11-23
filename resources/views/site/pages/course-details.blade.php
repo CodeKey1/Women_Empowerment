@@ -1,85 +1,3 @@
-{{-- @extends('site.page')
-@section('content')
-    <!--SECTION START-->
-    <section>
-        <div class="container com-sp pad-bot-70 pg-inn" dir="rtl">
-            <div class="row">
-                <div class="cor">
-
-                    <div class="col-md-12">
-                        <div class="cor-mid-img">
-                            <img src="images/slider/cover.jpg" alt="" style="height: 45vh; border-radius: 5px">
-                        </div>
-                        <div class="cor-con-mid">
-                            @isset($details)
-                                @foreach ($details as $item)
-                                    <div class="cor-p1">
-                                        <h2>تفاصيل التدريب</h2>
-                                        <span>كل ما تحتاجه للتدريب</span>
-                                    </div>
-                                    <div class="cor-p4">
-                                        <h3>متطلبات التدريب</h3>
-                                        <p>{{ $item->pre_req }}</p>
-                                    </div>
-                                    <div class="cor-p5">
-                                        <h3>التدريب</h3>
-                                        <ul class="nav nav-tabs">
-                                            <li class="active"><a data-toggle="tab" href="#desc">
-                                                    <img src="images/icon/cor4.png" alt=""> <span> وصف التدريب </span>
-                                                </a>
-                                            </li>
-                                            <li><a data-toggle="tab" href="#whom"><img src="images/icon/cor1.png"
-                                                        alt="">
-                                                    <span> لمن هذا التدريب </span> </a></li>
-                                            <li><a data-toggle="tab" href="#place"><img src="images/icon/cor5.png"
-                                                        alt="">
-                                                    <span> مكان التدريب </span> </a></li>
-                                        </ul>
-                                        <div class="tab-content">
-                                            <div id="desc" class="tab-pane fade in active">
-                                                <h4>وصف التدريب</h4>
-                                                <p>{{ $item->description }}</p>
-                                            </div>
-                                            <div id="whom" class="tab-pane fade">
-                                                <h4>لمن هذا التدريب</h4>
-                                                <p>{{ $item->for_whom }}</p>
-                                            </div>
-                                            <div id="place" class="tab-pane fade">
-                                                <h4>مكان التدريب</h4>
-                                                <p>{{ $item->location }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="cor-p4">
-                                        @if ($item->video)
-                                            <h3>عرض تقديمي</h3>
-                                            <video src="{{ URL::to('images/course/' . $item->video) }}" controls autoplay muted
-                                                width="100%"></video>
-                                        @endif
-                                        <br>
-                                        @if ($item->presentation)
-                                            <h3>عرض تقديمي</h3>
-                                            <a class="btn" target="_blank"
-                                                href="{{ URL::to('storage/' . $item->presentation) }}">تحميل
-                                                العرض
-                                                التقديمي PDF</a>
-                                        @endif
-                                    </div>
-                                @endforeach
-                            @endisset
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--SECTION END-->
-@endsection
-@section('script')
-@endsection --}}
-
 @include('Site.includes.Header')
 <div class="page-wraper">
     @include('Site.includes.menu')
@@ -175,17 +93,22 @@
                                                 <div class="col-md-12 col-lg-4">
                                                     <ul class="course-features">
                                                         <li><i class="ti-book"></i> <span class="label">Lectures</span>
-                                                            <span class="value">8</span></li>
+                                                            <span class="value">8</span>
+                                                        </li>
                                                         <li><i class="ti-help-alt"></i> <span class="label">Quizzes</span>
-                                                            <span class="value">1</span></li>
+                                                            <span class="value">1</span>
+                                                        </li>
                                                         <li><i class="ti-time"></i> <span class="label">Duration</span>
-                                                            <span class="value">60 hours</span></li>
+                                                            <span class="value">60 hours</span>
+                                                        </li>
                                                         <li><i class="ti-stats-up"></i> <span class="label">Skill
                                                                 level</span> <span class="value">Beginner</span></li>
                                                         <li><i class="ti-smallcap"></i> <span class="label">Language</span>
-                                                            <span class="value">English</span></li>
+                                                            <span class="value">English</span>
+                                                        </li>
                                                         <li><i class="ti-user"></i> <span class="label">Students</span>
-                                                            <span class="value">32</span></li>
+                                                            <span class="value">32</span>
+                                                        </li>
                                                         <li><i class="ti-check-box"></i> <span
                                                                 class="label">Assessments</span> <span
                                                                 class="value">Yes</span></li>

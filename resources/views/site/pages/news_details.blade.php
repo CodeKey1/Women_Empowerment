@@ -7,7 +7,8 @@
         <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner1.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h2 class="text-white" style="margin-top: 130px;"><span style="color: #f7a935">{{ $new->name }}</span> </h2>
+                    <h2 class="text-white" style="margin-top: 130px;"><span
+                            style="color: #f7a935">{{ $new->name }}</span> </h2>
                 </div>
             </div>
         </div>
@@ -22,16 +23,24 @@
                             <div class="row">
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="action-box blog-lg">
-                                        <img src="{{ asset('storage/'. $new->image ) }}" alt="">
+                                        <img src="{{ asset('storage/' . $new->image) }}" alt="">
+                                    </div>
+                                    <br>
+                                    <div class="action-box blog-lg">
+                                        <video width="100%" controls>
+                                            <source src="{{ asset('storage/' . $new->video) }}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
                                     </div>
                                 </div>
 
                                 <!-- blog start -->
                                 <div class="col-lg-6 col-xl-6">
 
-                                        <div class="heading-bx left">
-                                            <h5 class="m-b10 title-head" style="text-align: right; direction: rtl;">{{ $new->name }} </h5>
-                                        </div>
+                                    <div class="heading-bx left">
+                                        <h5 class="m-b10 title-head" style="text-align: right; direction: rtl;">
+                                            {{ $new->name }} </h5>
+                                    </div>
 
                                     <div class="recent-news blog-lg">
 
