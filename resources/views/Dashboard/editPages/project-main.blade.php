@@ -9,9 +9,11 @@
             <h4 class="breadcrumb-title">الرئيسية</h4>
             <ul class="db-breadcrumb-list">
                 <li><a href="#"><i class="fa fa-user"></i></a></li>
-                <li>المستخدمين</li>
+                <li> جميع مشاريع المستخدم </li>
             </ul>
         </div>
+        @include('Dashboard.includes.alertts.success')
+        @include('Dashboard.includes.alertts.error')
         <div class="row">
             <div class="col-md-12">
                 <div class="box-inn-sp">
@@ -31,15 +33,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @isset($users)
-                                        @foreach ($users as $num => $user)
+                                    @isset($projects)
+                                        @foreach ($projects as $num => $project)
                                             <tr>
                                                 <td>{{ ++$num }}</td>
-                                                <td>{{ $user->name }}</td>
-                                                <td>{{ $user->email }}</td>
-                                                <td>{{ $user->role }}</td>
-                                                <td style="text-align: end;width">
-                                                    <a href="{{ route('dashboard.project.main', $user->id) }}" class="btn blue inline" style="padding: 7px;">
+                                                <td>{{ $project->name }}</td>
+                                                <td>{{ $project->email }}</td>
+                                                <td>{{ $project->role }}</td>
+                                                {{-- <td style="text-align: end;width">
+                                                    <a href="{{ route('user.edit', $user->id) }}" class="btn blue inline" style="padding: 7px;">
                                                          المشاريع </a>
                                                     <a href="{{ route('user.edit', $user->id) }}" class="btn green inline"
                                                         style="padding: 7px;">تعديل</a>
@@ -48,9 +50,7 @@
                                                             onclick="return confirmSubmit()"
                                                             class="btn red inline"style="padding: 7px;">حذف</a>
                                                     @endif
-
-
-                                                </td>
+                                                </td> --}}
                                             </tr>
                                         @endforeach
                                     @endisset

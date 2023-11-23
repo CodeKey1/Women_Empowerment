@@ -30,14 +30,14 @@ require __DIR__ . '/auth.php';
 ///////////////////////////////////////////// front site Auth ///////////////////////////////////////////
 
 Route::middleware(['auth'])->group(function () {
-    //initial project creation 
+    //initial project creation
     Route::get('/add_project', [App\Http\Controllers\Site\RegistrationController::class, 'create'])->name('project.create');
     Route::post('/project_initial_store', [App\Http\Controllers\Site\RegistrationController::class, 'Initial_store'])->name('project.Initial_store');
     Route::post('/project_store{id}', [App\Http\Controllers\Site\RegistrationController::class, 'project_store'])->name('project.store');
-    //remaning project data 
+    //remaning project data
     Route::get('/create_project{id}', [App\Http\Controllers\Site\RegistrationController::class, 'create_project'])->name('project.data');
     Route::post('/project_data_store{id}', [App\Http\Controllers\Site\RegistrationController::class, 'store'])->name('project.data.store');
-    //data edit 
+    //data edit
     Route::get('/project_data_edit{id}', [App\Http\Controllers\Site\RegistrationController::class, 'edit_index'])->name('viewProject');
     Route::post('/project_edit_store{id}', [App\Http\Controllers\Site\RegistrationController::class, 'edit_store'])->name('project.edit.store');
     Route::post('/project_update{id}', [App\Http\Controllers\Site\RegistrationController::class, 'update'])->name('project.edit');
@@ -80,6 +80,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard-projects-model', [App\Http\Controllers\Admin\AdminViewController::class, 'projects'])->name('dashboard.project.model');
     Route::get('/dashboard-courses', [App\Http\Controllers\Admin\AdminViewController::class, 'courses'])->name('dashboard.courses');
     Route::get('/dashboard-users', [App\Http\Controllers\Admin\AdminViewController::class, 'users'])->name('dashboard.users');
+    Route::get('/dashboard-project-main{id}', [App\Http\Controllers\Admin\AdminViewController::class, 'projecs_view'])->name('dashboard.project.main');
     //*************************************//
     //********dashboard add pages**********//
     //*************************************//

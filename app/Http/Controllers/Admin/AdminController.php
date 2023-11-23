@@ -45,20 +45,10 @@ class AdminController extends Controller
         $users = User::select()->get();
         return view('Dashboard.users', compact('users'));
     }
-
     public function users_edit(string $id)
     {
         $users = User::select()->find($id);
-        return view('Dashboard.pages.user_edit', compact('users'));
-    }
-    public function users_update(Request $request, string $id)
-    {
-        User::where('id', $id)->update([
-            "name" => $request['name'],
-            "email" => $request['email'],
-            'password' => Hash::make($request->password),
-        ]);
-        return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+        return view('Dashboard.editPages.user', compact('users'));
     }
     public function users_delete(string $id)
     {
@@ -66,7 +56,6 @@ class AdminController extends Controller
         $User->delete();
         return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
     }
-
     public function courses()
     {
         //
@@ -141,7 +130,6 @@ class AdminController extends Controller
         $course->delete();
         return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
     }
-
     public function old_project()
     {
         //
@@ -187,7 +175,6 @@ class AdminController extends Controller
         $project->delete();
         return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
     }
-
     public function course_edit(string $id)
     {
         //
@@ -246,12 +233,6 @@ class AdminController extends Controller
         }
     }
 
-    public function project_edit(string $id)
-    {
-        $projects = Model_Project::select()->find($id);
-        return view('Dashboard.pages.old_project_edit', compact('projects'));
-    }
-
     public function project_update(Request $request, string $id)
     {
         try {
@@ -279,9 +260,6 @@ class AdminController extends Controller
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
     }
-
-
-
     public function update(Request $request, string $id)
     {
         //

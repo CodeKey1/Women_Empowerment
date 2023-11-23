@@ -12,6 +12,7 @@ use App\Models\News;
 use App\Models\Guide_Women;
 use App\Models\Mobadrat;
 use App\Models\Model_Project;
+use App\Models\Project;
 use App\Models\Project_owner;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -65,5 +66,14 @@ class AdminViewController extends Controller
     {
         $users = User::select()->get();
         return view('Dashboard.users', compact('users'));
+    }
+    //**************************** //
+    //***********BY=>ID*********** //
+    //**************************** //
+
+    public function projecs_view(string $id)
+    {
+        $projects = Model_Project::select()->find($id);
+        return view('Dashboard.editPages.project-main', compact('projects'));
     }
 }

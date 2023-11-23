@@ -243,4 +243,18 @@ class AdminEditController extends Controller
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }
     }
+    //**************************** //
+    //***********edit*********** //
+    //**************************** //
+    public function users_update(Request $request, string $id)
+    {
+        User::where('id', $id)->update([
+            "name" => $request['name'],
+            "email" => $request['email'],
+            'password' => Hash::make($request->password),
+
+        ]);
+        return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+    }
+
 }

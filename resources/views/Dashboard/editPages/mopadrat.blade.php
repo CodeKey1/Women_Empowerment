@@ -34,7 +34,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="form-group col-6">
+                    <div class="form-group col-12">
                         <label class="col-form-label"> تفاصيل المبادرة </label>
                         <div>
                             <textarea class="form-control" name="details" required>{{ $mopadrat->description }}</textarea>

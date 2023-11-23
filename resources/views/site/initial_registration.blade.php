@@ -43,7 +43,7 @@
                                             <div class="tab-pane {{ !session('project_active') ? 'active' : null }}"
                                                 id="info">
                                                 <div class="profile-head">
-                                                    <h3>بيانات رائدة الاعمال</h3>
+                                                    <h3 style="text-align: center">بيانات رائدة الاعمال</h3>
                                                 </div>
                                                 @if (!App\Models\Project_owner::where('user_id', Auth::user()->id)->exists('user_id'))
                                                     <form class="form-horizontal" style="font-family: system-ui;"
@@ -127,10 +127,10 @@
                                                     <br>
                                                     <div class="row">
                                                         <div class="col-md-6 col-sm-12 col-xs-12">
-                                                            <h3>تم تسجيل بيانات رائدة الاعمال</h3>
-                                                            <a data-toggle="tab" class="btn" href="#project">سجل
+                                                            <h3 style="text-align: center">تم تسجيل بيانات رائدة الاعمال</h3>
+                                                            {{-- <a data-toggle="tab" class="btn" href="#project">سجل
                                                                 مشروع
-                                                                جديد</a>
+                                                                جديد</a> --}}
                                                         </div>
                                                     </div>
                                                     <br>
@@ -139,7 +139,7 @@
                                             <div class="tab-pane {{ session('project_active') ? 'active' : null }}"
                                                 id="project">
                                                 <div class="profile-head">
-                                                    <h3>بيانات المشروع </h3>
+                                                    <h3 style="text-align: center">بيانات المشروع جديد</h3>
                                                 </div>
                                                 @isset($owner_id)
                                                     <form class="form-horizontal" style="font-family: system-ui;"
