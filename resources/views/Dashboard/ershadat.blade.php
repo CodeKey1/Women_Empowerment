@@ -39,11 +39,9 @@
                                                 </td>
                                                 <td>{{ $ershad->name }}</a>
                                                 </td>
-                                                <td>
-                                                    <a href="{{ route('dashboard.ershadat.edit', $ershad->id) }}"
-                                                        class="ad-st-view"> تعديل </a><br>
-                                                    <a href="{{ route('dashboard.ershadat.delete', $ershad->id) }}"
-                                                        class="ad-st-view" onclick="return confirmSubmit()"> حذف </a>
+                                                <td style="text-align: end;">
+                                                    <a href="{{ route('dashboard.ershadat.edit', $ershad->id) }}" class="btn green inline" style="padding: 7px;">تعديل</a>
+                                                    <a href="{{ route('dashboard.ershadat.delete', $ershad->id) }}" class="btn red inline"style="padding: 7px;" onclick="return confirmSubmit()">حذف</a>
                                                 </td>
                                             </tr>
                                         @endforeach

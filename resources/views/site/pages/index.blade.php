@@ -261,7 +261,7 @@
                                                 </ul>
                                                 <h5 class="post-title"><a href="blog-details.html"> {{ $News->name }}
                                                     </a></h5>
-                                                <p> {{ $News->details }} </p>
+                                                <p> {{ $News->brief }} </p>
                                                 <div class="post-extra">
                                                     <a href="{{ route('news.details', $News->id) }}" class="btn-link">
                                                         للمذيد </a>

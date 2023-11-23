@@ -3,7 +3,7 @@
     <div class="footer-top">
         <div class="pt-exebar">
             <div class="container">
-                <div class="d-flex align-items-stretch">
+                <div class="d-flex align-items-stretch" style="text-align: left !important;">
                     <div class="pt-logo mr-auto">
                         <a href="{{ route('site') }}"><img src="assets/images/logo-white.png" alt="" /></a>
                     </div>
