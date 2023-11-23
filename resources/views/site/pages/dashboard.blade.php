@@ -1,91 +1,7 @@
-{{-- @extends('site.sub_site')
-
-@section('profile')
-    @if (session('logged'))
-        <script>
-            setTimeout(function() {
-                alert("loged in successfully");
-            }, 100);
-        </script>
-    @endif
-    <div class="pro-menu">
-        <div class="container" style="direction: rtl">
-            <div class="col-md-9 col-md-offset-3">
-                <ul>
-                    <li><a href="#" class="pro-act">المشاريع</a></li>
-                    <li><a href="{{ route('success') }}">فرص النجاح</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="stu-db">
-        <div class="container pg-inn">
-            <div class="col-md-3">
-                <div class="pro-user">
-                    <img src="images/icon/seyasea.png" alt="user" style="background: #4c2d34;height: 220px;">
-                </div>
-
-                <div class="pro-user-bio">
-                    <ul>
-                        <li>
-                            <h4>{{ Auth::user()->name }}</h4>
-                        </li>
-                        <div class="semi-deta">
-                            <ul>
-                                <li style="width: 60%;">رائدة أعمال </li>
-                                <a href="{{ route('viewOwner') }}" style="color: white; font-weight: bolder;">
-                                    <li style="width: 100%;"> الاعـــدادات </li>
-                                </a>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="udb" style="direction: rtl">
-                    <div class="udb-sec udb-cour-stat">
-                        <h4><img src="images/icon/db3.png" alt="" /> المشاريع </h4>
-                        <p> متابعة المشروع </p>
-                        <div class="pro-con-table">
-                            <table class="bordered responsive-table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th> اسم المشروع </th>
-                                        <th> وقت التقديم </th>
-                                        <th> فئة المشروع </th>
-                                        <th> حالة </th>
-                                        <th> عرض </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @isset($apply)
-                                        @foreach ($project as $num => $projects)
-                                            <tr>
-                                                <td>{{ $num + 1 }}</td>
-                                                <td>{{ $projects->name }}</td>
-                                                <td>{{ $projects->created_at->format('Y-d-m') }}</td>
-                                                <td>{{ $projects->category }}</td>
-                                                <td>{{ $projects->state }}</td>
-                                                <td><a href="{{ route('viewProject', $projects->id) }}" class="ad-st-view"> عرض
-                                                    </a></td>
-                                            </tr>
-                                        @endforeach
-                                    @endisset
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection --}}
 @include('Site.includes.Header')
 @section('css')
     <style>
-        #report{
+        #report {
             display: none;
         }
     </style>
@@ -98,7 +14,7 @@
         <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner1.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
-                    <h2 class="text-white" style="margin-top: 130px;">  بيانات حساب/  {{ Auth::user()->name }}</h2>
+                    <h2 class="text-white" style="margin-top: 130px;"> بيانات حساب/ {{ Auth::user()->name }}</h2>
                 </div>
             </div>
         </div>
@@ -126,18 +42,18 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" data-toggle="tab" href="#quiz-results"
-                                                style="text-align: right;"><i
-                                                class="ti-bookmark-alt"></i> فرص النجاح </a>
+                                                style="text-align: right;"><i class="ti-bookmark-alt"></i> فرص النجاح
+                                            </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" data-toggle="tab" href="#edit-profile"
-                                                style="text-align: right;"><i
-                                                class="ti-pencil-alt"></i> تعديل بيانات الحساب  </a>
+                                                style="text-align: right;"><i class="ti-pencil-alt"></i> تعديل بيانات
+                                                الحساب </a>
                                         </li>
-                                        <li class="nav-item">
+                                        {{-- <li class="nav-item">
                                             <a class="nav-link" data-toggle="tab" href="#change-password"
                                                 style="text-align: right;"><i class="ti-lock"></i> تعديل كلمة السر </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </div>
@@ -147,7 +63,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="courses">
                                         <div class="profile-head">
-                                            <h3> متابعةالمشاريع  </h3>
+                                            <h3> متابعةالمشاريع </h3>
                                             {{-- <div class="feature-filters style1 ml-auto">
                                                 <ul class="filters" data-toggle="buttons">
                                                     <li data-filter="" class="btn active">
@@ -177,7 +93,7 @@
                                                                     <th> وقت التقديم </th>
                                                                     <th> فئة المشروع </th>
                                                                     <th> حالة </th>
-                                                                    {{-- <th> عرض </th> --}}
+                                                                    <th> عرض </th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -186,11 +102,13 @@
                                                                         <tr>
                                                                             <td>{{ $num + 1 }}</td>
                                                                             <td>{{ $projects->name }}</td>
-                                                                            <td>{{ $projects->created_at->format('Y-d-m') }}</td>
+                                                                            <td>{{ $projects->created_at->format('Y-d-m') }}
+                                                                            </td>
                                                                             <td>{{ $projects->category }}</td>
                                                                             <td>{{ $projects->state }}</td>
-                                                                            {{-- <td><a href="{{ route('viewProject', $projects->id) }}" class="ad-st-view"> عرض
-                                                                                </a></td> --}}
+                                                                            <td><a href="{{ route('viewProject', $projects->id) }}"
+                                                                                    class="ad-st-view"> عرض
+                                                                                </a></td>
                                                                         </tr>
                                                                     @endforeach
                                                                 @endisset
@@ -249,7 +167,7 @@
                                         <div class="courses-filter">
                                             <div class="row">
                                                 <div class="col-md-12 col-lg-12">
-                                                    <div class="row">
+                                                    <div class="row" id="clac">
                                                         <div class="col-lg-12">
                                                             <div class="form-group col-md-12">
                                                                 <label>مبلغ الاستثمار للمشروع (رأس المال
@@ -281,174 +199,132 @@
                                                             class="btn btn-success" style="float: left;">احسب فرص
                                                             النجاح</button>
                                                     </div>
+                                                    <div class="row" id="report" style=" display: none;">
+                                                        <h4> تقرير فرص نجاح
+                                                            مشروعك </h4>
+                                                        <p> التقرير </p>
+                                                        <div class="table">
+                                                            <table class="bordered responsive-table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th> المؤشر </th>
+                                                                        <th> القيمة </th>
+                                                                        <th> وصف </th>
+                                                                        <th> توصيات </th>
+                                                                    </tr>
+                                                                </thead>
+
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>مؤشر صافي القيمة الحالية</td>
+                                                                        <td id="NetPresentValue"></td>
+                                                                        <td id="NetPresentValue_note"></td>
+                                                                        <td id="NetPresentValue_desc"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>مؤشر ربحية المشروع</td>
+                                                                        <td id="ProfitIndecator"></td>
+                                                                        <td id="ProfitIndecator_note"></td>
+                                                                        <td id="ProfitIndecator_desc"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>معدل العائد الداخلى</td>
+                                                                        <td id="IRR"></td>
+                                                                        <td id="IRR_note"></td>
+                                                                        <td id="IRR_desc"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <button type="submit" onclick="back()" class="btn btn-info"
+                                                            style="float: right;"> عودة </button>
+                                                    </div>
                                                 </div>
 
                                             </div>
-                                            <div class="udb-sec udb-cour-stat" id="report" style=" display: none;">
-                                                <h4> تقرير فرص نجاح
-                                                    مشروعك </h4>
-                                                <p> التقرير </p>
-                                                <div class="pro-con-table">
-                                                    <table class="bordered responsive-table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th> المؤشر </th>
-                                                                <th> القيمة </th>
-                                                                <th> وصف </th>
-                                                                <th> توصيات </th>
-                                                            </tr>
-                                                        </thead>
 
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>مؤشر صافي القيمة الحالية</td>
-                                                                <td id="NetPresentValue"></td>
-                                                                <td id="NetPresentValue_note"></td>
-                                                                <td id="NetPresentValue_desc"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>مؤشر ربحية المشروع</td>
-                                                                <td id="ProfitIndecator"></td>
-                                                                <td id="ProfitIndecator_note"></td>
-                                                                <td id="ProfitIndecator_desc"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>معدل العائد الداخلى</td>
-                                                                <td id="IRR"></td>
-                                                                <td id="IRR_note"></td>
-                                                                <td id="IRR_desc"></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="edit-profile">
                                         <div class="profile-head">
                                             <h3> تعديل بيانات الحساب </h3>
                                         </div>
-                                        <form class="edit-profile">
+                                        <form
+                                            class="edit-profile"action="{{ route('project.edit', $Project_owner->id) }}"
+                                            onsubmit="return confirmSubmit();"
+                                            method="POST"enctype="multipart/form-data">
+                                            @csrf
+
                                             <div class="">
                                                 <div class="form-group row">
                                                     <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
-                                                        <h3>1. Personal Details</h3>
+                                                        <h3>1. البيانات الشخصية</h3>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Full
-                                                        Name</label>
+                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">
+                                                        لصاحبة المشروع</label>
+                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                        <input class="form-control" type="text"name="name"
+                                                            value="{{ $Project_owner->name }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">رقم
+                                                        القومي </label>
                                                     <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                         <input class="form-control" type="text"
-                                                            value="Mark Andre">
+                                                            pattern="[0-9]{14,14}" maxlength="14" minlength="14"
+                                                            class="form-control" name="nid"
+                                                            value="{{ $Project_owner->nid }}"
+                                                            title="رقم البطاقة مكون من 14 رقم">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Occupation</label>
+                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">البريد
+                                                        الإلكتروني </label>
                                                     <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="CTO">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Company
-                                                        Name</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="EduChamp">
-                                                        <span class="help">If you want your invoices addressed to a
-                                                            company. Leave blank to use your full name.</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Phone
-                                                        No.</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text"
-                                                            value="+120 012345 6789">
-                                                    </div>
-                                                </div>
+                                                        <input class="form-control" type="email" name="email"
+                                                            value="{{ $Project_owner->email }}">
 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label
+                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">التليفون</label>
+                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                        <input class="form-control" pattern="[0-9]{10,11}"
+                                                            maxlength="11" minlength="10" class="form-control"
+                                                            name="phone" value="{{ $Project_owner->phone }}"
+                                                            title="رقم الهاتف مكون من 11 رقم">
+                                                    </div>
+                                                </div>
                                                 <div class="seperator"></div>
-
                                                 <div class="form-group row">
                                                     <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
-                                                        <h3>2. Address</h3>
+                                                        <h3>2. بيانات العنوان</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">
+                                                        العنوان </label>
+                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                        <input class="form-control" type="text" name="address"
+                                                            value="{{ $Project_owner->address }}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Address</label>
+                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">الرغبة
+                                                        في التمويل</label>
                                                     <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text"
-                                                            value="5-S2-20 Dummy City, UK">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">City</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="US">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">State</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text"
-                                                            value="California">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Postcode</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="000702">
-                                                    </div>
-                                                </div>
-
-                                                <div
-                                                    class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x">
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
-                                                        <h3 class="m-form__section">3. Social Links</h3>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Linkedin</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text"
-                                                            value="www.linkedin.com">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Facebook</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text"
-                                                            value="www.facebook.com">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Twitter</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text"
-                                                            value="www.twitter.com">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Instagram</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text"
-                                                            value="www.instagram.com">
+                                                        <input type="radio" id="yes" name="fund"
+                                                            value="1">
+                                                        <label for="yes"> نعم </label>
+                                                        <input type="radio" id="no" name="fund"
+                                                            value="0">
+                                                        <label for="no">لا </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -458,47 +334,59 @@
                                                         <div class="col-12 col-sm-3 col-md-3 col-lg-2">
                                                         </div>
                                                         <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                            <button type="reset" class="btn">Save
-                                                                changes</button>
-                                                            <button type="reset"
-                                                                class="btn-secondry">Cancel</button>
+                                                            <button type="submit" class="btn"> حفظ التعديل
+                                                            </button>
+                                                            <button type="reset" class="btn-secondry">إلغاء</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="tab-pane" id="change-password">
+                                    {{-- <div class="tab-pane" id="change-password">
                                         <div class="profile-head">
                                             <h3> تعديل كلمة السر الخاصة بكي </h3>
                                         </div>
-                                        <form class="edit-profile">
+                                        <form class="edit-profile"method="POST"
+                                            action="{{ route('password.store') }}">
+                                            @csrf
                                             <div class="">
                                                 <div class="form-group row">
                                                     <div class="col-12 col-sm-8 col-md-8 col-lg-9 ml-auto">
-                                                        <h3>Password</h3>
+                                                        <h3> كلمة السر </h3>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">
+                                                        البريد الإلكتروني</label>
+                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-7">
+                                                        <input class="form-control" type="email" name="email" value="old('email', $request->email)" required autofocus autocomplete="username" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">
+                                                        كلمة السر الحالية </label>
+                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-7">
+                                                        <input class="form-control" type="password" name="password"
+                                                            required autocomplete="new-password">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label
-                                                        class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">Current
-                                                        Password</label>
+                                                        class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">كلمة
+                                                        السر الجديدة</label>
                                                     <div class="col-12 col-sm-8 col-md-8 col-lg-7">
                                                         <input class="form-control" type="password" value="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">New
-                                                        Password</label>
+                                                    <label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">
+                                                        تأكيد كلمة السر </label>
                                                     <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                        <input class="form-control" type="password" value="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">Re
-                                                        Type New Password</label>
-                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                        <input class="form-control" type="password" value="">
+                                                        <input class="form-control" type="password"
+                                                            name="password_confirmation" required
+                                                            autocomplete="new-password">
                                                     </div>
                                                 </div>
                                             </div>
@@ -506,13 +394,13 @@
                                                 <div class="col-12 col-sm-4 col-md-4 col-lg-3">
                                                 </div>
                                                 <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                    <button type="reset" class="btn">Save changes</button>
-                                                    <button type="reset" class="btn-secondry">Cancel</button>
+                                                    <button type="submit" class="btn"> حفظ التعديل </button>
+                                                    <button type="reset" class="btn-secondry"> إلغاء </button>
                                                 </div>
                                             </div>
 
                                         </form>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -528,6 +416,11 @@
 </div>
 @section('script')
     <script>
+        function back() {
+            document.getElementById("report").style.display = "none";
+            document.getElementById("clac").style.display = "block";
+        }
+
         function calculateNPV() {
             var rate = 18;
             var initialCost = parseInt(document.getElementById('capital').value);
@@ -544,6 +437,7 @@
             NetPresentValue += npv;
             ProfitIndecator = npv / ProfitIndecator;
             document.getElementById("report").style.display = "block";
+            document.getElementById("clac").style.display = "none";
             /*=========================================================================*/
             /*=========================== IRR function ================================*/
             /*=========================================================================*/
@@ -631,4 +525,3 @@
     </script>
 @endsection
 @include('Site.includes.Footer')
-
