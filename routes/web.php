@@ -14,11 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/registermm', function () {
-    return view('site.registration');
-});
-
 Route::middleware('auth')->group(function () {
     //Route::get('/profile_user', function () {return view('site.pages.dashboard'); })->name('profile');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

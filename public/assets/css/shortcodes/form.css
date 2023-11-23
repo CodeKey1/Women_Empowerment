@@ -16,7 +16,8 @@
 .list-group-item:first-child,
 .list-group-item:last-child,
 .input-group-addon,
-.btn-group-divides > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group-divides
+    > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
 .btn-group-divides > .btn:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child),
 .ttr-booking-form .ttr-extra-services li .feature-box-lg,
@@ -44,7 +45,7 @@ a,
 .navbar-toggler,
 .menu-logo,
 .menu-links .nav > li > a,
-.secondary-menu{
+.secondary-menu {
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     -ms-transition: all 0.2s linear;
@@ -72,13 +73,14 @@ a,
 .has-success .bootstrap-select .dropdown-toggle:focus {
     border-color: #3c763d !important;
 }
-button{
-	outline:none !important;
-	cursor:pointer;
+button {
+    outline: none !important;
+    cursor: pointer;
 }
 label {
     font-weight: 600;
     margin-bottom: 10px;
+    text-align: right;
 }
 .panel-default,
 .panel-default > .panel-heading {
@@ -100,7 +102,7 @@ label {
     padding: 9px 12px;
 }
 textarea.form-control {
-	height:120px;
+    height: 120px;
 }
 .form-control:focus {
     border-color: #e1e1e1;
@@ -148,7 +150,9 @@ textarea.form-control {
 .dropdown-menu {
     font-size: 13px;
 }
-.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
+        .input-group-btn
+    ) {
     width: 100%;
 }
 .bootstrap-select .dropdown-toggle {
@@ -183,9 +187,9 @@ textarea.form-control {
     box-shadow: none !important;
     outline: 0px !important;
 }
-.bootstrap-select.show.btn-group .dropdown-menu.inner{
-	display:block;
-}	
+.bootstrap-select.show.btn-group .dropdown-menu.inner {
+    display: block;
+}
 .bootstrap-select div.dropdown-menu {
     border: 1px solid #e9e9e9;
     border-radius: 0;
@@ -216,10 +220,10 @@ textarea.form-control {
     font-weight: 400;
     line-height: 1.42857143;
     color: #333;
-	white-space: nowrap;
+    white-space: nowrap;
 }
 .bootstrap-select .dropdown-menu > li > a:hover {
-	background-color:#f2f2f4;
+    background-color: #f2f2f4;
 }
 /*touchspin input type number*/
 .bootstrap-touchspin .input-group-btn-vertical {
@@ -240,7 +244,7 @@ textarea.form-control {
     border-width: 1px;
     border-style: solid;
     border-color: #e1e1e1;
-    background: #FFF;
+    background: #fff;
 }
 .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up {
     border-radius: 0;
@@ -260,20 +264,20 @@ textarea.form-control {
     color: #9fa0a1;
 }
 /*rating star*/
-.input-rating input[type=radio] {
+.input-rating input[type="radio"] {
     display: none;
 }
-.input-rating input[type=radio] + label {
+.input-rating input[type="radio"] + label {
     display: inline-block;
     margin-left: -4px;
     padding-left: 0px !important;
     padding-right: 0px;
     width: 24px;
 }
-.input-rating input[type=radio] + label:first-of-type {
+.input-rating input[type="radio"] + label:first-of-type {
     margin-left: 0px;
 }
-.input-rating input[type=radio] + label:before {
+.input-rating input[type="radio"] + label:before {
     background-color: transparent;
     border: none;
     color: #ffd925;
@@ -291,13 +295,13 @@ textarea.form-control {
     transition: none;
     width: 14px;
 }
-.input-rating input[type=radio]:checked + label:before,
-.input-rating input[type=radio] + label.marked:before,
-.input-rating input[type=radio] + label.filled:before,
-.input-rating input[type=radio] + label.hovered.filled:before {
+.input-rating input[type="radio"]:checked + label:before,
+.input-rating input[type="radio"] + label.marked:before,
+.input-rating input[type="radio"] + label.filled:before,
+.input-rating input[type="radio"] + label.hovered.filled:before {
     content: "\f005";
 }
-.input-rating input[type=radio] + label.hovered:before {
+.input-rating input[type="radio"] + label.hovered:before {
     content: "\f006";
 }
 /*simple rating list*/
@@ -329,7 +333,7 @@ blockquote {
     position: relative;
     background: #f6f6f6;
     clear: both;
-    border-left: 4px solid #EFBB20;
+    border-left: 4px solid #efbb20;
 }
 blockquote p {
     font-size: 18px;
@@ -338,9 +342,9 @@ blockquote p {
     margin-bottom: 0px;
 }
 blockquote:before {
-    content: '\f10d';
+    content: "\f10d";
     font-family: "FontAwesome";
-    color: #EFBB20;
+    color: #efbb20;
     font-size: 35px;
     position: absolute;
     left: 20px;
