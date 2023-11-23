@@ -42,11 +42,10 @@
                                                 <td><a href="#"><span
                                                             class="list-enq-name">{{ $train->name }}</span></a>
                                                 </td>
-                                                <td>
-                                                    <a href="{{ route('dashboard.courses.edit', $train->id) }}"
-                                                        class="ad-st-view"> تعديل </a><br>
-                                                    <a href="{{ route('dashboard.courses.delete', $train->id) }}"
-                                                        class="ad-st-view" onclick="return confirmSubmit()"> حذف </a>
+                                                <td style="text-align: end;">
+                                                    <a href="{{ route('dashboard.courses.edit', $train->id) }}" class="btn green inline" style="padding: 7px;">تعديل</a>
+                                                    <a href="{{ route('dashboard.courses.delete', $train->id) }}" class="btn red inline"style="padding: 7px;" onclick="return confirmSubmit()">حذف</a>
+
                                                 </td>
                                             </tr>
                                         @endforeach

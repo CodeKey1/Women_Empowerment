@@ -38,13 +38,15 @@
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->role }}</td>
-                                                <td><a href="{{ route('user.edit', $user->id) }}" class="ad-st-view">
-                                                        عرض </a><br>
-                                                    <a href="{{ route('user.edit', $user->id) }}" class="ad-st-view">
-                                                        عرض المشاريع </a><br>
+                                                <td style="text-align: end;width">
+                                                    <a href="{{ route('user.edit', $user->id) }}" class="btn blue inline" style="padding: 7px;">
+                                                         المشاريع </a>
+                                                    <a href="{{ route('user.edit', $user->id) }}" class="btn green inline"
+                                                        style="padding: 7px;">تعديل</a>
                                                     @if ($user->role != 'admin')
-                                                        <a href="{{ route('user.delete', $user->id) }}" class="ad-st-view"
-                                                            onclick="return confirmSubmit()"> حذف </a>
+                                                        <a href="{{ route('user.delete', $user->id) }}"
+                                                            onclick="return confirmSubmit()"
+                                                            class="btn red inline"style="padding: 7px;">حذف</a>
                                                     @endif
                                                 </td>
                                             </tr>
