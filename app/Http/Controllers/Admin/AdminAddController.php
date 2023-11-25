@@ -46,8 +46,8 @@ class AdminAddController extends Controller
     }
     public function courses()
     {
-        $types = Type::select()->get();
-        return view('Dashboard.addPages.training', compact('types'));
+        $type = Type::select()->get();
+        return view('Dashboard.addPages.training', compact('type'));
     }
     //**************************** //
     //************Store*********** //
@@ -149,7 +149,7 @@ class AdminAddController extends Controller
                 "name" => $request['name'],
                 "details" => $request['details'],
                 "date" => $request['date'],
-                "cat" => $request['cat'],
+                "type_id" => $request['cat'],
                 "image" => $image,
             ]);
             //details

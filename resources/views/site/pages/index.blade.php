@@ -40,7 +40,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 heading-bx left">
-                            <h2 class="title-head"> {{__('message.Project models')}} </h2>
+                            <h2 class="title-head"> {{ __('message.Project models') }} </h2>
 
                         </div>
                     </div>
@@ -79,8 +79,8 @@
                     <div class="row">
                         <div class="col-md-12 text-center text-white">
                             <h2>{{ __('message.Cross-platform') }}</h2>
-                            <h5 > {{ __('message.Have') }}
-                             </h5>
+                            <h5> {{ __('message.Have') }}
+                            </h5>
 
                         </div>
                     </div>
@@ -139,13 +139,15 @@
                                                 <div>
                                                     <div class="event-time">
                                                         <div class="event-month">
-                                                            {{ \Carbon\Carbon::parse($Courses->date)->format('d-m') }}</div>
+                                                            {{ \Carbon\Carbon::parse($Courses->date)->format('d-m') }}
+                                                        </div>
                                                         <div class="event-month">
                                                             {{ \Carbon\Carbon::parse($Courses->date)->format('Y') }}</div>
                                                     </div>
                                                 </div>
                                                 <div class="event-info">
-                                                    <h4 class="event-title"><a href="#"> {{ $Courses->name }}</a></h4>
+                                                    <h4 class="event-title"><a href="#"> {{ $Courses->name }}</a>
+                                                    </h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -160,8 +162,8 @@
                 </div>
             </div>
 
-            <!-- Testimonials -->
-            <div class="section-area section-sp2 bg-fix ovbl-dark"
+            <!-- quotes -->
+            {{-- <div class="section-area section-sp2 bg-fix ovbl-dark"
                 style="background-image:url(assets/images/background/bg1.jpg);">
                 <div class="container">
                     <div class="row">
@@ -205,10 +207,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Testimonials END -->
+            </div> --}}
+            <!-- quotes END -->
 
-            <!-- Recent News -->
+            <!--  News -->
             <div class="section-area section-sp2">
                 <div class="container">
                     <div class="row">
@@ -226,8 +228,7 @@
                                         </div>
                                         <div class="info-bx">
                                             <ul class="media-post">
-                                                <li><a href="#"><i
-                                                            class="fa fa-calendar"></i>{{ $News->date }}</a>
+                                                <li><a href="#"><i class="fa fa-calendar"></i>{{ $News->date }}</a>
                                                 </li>
                                             </ul>
                                             <h5 class="post-title"><a href="blog-details.html"> {{ $News->name }}
@@ -246,7 +247,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Recent News End -->
+            <!--  News End -->
 
         </div>
         <!-- contact area END -->
