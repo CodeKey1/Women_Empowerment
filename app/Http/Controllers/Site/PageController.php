@@ -31,19 +31,19 @@ class PageController extends Controller
         //
         $type = Type::select()->get();
         $courses = Course::select()->get();
-        return view('site.pages.training', compact('courses','type'));
+        return view('site.pages.training', compact('courses', 'type'));
     }
     public function news()
     {
         //$courses = Course::select()->get();
         $news = News::select()->get();
-        return view('site.pages.news',compact('news'));
+        return view('site.pages.news', compact('news'));
     }
     public function news_details(string $id)
     {
         $new = News::whereId($id)->firstOrFail();
         $news = News::select()->find($id);
-        return view('site.pages.news_details',compact('news','new'));
+        return view('site.pages.news_details', compact('news', 'new'));
     }
     public function successIndex()
     {
@@ -69,14 +69,14 @@ class PageController extends Controller
         //
         //$guide = Guide_Women::select()->get();
         $old_project = Model_Project::select()->get();
-        return view('site.pages.namazeg_project',compact('old_project'));
+        return view('site.pages.namazeg_project', compact('old_project'));
     }
     public function namazeg_projectGet(string $id)
     {
         //
         //$guide = Guide_Women::select()->get();
         $old_project = Model_Project::select()->find($id);
-        return view('site.pages.namazeg_project_details',compact('old_project'));
+        return view('site.pages.namazeg_project_details', compact('old_project'));
     }
     /**
      * Display a listing of the resource.
@@ -90,7 +90,7 @@ class PageController extends Controller
         $old_project = Model_Project::select()->get();
         $guide = Guide_Women::select()->get();
         $mopadarat = Mobadrat::select()->get();
-        return view('site.pages.index', compact('mopadarat', 'guide','old_project','news','courses','type'));
+        return view('site.pages.index', compact('mopadarat', 'guide', 'old_project', 'news', 'courses', 'type'));
     }
     /**
      * Display a listing of the resource.
@@ -113,26 +113,26 @@ class PageController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function viewProject(string $id)
-    {
-        //
-        $type = Type::select()->get();
-        $Project = Project::select()->where('id', $id)->first();
-        $Project_risk = Project_risk::select()->where('project_id', $id)->get();
-        $Project_study = Project_study::select()->where('project_id', $id)->get();
-        $Project_Plan = Project_Plan::select()->where('project_id', $id)->get();
-        $Project_form = Project_form::select()->where('project_id', $id)->get();
-        $Project_performane = Project_performane::select()->where('project_id', $id)->get();
-        return view('site.pages.viewProject', compact('type', 'Project', 'Project_risk', 'Project_study', 'Project_Plan', 'Project_form', 'Project_performane'));
-    }
-    public function viewOwner()
-    {
-        $Project_owner = Project_owner::select()->where('user_id', Auth::user()->id)->first();
-        return view('site.pages.viewOwner', compact('Project_owner'));
-    }
-    /**
-     * Display a listing of the resource.
-     */
+    // public function viewProject(string $id)
+    // {
+    //     //
+    //     $type = Type::select()->get();
+    //     $Project = Project::select()->where('id', $id)->first();
+    //     $Project_risk = Project_risk::select()->where('project_id', $id)->get();
+    //     $Project_study = Project_study::select()->where('project_id', $id)->get();
+    //     $Project_Plan = Project_Plan::select()->where('project_id', $id)->get();
+    //     $Project_form = Project_form::select()->where('project_id', $id)->get();
+    //     $Project_performane = Project_performane::select()->where('project_id', $id)->get();
+    //     return view('site.pages.viewProject', compact('type', 'Project', 'Project_risk', 'Project_study', 'Project_Plan', 'Project_form', 'Project_performane'));
+    // }
+    // public function viewOwner()
+    // {
+    //     $Project_owner = Project_owner::select()->where('user_id', Auth::user()->id)->first();
+    //     return view('site.pages.viewOwner', compact('Project_owner'));
+    // }
+    // /**
+    //  * Display a listing of the resource.
+    //  */
     public function guide()
     {
         //

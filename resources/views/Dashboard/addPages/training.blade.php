@@ -45,7 +45,15 @@
                     <div class="form-group col-6">
                         <label class="col-form-label"> تخصص التدريب </label>
                         <div>
-                            <input type="text" name="cat" class="form-control" required>
+                            <select name="cat" class="form-control" required>
+                                <option value="null" selected disabled hidden>اختر فئة التدريب
+                                </option>
+                                @isset($type)
+                                    @foreach ($type as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
+                                @endisset
+                            </select>
                         </div>
                     </div>
                     <div class="form-group col-12">
@@ -96,8 +104,8 @@
                         </div>
                     </div>
                     <div class="form-group col-6">
-                        <label class="col-form-label"> فيديو التدريب (ان وجد) <span style="color: red">فيديو MP4 لا
-                                يتعدي 10 ميجا</span></label>
+                        <label class="col-form-label"> فيديو التدريب (ان وجد) <span style="color: red">فيديو MP4
+                            </span></label>
                         <div>
                             <input class="form-control" type="file" name="video">
                             @error('video')
@@ -106,8 +114,8 @@
                         </div>
                     </div>
                     <div class="form-group col-6">
-                        <label class="col-form-label"> عرض تقديمي (ان وجد) <span style="color: red">PDF لا
-                                يتعدي 2 ميجا</span></label>
+                        <label class="col-form-label"> عرض تقديمي (ان وجد) <span style="color: red">PDF
+                            </span></label>
                         <div>
                             <input class="form-control" type="file" name="presentation">
                             @error('presentation')

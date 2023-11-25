@@ -18,4 +18,8 @@ class Course extends Model
         'created_at',
         'updated_at',
     ];
+    public function type_name()
+    {
+        return  $this->belongsTo(Type::class, 'cat');
+    }
 }
