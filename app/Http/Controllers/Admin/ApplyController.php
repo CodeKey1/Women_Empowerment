@@ -22,12 +22,18 @@ class ApplyController extends Controller
      */
     public function profile()
     {
-        //Auth()->id()
-        $Project_owner = Project_owner::select()->where('user_id', Auth::user()->id)->first();
-        $apply = Project_owner::select()->where('user_id', Auth()->id())->first();
-        $project = Project::select()->get();
-        //$project = Project::select()->where('owner_id', $apply->id)->get();
-        return view('site.pages.dashboard', compact('apply', 'project','Project_owner'));
+        if(Auth()->id()){
+            if($Project_owner = Project_owner::select()->where('user_id', Auth::user()->id)->first()){
+                $apply = Project_owner::select()->where('user_id', Auth()->id())->first();
+                $project = Project::select()->where('owner_id',$Project_owner->id)->get();
+                    //$project = Project::select()->where('owner_id', $apply->id)->get();
+                    return view('site.pages.dashboard', compact('apply', 'project','Project_owner'));
+                }else{
+                    return redirect()->route('project.create');
+                }
+        }else{
+            return redirect()->route('login');
+        }
     }
     /**
      * Display a listing of the resource.

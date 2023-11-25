@@ -20,24 +20,17 @@
 
                         </li>
                         @guest
-
-                            {{-- @if (Route::has('register'))
-
-                                <li><a href="{{ route('register') }}"> تسجيل </a>
-
-                                </li>
-                            @endif --}}
                             @if (Route::has('login'))
-                                <li><a href="{{ route('login') }}"> تسجيل الدخول </a>
+                                <li><a href="{{ route('login') }}"> {{ __('message.Login') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li><a href="{{ route('profile') }}"> {{ Auth::user()->name }} : مرحباً </a>
+                            <li><a href="{{ route('profile') }}"> {{ Auth::user()->name }} : {{ __('message.Welcome') }} </a>
                             </li>
                             <li><a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();"
                                     style="color: #f0ae06;">
-                                    تسجيل خروج </a>
+                                      {{ __('message.Logout') }}</a>
                                 <form action="{{ route('logout') }}" method="POST" id="logout-form">
                                     @csrf
                                 </form>
@@ -76,19 +69,19 @@
                         </li>
                         <li><a href="{{ route('about') }}"> {{ __('message.About') }} </a>
                         </li>
-                        <li class="add-mega-menu"><a href="{{ route('namazeg-project') }}">نماذج مشاريع </a>
+                        <li class="add-mega-menu"><a href="{{ route('namazeg-project') }}">{{ __('message.Project models') }}</a>
                         </li>
-                        <li class="nav-dashboard"><a href="{{ route('training') }}">التدريب </a>
+                        <li class="nav-dashboard"><a href="{{ route('training') }}"> {{ __('message.Training') }}</a>
                         </li>
-                        <li class="nav-dashboard"><a href="{{ route('stratgey') }}">الإستراتيجية </i></a>
+                        <li class="nav-dashboard"><a href="{{ route('stratgey') }}">{{ __('message.strategy') }} </i></a>
                         </li>
-                        <li class="nav-dashboard"><a href="{{ route('initiatives') }}">المبادرات </a>
+                        <li class="nav-dashboard"><a href="{{ route('initiatives') }}">{{ __('message.Initiatives') }} </a>
                         </li>
-                        <li class="nav-dashboard"><a href="{{ route('instructions') }}">الإرشادات </a>
+                        <li class="nav-dashboard"><a href="{{ route('instructions') }}">{{ __('message.Instructions') }} </a>
                         </li>
-                        <li class="nav-dashboard"><a href="{{ route('news') }}">الأخبار </a>
+                        <li class="nav-dashboard"><a href="{{ route('news') }}">{{ __('message.News') }} </a>
                         </li>
-                        <li class="nav-dashboard"><a href="{{ route('Data') }}"> البيانات المفتوحة</a>
+                        <li class="nav-dashboard"><a href="{{ route('Data') }}"> {{ __('message.Open data') }}</a>
                         </li>
                     </ul>
 

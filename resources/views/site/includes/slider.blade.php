@@ -45,7 +45,7 @@
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]"
                             data-paddingleft="[0,0,0,0]"
                             style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
-                            مرحباً بك بالمنصــة
+                          {{__('message.Welcome to the platform')}}
                         </div>
 
                         <!-- LAYER NR. 3 -->
@@ -59,7 +59,7 @@
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                             data-paddingleft="[0,0,0,0]"
                             style="z-index: 7; white-space: nowrap; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-                            اول منصة لرائدات الأعمال
+                            {{ __('message.The first platform for female entrepreneurs') }}
                         </div>
 
                         <!-- LAYER NR. 3 -->
@@ -73,11 +73,7 @@
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                             data-paddingleft="[0,0,0,0]"
                             style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-                            عزيزتي رائدة الاعمال اهلا بيكي على منصة مسرعات المشروعات الخضراء الذكية لرائدات
-                            الاعمال باسوان .
-
-                            تحتوى المنصه على الكثير من المواضيع التى تحتاجيها لتاسيس مشروعك الريادي خاصة
-                            المشروعات المهتمه بمعالجة القضيه البيئية .
+                            {{ __('message.Dear Entrepreneur') }}
                         </div>
                     </li>
                     <li data-index="rs-200" data-transition="parallaxvertical" data-slotamount="default"

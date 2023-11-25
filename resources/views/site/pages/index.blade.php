@@ -78,9 +78,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center text-white">
-                            <h2>دورات عبر المنصة للتعلم</h2>
-                            <h5>امتلكي ميزتكي لتعلم مهارات جديدة عبر المنصة
-                            </h5>
+                            <h2>{{ __('message.Cross-platform') }}</h2>
+                            <h5 > {{ __('message.Have') }}
+                             </h5>
 
                         </div>
                     </div>

@@ -97,7 +97,7 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                @isset($apply)
+                                                                @isset($project)
                                                                     @foreach ($project as $num => $projects)
                                                                         <tr>
                                                                             <td>{{ $num + 1 }}</td>
