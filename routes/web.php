@@ -81,7 +81,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard-projects-model', [App\Http\Controllers\Admin\AdminViewController::class, 'projects'])->name('dashboard.project.model');
     Route::get('/dashboard-courses', [App\Http\Controllers\Admin\AdminViewController::class, 'courses'])->name('dashboard.courses');
     Route::get('/dashboard-users', [App\Http\Controllers\Admin\AdminViewController::class, 'users'])->name('dashboard.users');
+    Route::get('/dashboard-project-users', [App\Http\Controllers\Admin\AdminViewController::class, 'projects_users'])->name('dashboard.projects.users');
     Route::get('/dashboard-project-main{id}', [App\Http\Controllers\Admin\AdminViewController::class, 'projecs_view'])->name('dashboard.project.main');
+    Route::get('/dashboard-project-single{id}', [App\Http\Controllers\Admin\AdminViewController::class, 'projecs_single_view'])->name('dashboard.project.single');
     //*************************************//
     //********dashboard add pages**********//
     //*************************************//
@@ -120,6 +122,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('/dashboard-projects-model-update{id}', [App\Http\Controllers\Admin\AdminEditController::class, 'projects_update'])->name('dashboard.project.model.update');
     Route::post('/dashboard-courses-update{id}', [App\Http\Controllers\Admin\AdminEditController::class, 'courses_update'])->name('dashboard.courses.update');
     Route::post('/dashboard-users-update{id}', [App\Http\Controllers\Admin\AdminEditController::class, 'users_update'])->name('dashboard.users.update');
+    Route::post('/dashboard-project-status-update{id}', [App\Http\Controllers\Admin\AdminEditController::class, 'project_state_update'])->name('dashboard.project.state.update');
     //*************************************//
     //******dashboard Delete Function******//
     //*************************************//
@@ -133,6 +136,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //not configerd yet
     Route::get('/user_apply{id}', [App\Http\Controllers\Admin\ApplyController::class, 'show'])->name('admin.apply.show');
     Route::get('/users-edit{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_edit'])->name('user.edit');
+    // Route::get('/project-users-edit{id}', [App\Http\Controllers\Admin\AdminController::class, 'project_users_view'])->name('user.project.edit');
     Route::post('/users-update{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_update'])->name('user.update');
     Route::get('/users-delete{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_delete'])->name('user.delete');
     Route::get('/all_apply', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.apply');

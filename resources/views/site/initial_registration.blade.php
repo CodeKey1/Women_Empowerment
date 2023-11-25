@@ -146,16 +146,19 @@
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
-                                                                <label class="control-label col-12"> اسم المشروع <span
-                                                                        style="color: red">*</span></label>
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="اسم المشروع" name="name" required>
+                                                                <label class="control-label col-12"> اسم المشروع <span style="color: red">*</span></label>
+                                                                <input type="text" class="form-control" placeholder="اسم المشروع" name="name" required>
                                                             </div>
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
-                                                                <label class="control-label col-12"> مجال المشروع <span
-                                                                        style="color: red">*</span></label>
-                                                                <input type="text" class="form-control"
-                                                                    name="category" placeholder="مجال المشروع" required>
+                                                                <label class="control-label col-12"> مجال المشروع <span style="color: red">*</span></label>
+                                                                <select name="category" class="form-control" required>
+                                                                    <option value=" " selected disabled>اختر مجال المشروع</option>
+                                                                    @foreach ($type as $types)
+                                                                    <option value="{{ $types->id }}"> {{ $types->name }}</option>
+                                                                    @endforeach
+
+                                                                </select>
+                                                                {{-- <input type="text" class="form-control" name="category" placeholder="مجال المشروع" required> --}}
                                                             </div>
                                                         </div>
                                                         <br>
@@ -163,54 +166,40 @@
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                                 <label class="control-label col-12"> ملخص فكرة المشروع
                                                                     <span style="color: red">*</span></label>
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="فكرة المشروع" name="idea" required>
+                                                                <input type="text" class="form-control" placeholder="فكرة المشروع" name="idea" required>
                                                             </div>
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                                 <label class="control-label col-12"> تاريخ البدء المتوقع
                                                                     <span style="color: red">*</span></label>
-                                                                <input type="date" class="form-control" name="date"
-                                                                    required>
+                                                                <input type="date" class="form-control" name="date" required>
                                                             </div>
                                                         </div>
                                                         <br>
                                                         <div class="row">
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
-                                                                <label class="control-label col-12"> أهداف المشروع <span
-                                                                        style="color: red">*</span></label>
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="اهداف المشروع" name="goal" required>
+                                                                <label class="control-label col-12"> أهداف المشروع <span style="color: red">*</span></label>
+                                                                <input type="text" class="form-control" placeholder="اهداف المشروع" name="goal" required>
                                                             </div>
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
-                                                                <label class="control-label col-12"> التخطيط والابتكار في
-                                                                    المشروع
+                                                                <label class="control-label col-12"> التخطيط والابتكار في المشروع
                                                                     <span style="color: red">*</span></label>
-                                                                <input type="text" name="innovation"
-                                                                    class="form-control" placeholder="تخطيط المشروع"
-                                                                    required>
+                                                                <input type="text" name="innovation" class="form-control" placeholder="تخطيط المشروع"  required>
                                                             </div>
                                                         </div>
                                                         <br>
                                                         <div class="row">
                                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                                <label class="control-label "> كيف يولد المشروع
-                                                                    مستقبل اكثر
-                                                                    خضرة
-                                                                    واستدامه <span style="color: red">*</span></label>
+                                                                <label class="control-label "> كيف يولد المشروع مستقبل اكثر خضرة واستدامه <span style="color: red">*</span></label>
                                                                 <textarea class="form-control" name="future" cols="5" rows="5" required></textarea>
                                                             </div>
                                                             <br>
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
-                                                                <label class="control-label col-12"> ذكاء المشروع <span
-                                                                        style="color: red">*</span></label>
-                                                                <input type="text" class="form-control" name="smart"
-                                                                    required>
+                                                                <label class="control-label col-12"> ذكاء المشروع <span style="color: red">*</span></label>
+                                                                <input type="text" class="form-control" name="smart" required>
                                                             </div>
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
-                                                                <label class="control-label col-12"> الاثر المتوقع
-                                                                    للمشروع <span style="color: red">*</span></label>
-                                                                <input type="text" class="form-control "
-                                                                    name="trail" required>
+                                                                <label class="control-label col-12"> الاثر المتوقع للمشروع <span style="color: red">*</span></label>
+                                                                <input type="text" class="form-control " name="trail" required>
                                                             </div>
                                                         </div>
                                                         <br>
@@ -218,22 +207,17 @@
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                                 <label class="control-label col-12"> مقر تنفيذ المشروع
                                                                     <span style="color: red">*</span></label>
-                                                                <input type="text" name="location"
-                                                                    class="form-control" required>
+                                                                <input type="text" name="location" class="form-control" required>
                                                             </div>
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
-                                                                <label class="control-label col-12"> الموقع الألكتروني
-                                                                    للمشروع
+                                                                <label class="control-label col-12"> الموقع الألكتروني للمشروع
                                                                 </label>
-                                                                <input type="text" name="email"
-                                                                    class="form-control">
+                                                                <input type="text" name="email" class="form-control">
                                                             </div>
                                                         </div>
                                                         <br>
                                                         <div class="row" style="justify-content: space-around;">
-                                                            <button type="submit" name="formType" value="projectInitial"
-                                                                class="btn">حفظ -
-                                                                التالي</button>
+                                                            <button type="submit" name="formType" value="projectInitial" class="btn">حفظ - التالي</button>
                                                         </div>
                                                         <br>
                                                     </form>

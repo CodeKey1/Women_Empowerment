@@ -18,18 +18,19 @@
             <div class="col-md-12">
                 <div class="box-inn-sp">
                     <div class="inn-title">
-                        <h4> جميع المستخدمين</h4>
+                        <h4> جميع مقدمي المشاريع</h4>
                     </div>
                     <div class="tab-inn">
                         <div class="table-responsive table-desi">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th> </th>
-                                        <th>الاسم</th>
-                                        <th>البريد الالكتروني</th>
-                                        <th>الصلاحية</th>
-                                        <th>تفاصيل</th>
+                                        <th>#</th>
+                                        <th>اسم المشروع </th>
+                                        <th> مجال المشروع </th>
+                                        <th> حالة المشروع </th>
+                                        <th> ت : التقديم </th>
+                                        <th> تفاصيل</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -38,19 +39,12 @@
                                             <tr>
                                                 <td>{{ ++$num }}</td>
                                                 <td>{{ $project->name }}</td>
-                                                <td>{{ $project->email }}</td>
-                                                <td>{{ $project->role }}</td>
-                                                {{-- <td style="text-align: end;width">
-                                                    <a href="{{ route('user.edit', $user->id) }}" class="btn blue inline" style="padding: 7px;">
-                                                         المشاريع </a>
-                                                    <a href="{{ route('user.edit', $user->id) }}" class="btn green inline"
-                                                        style="padding: 7px;">تعديل</a>
-                                                    @if ($user->role != 'admin')
-                                                        <a href="{{ route('user.delete', $user->id) }}"
-                                                            onclick="return confirmSubmit()"
-                                                            class="btn red inline"style="padding: 7px;">حذف</a>
-                                                    @endif
-                                                </td> --}}
+                                                <td>{{ $project->project_type->name }}</td>
+                                                <td>{{ $project->state }}</td>
+                                                <td>{{ $project->date }}</td>
+                                                <td>
+                                                    <a href="{{ route('dashboard.project.single',$project->id) }}" class="btn green inline" style="padding: 7px;"> عرض المشروع </a>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     @endisset

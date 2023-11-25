@@ -77,8 +77,14 @@
                                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                                             <label class="control-label col-12"> مجال المشروع <span
                                                                     style="color: red">*</span></label>
-                                                            <input type="text" class="form-control" name="category"
-                                                                value="{{ $Project->category }}" required>
+                                                                    <select name="category" required>
+                                                                        <option value=" " selected disabled>اختر مجال المشروع</option>
+                                                                        @foreach ($type as $types)
+                                                                        <option value="{{ $Project->type_id}}"> {{ $types->name }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                            {{-- <input type="text" class="form-control" name="category"
+                                                                value="{{ $Project->category }}" required> --}}
                                                         </div>
                                                     </div>
                                                     <br>

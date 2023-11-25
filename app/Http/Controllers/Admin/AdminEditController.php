@@ -12,6 +12,7 @@ use App\Models\News;
 use App\Models\Guide_Women;
 use App\Models\Mobadrat;
 use App\Models\Model_Project;
+use App\Models\Project;
 use App\Models\Project_owner;
 use App\Models\Type;
 use App\Models\User;
@@ -255,6 +256,12 @@ class AdminEditController extends Controller
 
         ]);
         return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
+    }
+    public function project_state_update(Request $request, string $id) {
+        Project::where('id', $id)->update([
+            "state" => $request['new_state'],
+        ]);
+        return redirect()->back()->with(['success' => 'تم التعديل']);
     }
 
 }

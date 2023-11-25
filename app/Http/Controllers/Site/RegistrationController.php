@@ -49,7 +49,7 @@ class RegistrationController extends Controller
     {
         $project = Project::create([
             "name" => $request['name'],
-            "category" => $request['category'],
+            "type_id" => $request['type_id'],
             "idea" => $request['idea'],
             "goal" => $request['goal'],
             "innovation" => $request['innovation'],

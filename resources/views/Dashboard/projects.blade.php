@@ -24,9 +24,11 @@
                                 <thead>
                                     <tr>
                                         <th> </th>
-                                        <th>الاسم</th>
+
+                                        <th>مقدم المشروع </th>
                                         <th>البريد الالكتروني</th>
-                                        <th>الصلاحية</th>
+                                        <th> الرقم الهاتف </th>
+                                        <th> الرقم القومي </th>
                                         <th>تفاصيل</th>
                                     </tr>
                                 </thead>
@@ -35,15 +37,16 @@
                                         @foreach ($users as $num => $user)
                                             <tr>
                                                 <td>{{ ++$num }}</td>
-                                                <td>{{ $user->name }}</td>
+
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
-                                                <td>{{ $user->role }}</td>
+                                                <td>{{ $user->phone }}</td>
+                                                <td>{{ $user->nid }}</td>
                                                 <td style="text-align: end;width">
                                                     {{-- <a href="{{ route('dashboard.project.main', $user->id) }}" class="btn blue inline" style="padding: 7px;">
                                                          المشاريع </a> --}}
-                                                    <a href="{{ route('user.edit', $user->id) }}" class="btn green inline"
-                                                        style="padding: 7px;">تعديل</a>
+                                                    <a href="{{ route('dashboard.project.main', $user->id) }}" class="btn green inline"
+                                                        style="padding: 7px;"> عرض المشاريع </a>
                                                     @if ($user->role != 'admin')
                                                         <a href="{{ route('user.delete', $user->id) }}"
                                                             onclick="return confirmSubmit()"
