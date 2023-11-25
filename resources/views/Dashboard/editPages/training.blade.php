@@ -49,7 +49,7 @@
                         <label class="col-form-label"> تخصص التدريب </label>
                         <div>
                             <select name="cat" class="form-control" required>
-                                <option value="{{ $courses->cat }}" selected hidden>{{ $courses->type_name->name }}
+                                <option value="{{ $courses->type_id }}" selected hidden>{{ $courses->type_name->name }}
                                 </option>
                                 @isset($type)
                                     @foreach ($type as $item)

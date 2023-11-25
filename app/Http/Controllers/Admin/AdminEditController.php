@@ -153,7 +153,7 @@ class AdminEditController extends Controller
                 "name" => $request['name'],
                 "details" => $request['details'],
                 "date" => $request['date'],
-                "cat" => $request['cat'],
+                "type_id" => $request['cat'],
                 "image" => $image,
             ]);
             //details
@@ -245,11 +245,16 @@ class AdminEditController extends Controller
     public function courses_delete(string $id)
     {
         try {
-            $course_details = Courese_detail::where('course_id', $id)->first();
-            $course_details->delete();
-            $course = Course::find($id);
-            $course->delete();
-            return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
+            if ($course_details = Courese_detail::where('course_id', $id)->first()) {
+                $course_details->delete();
+                $course = Course::find($id);
+                $course->delete();
+                return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
+            } else {
+                $course = Course::find($id);
+                $course->delete();
+                return redirect()->back()->with(['success' => 'تم الحذف بنجاح']);
+            }
         } catch (\Exception $ex) {
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
         }

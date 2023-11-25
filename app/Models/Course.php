@@ -14,12 +14,12 @@ class Course extends Model
         'details',
         'image',
         'date',
-        'cat',
+        'type_id',
         'created_at',
         'updated_at',
     ];
     public function type_name()
     {
-        return  $this->belongsTo(Type::class, 'cat');
+        return  $this->belongsTo(Type::class, 'type_id');
     }
 }

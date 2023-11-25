@@ -149,7 +149,7 @@ class AdminAddController extends Controller
                 "name" => $request['name'],
                 "details" => $request['details'],
                 "date" => $request['date'],
-                "cat" => $request['cat'],
+                "type_id" => $request['cat'],
                 "image" => $image,
             ]);
             //details

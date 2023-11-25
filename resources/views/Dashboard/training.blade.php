@@ -31,6 +31,8 @@
                                         <th> </th>
                                         <th>الاسم</th>
                                         <th>تفاصيل</th>
+                                        <th>الفئة</th>
+                                        <th>خيارات</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -39,12 +41,18 @@
                                             <tr>
                                                 <td>{{ $num + 1 }}
                                                 </td>
-                                                <td><a href="#"><span
-                                                            class="list-enq-name">{{ $train->name }}</span></a>
+                                                <td><span class="list-enq-name">{{ $train->name }}</span>
+                                                </td>
+                                                <td><span class="list-enq-name">{{ $train->details }}</span>
+                                                </td>
+                                                <td><span class="list-enq-name">{{ $train->type_name->name }}</span>
                                                 </td>
                                                 <td style="text-align: end;">
-                                                    <a href="{{ route('dashboard.courses.edit', $train->id) }}" class="btn green inline" style="padding: 7px;">تعديل</a>
-                                                    <a href="{{ route('dashboard.courses.delete', $train->id) }}" class="btn red inline"style="padding: 7px;" onclick="return confirmSubmit()">حذف</a>
+                                                    <a href="{{ route('dashboard.courses.edit', $train->id) }}"
+                                                        class="btn green inline" style="padding: 7px;">تعديل</a>
+                                                    <a href="{{ route('dashboard.courses.delete', $train->id) }}"
+                                                        class="btn red inline"style="padding: 7px;"
+                                                        onclick="return confirmSubmit()">حذف</a>
 
                                                 </td>
                                             </tr>
