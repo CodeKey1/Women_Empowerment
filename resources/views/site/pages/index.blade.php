@@ -163,7 +163,7 @@
             </div>
 
             <!-- quotes -->
-            <div class="section-area section-sp2 bg-fix ovbl-dark"
+            {{-- <div class="section-area section-sp2 bg-fix ovbl-dark"
                 style="background-image:url(assets/images/background/bg1.jpg);">
                 <div class="container">
                     <div class="row">
@@ -207,7 +207,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- quotes END -->
 
             <!--  News -->
@@ -228,8 +228,7 @@
                                         </div>
                                         <div class="info-bx">
                                             <ul class="media-post">
-                                                <li><a href="#"><i
-                                                            class="fa fa-calendar"></i>{{ $News->date }}</a>
+                                                <li><a href="#"><i class="fa fa-calendar"></i>{{ $News->date }}</a>
                                                 </li>
                                             </ul>
                                             <h5 class="post-title"><a href="blog-details.html"> {{ $News->name }}
