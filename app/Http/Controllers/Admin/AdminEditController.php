@@ -273,4 +273,11 @@ class AdminEditController extends Controller
         ]);
         return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
     }
+    public function project_state_update(Request $request, string $id) {
+        Project::where('id', $id)->update([
+            "state" => $request['new_state'],
+        ]);
+        return redirect()->back()->with(['success' => 'تم التعديل']);
+    }
+
 }
