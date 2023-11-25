@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'ar'])) {session()->put('locale',$locale);} return redirect()->back();})->name('Language');
 Route::get('/tst', function () {
     $owner_id = 47;
     return view('site.project_data_update');

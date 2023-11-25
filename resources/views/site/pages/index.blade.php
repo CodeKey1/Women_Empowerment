@@ -40,7 +40,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 heading-bx left">
-                            <h2 class="title-head">نمـاذج المشاريـع </h2>
+                            <h2 class="title-head"> {{__('message.Project models')}} </h2>
 
                         </div>
                     </div>

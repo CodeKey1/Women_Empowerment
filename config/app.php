@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
+
 return [
 
     /*
@@ -83,7 +84,8 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ar',
+
 
     /*
     |--------------------------------------------------------------------------
