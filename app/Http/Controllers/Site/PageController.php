@@ -53,9 +53,9 @@ class PageController extends Controller
     }
     public function training_details(string $id)
     {
-        //
-        $details = Courese_detail::select()->where('course_id', $id)->get();
-        return view('site.pages.course-details', compact('details'));
+        $course = Course::select()->where('id', $id)->first();
+        $details = Courese_detail::select()->where('course_id', $id)->first();
+        return view('site.pages.course-details', compact('course', 'details'));
     }
     public function namazeg()
     {

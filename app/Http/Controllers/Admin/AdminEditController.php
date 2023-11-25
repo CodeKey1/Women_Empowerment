@@ -165,14 +165,25 @@ class AdminEditController extends Controller
             if ($request->file('presentation')) {
                 $presentation = Storage::disk('public')->put('training', $request->file('presentation'));
             }
-            Courese_detail::where('course_id', $id)->update([
-                "pre_req" => $request['pre_req'],
-                "description" => $request['description'],
-                "for_whom" => $request['for_whom'],
-                "location" => $request['location'],
-                "presentation" => $presentation,
-                "video" => $video,
-            ]);
+            if (Courese_detail::where('course_id', $id)->first())
+                Courese_detail::where('course_id', $id)->update([
+                    "pre_req" => $request['pre_req'],
+                    "description" => $request['description'],
+                    "for_whom" => $request['for_whom'],
+                    "location" => $request['location'],
+                    "presentation" => $presentation,
+                    "video" => $video,
+                ]);
+            else
+                Courese_detail::create([
+                    "course_id" => $id,
+                    "pre_req" => $request['pre_req'],
+                    "description" => $request['description'],
+                    "for_whom" => $request['for_whom'],
+                    "location" => $request['location'],
+                    "presentation" => $presentation,
+                    "video" =>  $video
+                ]);
             return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
         } catch (\Exception $ex) {
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
@@ -256,5 +267,4 @@ class AdminEditController extends Controller
         ]);
         return redirect()->back()->with(['success' => 'تم التعديل بنجاح']);
     }
-
 }

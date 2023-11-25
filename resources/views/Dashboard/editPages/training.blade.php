@@ -14,8 +14,8 @@
         </div>
         @include('Dashboard.includes.alertts.success')
         @include('Dashboard.includes.alertts.error')
-        <form class="needs-validation" novalidate="" action="{{ route('dashboard.courses.store') }}" method="POST"
-            enctype="multipart/form-data">
+        <form class="needs-validation" novalidate="" action="{{ route('dashboard.courses.update', $courses->id) }}"
+            method="POST" enctype="multipart/form-data">
             @csrf
             <div class="widget-inner">
                 <div class="row">
@@ -112,12 +112,12 @@
                             </div>
                         </div>
                         <div class="form-group col-6">
-                            <label class="col-form-label"> فيديو التدريب (ان وجد) <span style="color: red">فيديو MP4 لا
-                                    يتعدي 10 ميجا</span><br><span style="color: red">يجب اضافة الملف
+                            <label class="col-form-label"> فيديو التدريب (ان وجد) <span style="color: red">فيديو MP4
+                                </span><br><span style="color: red">يجب اضافة الملف
                                     مرة
                                     اخرى </span></label>
                             <div>
-                                <input class="form-control" type="file" name="video">
+                                <input class="form-control" type="file" name="video" accept="video/mp4">
                                 @error('video')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -129,7 +129,7 @@
                                     مرة
                                     اخرى </span></label>
                             <div>
-                                <input class="form-control" type="file" name="presentation">
+                                <input class="form-control" type="file" name="presentation" accept="application/pdf">
                                 @error('presentation')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -182,7 +182,7 @@
                                     مرة
                                     اخرى </span></label>
                             <div>
-                                <input class="form-control" type="file" name="video">
+                                <input class="form-control" type="file" name="video" accept="video/mp4">
                                 @error('video')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -194,7 +194,8 @@
                                     مرة
                                     اخرى </span></label>
                             <div>
-                                <input class="form-control" type="file" name="presentation">
+                                <input class="form-control" type="file" name="presentation"
+                                    accept="application/pdf">
                                 @error('presentation')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror

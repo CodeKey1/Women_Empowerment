@@ -51,7 +51,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="event-info">
-                                                    <h4 class="event-title"><a href="#"> {{ $item->name }}</a>
+                                                    <h4 class="event-title"><a
+                                                            href="{{ route('training.details', $item->id) }}">
+                                                            {{ $item->name }}</a>
                                                     </h4>
                                                     <p>{{ $item->details }}</p>
                                                 </div>
@@ -62,44 +64,6 @@
                             @endisset
                         </ul>
                     </div>
-                    {{-- <div class="row">
-
-                        <div class="col-lg-9 col-md-8 col-sm-12">
-                            <div class="row">
-                                @isset($courses)
-                                    @foreach ($courses as $num => $Courses)
-                                        <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
-                                            <div class="cours-bx">
-                                                <div class="action-box">
-                                                    <img src="{{ asset('storage/' . $Courses->image) }}" alt="">
-                                                    <a href="{{ route('training.details', $Courses->id) }}" class="btn">
-                                                        اقراء المذيد </a>
-                                                </div>
-                                                <div class="info-bx text-center">
-                                                    <h5><a href="#">{{ $Courses->name }}</a></h5>
-                                                    <span>{{ $Courses->cat }}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                @endisset
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 m-b30">
-                            <div class="widget widget_archive">
-                                <h5 class="widget-title style-1"> كل التدريبات </h5>
-                                <ul>
-                                    @isset($type)
-                                        @foreach ($type as $num => $types)
-                                            @if ($num <= 1)
-                                                <li class="active"><a href="#">{{ $types->name }}</a></li>
-                                            @endif
-                                        @endforeach
-                                    @endisset
-                                </ul>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>
