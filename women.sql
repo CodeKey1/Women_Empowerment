@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2023 at 11:15 AM
+-- Generation Time: Nov 26, 2023 at 03:19 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -67,6 +67,13 @@ CREATE TABLE `coures` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `coures`
+--
+
+INSERT INTO `coures` (`id`, `name`, `details`, `image`, `date`, `type_id`, `created_at`, `updated_at`) VALUES
+(42, 'sd fasd fasd', 'sdfasd fas dfa', 'training/DPNZkaDFcq0KS5HrYp15zvlqc5ApaNB10HPpJAGf.png', '2023-11-27', 12, '2023-11-26 10:41:28', '2023-11-26 10:41:28');
+
 -- --------------------------------------------------------
 
 --
@@ -84,6 +91,33 @@ CREATE TABLE `courese_detail` (
   `presentation` varchar(128) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `courese_detail`
+--
+
+INSERT INTO `courese_detail` (`id`, `course_id`, `pre_req`, `description`, `for_whom`, `location`, `video`, `presentation`, `created_at`, `updated_at`) VALUES
+(17, 42, 'sdf asdf a', 'sd fasdf asdf a', 'sd fasd fa', 'sdf asdf asdfa sd', 'training/HayCq6QFjZ6i7b3yhbii2i6QpGTq8ihHEOgxY6MC.mp4', 'training/cOtukOT39bw3klHZJ65XgTHAjrufSdbLGZMJjqZZ.pdf', '2023-11-26 10:41:28', '2023-11-26 10:41:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `course_applicants`
+--
+
+CREATE TABLE `course_applicants` (
+  `id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `mobile` varchar(11) NOT NULL,
+  `nid` varchar(14) NOT NULL,
+  `qualification` varchar(64) NOT NULL,
+  `email` varchar(64) DEFAULT NULL,
+  `is_online` int(11) NOT NULL,
+  `course_id` int(11) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -541,6 +575,14 @@ ALTER TABLE `courese_detail`
   ADD KEY `course_id` (`course_id`);
 
 --
+-- Indexes for table `course_applicants`
+--
+ALTER TABLE `course_applicants`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `course_id` (`course_id`,`user_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `data`
 --
 ALTER TABLE `data`
@@ -676,13 +718,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `coures`
 --
 ALTER TABLE `coures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `courese_detail`
 --
 ALTER TABLE `courese_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `course_applicants`
+--
+ALTER TABLE `course_applicants`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `data`
@@ -801,6 +849,13 @@ ALTER TABLE `users`
 --
 ALTER TABLE `coures`
   ADD CONSTRAINT `coures_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`);
+
+--
+-- Constraints for table `course_applicants`
+--
+ALTER TABLE `course_applicants`
+  ADD CONSTRAINT `course_applicants_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `coures` (`id`),
+  ADD CONSTRAINT `course_applicants_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `project`

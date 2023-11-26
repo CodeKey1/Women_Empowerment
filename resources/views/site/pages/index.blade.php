@@ -146,7 +146,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="event-info">
-                                                    <h4 class="event-title"><a href="#"> {{ $Courses->name }}</a>
+                                                    <h4 class="event-title"><a
+                                                            href="{{ route('training.details', $Courses->id) }}">
+                                                            {{ $Courses->name }}</a>
                                                     </h4>
                                                 </div>
                                             </div>

@@ -20,9 +20,15 @@
                         <div class="row d-flex flex-row-reverse">
                             <div class="col-lg-3 col-md-4 col-sm-12 m-b30">
                                 <div class="course-detail-bx">
-                                    <div class="course-buy-now text-center">
-                                        <a href="#" class="btn radius-xl text-uppercase">اشترك الان</a>
-                                    </div>
+                                    <h4>{{ $course->name }}</h4>
+                                    @if ($course->date > \Carbon\Carbon::now()->toDateString())
+                                        <div class="course-buy-now text-center">
+                                            <a href="{{ route('course.register', $course->id) }}"
+                                                class="btn radius-xl text-uppercase">اشترك الان</a>
+                                        </div>
+                                    @else
+                                        <h5>انتهى موعد التقديم</h5>
+                                    @endif
                                     <div class="cours-more-info">
                                         <div class="price categories" style="flex: auto;">
                                             <span>فئة التدريب</span>

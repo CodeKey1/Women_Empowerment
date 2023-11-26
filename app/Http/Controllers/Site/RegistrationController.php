@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\City;
+use App\Models\Course;
+use App\Models\Course_applicants;
 use App\Models\Project;
 use App\Models\Project_owner;
 use App\Models\Project_risk;
@@ -367,6 +369,35 @@ class RegistrationController extends Controller
             return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
         } catch (\Exception $ex) {
             return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد']);
+        }
+    }
+    /**
+     * course data store
+     */
+    public function course_register(Request $request, string $id)
+    {
+        $course = Course::select()->find($id);
+        if ($is_register = Course_applicants::select()->where('user_id', Auth()->id())->where('course_id', $id)->first()) {
+            return view('site.pages.Course_applicants', compact('course', 'is_register'));
+        } else
+            return view('site.pages.Course_applicants', compact('course'));
+    }
+    public function course_register_store(Request $request, string $id)
+    {
+        try {
+            Course_applicants::create([
+                "name" => $request['name'],
+                "nid" => $request['nid'],
+                "email" => $request['email'],
+                "mobile" => $request['mobile'],
+                "qualification" => $request['qualification'],
+                "is_online" => $request['is_online'],
+                "course_id" => $id,
+                "user_id" => Auth()->id(),
+            ]);
+            return redirect()->back()->with(['success' => 'تم الحفظ بنجاح']);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاوله فيما بعد' . $ex]);
         }
     }
 }

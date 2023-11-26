@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/lang/{locale}', function ($locale) {
-    if (in_array($locale, ['en', 'ar'])) {session()->put('locale',$locale);} return redirect()->back();})->name('Language');
+    if (in_array($locale, ['en', 'ar'])) {
+        session()->put('locale', $locale);
+    }
+    return redirect()->back();
+})->name('Language');
 Route::get('/tst', function () {
     $owner_id = 47;
     return view('site.project_data_update');
@@ -42,6 +47,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/project_data_edit{id}', [App\Http\Controllers\Site\RegistrationController::class, 'edit_index'])->name('viewProject');
     Route::post('/project_edit_store{id}', [App\Http\Controllers\Site\RegistrationController::class, 'edit_store'])->name('project.edit.store');
     Route::post('/project_update{id}', [App\Http\Controllers\Site\RegistrationController::class, 'update'])->name('project.edit');
+    //course reg
+    Route::get('/course_register{id}', [App\Http\Controllers\Site\RegistrationController::class, 'course_register'])->name('course.register');
+    Route::post('/course_register_store{id}', [App\Http\Controllers\Site\RegistrationController::class, 'course_register_store'])->name('course.register.store');
 });
 
 ///////////////////////////////////////////// front site ///////////////////////////////////////////
@@ -59,13 +67,11 @@ Route::group(['namespace' => 'guest'], function () {
     Route::get('/namazeg-project_details{id}', [App\Http\Controllers\Site\PageController::class, 'namazeg_projectget'])->name('namazeg-project_details');
     Route::get('/women_guide', [App\Http\Controllers\Site\PageController::class, 'guide'])->name('guide');
     Route::get('/design_project', [App\Http\Controllers\Site\PageController::class, 'project_design'])->name('project_design');
-    Route::get('/registration_project', [App\Http\Controllers\Site\RegistrationController::class, 'index'])->name('project.signup');
     Route::get('/training', [App\Http\Controllers\Site\PageController::class, 'training'])->name('training');
     Route::get('/news', [App\Http\Controllers\Site\PageController::class, 'news'])->name('news');
     Route::get('/news-details{id}', [App\Http\Controllers\Site\PageController::class, 'news_details'])->name('news.details');
     Route::get('/training-details{id}', [App\Http\Controllers\Site\PageController::class, 'training_details'])->name('training.details');
     Route::get('/success', [App\Http\Controllers\Site\PageController::class, 'successIndex'])->name('success');
-    Route::get('/viewOwner', [App\Http\Controllers\Site\PageController::class, 'viewOwner'])->name('viewOwner');
 });
 ///////////////////////////////////////////// Dashboard site ///////////////////////////////////////////
 
@@ -136,8 +142,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //not configerd yet
     Route::get('/user_apply{id}', [App\Http\Controllers\Admin\ApplyController::class, 'show'])->name('admin.apply.show');
     Route::get('/users-edit{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_edit'])->name('user.edit');
-    // Route::get('/project-users-edit{id}', [App\Http\Controllers\Admin\AdminController::class, 'project_users_view'])->name('user.project.edit');
-    Route::post('/users-update{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_update'])->name('user.update');
     Route::get('/users-delete{id}', [App\Http\Controllers\Admin\AdminController::class, 'users_delete'])->name('user.delete');
     Route::get('/all_apply', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.apply');
 });
