@@ -1,4 +1,4 @@
-<div id="loading-icon-bx"></div>
+{{-- <div id="loading-icon-bx"></div> --}}
 <!-- Header Top ==== -->
 <header class="header rs-nav header-transparent">
     <div class="top-bar">
@@ -6,7 +6,8 @@
             <div class="row d-flex justify-content-between">
                 <div class="topbar-left">
                     <ul>
-                        <li><a href="#"> {{ __('message.A platform for female pioneers Business in Aswan') }}</a></li>
+                        <li><a href="#"> {{ __('message.A platform for female pioneers Business in Aswan') }}</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -16,7 +17,7 @@
                         <li> <a href="{{ route('Language', 'en') }}">English</a>
                         </li>
                         <li>
-                                 <a href="{{ route('Language', 'ar') }}">عربي</a>
+                            <a href="{{ route('Language', 'ar') }}">عربي</a>
 
                         </li>
                         @guest
@@ -25,12 +26,13 @@
                                 </li>
                             @endif
                         @else
-                            <li><a href="{{ route('profile') }}"> {{ Auth::user()->name }} : {{ __('message.Welcome') }} </a>
+                            <li><a href="{{ route('profile') }}"> {{ Auth::user()->name }} : {{ __('message.Welcome') }}
+                                </a>
                             </li>
                             <li><a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();"
                                     style="color: #f0ae06;">
-                                      {{ __('message.Logout') }}</a>
+                                    {{ __('message.Logout') }}</a>
                                 <form action="{{ route('logout') }}" method="POST" id="logout-form">
                                     @csrf
                                 </form>
@@ -69,15 +71,19 @@
                         </li>
                         <li><a href="{{ route('about') }}"> {{ __('message.About') }} </a>
                         </li>
-                        <li class="add-mega-menu"><a href="{{ route('namazeg-project') }}">{{ __('message.Project models') }}</a>
+                        <li class="add-mega-menu"><a
+                                href="{{ route('namazeg-project') }}">{{ __('message.Project models') }}</a>
                         </li>
                         <li class="nav-dashboard"><a href="{{ route('training') }}"> {{ __('message.Training') }}</a>
                         </li>
-                        <li class="nav-dashboard"><a href="{{ route('stratgey') }}">{{ __('message.strategy') }} </i></a>
+                        <li class="nav-dashboard"><a href="{{ route('stratgey') }}">{{ __('message.strategy') }}
+                                </i></a>
                         </li>
-                        <li class="nav-dashboard"><a href="{{ route('initiatives') }}">{{ __('message.Initiatives') }} </a>
+                        <li class="nav-dashboard"><a href="{{ route('initiatives') }}">{{ __('message.Initiatives') }}
+                            </a>
                         </li>
-                        <li class="nav-dashboard"><a href="{{ route('instructions') }}">{{ __('message.Instructions') }} </a>
+                        <li class="nav-dashboard"><a
+                                href="{{ route('instructions') }}">{{ __('message.Instructions') }} </a>
                         </li>
                         <li class="nav-dashboard"><a href="{{ route('news') }}">{{ __('message.News') }} </a>
                         </li>
