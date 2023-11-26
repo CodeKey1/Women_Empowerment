@@ -23,7 +23,4 @@ return [
     'The first platform for female entrepreneurs'=>'اول منصة لرائدات الأعمال',
     'Cross-platform'=>'دورات عبر المنصة للتعلم',
     'Have'=>'امتلكي ميزتكي لتعلم مهارات جديدة عبر المنصة',
-
-
-
 ];

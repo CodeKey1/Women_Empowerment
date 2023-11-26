@@ -13,7 +13,7 @@
 <script src="back/assets/vendors/owl-carousel/owl.carousel.js"></script>
 <script src='back/assets/vendors/scroll/scrollbar.min.js'></script>
 <script src="back/assets/js/functions.js"></script>
-<script src="back/assets/vendors/chart/chart.min.js"></script>
+<script src="back/assets/vendors/chart/chart-chartjs.js"></script>
 <script src="back/assets/js/admin.js"></script>
 <script>
     function confirmSubmit() {
