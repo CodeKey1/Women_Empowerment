@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2023 at 02:58 PM
+-- Generation Time: Nov 26, 2023 at 11:15 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,6 +20,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `women`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `city`
+--
+
+CREATE TABLE `city` (
+  `id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `city`
+--
+
+INSERT INTO `city` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'اسوان', NULL, NULL),
+(2, 'نصر النوبة', NULL, NULL),
+(3, 'ادفو', NULL, NULL),
+(4, 'دراو', NULL, NULL),
+(5, 'كوم امبو', NULL, NULL),
+(6, 'السباعية', NULL, NULL),
+(7, 'كلابشة', NULL, NULL),
+(8, 'الرديسية', NULL, NULL),
+(9, 'ابوسمبل السياحية', NULL, NULL),
+(10, 'البصيلية', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -68,7 +97,7 @@ CREATE TABLE `data` (
   `name` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `date` date NOT NULL,
-  `file` varchar(255) NOT NULL,
+  `file` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -259,6 +288,7 @@ CREATE TABLE `project` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `type_id` int(11) NOT NULL,
+  `city_id` int(11) NOT NULL,
   `idea` varchar(255) NOT NULL,
   `goal` varchar(255) NOT NULL,
   `innovation` varchar(255) NOT NULL,
@@ -273,6 +303,13 @@ CREATE TABLE `project` (
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `project`
+--
+
+INSERT INTO `project` (`id`, `name`, `type_id`, `city_id`, `idea`, `goal`, `innovation`, `future`, `location`, `smart`, `trail`, `email`, `date`, `owner_id`, `state`, `created_at`, `updated_at`) VALUES
+(49, 'سي لسيب ل', 6, 6, 'سيب لسيب لسيب', 'سيب لسيب ل', 'سي بلسيب لسيب', 'لسيب لسيب لسيب لس', 'سيب لسيبل سيبل', 'يب لسي بل', 'سيب لسيب ل', NULL, '2023-11-08', 85, 'قيد المراجعة', '2023-11-26', '2023-11-26');
 
 -- --------------------------------------------------------
 
@@ -314,6 +351,13 @@ CREATE TABLE `project_owner` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `user_id` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `project_owner`
+--
+
+INSERT INTO `project_owner` (`id`, `nid`, `email`, `name`, `phone`, `address`, `fund`, `created_at`, `updated_at`, `user_id`) VALUES
+(85, 43435673456345, 'fhdfghfg@g.fgh', 'dsaf sad f', 52435234523, 'fdhfdghdfghdfghfdghd', 1, '2023-11-26 07:47:58', '2023-11-26 07:47:58', 1);
 
 -- --------------------------------------------------------
 
@@ -406,7 +450,29 @@ CREATE TABLE `type` (
 
 INSERT INTO `type` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'صناعي', NULL, NULL),
-(2, 'زراعي', NULL, NULL);
+(2, 'زراعي', NULL, NULL),
+(3, 'تقليل الانبعاثات وغازات الاحتباس الحراري', NULL, NULL),
+(4, 'الطاقة', NULL, NULL),
+(5, 'الزراعة المستدامة', NULL, NULL),
+(6, 'السياحة المستدامة', NULL, NULL),
+(7, 'المياه', NULL, NULL),
+(8, 'المدن الذكية المستدامة', NULL, NULL),
+(9, 'المباني الخضراء', NULL, NULL),
+(10, 'ادارة المخلفات', NULL, NULL),
+(11, 'الملابس والموضه المستدامة', NULL, NULL),
+(12, 'اعادة التدوير', NULL, NULL),
+(13, 'الاقتصاد الدوار', NULL, NULL),
+(14, 'التكيف مع التغيرات المناخية', NULL, NULL),
+(15, 'ترميم واستعادة النظام الايكولوجي', NULL, NULL),
+(16, 'تجارى ', NULL, NULL),
+(17, 'مهن حرة', NULL, NULL),
+(18, 'خدمي ', NULL, NULL),
+(19, 'حيواني', NULL, NULL),
+(20, 'زراعة مستدامة', NULL, NULL),
+(21, 'طاقة نظيفة', NULL, NULL),
+(22, 'تكنولوجي ', NULL, NULL),
+(23, 'اعادة تدوير', NULL, NULL),
+(24, 'اخرى', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -453,6 +519,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `passwo
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `city`
+--
+ALTER TABLE `city`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `coures`
@@ -537,7 +609,8 @@ ALTER TABLE `personal_access_tokens`
 ALTER TABLE `project`
   ADD PRIMARY KEY (`id`),
   ADD KEY `owner_id` (`owner_id`),
-  ADD KEY `type_id` (`type_id`);
+  ADD KEY `type_id` (`type_id`),
+  ADD KEY `city_id` (`city_id`);
 
 --
 -- Indexes for table `project_form`
@@ -669,7 +742,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `project_form`
@@ -681,7 +754,7 @@ ALTER TABLE `project_form`
 -- AUTO_INCREMENT for table `project_owner`
 --
 ALTER TABLE `project_owner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `project_performane`
@@ -711,7 +784,7 @@ ALTER TABLE `project_study`
 -- AUTO_INCREMENT for table `type`
 --
 ALTER TABLE `type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -734,7 +807,8 @@ ALTER TABLE `coures`
 --
 ALTER TABLE `project`
   ADD CONSTRAINT `project_ibfk_1` FOREIGN KEY (`owner_id`) REFERENCES `project_owner` (`id`),
-  ADD CONSTRAINT `project_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`);
+  ADD CONSTRAINT `project_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`),
+  ADD CONSTRAINT `project_ibfk_3` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
 
 --
 -- Constraints for table `project_form`

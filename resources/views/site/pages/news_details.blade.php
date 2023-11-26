@@ -22,16 +22,20 @@
                         <div class="col-lg-12 col-xl-12">
                             <div class="row">
                                 <div class="col-lg-6 col-xl-6">
-                                    <div class="action-box blog-lg">
-                                        <img src="{{ asset('storage/' . $new->image) }}" alt="">
-                                    </div>
+                                    @if ($new->image)
+                                        <div class="action-box blog-lg">
+                                            <img src="{{ asset('storage/' . $new->image) }}" alt="">
+                                        </div>
+                                    @endif
                                     <br>
-                                    <div class="action-box blog-lg">
-                                        <video width="100%" controls>
-                                            <source src="{{ asset('storage/' . $new->video) }}" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
+                                    @if ($new->video)
+                                        <div class="action-box blog-lg">
+                                            <video width="100%" controls>
+                                                <source src="{{ asset('storage/' . $new->video) }}" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div>
+                                    @endif
                                 </div>
 
                                 <!-- blog start -->
