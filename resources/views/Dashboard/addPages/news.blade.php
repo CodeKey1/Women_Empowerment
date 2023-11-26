@@ -51,14 +51,14 @@
                     <div class="form-group col-3">
                         <label class="col-form-label"> صورة الخبر </label>
                         <div>
-                            <input type="file" name="image" class="form-control" required>
+                            <input type="file" name="image" class="form-control">
                         </div>
                     </div>
                     <div class="form-group col-3">
                         <label class="col-form-label"> فيديو <span style="color: red">MP4 لا
                                 يتعدي 10 ميجا</span></label>
                         <div>
-                            <input type="file" name="video" class="form-control" required>
+                            <input type="file" name="video" class="form-control" accept="video/mp4">
                             @error('video')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

@@ -56,7 +56,7 @@
                                 مرة
                                 اخرى </span></label>
                         <div>
-                            <input type="file" name="image" class="form-control" required>
+                            <input type="file" name="image" class="form-control">
                         </div>
                     </div>
                     <div class="form-group col-3">
@@ -65,7 +65,7 @@
                                 مرة
                                 اخرى </span></label>
                         <div>
-                            <input type="file" name="video" class="form-control" required>
+                            <input type="file" name="video" class="form-control" accept="video/mp4">
                             @error('video')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

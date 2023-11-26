@@ -83,18 +83,18 @@ class AdminViewController extends Controller
 
     public function projecs_view(string $id)
     {
-        $projects = Project::select()->where('owner_id',$id)->get();
-        return view('Dashboard.editPages.project-main', compact('projects'));
+        $projects = Project::select()->where('owner_id', $id)->get();
+        return view('Dashboard.project-main', compact('projects'));
     }
     public function projecs_single_view(string $id)
     {
         $projects = Project::select()->find($id);
-       // $Project_owner = Project_owner::select()->find($id);
-        $Project_form = Project_form::select()->where('project_id',$projects->id)->first();
-        $Project_performane = Project_performane::select()->where('project_id',$projects->id)->get();
-        $Project_plan = Project_plan::select()->where('project_id',$projects->id)->get();
-        $Project_risk = Project_risk::select()->where('project_id',$projects->id)->get();
-        $Project_study = Project_study::select()->where('project_id',$projects->id)->first();
-        return view('Dashboard.editPages.project-single', compact('projects','Project_form','Project_performane','Project_plan','Project_risk','Project_study'));
+        // $Project_owner = Project_owner::select()->find($id);
+        $Project_form = Project_form::select()->where('project_id', $projects->id)->first();
+        $Project_performane = Project_performane::select()->where('project_id', $projects->id)->get();
+        $Project_plan = Project_plan::select()->where('project_id', $projects->id)->get();
+        $Project_risk = Project_risk::select()->where('project_id', $projects->id)->get();
+        $Project_study = Project_study::select()->where('project_id', $projects->id)->first();
+        return view('Dashboard.editPages.project-single', compact('projects', 'Project_form', 'Project_performane', 'Project_plan', 'Project_risk', 'Project_study'));
     }
 }

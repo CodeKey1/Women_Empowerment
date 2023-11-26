@@ -107,7 +107,7 @@
                         <label class="col-form-label"> فيديو التدريب (ان وجد) <span style="color: red">فيديو MP4
                             </span></label>
                         <div>
-                            <input class="form-control" type="file" name="video">
+                            <input class="form-control" type="file" name="video" accept="video/mp4">
                             @error('video')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -117,7 +117,7 @@
                         <label class="col-form-label"> عرض تقديمي (ان وجد) <span style="color: red">PDF
                             </span></label>
                         <div>
-                            <input class="form-control" type="file" name="presentation">
+                            <input class="form-control" type="file" name="presentation" accept="application/pdf">
                             @error('presentation')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

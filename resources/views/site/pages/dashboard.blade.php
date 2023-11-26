@@ -64,22 +64,6 @@
                                     <div class="tab-pane active" id="courses">
                                         <div class="profile-head">
                                             <h3> متابعةالمشاريع </h3>
-                                            {{-- <div class="feature-filters style1 ml-auto">
-                                                <ul class="filters" data-toggle="buttons">
-                                                    <li data-filter="" class="btn active">
-                                                        <input type="radio">
-                                                        <a href="#"><span>All</span></a>
-                                                    </li>
-                                                    <li data-filter="publish" class="btn">
-                                                        <input type="radio">
-                                                        <a href="#"><span>Publish</span></a>
-                                                    </li>
-                                                    <li data-filter="pending" class="btn">
-                                                        <input type="radio">
-                                                        <a href="#"><span>Pending</span></a>
-                                                    </li>
-                                                </ul>
-                                            </div> --}}
                                         </div>
                                         <div class="col-md-12">
                                             <div class="udb" style="direction: rtl">
@@ -119,46 +103,6 @@
 
                                             </div>
                                         </div>
-                                        {{-- <div class="courses-filter">
-                                            <div class="clearfix">
-                                                <ul id="masonry" class="ttr-gallery-listing magnific-image row">
-                                                    <li
-                                                        class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6 publish">
-                                                        <div class="cours-bx">
-                                                            <div class="action-box">
-                                                                <img src="assets/images/courses/pic1.jpg"
-                                                                    alt="">
-                                                                <a href="#" class="btn">Read More</a>
-                                                            </div>
-                                                            <div class="info-bx text-center">
-                                                                <h5><a href="#">Introduction EduChamp – LMS
-                                                                        plugin</a></h5>
-                                                                <span>Programming</span>
-                                                            </div>
-                                                            <div class="cours-more-info">
-                                                                <div class="review">
-                                                                    <span>3 Review</span>
-                                                                    <ul class="cours-star">
-                                                                        <li class="active"><i class="fa fa-star"></i>
-                                                                        </li>
-                                                                        <li class="active"><i class="fa fa-star"></i>
-                                                                        </li>
-                                                                        <li class="active"><i class="fa fa-star"></i>
-                                                                        </li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <del>$190</del>
-                                                                    <h5>$120</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div> --}}
                                     </div>
                                     <div class="tab-pane" id="quiz-results">
                                         <div class="profile-head">
@@ -240,167 +184,112 @@
                                                             style="float: right;"> عودة </button>
                                                     </div>
                                                 </div>
-
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="edit-profile">
                                         <div class="profile-head">
                                             <h3> تعديل بيانات الحساب </h3>
                                         </div>
-                                        <form
-                                            class="edit-profile"action="{{ route('project.edit', $Project_owner->id) }}"
-                                            onsubmit="return confirmSubmit();"
-                                            method="POST"enctype="multipart/form-data">
-                                            @csrf
-
-                                            <div class="">
-                                                <div class="form-group row">
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
-                                                        <h3>1. البيانات الشخصية</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">
-                                                        لصاحبة المشروع</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text"name="name"
-                                                            value="{{ $Project_owner->name }}">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">رقم
-                                                        القومي </label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text"
-                                                            pattern="[0-9]{14,14}" maxlength="14" minlength="14"
-                                                            class="form-control" name="nid"
-                                                            value="{{ $Project_owner->nid }}"
-                                                            title="رقم البطاقة مكون من 14 رقم">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">البريد
-                                                        الإلكتروني </label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="email" name="email"
-                                                            value="{{ $Project_owner->email }}">
-
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">التليفون</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" pattern="[0-9]{10,11}"
-                                                            maxlength="11" minlength="10" class="form-control"
-                                                            name="phone" value="{{ $Project_owner->phone }}"
-                                                            title="رقم الهاتف مكون من 11 رقم">
-                                                    </div>
-                                                </div>
-                                                <div class="seperator"></div>
-                                                <div class="form-group row">
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
-                                                        <h3>2. بيانات العنوان</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">
-                                                        العنوان </label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" name="address"
-                                                            value="{{ $Project_owner->address }}">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">الرغبة
-                                                        في التمويل</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input type="radio" id="yes" name="fund"
-                                                            value="1">
-                                                        <label for="yes"> نعم </label>
-                                                        <input type="radio" id="no" name="fund"
-                                                            value="0">
-                                                        <label for="no">لا </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="">
+                                        @isset($Project_owner)
+                                            <form
+                                                class="edit-profile"action="{{ route('project.edit', $Project_owner->id) }}"
+                                                onsubmit="return confirmSubmit();"
+                                                method="POST"enctype="multipart/form-data">
+                                                @csrf
                                                 <div class="">
-                                                    <div class="row">
-                                                        <div class="col-12 col-sm-3 col-md-3 col-lg-2">
+                                                    <div class="form-group row">
+                                                        <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
+                                                            <h3>1. البيانات الشخصية</h3>
                                                         </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">
+                                                            صاحبة المشروع</label>
                                                         <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                            <button type="submit" class="btn"> حفظ التعديل
-                                                            </button>
-                                                            <button type="reset" class="btn-secondry">إلغاء</button>
+                                                            <input class="form-control" type="text"name="name"
+                                                                value="{{ $Project_owner->name }}" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label
+                                                            class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">الرقم
+                                                            القومي </label>
+                                                        <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                            <input class="form-control" type="text"
+                                                                pattern="[0-9]{14,14}" maxlength="14" minlength="14"
+                                                                class="form-control" name="nid"
+                                                                value="{{ $Project_owner->nid }}"
+                                                                title="رقم البطاقة مكون من 14 رقم" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label
+                                                            class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">البريد
+                                                            الإلكتروني </label>
+                                                        <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                            <input class="form-control" type="email" name="email"
+                                                                value="{{ $Project_owner->email }}" required>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label
+                                                            class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">التليفون</label>
+                                                        <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                            <input class="form-control" pattern="[0-9]{10,11}"
+                                                                maxlength="11" minlength="10" class="form-control"
+                                                                name="phone" value="{{ $Project_owner->phone }}"
+                                                                title="رقم الهاتف مكون من 11 رقم" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="seperator"></div>
+                                                    <div class="form-group row">
+                                                        <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
+                                                            <h3>2. بيانات العنوان</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">
+                                                            العنوان </label>
+                                                        <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                            <input class="form-control" type="text" name="address"
+                                                                value="{{ $Project_owner->address }}" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label
+                                                            class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">الرغبة
+                                                            في التمويل</label>
+                                                        <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                            <input type="radio" id="yes" name="fund"
+                                                                value="1">
+                                                            <label for="yes"> نعم </label>
+                                                            <input type="radio" id="no" name="fund"
+                                                                value="0">
+                                                            <label for="no">لا </label>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </form>
+                                                <div class="">
+                                                    <div class="">
+                                                        <div class="row">
+                                                            <div class="col-12 col-sm-3 col-md-3 col-lg-2">
+                                                            </div>
+                                                            <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                                <button type="submit" class="btn"> حفظ التعديل
+                                                                </button>
+                                                                <button type="reset" class="btn-secondry">إلغاء</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        @else
+                                            <h4>لم يتم تسجيل بيانات رائدة الاعمال</h4>
+                                            <h5><a href="{{ route('project.create') }}">سجلي بياناتك الان</a></h5>
+                                        @endisset
                                     </div>
-                                    {{-- <div class="tab-pane" id="change-password">
-                                        <div class="profile-head">
-                                            <h3> تعديل كلمة السر الخاصة بكي </h3>
-                                        </div>
-                                        <form class="edit-profile"method="POST"
-                                            action="{{ route('password.store') }}">
-                                            @csrf
-                                            <div class="">
-                                                <div class="form-group row">
-                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-9 ml-auto">
-                                                        <h3> كلمة السر </h3>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">
-                                                        البريد الإلكتروني</label>
-                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                        <input class="form-control" type="email" name="email" value="old('email', $request->email)" required autofocus autocomplete="username" />
-
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">
-                                                        كلمة السر الحالية </label>
-                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                        <input class="form-control" type="password" name="password"
-                                                            required autocomplete="new-password">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label
-                                                        class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">كلمة
-                                                        السر الجديدة</label>
-                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                        <input class="form-control" type="password" value="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">
-                                                        تأكيد كلمة السر </label>
-                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                        <input class="form-control" type="password"
-                                                            name="password_confirmation" required
-                                                            autocomplete="new-password">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-12 col-sm-4 col-md-4 col-lg-3">
-                                                </div>
-                                                <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                    <button type="submit" class="btn"> حفظ التعديل </button>
-                                                    <button type="reset" class="btn-secondry"> إلغاء </button>
-                                                </div>
-                                            </div>
-
-                                        </form>
-                                    </div> --}}
                                 </div>
                             </div>
                         </div>

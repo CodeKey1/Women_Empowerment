@@ -43,7 +43,8 @@
                                                 <td>{{ $project->state }}</td>
                                                 <td>{{ $project->date }}</td>
                                                 <td>
-                                                    <a href="{{ route('dashboard.project.single',$project->id) }}" class="btn green inline" style="padding: 7px;"> عرض المشروع </a>
+                                                    <a href="{{ route('dashboard.project.single', $project->id) }}"
+                                                        class="btn green inline" style="padding: 7px;"> عرض المشروع </a>
                                                 </td>
                                             </tr>
                                         @endforeach

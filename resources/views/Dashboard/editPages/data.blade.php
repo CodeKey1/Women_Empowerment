@@ -33,14 +33,16 @@
                     <div class="form-group col-6">
                         <label class="col-form-label">تفاصيل البيان </label>
                         <div>
-                            <input class="form-control" name="type" type="text" value="{{ $data->type }}">
+                            <input class="form-control" name="type" type="text" value="{{ $data->type }}"
+                                required>
                         </div>
                     </div>
                     <div class="form-group
                                 col-6">
                         <label class="col-form-label">التاريخ</label>
                         <div>
-                            <input class="form-control" name="date" type="date" value="{{ $data->date }}">
+                            <input class="form-control" name="date" type="date" value="{{ $data->date }}"
+                                required>
                         </div>
                     </div>
                     <div class="form-group

@@ -32,13 +32,13 @@
                     <div class="form-group col-6">
                         <label class="col-form-label">تفاصيل البيان </label>
                         <div>
-                            <input class="form-control" name="type" type="text">
+                            <input class="form-control" name="type" type="text" required>
                         </div>
                     </div>
                     <div class="form-group col-6">
                         <label class="col-form-label">التاريخ</label>
                         <div>
-                            <input class="form-control" name="date" type="date">
+                            <input class="form-control" name="date" type="date" required>
                         </div>
                     </div>
                     <div class="form-group col-6">
