@@ -151,7 +151,7 @@
                                                             </div>
                                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                                 <label class="control-label col-12"> مجال المشروع <span style="color: red">*</span></label>
-                                                                <select name="category" class="form-control" required>
+                                                                <select name="type_id" class="form-control" required>
                                                                     <option value=" " selected disabled>اختر مجال المشروع</option>
                                                                     @foreach ($type as $types)
                                                                     <option value="{{ $types->id }}"> {{ $types->name }}</option>

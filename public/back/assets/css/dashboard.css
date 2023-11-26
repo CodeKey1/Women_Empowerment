@@ -896,6 +896,7 @@
 .widget-box .wc-title {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 20px 30px;
+    text-align: right;
 }
 .widget-box .wc-title h4 {
     font-size: 18px;
