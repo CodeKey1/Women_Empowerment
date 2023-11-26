@@ -89,7 +89,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="cours-search-bx m-b30">
                                     <div class="icon-box">
-                                        <h3><i class="ti-user"></i><span class="counter">34251</span>K</h3>
+                                        <h3><i class="ti-user"></i><span class="counter">1.8</span>K</h3>
                                     </div>
                                     <span class="cours-search-text">مستفيد</span>
                                 </div>
@@ -97,7 +97,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="cours-search-bx m-b30">
                                     <div class="icon-box">
-                                        <h3><i class="ti-book"></i><span class="counter">31450</span>k</h3>
+                                        <h3><i class="ti-book"></i><span class="counter">924</span></h3>
                                     </div>
                                     <span class="cours-search-text">مشروع </span>
                                 </div>
@@ -105,7 +105,7 @@
                             <div class="col-md-4 col-sm-12">
                                 <div class="cours-search-bx m-b30">
                                     <div class="icon-box">
-                                        <h3><i class="ti-layout-list-post"></i><span class="counter">180</span>
+                                        <h3><i class="ti-layout-list-post"></i><span class="counter">6</span>K
                                         </h3>
                                     </div>
                                     <span class="cours-search-text"> تدريبات عامة </span>

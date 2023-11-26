@@ -74,17 +74,29 @@
                                                             <input type="text" class="form-control"
                                                                 value="{{ $Project->name }}" name="name" required>
                                                         </div>
-                                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="col-md-3 col-sm-12 col-xs-12">
                                                             <label class="control-label col-12"> مجال المشروع <span
                                                                     style="color: red">*</span></label>
-                                                                    <select name="category" required>
-                                                                        <option value=" " selected disabled>اختر مجال المشروع</option>
-                                                                        @foreach ($type as $types)
-                                                                        <option value="{{ $Project->type_id}}"> {{ $types->name }}</option>
-                                                                        @endforeach
-                                                                    </select>
-                                                            {{-- <input type="text" class="form-control" name="category"
-                                                                value="{{ $Project->category }}" required> --}}
+                                                            <select name="type_id" required>
+                                                                <option value="{{ $Project->type_id }}" selected hidden>
+                                                                    {{ $Project->project_type->name }}</option>
+                                                                @foreach ($type as $types)
+                                                                    <option value="{{ $types->id }}">
+                                                                        {{ $types->name }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-3 col-sm-12 col-xs-12">
+                                                            <label class="control-label col-12"> المدينة المقام عليها
+                                                                <span style="color: red">*</span></label>
+                                                            <select name="city_id" required>
+                                                                <option value="{{ $Project->city_id }}" selected hidden>
+                                                                    {{ $Project->project_city->name }}</option>
+                                                                @foreach ($city as $item)
+                                                                    <option value="{{ $item->id }}">
+                                                                        {{ $item->name }}</option>
+                                                                @endforeach
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <br>
@@ -140,7 +152,8 @@
                                                             <label class="control-label col-12"> الاثر المتوقع
                                                                 للمشروع <span style="color: red">*</span></label>
                                                             <input type="text" class="form-control "
-                                                                name="trail" value="{{ $Project->trail }}" required>
+                                                                name="trail" value="{{ $Project->trail }}"
+                                                                required>
                                                         </div>
                                                     </div>
                                                     <br>

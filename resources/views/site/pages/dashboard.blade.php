@@ -76,6 +76,7 @@
                                                                     <th> اسم المشروع </th>
                                                                     <th> وقت التقديم </th>
                                                                     <th> فئة المشروع </th>
+                                                                    <th> مدينة المشروع </th>
                                                                     <th> حالة </th>
                                                                     <th> عرض </th>
                                                                 </tr>
@@ -86,9 +87,10 @@
                                                                         <tr>
                                                                             <td>{{ $num + 1 }}</td>
                                                                             <td>{{ $projects->name }}</td>
-                                                                            <td>{{ $projects->created_at->format('Y-d-m') }}
+                                                                            <td>{{ $projects->date }}
                                                                             </td>
-                                                                            <td>{{ $projects->category }}</td>
+                                                                            <td>{{ $projects->project_type->name }}</td>
+                                                                            <td>{{ $projects->project_city->name }}</td>
                                                                             <td>{{ $projects->state }}</td>
                                                                             <td><a href="{{ route('viewProject', $projects->id) }}"
                                                                                     class="ad-st-view"> عرض

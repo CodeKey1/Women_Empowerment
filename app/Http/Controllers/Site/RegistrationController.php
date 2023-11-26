@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
 use App\Models\Project;
 use App\Models\Project_owner;
 use App\Models\Project_risk;
@@ -23,11 +24,12 @@ class RegistrationController extends Controller
     public function create()
     {
         $type = Type::select()->get();
+        $city = City::select()->get();
         if (Project_owner::where('user_id', Auth::user()->id)->exists('user_id')) {
             $owner_id = Project_owner::where('user_id', Auth::user()->id)->first();
-            return view('site.initial_registration', compact('type', 'owner_id'));
+            return view('site.initial_registration', compact('type', 'city', 'owner_id'));
         }
-        return view('site.initial_registration', compact('type'));
+        return view('site.initial_registration', compact('type', 'city'));
     }
     public function Initial_store(Request $request)
     {
@@ -50,6 +52,7 @@ class RegistrationController extends Controller
         $project = Project::create([
             "name" => $request['name'],
             "type_id" => $request['type_id'],
+            "city_id" => $request['city_id'],
             "idea" => $request['idea'],
             "goal" => $request['goal'],
             "innovation" => $request['innovation'],
@@ -169,13 +172,14 @@ class RegistrationController extends Controller
     public function edit_index(string $id)
     {
         $type = Type::select()->get();
+        $city = City::select()->get();
         $Project = Project::select()->where('id', $id)->first();
         $Project_risk = Project_risk::select()->where('project_id', $id)->get();
         $Project_study = Project_study::select()->where('project_id', $id)->first();
         $Project_Plan = Project_Plan::select()->where('project_id', $id)->get();
         $Project_form = Project_form::select()->where('project_id', $id)->first();
         $Project_performane = Project_performane::select()->where('project_id', $id)->get();
-        return view('site.project_data_update', compact('type', 'Project', 'Project_risk', 'Project_study', 'Project_Plan', 'Project_form', 'Project_performane'));
+        return view('site.project_data_update', compact('type', 'city', 'Project', 'Project_risk', 'Project_study', 'Project_Plan', 'Project_form', 'Project_performane'));
     }
     public function edit_store(Request $request, string $id)
     {
@@ -286,7 +290,8 @@ class RegistrationController extends Controller
                 case 'projectInitial':
                     Project::where('id', $id)->update([
                         "name" => $request['name'],
-                        "category" => $request['category'],
+                        "type_id" => $request['type_id'],
+                        "city_id" => $request['city_id'],
                         "idea" => $request['idea'],
                         "goal" => $request['goal'],
                         "innovation" => $request['innovation'],

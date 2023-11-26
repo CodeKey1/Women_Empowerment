@@ -16,6 +16,7 @@ class Project extends Model
         'id',
         'name',
         'type_id',
+        'city_id',
         'idea',
         'goal',
         'innovation',
@@ -38,5 +39,9 @@ class Project extends Model
     public function project_type()
     {
         return  $this->belongsTo(Type::class, 'type_id');
+    }
+    public function project_city()
+    {
+        return  $this->belongsTo(City::class, 'city_id');
     }
 }
