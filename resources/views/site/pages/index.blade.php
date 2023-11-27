@@ -265,7 +265,7 @@
 
                     </div>
                 </div>
-                <div class="recent-news-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+                <div class="recent-news-carousel owl-carousel owl-btn-1 col-12" style="padding-left: 145px;">
                     <div class="item">
                         <div class="testimonial-thumb" style="position: relative !important">
                             <img src="assets/images/testimonials/pic1.jpg" alt="">

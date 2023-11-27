@@ -34,9 +34,7 @@
                         <li>
                             <a href="{{ route('dashboard.projects.users') }}" class="ttr-material-button"><span class="ttr-label">مقدمي المشاريع </span></a>
                         </li>
-                        <li>
-                            <a href="#" class="ttr-material-button"><span class="ttr-label">التدريب</span></a>
-                        </li>
+
                     </ul>
                 </li>
                 <li>
