@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2023 at 03:19 PM
+-- Generation Time: Nov 27, 2023 at 12:48 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -67,13 +67,6 @@ CREATE TABLE `coures` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `coures`
---
-
-INSERT INTO `coures` (`id`, `name`, `details`, `image`, `date`, `type_id`, `created_at`, `updated_at`) VALUES
-(42, 'sd fasd fasd', 'sdfasd fas dfa', 'training/DPNZkaDFcq0KS5HrYp15zvlqc5ApaNB10HPpJAGf.png', '2023-11-27', 12, '2023-11-26 10:41:28', '2023-11-26 10:41:28');
-
 -- --------------------------------------------------------
 
 --
@@ -92,13 +85,6 @@ CREATE TABLE `courese_detail` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `courese_detail`
---
-
-INSERT INTO `courese_detail` (`id`, `course_id`, `pre_req`, `description`, `for_whom`, `location`, `video`, `presentation`, `created_at`, `updated_at`) VALUES
-(17, 42, 'sdf asdf a', 'sd fasdf asdf a', 'sd fasd fa', 'sdf asdf asdfa sd', 'training/HayCq6QFjZ6i7b3yhbii2i6QpGTq8ihHEOgxY6MC.mp4', 'training/cOtukOT39bw3klHZJ65XgTHAjrufSdbLGZMJjqZZ.pdf', '2023-11-26 10:41:28', '2023-11-26 10:41:28');
 
 -- --------------------------------------------------------
 
@@ -136,15 +122,6 @@ CREATE TABLE `data` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `data`
---
-
-INSERT INTO `data` (`id`, `name`, `type`, `date`, `file`, `created_at`, `updated_at`) VALUES
-(7, 'نسبة استخدام مصادر الطاقة المتجددة في المشروعات', '70%', '2023-07-01', '', '2023-09-10 04:15:45', '2023-09-10 04:15:45'),
-(8, 'نسبة الحفاظ على الموارد الطبيعية ذات الصلة بالمشروع', '95%', '2023-07-01', '', '2023-09-10 04:16:15', '2023-09-10 04:16:15'),
-(9, 'مساهمة المشروع فى تحقيق بأهداف التنمية المستدامة الأممية', '98%', '2023-07-01', '', '2023-09-10 04:24:25', '2023-09-10 04:24:25');
-
 -- --------------------------------------------------------
 
 --
@@ -174,17 +151,6 @@ CREATE TABLE `guide_women` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `guide_women`
---
-
-INSERT INTO `guide_women` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'ابدأ في أسرع وقت ممكن.. وتعلّم قدر ما تستطيع', 'إذا استمر بك الحال بالتراجع عن بدء مشروعك الخاص، فإنك لن تتقدّم، الوضع هنا لا يُمثّل الاندفاع، كالقفز من أعلى جسر مهيب بدون مظلة، إلا أنه يجب عليك التحلي بالنشاط، والالتزام تجاه فكرة مشروعك', '2023-09-10 03:58:29', '2023-09-10 03:58:29'),
-(2, 'لا تُفكر في الثراء.. فكّر في العميل', 'الربح ما هو إلا شيء حتمي؛ وذلك في حالة إنشاء المحور الرئيسي لفلسفة شركتك، فعند إنشاء منتج يستجيب حقًا لاحتياجات السوق، ويتكيف مع خصائص ومتطلبات عملائك، هنا فقط ستجد المفاتيح لكل أسئلتك، ومتطلباتك الربحية، إنها مسألة وقت، علمًا بأن الطلب يستجيب لعرض الجودة.', '2023-09-10 03:59:32', '2023-09-10 03:59:32'),
-(3, 'أحِبْ شركتك والعاملين بها', 'عليك أن تُقدّر التفاصيل الصغيرة في شركتك، سواء كانت نقاط الضعف أو القوة، بالإضافة إلى احتواء كل ما يجعلها على ما هي عليه اليوم، حتى تعمل باجتهاد لتطويرها دائمًا، وجعلها أفضل نسخة من نفسها في المستقبل.', '2023-09-10 04:02:38', '2023-09-10 04:02:38'),
-(4, 'السيطرة على النفقات وتحديد الميزانية', 'عادة ما تتضاعف النفقات بشكل ضخم مع تقدم نشاطك التجاري؛ لذا من الطبيعي أن تُفكّر في البدء بتبني مشروعات جديدة تتضمن أدوات إضافية، لتحسين نشاط شركتك.\r\n\r\nويعتبر ذلك الأمر رائعًا طالما أنك وضعت الخطط الجيدة لميزانيتك، بالإضافة إلى العناصر الأساسية لتخصيص جزء معين منها لنشاطك التجاري، من أجل العمل بشكل طبيعي.', '2023-09-10 04:03:56', '2023-09-10 04:03:56'),
-(5, 'ناقش أفكارك مع الآخرين', 'لا تنس “تأثير الفراشة” –ليس بالمفهوم الحرفي قطعًا– لكن الاعتماد على الظروف الأولية التي يمكن أن يؤدي فيها تغيُر طفيف إلى اختلافات كبيرة، وهذا ما تبحث عنه لشركتك.\r\n\r\nففي حالة وصول منتجك أو شركتك أو أي عنصر آخر مرتبط بعلامتك التجارية، إلى أكبر شريحة ممكنة، زاد تأثير الجمهور واتسع نطاقه.', '2023-09-10 04:04:26', '2023-09-10 04:04:26');
 
 -- --------------------------------------------------------
 
@@ -235,18 +201,6 @@ CREATE TABLE `mobadrat` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `mobadrat`
---
-
-INSERT INTO `mobadrat` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'ابداي حلمك', 'تهدف الى زيادة التوعية للسيدات بدورها الاقتصادي في محافظة اسوان', '2023-09-09 22:12:18', '2023-09-09 22:12:18'),
-(2, 'انتِ قدوة', 'تهدف الى التعريف بالنماذج الناجحه للسيدات بمحافظة اسوان', '2023-09-09 22:12:43', '2023-09-09 22:12:43'),
-(3, 'يوم الطاقة', 'تهدف الى التعريف بجوانب الطاقة وتغير المناخ', '2023-09-09 22:13:12', '2023-09-09 22:13:12'),
-(4, 'الاسوانية ممكن', 'تهدف الى زيادة دور المراه في المشاركة في المشروعات الخضراء', '2023-09-09 22:13:25', '2023-09-09 22:13:25'),
-(5, 'ابنه الملك', 'تهدف الى التدريب على كيفية كتابة دراسات الجدوى', '2023-09-09 22:13:45', '2023-09-09 22:13:45'),
-(6, 'اكتشفي نفسك', 'تهدف الى الاجابة عن اسئلة يتم من خلالها التعرف على الشمروع المناسب لك ِ', '2023-09-09 22:14:03', '2023-09-09 22:14:03');
 
 -- --------------------------------------------------------
 
@@ -334,16 +288,10 @@ CREATE TABLE `project` (
   `date` date NOT NULL,
   `owner_id` int(11) NOT NULL,
   `state` varchar(20) NOT NULL DEFAULT 'قيد المراجعة',
+  `fund` tinyint(1) NOT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `project`
---
-
-INSERT INTO `project` (`id`, `name`, `type_id`, `city_id`, `idea`, `goal`, `innovation`, `future`, `location`, `smart`, `trail`, `email`, `date`, `owner_id`, `state`, `created_at`, `updated_at`) VALUES
-(49, 'سي لسيب ل', 6, 6, 'سيب لسيب لسيب', 'سيب لسيب ل', 'سي بلسيب لسيب', 'لسيب لسيب لسيب لس', 'سيب لسيبل سيبل', 'يب لسي بل', 'سيب لسيب ل', NULL, '2023-11-08', 85, 'قيد المراجعة', '2023-11-26', '2023-11-26');
 
 -- --------------------------------------------------------
 
@@ -380,18 +328,10 @@ CREATE TABLE `project_owner` (
   `name` varchar(255) NOT NULL,
   `phone` bigint(12) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `fund` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `user_id` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `project_owner`
---
-
-INSERT INTO `project_owner` (`id`, `nid`, `email`, `name`, `phone`, `address`, `fund`, `created_at`, `updated_at`, `user_id`) VALUES
-(85, 43435673456345, 'fhdfghfg@g.fgh', 'dsaf sad f', 52435234523, 'fdhfdghdfghdfghfdghd', 1, '2023-11-26 07:47:58', '2023-11-26 07:47:58', 1);
 
 -- --------------------------------------------------------
 
@@ -718,25 +658,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `coures`
 --
 ALTER TABLE `coures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `courese_detail`
 --
 ALTER TABLE `courese_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `course_applicants`
 --
 ALTER TABLE `course_applicants`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -748,13 +688,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `guide_women`
 --
 ALTER TABLE `guide_women`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `initiatives`
 --
 ALTER TABLE `initiatives`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -766,19 +706,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `mobadrat`
 --
 ALTER TABLE `mobadrat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `old-project`
 --
 ALTER TABLE `old-project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -790,43 +730,43 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `project_form`
 --
 ALTER TABLE `project_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `project_owner`
 --
 ALTER TABLE `project_owner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `project_performane`
 --
 ALTER TABLE `project_performane`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `project_plan`
 --
 ALTER TABLE `project_plan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `project_risk`
 --
 ALTER TABLE `project_risk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `project_study`
 --
 ALTER TABLE `project_study`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `type`
