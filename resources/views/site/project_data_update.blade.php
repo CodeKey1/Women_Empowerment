@@ -172,6 +172,20 @@
                                                             <input type="text" name="email" class="form-control"
                                                                 value="{{ $Project->email }}">
                                                         </div>
+
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label
+                                                            class="col-12 col-sm-12 col-md-12 col-lg-12 col-form-label">الرغبة
+                                                            في التمويل</label>
+                                                        <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                            <input type="radio" id="yes" name="fund"
+                                                                value="1">
+                                                            <label for="yes"> نعم </label>
+                                                            <input type="radio" id="no" name="fund"
+                                                                value="0">
+                                                            <label for="no">لا </label>
+                                                        </div>
                                                     </div>
                                                     <br>
                                                     <div class="row" style="justify-content: space-around;">

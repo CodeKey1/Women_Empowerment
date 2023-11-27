@@ -24,15 +24,16 @@
                             </div>
                         </div>
                     </div>
-                    <form action="{{ route('dashboard.project.state.update',$projects->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('dashboard.project.state.update', $projects->id) }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="row col-12">
                             <div class="col-10 m-t20">
-                                    <select class="form-control" name="new_state" style="text-align: right" required>
-                                        <option value="جاري المراجعة "> جاري المراجعة </option>
-                                        <option value="مقبول"> مقبول </option>
-                                        <option value="مرفوض"> مرفوض </option>
-                                    </select>
+                                <select class="form-control" name="new_state" style="text-align: right" required>
+                                    <option value="جاري المراجعة "> جاري المراجعة </option>
+                                    <option value="مقبول"> مقبول </option>
+                                    <option value="مرفوض"> مرفوض </option>
+                                </select>
                             </div>
                             <div class="col-2 m-t20">
                                 <button type="submit" class="btn">حفظ</button>
@@ -124,159 +125,188 @@
                                         <textarea class="form-control" disabled>{{ $projects->goal }}</textarea>
                                     </div>
                                 </div>
-
+                                {{-- المخاطر المحتملة للمشروع  --}}
                                 <div class="col-12 m-t20">
                                     <div class="ml-auto">
-                                        <h3 class="m-form__section">2.المخاطر المحتملة للمشروع</h3>
+                                        <h3 class="m-form__section">2.المخاطر المحتملة للمشروع </h3>
                                     </div>
                                 </div>
-
-                                <div class="table-responsive table-desi">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>الخطر المحتمل</th>
-                                                <th>الشدة</th>
-                                                <th>الاحتمال</th>
-                                                <th>التقيم</th>
-                                                <th>اجرائات التعامل</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @isset($Project_risk)
-                                                @foreach ($Project_risk as $Pr)
-                                                    <tr>
-                                                        <td>{{ $Pr->name }}
-                                                        </td>
-                                                        <td>{{ $Pr->degree }}
-                                                        </td>
-                                                        <td>{{ $Pr->possibility }}
-                                                        </td>
-                                                        <td>{{ $Pr->evaluation }}
-                                                        </td>
-                                                        <td>{{ $Pr->procedures }}
-                                                        </td>
-
-                                                    </tr>
-                                                @endforeach
-                                            @endisset
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-12 m-t20">
-                                    <div class="ml-auto">
-                                        <h3 class="m-form__section">3.خطة المشروع</h3>
-                                    </div>
-                                </div>
-                                <div class="table-responsive table-desi">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>المهام</th>
-                                                <th>البداية</th>
-                                                <th>النهاية</th>
-                                                <th>المسؤل</th>
-                                                <th>المتابعة</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @isset($Project_plan)
-                                                @foreach ($Project_plan as $Pp)
-                                                    <tr>
-                                                        <td>{{ $Pp->name }}</td>
-                                                        <td>{{ $Pp->start_date }}</td>
-                                                        <td>{{ $Pp->end_date }}</td>
-                                                        <td>{{ $Pp->responsible }}</td>
-                                                        <td>{{ $Pp->follower }}</td>
-                                                    </tr>
-                                                @endforeach
-                                            @endisset
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="row col-12">
-                                    <div class="col-12 m-t20">
-                                        <div class="ml-auto">
-                                            <h3 class="m-form__section">4. نموذج العمل</h3>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label class="col-form-label"> القيمة المقدمة </label>
-                                        <div>
-                                            <textarea class="form-control" disabled>{{ $Project_form->provided_value }}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label class="col-form-label"> فئات العملاء </label>
-                                        <div>
-                                            <textarea class="form-control" disabled>{{ $Project_form->customer_categories }}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label class="col-form-label"> قنوات الوصول للعملاء </label>
-                                        <div>
-                                            <textarea class="form-control" disabled>{{ $Project_form->project_access }}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label class="col-form-label"> جذب العملاء </label>
-                                        <div>
-                                            <textarea class="form-control" disabled>{{ $Project_form->attract_clients }}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label class="col-form-label"> مصادر الدخل </label>
-                                        <div>
-                                            <textarea class="form-control" disabled>{{ $Project_form->income_source }}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label class="col-form-label"> الموارد الرئيسية </label>
-                                        <div>
-                                            <textarea class="form-control" disabled>{{ $Project_form->main_resorce }}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-12">
-                                        <label class="col-form-label"> الانشطة الرئيسية </label>
-                                        <div>
-                                            <textarea class="form-control" disabled>{{ $Project_form->main_activity }}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label class="col-form-label"> الشركاء </label>
-                                        <div>
-                                            <input class="form-control" value="{{ $Project_form->partners }}"
-                                                disabled />
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-6">
-                                        <label class="col-form-label"> التكلفة </label>
-                                        <div>
-                                            <input class="form-control" value="{{ $Project_form->cost }}" disabled />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row col-12">
-                                    <div class="col-12 m-t20">
-                                        <div class="ml-auto">
-                                            <h3 class="m-form__section">5. مؤشرات أداء المشروع</h3>
-                                        </div>
-                                    </div>
+                                @if ($Project_risk->count() > 0)
                                     <div class="table-responsive table-desi">
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>مؤشر الأداء</th>
-                                                    <th>دورة القياس</th>
-                                                    <th>وحدة القياس</th>
-                                                    <th>المستهدف</th>
-                                                    <th>آلية القياس</th>
+                                                    <th>الخطر المحتمل</th>
+                                                    <th>الشدة</th>
+                                                    <th>الاحتمال</th>
+                                                    <th>التقيم</th>
+                                                    <th>اجرائات التعامل</th>
 
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @isset($Project_performane)
+                                                @isset($Project_risk)
+                                                    @foreach ($Project_risk as $Pr)
+                                                        <tr>
+                                                            <td>{{ $Pr->name }}
+                                                            </td>
+                                                            <td>{{ $Pr->degree }}
+                                                            </td>
+                                                            <td>{{ $Pr->possibility }}
+                                                            </td>
+                                                            <td>{{ $Pr->evaluation }}
+                                                            </td>
+                                                            <td>{{ $Pr->procedures }}
+                                                            </td>
+
+                                                        </tr>
+                                                    @endforeach
+                                                @endisset
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                @else
+                                    <div style="width: 100%;padding: 15px;border: 1px solid #000;background: #faebeb;border-radius: 36px;">
+                                        <h2 style="text-align: center;color:brown;margin: 8px;">
+                                           لم يتم تسجيل المخاطر المحتملة للمشروع </h2>
+                                    </div>
+                                @endif
+                                {{-- خطة المشروع  --}}
+                                <div class="col-12 m-t20">
+                                    <div class="ml-auto">
+                                        <h3 class="m-form__section">3.خطة المشروع </h3>
+                                    </div>
+                                </div>
+                                @if ($Project_plan->count() > 0)
+                                    <div class="table-responsive table-desi">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>المهام</th>
+                                                    <th>البداية</th>
+                                                    <th>النهاية</th>
+                                                    <th>المسؤل</th>
+                                                    <th>المتابعة</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @isset($Project_plan)
+                                                    @foreach ($Project_plan as $Pp)
+                                                        <tr>
+                                                            <td>{{ $Pp->name }}</td>
+                                                            <td>{{ $Pp->start_date }}</td>
+                                                            <td>{{ $Pp->end_date }}</td>
+                                                            <td>{{ $Pp->responsible }}</td>
+                                                            <td>{{ $Pp->follower }}</td>
+                                                        </tr>
+                                                    @endforeach
+                                                @endisset
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                @else
+                                    <div
+                                        style="width: 100%;padding: 15px;border: 1px solid #000;background: #faebeb;border-radius: 36px;">
+                                        <h2 style="text-align: center;color:brown;margin: 8px;">
+                                            لم يتم تسجيل خطة المشروع </h2>
+                                    </div>
+                                @endif
+                                {{-- نموذج العمل  --}}
+                                <div class="row col-12">
+                                    <div class="col-12 m-t20">
+                                        <div class="ml-auto">
+                                            <h3 class="m-form__section">4. نموذج العمل </h3>
+                                        </div>
+                                    </div>
+                                    @isset($Project_form)
+                                        <div class="row">
+                                            <div class="form-group col-6">
+                                                <label class="col-form-label"> القيمة المقدمة </label>
+                                                <div>
+                                                    <textarea class="form-control" disabled>{{ $Project_form->provided_value }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label class="col-form-label"> فئات العملاء </label>
+                                                <div>
+                                                    <textarea class="form-control" disabled>{{ $Project_form->customer_categories }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label class="col-form-label"> قنوات الوصول للعملاء </label>
+                                                <div>
+                                                    <textarea class="form-control" disabled>{{ $Project_form->project_access }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label class="col-form-label"> جذب العملاء </label>
+                                                <div>
+                                                    <textarea class="form-control" disabled>{{ $Project_form->attract_clients }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label class="col-form-label"> مصادر الدخل </label>
+                                                <div>
+                                                    <textarea class="form-control" disabled>{{ $Project_form->income_source }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label class="col-form-label"> الموارد الرئيسية </label>
+                                                <div>
+                                                    <textarea class="form-control" disabled>{{ $Project_form->main_resorce }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-12">
+                                                <label class="col-form-label"> الانشطة الرئيسية </label>
+                                                <div>
+                                                    <textarea class="form-control" disabled>{{ $Project_form->main_activity }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label class="col-form-label"> الشركاء </label>
+                                                <div>
+                                                    <input class="form-control" value="{{ $Project_form->partners }}"
+                                                        disabled />
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label class="col-form-label"> التكلفة </label>
+                                                <div>
+                                                    <input class="form-control" value="{{ $Project_form->cost }}"
+                                                        disabled />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <div
+                                            style="width: 100%;padding: 15px;border: 1px solid #000;background: #faebeb;border-radius: 36px;">
+                                            <h2 style="text-align: center;color:brown;margin: 8px;">لم يتم تسجيل نموذج العمل
+                                            </h2>
+                                        </div>
+                                    @endisset
+                                </div>
+                                {{-- مؤشرات أداء المشروع  --}}
+                                <div class="row col-12">
+                                    <div class="col-12 m-t20">
+                                        <div class="ml-auto">
+                                            <h3 class="m-form__section">5. مؤشرات أداء المشروع </h3>
+                                        </div>
+                                    </div>
+                                    @if ($Project_performane->count() > 0)
+
+                                        <div class="table-responsive table-desi">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>مؤشر الأداء</th>
+                                                        <th>دورة القياس</th>
+                                                        <th>وحدة القياس</th>
+                                                        <th>المستهدف</th>
+                                                        <th>آلية القياس</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
                                                     @foreach ($Project_performane as $Pff)
                                                         <tr>
                                                             <td>{{ $Pff->name }}</td>
@@ -286,12 +316,17 @@
                                                             <td>{{ $Pff->measurement }}</td>
                                                         </tr>
                                                     @endforeach
-                                                @endisset
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    @else
+                                        <div
+                                            style="width: 100%;padding: 15px;border: 1px solid #000;background: #faebeb;border-radius: 36px;">
+                                            <h2 style="text-align: center;color:brown;margin: 8px;"> لم يتم تسجيل
+                                                مؤشرات أداء المشروع </h2>
+                                        </div>
+                                    @endif
                                 </div>
-
                             </div>
                         </form>
 

@@ -28,6 +28,7 @@ class Project extends Model
         'date',
         'owner_id',
         'state',
+        'fund',
         'created_at',
         'updated_at',
     ];

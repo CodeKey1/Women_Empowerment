@@ -23,7 +23,7 @@
                                     <div class="post action-card col-lg-4 col-md-6 col-sm-12 col-xs-12 m-b40">
                                         <div class="recent-news">
                                             <div class="action-box">
-                                                <img src="{{ URL::to('images/ng/' . $N_project->image) }}" alt="">
+                                                <img src="{{ asset('storage/' . $N_project->image) }}" alt="">
                                             </div>
                                             <div class="info-bx">
                                                 <h5 class="post-title"><a href="blog-details.html"> {{ $N_project->name }}

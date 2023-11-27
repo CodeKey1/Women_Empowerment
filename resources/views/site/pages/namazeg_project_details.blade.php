@@ -22,7 +22,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="action-box blog-lg">
-                                        <img src="{{ URL::to('images/ng/' . $old_project->image) }}" alt="">
+                                        <img src="{{ asset('storage/' . $old_project->image) }}" alt="">
                                     </div>
                                 </div>
 

@@ -8,6 +8,7 @@ use App\Http\Requests\TrainingRequest;
 use App\Models\Courese_detail;
 use App\Models\Course;
 use App\Models\Model_Project;
+use App\Models\Project;
 use App\Models\Project_owner;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
@@ -20,26 +21,26 @@ class AdminController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function back()
-    {
-        //
-        return redirect()->back();
-    }
+    // public function back()
+    // {
+    //     //
+    //     return redirect()->back();
+    // }
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-
-        return view('admin.pages.dashboard');
-    }
-    public function apply_project()
-    {
-        //
-        $apply = Project_owner::select()->get();
-        return view('Dashboard.dashboard', compact('apply'));
-    }
+    // public function index()
+    // {
+    //     //
+    //     return view('admin.pages.dashboard');
+    // }
+    // public function apply_project()
+    // {
+    //     //
+    //     $apply = Project::select()->get();
+    //    // $apply = Project_owner::select()->get();
+    //     return view('Dashboard.dashboard', compact('apply'));
+    // }
     public function users()
     {
         $users = User::select()->get();

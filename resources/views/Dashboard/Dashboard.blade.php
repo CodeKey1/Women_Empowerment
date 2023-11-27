@@ -24,7 +24,7 @@
                             اجمالي مشاريع المنصة
                         </span>
                         <span class="wc-stats">
-                            <span class="counter">18</span>M
+                            <span class="counter">{{ $project->count() }}</span>M
                         </span>
                         <div class="progress wc-progress">
                             <div class="progress-bar" role="progressbar" style="width: 78%;" aria-valuenow="50"
@@ -51,7 +51,7 @@
                             اجمالي المشاريع الممولة
                         </span>
                         <span class="wc-stats counter">
-                            120
+                            {{ $project->where('state','مقبول')->count() ?? 0}}
                         </span>
                         <div class="progress wc-progress">
                             <div class="progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="50"

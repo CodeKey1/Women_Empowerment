@@ -15,7 +15,7 @@
                                     <div class="col-lg-4 col-md-4 col-sm-6">
                                         <div class="service-bx">
                                             <div class="action-box">
-                                                <img src="{{ URL::to('images/ng/' . $N_project->image) }}" alt="">
+                                                <img src="{{ asset('storage/' . $N_project->image) }}" alt="">
                                             </div>
                                             <div class="info-bx text-center">
                                                 <div class="feature-box-sm radius bg-white">
@@ -52,7 +52,7 @@
                                         <div class="item">
                                             <div class="cours-bx">
                                                 <div class="action-box">
-                                                    <img src="{{ URL::to('images/ng/' . $N_project->image) }}"
+                                                    <img src="{{ asset('storage/' . $N_project->image) }}"
                                                         alt="">
                                                     <a href="{{ route('namazeg-project_details', $N_project->id) }}"
                                                         class="btn"> للمزيد </a>
@@ -89,7 +89,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="cours-search-bx m-b30">
                                     <div class="icon-box">
-                                        <h3><i class="ti-user"></i><span class="counter">1.8</span>K</h3>
+                                        <h3><i class="ti-user"></i><span class="counter">342,51</span>K</h3>
                                     </div>
                                     <span class="cours-search-text">مستفيد</span>
                                 </div>
@@ -97,7 +97,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="cours-search-bx m-b30">
                                     <div class="icon-box">
-                                        <h3><i class="ti-book"></i><span class="counter">924</span></h3>
+                                        <h3><i class="ti-book"></i><span class="counter">314,50</span>k</h3>
                                     </div>
                                     <span class="cours-search-text">مشروع </span>
                                 </div>
@@ -105,7 +105,7 @@
                             <div class="col-md-4 col-sm-12">
                                 <div class="cours-search-bx m-b30">
                                     <div class="icon-box">
-                                        <h3><i class="ti-layout-list-post"></i><span class="counter">6</span>K
+                                        <h3><i class="ti-layout-list-post"></i><span class="counter">180</span>
                                         </h3>
                                     </div>
                                     <span class="cours-search-text"> تدريبات عامة </span>

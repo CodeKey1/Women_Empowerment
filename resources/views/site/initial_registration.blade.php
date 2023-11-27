@@ -100,23 +100,6 @@
                                                             </div>
                                                         </div>
                                                         <br>
-                                                        <div class="row">
-                                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                                <label class="control-label col-12"> الرغبة في الحصول
-                                                                    على
-                                                                    تمويل
-                                                                    <span style="color: red">*</span></label>
-                                                                <div style="text-align: justify">
-                                                                    <input type="radio" id="yes" name="fund"
-                                                                        value="1" required>
-                                                                    <label for="yes"> نعم </label>
-                                                                    <input type="radio" id="no"
-                                                                        name="fund" value="0">
-                                                                    <label for="no"> لا </label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <br>
                                                         <div class="row" style="justify-content: space-around;">
                                                             <button type="submit" name="formType" value="initial"
                                                                 class="btn">حفظ -
@@ -244,6 +227,22 @@
                                                                 </label>
                                                                 <input type="text" name="email"
                                                                     class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 18px;">
+                                                                <label class="control-label col-12"> الرغبة في الحصول
+                                                                    على
+                                                                    تمويل
+                                                                    <span style="color: red">*</span></label>
+                                                                <div style="text-align: justify;padding-inline-start: 30px;">
+                                                                    <input type="radio" id="yes" name="fund"
+                                                                        value="1" required>
+                                                                    <label for="yes"> نعم </label>
+                                                                    <input type="radio" id="no"
+                                                                        name="fund" value="0">
+                                                                    <label for="no"> لا </label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <br>

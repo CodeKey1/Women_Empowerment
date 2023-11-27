@@ -32,8 +32,9 @@ class AdminViewController extends Controller
     public function index()
     {
         //
+        $project = Project::select()->get();
         $apply = Project_owner::select()->get();
-        return view('Dashboard.dashboard', compact('apply'));
+        return view('Dashboard.dashboard', compact('apply','project'));
     }
     public function data()
     {

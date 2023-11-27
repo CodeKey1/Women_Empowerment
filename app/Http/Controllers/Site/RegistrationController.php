@@ -42,7 +42,7 @@ class RegistrationController extends Controller
             "email" => $request['email'],
             "phone" => $request['phone'],
             "address" => $request['address'],
-            "fund" => $request['fund'],
+            //"fund" => $request['fund'],
             "state" => 2,
             "user_id" => $project,
         ]);
@@ -63,6 +63,7 @@ class RegistrationController extends Controller
             "smart" => $request['smart'],
             "trail" => $request['trail'],
             "email" => $request['email'],
+            "fund" => $request['fund'],
             "date" => $request['date'],
             "owner_id" => $id,
         ]);
@@ -284,7 +285,7 @@ class RegistrationController extends Controller
                         "email" => $request['email'],
                         "phone" => $request['phone'],
                         "address" => $request['address'],
-                        "fund" => $request['fund'],
+
                         "state" => 2,
                     ]);
                     return redirect()->route('viewProject')->with('menu1_active', true)->with('active', true)->with(['success' => 'تم الحفظ بيانات رائدة الأعمال بنجاح']);
@@ -296,6 +297,7 @@ class RegistrationController extends Controller
                         "city_id" => $request['city_id'],
                         "idea" => $request['idea'],
                         "goal" => $request['goal'],
+                        "fund" => $request['fund'],
                         "innovation" => $request['innovation'],
                         "future" => $request['future'],
                         "location" => $request['location'],
